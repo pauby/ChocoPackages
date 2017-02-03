@@ -9,7 +9,7 @@
     <authors>Avast</authors>
     <projectUrl>https://http://www.avast.com</projectUrl>
     <iconUrl>https://cdn.rawgit.com/pauby/chocopackages/master/avastfreeantivirus/avastfreeantivirus.png</iconUrl>
-    <copyright>2016</copyright>
+    <copyright>2016 AVAST Software s.r.o.</copyright>
     <licenseUrl>http://www.avast.com/en-eu/eula</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>avast security antivirus</tags>
