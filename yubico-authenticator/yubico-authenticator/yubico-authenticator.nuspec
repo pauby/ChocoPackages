@@ -1,43 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
-<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
-<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
-
-<!--
-This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
-
-* the package xmlns schema url may cause issues with nuget.exe
-* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces 
-* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements 
--->
-<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
-<!-- * If you are an organization making private packages, you probably have no issues here -->
-<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <!-- == PACKAGE SPECIFIC SECTION == -->
-    <!-- This section is about this package, although id and version have ties back to the software -->
-    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
-    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
     <id>yubico-authenticator</id>
-    <!-- version should MATCH as closely as possible with the underlying software -->
-    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
-    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
     <version>3.1.0</version>
     <packageSourceUrl>https://github.com/Yubico/yubioath-desktop</packageSourceUrl>
-    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>pauby</owners>
-    <!-- ============================== -->
 
-    <!-- == SOFTWARE SPECIFIC SECTION == -->
-    <!-- This section is about the software itself -->
     <title>Yubico Authenticator (Install)</title>
     <authors>Yubico</authors>
     <projectUrl>https://github.com/Yubico/yubioath-desktop</projectUrl>
-    <!--<iconUrl>http://cdn.rawgit.com/__MAINTAINER_REPO__/master/icons/yubico-authenticator.png</iconUrl>-->
-    <!-- copyright is usually years and software vendor, but not required for internal feeds -->
     <copyright>2016 Yubico</copyright>
     <licenseUrl>https://github.com/Yubico/yubioath-desktop/blob/master/BLURB</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -45,32 +17,14 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <docsUrl>https://github.com/Yubico/yubioath-desktop</docsUrl>
     <mailingListUrl>https://forum.yubico.com/</mailingListUrl>
     <bugTrackerUrl>https://github.com/Yubico/yubioath-desktop/issues</bugTrackerUrl>
-    <tags>yubikey yubico authenticator security authentication totp 2fa oath desktop hotp</tags>
+    <tags>yubikey yubico authenticator security authentication totp 2fa oath desktop hotp admin</tags>
     <summary>The Yubico Authenticator is a tool for generating OATH event-based HOTP and time-based TOTP one-time password codes using a Yubikey.</summary>
     <description>The Yubico Authenticator is a graphical desktop tool and command line tool for generating Open AuTHentication (OATH) event-based HOTP and time-based TOTP one-time password codes, with the help of a YubiKey that protects the shared secrets. Similar to Google Authenticator but for your desktop. There is an equivalent Android version so you can take your codes with you between desktop and mobile.
 
 Requires a capable Yubikey device. </description>
     <releaseNotes>https://developers.yubico.com/yubioath-desktop/Release_Notes.html</releaseNotes>
-    <!-- =============================== -->  
-
-    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
-    <!--<dependencies>
-      <dependency id="" version="__MINIMUM_VERSION__" />
-      <dependency id="" version="[__EXACT_VERSION__]" />
-      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
-      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
-      <dependency id="" />
-      <dependency id="chocolatey-uninstall.extension" />
-    </dependencies>-->
-      <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
-
-    <!--<provides>NOT YET IMPLEMENTED</provides>-->
-    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
-    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
   </metadata>
   <files>
-    <!-- this section controls what actually gets packaged into the Chocolatey package -->
     <file src="tools\**" target="tools" />
-    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
   </files>
 </package>
