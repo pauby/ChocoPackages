@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>Adobe Digital Editions(Install)</title>
+    <title>Adobe Digital Editions (Install)</title>
     <authors>Adobe</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.adobe.com/solutions/ebook/digital-editions.html</projectUrl>
