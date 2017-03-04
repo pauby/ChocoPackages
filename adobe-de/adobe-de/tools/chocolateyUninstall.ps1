@@ -6,7 +6,7 @@ $ahkPath = $(Join-Path -Path $toolsDir -ChildPath $ahkFile)
 
 $packageName = 'adobe-de'
 $softwareName = 'adobe-de*'
-$installerType = 'EXE' 
+$installerType = 'EXE'
 
 $silentArgs = '/s'
 $validExitCodes = @(0)
@@ -16,15 +16,15 @@ $uninstalled = $false
 
 $ahkRun = "$Env:Temp\$(Get-Random).ahk"
 write-warning "ahk file at start: $ahkrun"
-Copy-Item $ahkPath "$ahkRun" -Force
+Copy-Item $ahkPath $ahkRun -Force
 $ahkProc = Start-Process -FilePath 'AutoHotKey' `
    -ArgumentList $ahkRun `
    -PassThru
 
 if ($key.Count -eq 1) {
-  $key | % { 
+  $key | % {
     $file = "$($_.UninstallString)"
-	
+
     Uninstall-ChocolateyPackage -PackageName $packageName `
                                 -FileType $installerType `
                                 -SilentArgs "$silentArgs" `

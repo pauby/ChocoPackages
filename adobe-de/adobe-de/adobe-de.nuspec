@@ -39,7 +39,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.adobe.com/solutions/ebook/digital-editions.html</projectUrl>
     <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/737d13f0/adobe-de/adobe-de_icon_128x128.png</iconUrl>
-    <copyright>2017</copyright>
+    <!-- <copyright>2017</copyright> -->
     <!-- If there is a license Url available, it is is required for the community feed -->
     <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>-->
@@ -48,7 +48,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!--<mailingListUrl></mailingListUrl>-->
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <tags>adobe-de admin ebook drm epub epub3 pdf</tags>
-    <summary>__REPLACE__</summary>
+    <summary>Use it to download and purchase digital content and share between devices. Use it as an eReader to experience books in the optimum format.</summary>
     <description>Most major publishers use Adobe Digital Editions (ADE) to proof-read their books. Download this free eReader to experience your books in the most optimum format across PC, MAC, tablets or mobile devices. Use it to download and purchase digital content, which can be read both online and offline. Experience a new ease-of-use as the books you purchase appear automatically across all the devices you have ADE on.
 
 # Features of Adobe Digital Editions
