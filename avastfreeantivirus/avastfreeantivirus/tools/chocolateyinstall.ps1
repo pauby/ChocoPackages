@@ -1,46 +1,25 @@
-﻿
-$ErrorActionPreference = 'Stop';
-
+﻿$ErrorActionPreference = 'Stop';
 
 $packageName= 'avastfreeantivirus'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'http://files.avast.com/iavs9x/avast_free_antivirus_setup.exe'
+$url        = 'https://files.avast.com/iavs9x/avast_free_antivirus_setup.exe'
 $url64      = ''
 
 $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
-  fileType      = 'exe'
+  fileType      = 'EXE'
   url           = $url
   url64bit      = $url64
 
-  softwareName  = 'avastfreeantivirus*'
-
-  checksum      = '4A30F70BB12C0701B47C8352B997BD51309EFED8E6EBD61970FCD1ADF2452337'
+  softwareName  = 'Avast Free Antivirus'
+  checksum      = 'F8151FCEF0D692D929E0729772B93B7F1887A3D9399733670CB266EC98C2B2DE'
   checksumType  = 'sha256'
-  checksum64    = '4A30F70BB12C0701B47C8352B997BD51309EFED8E6EBD61970FCD1ADF2452337'
+  checksum64    = ''
   checksumType64= 'sha256'
 
   silentArgs    = "/silent"
-  validExitCodes= @(0, 3010, 1641)
+  validExitCodes= @(0)
 }
 
 Install-ChocolateyPackage @packageArgs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
