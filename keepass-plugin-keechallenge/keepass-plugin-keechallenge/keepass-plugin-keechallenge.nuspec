@@ -11,7 +11,6 @@
     <authors>Ben Rush</authors>
     <projectUrl>http://brush701.github.io/keechallenge/</projectUrl>
     <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/8a8a52b7/keepass-plugin-keechallenge/keepass-plugin-keechallenge/keepass-plugin-keechallenge.png</iconUrl>
-    <copyright>2014</copyright>
     <licenseUrl>https://raw.githubusercontent.com/brush701/keechallenge/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/brush701/keechallenge</projectSourceUrl>
