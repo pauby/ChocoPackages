@@ -3,14 +3,12 @@
 $packageName= 'spiceworks-agent-shell'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url        = 'https://download.spiceworks.com/ResolveAgent/current/SpiceworksAgentShell.msi'
-$url64      = ''
 
 $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
   fileType      = 'MSI'
   url           = $url
-  url64bit      = $url64
 
   softwareName  = 'agent shell'
 
@@ -66,15 +64,8 @@ else {
 	Write-Verbose "Package already installed so this is a reinstall or upgrade - /sitekey not needed"
 }
 
-If ($upgrade) {
-	Write-Verbose "Stopping the Spiceworks Agent Shell Service service"
-	Stop-Service -Name 'AgentShellService' -ErrorAction SilentlyContinue | Out-Null
-}
-
 Write-Debug "This would be the Chocolatey Silent Arguments: $($packageArgs.silentArgs)"
 Install-ChocolateyPackage @packageArgs
 
-if ($upgrade) {
-	Write-Verbose "Starting the Spiceworks Agent Shell Service service"
-	Start-Service -Name 'AgentShellService' -ErrorAction SilentlyContinue | Out-Null
-}
+Write-Verbose "Starting the Spiceworks Agent Shell Service service"
+Start-Service -Name 'AgentShellService' -ErrorAction SilentlyContinue | Out-Null
