@@ -1,11 +1,11 @@
 $ErrorActionPreference = 'Stop';
 
 $toolsDir = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
-$ahkFile = 'adobe-de_Uninstall.ahk'
+$ahkFile = 'adobedigitaleditions_Uninstall.ahk'
 $ahkPath = $(Join-Path -Path $toolsDir -ChildPath $ahkFile)
 
-$packageName = 'adobe-de'
-$softwareName = 'adobe-de*'
+$packageName = 'adobedigitaleditions'
+$softwareName = 'adobedigitaleditions*'
 $installerType = 'EXE'
 
 $silentArgs = '/s'

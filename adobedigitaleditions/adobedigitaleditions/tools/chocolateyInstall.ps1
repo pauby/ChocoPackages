@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName= 'adobe-de'
+$packageName= 'adobedigitaleditions'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url        = 'https://adedownload.adobe.com/pub/adobe/digitaleditions/ADE_4.5_Installer.exe'
 $url64      = ''
@@ -12,7 +12,7 @@ $packageArgs = @{
   url           = $url
   url64bit      = $url64
 
-  softwareName  = 'adobe-de*'
+  softwareName  = 'adobedigitaleditions*'
 
   checksum      = '1457FFF9877B292F66A1BA9E5D95D069503B92121165EFB4CE41CD8FADA9BEB8'
   checksumType  = 'sha256'
@@ -24,7 +24,7 @@ $packageArgs = @{
 }
 
 $ahkExe = 'AutoHotKey'
-$ahkFile = Join-Path $toolsDir "adobe-de_Install.ahk"
+$ahkFile = Join-Path $toolsDir "adobedigitaleditions_Install.ahk"
 $ahkProc = Start-Process -FilePath $ahkExe `
                          -ArgumentList $ahkFile `
                          -PassThru
