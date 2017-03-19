@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>outlookcaldav</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>2.17.0</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/outlookcaldav</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby,tkriviradev</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Outlook CalDav Synchronizer (Install)</title>
+    <authors>Gerhard Zehetbauer, Alexander Nimmervoll</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://caldavsynchronizer.org/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/pauby/ChocoPackages/3b8f5a8b/outlookcaldav/outlookcaldav/outlookcaldav_icon.png</iconUrl>
+    <copyright>2017 Gerhard Zehetbauer and Alexander Nimmervoll</copyright>
+    <!-- If there is a license Url available, it is is required for the community feed -->
+    <licenseUrl>https://github.com/aluxnimm/outlookcaldavsynchronizer/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/aluxnimm/outlookcaldavsynchronizer/</projectSourceUrl>
+    <docsUrl>http://caldavsynchronizer.org/documentation/</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/aluxnimm/outlookcaldavsynchronizer/issues</bugTrackerUrl>
+    <tags>outlookcaldavsynchronizer outlookcaldav caldav synchronizer outlook admin</tags>
+    <summary>Outlook Plugin, which synchronizes events, tasks and contacts between Outlook and Google, SOGo, Horde or any other CalDAV or CardDAV server. Supported Outlook versions are 2016, 2013, 2010 and 2007.</summary>
+    <description>Outlook Plugin, which synchronizes events, tasks and contacts between Outlook and Google, SOGo, Horde or any other CalDAV or CardDAV server. Supported Outlook versions are 2016, 2013, 2010 and 2007.
+
+This project was initially developed as a master thesis project at the University of Applied Sciences Technikum Wien, Software Engineering Degree program. Outlook CalDav Synchronizer is Free and Open-Source Software (FOSS).
+
+# Tested CalDAV Servers
+
+- Baïkal - Cozy Cloud - cPanel - Cyrus Imap 2.5 - DAViCal - Fruux - GMX - Google Calendar - Group-Office - Horde Kronolith - iCloud - Kolab - Landmarks - Mac OS X Server - mail.ru - mailbox.org - Nextcloud - One.com - OpenX-change - Owncloud - Posteo - Radicale - SabreDAV - SOGo - Synology DSM - Tine 2.0 - Yahoo - Yandex - Zimbra 8.5 - Zoho Calendar
+
+# Features
+
+* open source AGPL, the only free Outlook CalDav plugin
+* two-way-sync
+* SSL/TLS support, support for self-signed certificates and client certificate authentication
+* Manual proxy configuration support for NTLM or basic auth proxies
+* Autodiscovery of calendars and addressbooks
+* configurable sync range
+* sync multiple calendars per profile
+* sync reminders, categories, recurrences with exceptions, importance, transparency
+* sync organizer and attendees and own response status
+* task support
+* Google native Contacts API support with mapping of Google contact groups to Outlook categories.
+* Google Tasklists support (sync via Google Task Api with Outlook task folders)
+* CardDAV support to sync contacts (distribution lists planned)
+* time-triggered-sync
+* change-triggered-sync
+* manual-triggered-sync
+* Category Filtering (sync CalDAV calendar/tasks to Outlook categories)
+* map CalDAV server colors to Outlook category colors
+* show reports of last sync runs and status
+* System TrayIcon with notifications
+* bulk creation of multiple profiles
+* Use server settings from Outlook IMAP/POP3 account profile
+* Map Windows to standard IANA/Olson timezones
+* Configurable mapping of Outlook custom properties
+* create DAV server calendars/addressbooks with MKCOL
+* Map Outlook formatted RTFBody to html description via X-ALT-DESC attribute
+</description>
+    <releaseNotes>https://github.com/aluxnimm/outlookcaldavsynchronizer/releases</releaseNotes>
+    <!-- =============================== -->
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+<!--    <dependencies>
+      <dependency id="dotnet4.5"/>
+     <dependency id="" version="[__EXACT_VERSION__]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
+      <dependency id="" />
+      <dependency id="chocolatey-uninstall.extension" /> -->
+    <!--</dependencies>-->
+    <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
