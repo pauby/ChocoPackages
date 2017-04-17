@@ -5,7 +5,7 @@ $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageName  = 'outlookcaldav'
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url          = 'https://github.com/aluxnimm/outlookcaldavsynchronizer/releases/download/v2.18.0/OutlookCalDavSynchronizer-2.18.0.zip'
+$url          = "https://github.com/aluxnimm/outlookcaldavsynchronizer/releases/download/v$($env:ChocolateyPackageVersion)/OutlookCalDavSynchronizer-$($env:ChocolateyPackageVersion).zip"
 
 $packageArgs = @{
   packageName   = $packageName
@@ -16,7 +16,7 @@ $packageArgs = @{
 
   softwareName  = 'OutlookCalDavSynchronizer*'
 
-  checksum      = 'FE272AB8071777AAAAF5A52016C3696CF29F4A1E587651FC02F0FB366294DD5D'
+  checksum      = 'F289CE46B64495F37FC74FDBAE37DB370524458F7B25927C0AA93B5137D58D2B'
   checksumType  = 'sha256'
 
   silentArgs    = "/quiet"
