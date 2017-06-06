@@ -16,7 +16,7 @@ $packageArgs = @{
 
   softwareName  = 'OutlookCalDavSynchronizer*'
 
-  checksum      = 'F289CE46B64495F37FC74FDBAE37DB370524458F7B25927C0AA93B5137D58D2B'
+  checksum      = '9C2D36A7D7A9C57569E2084D61C546CC3265AD2D50A2ACF648EB6B3C0F5DD5EC'
   checksumType  = 'sha256'
 
   silentArgs    = "/quiet"
