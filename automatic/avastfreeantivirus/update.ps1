@@ -14,10 +14,6 @@ function global:au_SearchReplace {
     }
 }
 
-function au_BeforeUpdate() {
-    $Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
-}
-
 function global:au_AfterUpdate { 
     Set-DescriptionFromReadme -SkipFirst 2 
 }
@@ -33,4 +29,4 @@ function global:au_GetLatest {
     }
 }
 
-update -ChecksumFor none
+update -ChecksumFor 32
