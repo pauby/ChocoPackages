@@ -45,10 +45,14 @@ environment:
   api_key:
     secure: /M7oXDYygCRlrVqlO0DjjhwvQogHLLG6m48VOZoM7Mr/OC5RuBLD8JueJtIZc9Sg # https://ci.appveyor.com/tools/encrypt
 
+  appveyor_rdp_password: 
+    secure: CC+F6/yXM5KgZMVnjjHyBIaw8aK8oOCYipXqGfQUHEE=
+
 init:
 - git config --global user.email "chocolatey@realdimensions.net"
 - git config --global user.name "Chocolatey"
 - git config --global core.safecrlf false
+- ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
