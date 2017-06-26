@@ -4,7 +4,6 @@ $packageName= 'keepass-plugin-keechallenge'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $zipFolder  = 'KeeChallenge_1.5'
 $url        = 'https://github.com/brush701/keechallenge/releases/download/1.5/KeeChallenge_1.5.zip'
-$url64      = ''
 
 $packageSearch = 'KeePass Password Safe*'
 $installPath = ""
@@ -40,10 +39,8 @@ $packageArgs = @{
     unzipLocation   = $toolsDir
     url             = $url
     url64bit        = $url64
-    checksum        = '7A691E37858BEE3A69BA81ED1C7CE6DD42DE4096DFE9CD7B7547566399D3F369'
-    checksumType    = 'sha256'
-    checksum64      = ''
-    checksumType64  = 'sha256'
+    checksum        = '7a691e37858bee3a69ba81ed1c7ce6dd42de4096dfe9cd7b7547566399d3f369'
+    checksumType    = 'SHA256'
 }
 
 Write-Verbose "Downloading and extracting plugin into Keepass folder at $keepassInstallPath"
@@ -51,7 +48,7 @@ Install-ChocolateyZipPackage @packageArgs
 
 # copy the items from the chocolatey install folder to the Keepass install location
 $sourcePath = Join-Path -Path $toolsDir -ChildPath $zipFolder
-Get-ChildItem -Path $sourcePath -Recurse | ForEach {
+Get-ChildItem -Path $sourcePath -Recurse | ForEach-Object {
     Copy-Item -Path $_.FullName -Destination ($_.FullName.Replace($sourcePath, $installPath)) -Force -ErrorAction SilentlyContinue
 }
 
