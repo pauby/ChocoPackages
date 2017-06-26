@@ -5,7 +5,7 @@ $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageName  = 'outlookcaldav'
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url          = 'https://github.com//aluxnimm/outlookcaldavsynchronizer/releases/download/v2.21.0/OutlookCalDavSynchronizer-2.21.0.zip'
+$url          = 'https://github.com//aluxnimm/outlookcaldavsynchronizer/releases/download/v2.22.1/OutlookCalDavSynchronizer-2.22.1.zip'
 
 $packageArgs = @{
   packageName   = $packageName
