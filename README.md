@@ -1,7 +1,7 @@
 # Chocolatey Packages
 
 [![](https://ci.appveyor.com/api/projects/status/github/pauby/chocopackages?svg=true)](https://ci.appveyor.com/project/pauby/chocopackages)
-[Update status](https://gist.github.com/pauby/0e5f5b8ade5b422ef59fb547e0d210d2)
+[Update status](https://gist.github.com/pauby/e3b29a09c77246998b82c9ad33f4be4a)
 
 This contains my packages, both manually and automatically maintained through [Appveyor](https://www.appveyor.com/).
 
