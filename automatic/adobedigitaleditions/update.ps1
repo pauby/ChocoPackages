@@ -1,6 +1,6 @@
 import-module au
 
-. $PSScriptRoot\..\scripts\all.ps1
+. $PSScriptRoot\..\..\scripts\all.ps1
 
 $releases    = 'https://www.adobe.com/solutions/ebook/digital-editions/download.html'
 
