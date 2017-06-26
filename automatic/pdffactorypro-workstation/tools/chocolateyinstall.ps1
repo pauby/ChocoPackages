@@ -1,23 +1,19 @@
-$ErrorActionPreference = 'Stop'; # stop on all errors
+﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
 $packageName= 'pdffactorypro-workstation'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'http://fineprint.com/release/pdf605pro.exe'
-$url64      = ''
+$url        = 'http://fineprint.com/release/pdf616pro.exe'
 
 $packageArgs = @{
     packageName   = $packageName
     unzipLocation = $toolsDir
     fileType      = 'EXE'
     url           = $url
-    url64bit      = $url64
 
     softwareName  = 'pdfFactory Pro'
 
-    checksum      = '2E4C8369A0AD62295307E4F8F91FE7A1C198D27E36AA22804E71FA8910BE531A'
-    checksumType  = 'sha256'
-    checksum64    = ''
-    checksumType64= 'sha256'
+    checksum      = 'c879d413996c0f056c455faf31470cd30b726fe5c6b2ad6b694a5313df13b866'
+    checksumType  = 'SHA256'
 
     silentArgs = '/quiet /reboot=0'
     validExitCodes= @(0)
