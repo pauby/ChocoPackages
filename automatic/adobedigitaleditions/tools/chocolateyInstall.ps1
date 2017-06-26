@@ -20,7 +20,9 @@ $packageArgs = @{
   checksumType64= 'sha256'
 
   silentArgs   = '/S'
-  validExitCodes= @(0)
+  # Note code 1223 is added as valid for v4.5.5 as it exits with this code but appears to install correctly
+  # see https://forums.adobe.com/thread/2345991
+  validExitCodes= @(0, 1223)
 }
 
 $ahkExe = 'AutoHotKey'
