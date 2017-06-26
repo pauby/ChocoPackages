@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
@@ -10,9 +10,9 @@
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
     <version>2.21.0</version>
-    <packageSourceUrl>https://github.com/pauby/chocopackages/outlookcaldav</packageSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/outlookcaldav</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
-    <owners>pauby,tkriviradev</owners>
+    <owners>pauby</owners>
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
@@ -21,7 +21,7 @@
     <authors>Gerhard Zehetbauer, Alexander Nimmervoll</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://caldavsynchronizer.org/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/pauby/ChocoPackages/3b8f5a8b/outlookcaldav/outlookcaldav/outlookcaldav_icon.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/ea075a55/icons/outlookcaldav.png</iconUrl>
     <copyright>2017 Gerhard Zehetbauer and Alexander Nimmervoll</copyright>
     <!-- If there is a license Url available, it is is required for the community feed -->
     <licenseUrl>https://github.com/aluxnimm/outlookcaldavsynchronizer/blob/master/LICENSE.txt</licenseUrl>
