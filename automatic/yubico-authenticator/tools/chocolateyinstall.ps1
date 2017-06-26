@@ -2,7 +2,7 @@
 
 $packageName  = 'yubico-authenticator'
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$fileLocation = ''
+$url          = 'https://github.com//Yubico/yubioath-desktop/releases/download/yubioath-desktop-4.1.2/yubioath-desktop-4.1.2-win.exe'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -10,12 +10,9 @@ $packageArgs = @{
   fileType      = 'exe'
   silentArgs    = "/S" # NSIS 
   validExitCodes= @(0)
-  url			= "https://developers.yubico.com/yubioath-desktop/Releases/yubioath-desktop-$($env:ChocolateyPackageVersion)-win.exe"
-  checksum      = 'B71F9510A97FB52B9A70E35D98498D20A507AAC6968F1FC9E8CFF13EB5424218'
-  checksumType  = 'sha256'
-  url64bit      = ""  
-  checksum64    = ''
-  checksumType64= 'sha256'
+  url			      = $url
+  checksum      = '5101aedb7d0000c4cca91bce878c6900453cd40a42151bccd4c2de2a4cf97f14'
+  checksumType  = 'SHA256'
   destination   = $toolsDir
 }
 

@@ -1,15 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÅ½Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â doesnÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>yubico-authenticator</id>
-    <version>4.0.1</version>
-    <packageSourceUrl>https://github.com/Yubico/yubioath-desktop</packageSourceUrl>
+    <version>4.1.2</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/yubico-authenticator</packageSourceUrl>
     <owners>pauby</owners>
     <title>Yubico Authenticator (Install)</title>
     <authors>Yubico</authors>
     <projectUrl>https://github.com/Yubico/yubioath-desktop</projectUrl>
-    <copyright>2016 Yubico</copyright>
+    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/ea3887ac/icons/yubico-authenticator.png</iconUrl>
+    <copyright>2017 Yubico</copyright>
     <licenseUrl>https://github.com/Yubico/yubioath-desktop/blob/master/BLURB</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/Yubico/yubioath-desktop</projectSourceUrl>
@@ -20,7 +21,8 @@
     <summary>The Yubico Authenticator is a tool for generating OATH event-based HOTP and time-based TOTP one-time password codes using a Yubikey.</summary>
     <description>The Yubico Authenticator is a graphical desktop tool and command line tool for generating Open AuTHentication (OATH) event-based HOTP and time-based TOTP one-time password codes, with the help of a YubiKey that protects the shared secrets. Similar to Google Authenticator but for your desktop. There is an equivalent Android version so you can take your codes with you between desktop and mobile.
 
-Requires a capable Yubikey device. </description>
+Requires a capable Yubikey device.
+</description>
     <releaseNotes>https://developers.yubico.com/yubioath-desktop/Release_Notes.html</releaseNotes>
 	<dependencies>
       <dependency id="autohotkey" />
