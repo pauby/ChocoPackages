@@ -14,8 +14,8 @@ $packageArgs = @{
 
   softwareName  = 'adobedigitaleditions*'
 
-  checksum      = ''
-  checksumType  = ''
+  checksum      = '9750099afe7321eeb7d7c0f916c1d0b3cc5921e233fafcd3b7719ea02fbb86e1'
+  checksumType  = 'SHA256'
   checksum64    = ''
   checksumType64= 'sha256'
 
