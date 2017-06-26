@@ -14,8 +14,9 @@ function global:au_SearchReplace {
     }
 }
 
-function au_BeforeUpdate() {
+function global:au_BeforeUpdate() {
     $Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
+    $Latest.ChecksumType32 = 'SHA256'
 }
 
 function global:au_AfterUpdate { 
@@ -28,7 +29,7 @@ function global:au_GetLatest {
     $regexVer  = "Adobe Digital Editions (.*) Installers"
     $regexUrl = "ADE_.*_installer.exe"
     if ($page.content -match $regexVer) { $version = $matches[1] }
-    $url = $page.links | ? href -match $regexUrl | select -First 1 -expand href
+    $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
 
     return @{
         URL32        = $url
