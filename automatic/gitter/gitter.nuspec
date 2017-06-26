@@ -15,7 +15,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
 <!-- * If you are an organization making private packages, you probably have no issues here -->
 <!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
@@ -27,19 +27,19 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
     <version>3.1.0.20170307</version>
-    <!-- <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>-->
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/gitter</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
-    <!--<owners>__REPLACE_YOUR_NAME__</owners>-->
+    <owners>pauby</owners>
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
     <title>Gitter (Install)</title>
-    <authors>pauby,keradus</authors>
+    <authors>Troupe Technology Ltd</authors>
     <!-- projectUrl is required for the community feed -->
-    <projectUrl>https://github.com/pauby/chocopackages</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/3c79f59a/gitter/gitter/gitter_icon_128x128.png</iconUrl>
-    <copyright>Copyright 2016 Troupe Technology Ltd</copyright>
+    <projectUrl>https://gitter.im</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/30a80e4c/icons/gitter.png</iconUrl>
+    <copyright>Copyright 2017 Troupe Technology Ltd</copyright>
     <!-- If there is a license Url available, it is is required for the community feed -->
     <licenseUrl>https://gitter.zendesk.com/hc/en-us/articles/200944641-Terms-of-Service</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -49,13 +49,60 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <tags>gitter admin im messaging messenger chat</tags>
     <summary>Gitter. Where communities thrive.</summary>
-    <description>Gitter is a chat and networking platform that helps to manage, grow and connect communities through messaging, content and discovery.
+    <description>Make Amazing Videos with the Camtasia Video Editor.
+Camtasia makes video editing surprisingly easy. The drag-and-drop editor and video assets help you complete your videos faster. No video experience needed.
 
-* Free without limits - Enjoy free public communities with unlimited people, message history and integrations. 
-* Simple to create - Simply create your community and start talking - no need to set up any invitation services. 
-* Quick to grow - Grow your community in no time with our easy sharing tools. 
-* Out in the open - Let your community be discovered! With Gitter, everyone can find your community in our directory and via search engines.
-	</description>
+If you need a previous version, [download it](https://www.techsmith.com/download/oldversions).       
+
+* SCREEN RECORDER
+ Record any part of your screen, down to the pixel.
+
+* WEBCAM
+ Webcam lets you add a personal touch to your video.
+
+* MEDIA
+ Import images, audio, and video up to 4K resolution.
+
+* MULTI-TRACK TIMELINE
+ Build your videos quickly with multiple tracks for images, video, text, and audio.
+
+* ANNOTATIONS
+ Arrows, callouts, shapes, and more help you get your point across.
+
+* TRANSITIONS
+ Add an intro/outro to the beginning or end of a clip, image, shape, or text.
+
+* ANIMATIONS
+ Zoom, pan, or create your own custom motion effects.
+
+* VOICE NARRATION
+ A great way to add context to what you’re showing.
+
+* AUDIO EFFECTS
+ Add audio effects to recordings, music, or narration to enhance your video.
+
+* VISUAL EFFECTS
+ Adjust colors, add a drop shadow, change the clip speed, and more.
+
+* INTERACTIVITY
+ Add quizzes to see who is watching your videos, and how much they've viewed.
+
+* GREEN SCREEN
+ Put yourself in your video making it appear like you're right in the action.
+
+# Parameters:
+
+* /licensekey:ABCD-EFGH-IJKL
+ Registered license key. If this is missing a 30 day trial is installed.
+
+* /licensename:""Joe Bloggs""
+ Registered name for the license. Can only be used if a /licensekey is specified
+
+* /nodesktopshortcut
+ Does not install an application shortcut on the desktop.
+
+Example: **-params='"/licensekey:ABCD-EFGH-IJKL /licensename:""Joe Bloggs"" /nodesktopshortcut"'**
+</description>
     <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
     <!-- =============================== -->      
 
