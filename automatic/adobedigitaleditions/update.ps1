@@ -11,10 +11,11 @@ function global:au_SearchReplace {
         }
     }
 }
-<#
-function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
-function global:au_AfterUpdate  { Set-DescriptionFromReadme -SkipFirst 2 }
-#>
+
+function au_BeforeUpdate() {
+    $Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
+}
+
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases
 
@@ -29,4 +30,4 @@ function global:au_GetLatest {
     }
 }
 
-update -ChecksumFor 32
+update -ChecksumFor none
