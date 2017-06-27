@@ -4,8 +4,6 @@ import-module au
 
 $releases    = 'https://github.com/Yubico/yubioath-desktop/releases/latest'
 
-$NoCheckChocoVersion = $true
-
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
