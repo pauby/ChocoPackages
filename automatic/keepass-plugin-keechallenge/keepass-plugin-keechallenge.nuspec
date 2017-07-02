@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>keepass-plugin-keechallenge</id>
-    <version>1.5.0</version>
+    <version>1.5</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/keepass-plugin-keechallenge</packageSourceUrl>
     <owners>pauby</owners>
 
