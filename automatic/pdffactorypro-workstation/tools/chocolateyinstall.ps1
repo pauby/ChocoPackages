@@ -2,7 +2,7 @@
 
 $packageName= 'pdffactorypro-workstation'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'http://fineprint.com/release/pdf616pro.exe'
+$url        = 'http://fineprint.com/release/pdf617pro.exe'
 
 $packageArgs = @{
     packageName   = $packageName
@@ -12,7 +12,7 @@ $packageArgs = @{
 
     softwareName  = 'pdfFactory Pro'
 
-    checksum      = 'c879d413996c0f056c455faf31470cd30b726fe5c6b2ad6b694a5313df13b866'
+    checksum      = '59f67817a67a08962f138654acdd3a82d770b7c7232d5e4d7f00cb64cb22d870'
     checksumType  = 'SHA256'
 
     silentArgs = '/quiet /reboot=0'
