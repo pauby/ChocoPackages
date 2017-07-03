@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if Ã¢â‚¬Å“ÃŽÂ©Ã¢â‚¬Â doesnÃ¢â‚¬â„¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>yubikey-manager</id>
+    <version>0.0.0</version>
+    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/yubikey-manager</packageSourceUrl>
+    <owners>pauby</owners>
+
+    <title>Yubikey Manager (Install)</title>
+    <authors>Yubico</authors>
+    <projectUrl>https://github.com/Yubico/yubikey-manager-qt</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/d82c613a/icons/yubikey-manager.png</iconUrl>
+    <copyright>2017 Yubico</copyright>
+    <!--<docsUrl>https://www.yubico.com/support/knowledge-base/categories/articles/yubikey-neo-manager-quick-start-guide/</docsUrl>-->
+    <!--<mailingListUrl>https://forum.yubico.com/</mailingListUrl>-->
+    <tags>yubikey yubico admin neo</tags>
+    <summary>Cross-platform application for configuring any YubiKey over all USB transports.</summary>
+    <description>Cross-platform application for configuring any YubiKey over all USB transports.
+
+![Screenshot](https://github.com/pauby/chocopackages/tree/master/automatic/yubikey-manager/screenshot.png)
+
+## Features
+
+This application provides an easy way to perform the most common configuration tasks on a YubiKey.
+
+The current version can:
+
+* Display the serial number and firmware version of a YubiKey.
+* Configure YubiKey Slots. A YubiKey have two slots (short press and long press), which may both be configured for different functionality. 
+This tool can configure a [Yubico OTP](https://developers.yubico.com/OTP/) credential, a static password, a challenge-response credential or an [OATH](https://developers.yubico.com/OATH/) HOTP credential in both of these slots.
+* Swap the functionality between two configured YubiKey slots.
+* Enable or disable the different USB connections (USB modes).
+</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
