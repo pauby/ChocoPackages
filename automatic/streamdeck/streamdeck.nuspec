@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>streamdeck</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>1.2.0.1157</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/streamdeck</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Stream Deck (Install)</title>
+    <authors>Elgato Systems GmbH</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://www.elgato.com/gaming/downloads</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/f08050f3/icons/streamdeck.png</iconUrl>
+    <copyright>2017 Elgato Systems GmbH</copyright>
+    <!-- If there is a license Url available, it is is required for the community feed -->
+    <!-- <licenseUrl></licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
+    <!-- <projectSourceUrl></projectSourceUrl> -->
+    <docsUrl>https://gaming.help.elgato.com/customer/en/portal/topics/1061842-elgato-stream-deck/articles</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <!-- <bugTrackerUrl></bugTrackerUrl> -->
+    <tags>streamdeck stream deck admin</tags>
+    <summary>Stream Deck is the companion application to the Elgato Stream Deck hardware allowing you to customise buttons.</summary>
+    <description>Stream Deck is the companion application to the Elgato Stream Deck hardware allowing you to customise buttons.
+    
+Gone are the days of navigating myriad windows to trigger an action, and relying solely on automated plugins to expand your production value. Now, you hold the power to pioneer a new era of content creation, and lead your audience to uncharted frontiers of inspiration. Now, you’re in control.
+
+NOTE: This application ONLY supports Windows 10 x64.
+</description>
+    <releaseNotes>https://gaming.help.elgato.com/customer/en/portal/articles/2793637-elgato-stream-deck-software-release-notes</releaseNotes>
+    <!-- =============================== -->
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <dependencies>
+      <dependency id="autohotkey" />
+      <!-- <dependency id="dotnet4.5"/>
+     <dependency id="" version="[__EXACT_VERSION__]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
+      <dependency id="" />
+      <dependency id="chocolatey-uninstall.extension" /> -->
+    </dependencies>
+    <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
