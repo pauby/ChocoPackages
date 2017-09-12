@@ -38,12 +38,12 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Spiceworks</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://community.spiceworks.com/help/Spiceworks_Agent</projectUrl>
-    <iconUrl>http://cdn.rawgit.com/pauby/chocopackages/master/spiceworks-agent-shell/spiceworks-agent-shell-128x128.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/ad9fd8dd/icons/spiceworks-agent-shell.png</iconUrl>
     <!-- <copyright>Copyright 2016 Spiceworks</copyright> -->
     <!-- If there is a license Url available, it is is required for the community feed -->
     <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>-->
-    <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
+    <projectSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/spiceworks-agent-shell</projectSourceUrl>
     <docsUrl>https://community.spiceworks.com/how_to/5796-deep-dive-into-the-windows-spiceworks-agent-msi</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
     <!--<bugTrackerUrl></bugTrackerUrl>-->
