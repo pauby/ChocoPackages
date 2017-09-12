@@ -4,7 +4,7 @@
   <metadata>
     <id>yubikey-neo-manager</id>
     <version>1.4.0</version>
-    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/yubikey-neo-manager</packageSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/yubikey-neo-manager</packageSourceUrl>
     <owners>pauby</owners>
 
     <title>Yubikey NEO Manager (Install)</title>

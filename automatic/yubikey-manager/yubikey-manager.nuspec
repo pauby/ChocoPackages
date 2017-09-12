@@ -4,7 +4,7 @@
   <metadata>
     <id>yubikey-manager</id>
     <version>0.3.0</version>
-    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/yubikey-manager</packageSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/yubikey-manager</packageSourceUrl>
     <owners>pauby</owners>
 
     <title>Yubikey Manager (Install)</title>

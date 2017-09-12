@@ -4,7 +4,7 @@
   <metadata>
     <id>yubikey-piv-manager</id>
     <version>1.4.2</version>
-    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/yubikey-piv-manager</packageSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/yubikey-piv-manager</packageSourceUrl>
     <owners>pauby</owners>
 
     <title>Yubikey PIV Manager (Install)</title>
