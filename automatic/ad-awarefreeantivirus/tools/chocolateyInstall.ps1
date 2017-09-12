@@ -16,7 +16,7 @@ $packageArgs = @{
     softwareName   = 'adaware antivirus*'
 
     checksum       = 'dc3e21115ef6d474175159bd3433bc526b2f56cc7677ecff2f46472c46b4e0c6'
-    checksumType   = 'sha256'
+    checksumType   = 'SHA256'
 
     validExitCodes = @(0)
 }
