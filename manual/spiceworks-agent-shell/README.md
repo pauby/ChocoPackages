@@ -1,7 +1,15 @@
-# ![Stream Deck](https://cdn.rawgit.com/pauby/ChocoPackages/f08050f3/icons/streamdeck.png "Stream Deck Logo") [Stream Deck](https://chocolatey.org/packages/streamdeck)
+# ![Spiceworks Agent Logo](https://cdn.rawgit.com/pauby/ChocoPackages/ad9fd8dd/icons/spiceworks-agent-shell.png "Spiceworks Agent Logo") [Spiceworks Agent](https://chocolatey.org/packages/spiceworks-agent)
 
-Stream Deck is the companion application to the Elgato Stream Deck hardware allowing you to customise buttons.
-    
-Gone are the days of navigating myriad windows to trigger an action, and relying solely on automated plugins to expand your production value. Now, you hold the power to pioneer a new era of content creation, and lead your audience to uncharted frontiers of inspiration. Now, you’re in control.
+Spiceworks Agent is a tool that allows IOD IT Administrators to view details about your computer's configuration - What software is installed, if your anti-virus software is up to date, how much memory is in your machine, etc.  The information collected is used for a variety of purposes, such as:
 
-NOTE: This application ONLY supports Windows 10 x64.
+* Determining when your machine needs to be replaced or upgraded
+* Tracking when your machine's warranty expires
+* Tracking when your computer is having hardware malfunctions.
+
+NOTE: This package will fail to install without providing a [site key](https://resolve.spiceworks.com/#/login) at the time of install using the following parameter:
+
+    `/site_key:"&lt;your site key&gt;"`
+
+Example:
+
+    `-packageParameters='"/site_key:ABcdefGHiJKLmnoPQRSt"'`
