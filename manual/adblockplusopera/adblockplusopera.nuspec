@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>Adblock Plus for Opera (Install)</title>
+    <title>Adblock Plus for Opera</title>
     <authors>Wladimir Palant</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://adblockplus.org/en/</projectUrl>
