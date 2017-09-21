@@ -23,4 +23,4 @@ Install-ChocolateyPackage @packageArgs
 
 # Start Menu shortcuts are created under the admin account - move them to All Users start menu
 Move-Item -Path (Join-Path -Path $env:USERPROFILE -ChildPath "AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Gitter") `
-	-Destination (Join-Path -Path $env:ALLUSERSPROFILE -ChildPath "Microsoft\Windows\Start Menu\Programs")
+	-Destination (Join-Path -Path $env:ALLUSERSPROFILE -ChildPath "Microsoft\Windows\Start Menu\Programs") -Force
