@@ -33,6 +33,20 @@ function global:au_GetLatest {
     $urlVer = $version.Replace('.', '')
     $url = "https://download.techsmith.com/camtasiastudio/enu/$urlVer/camtasia.msi"
 
+    # As we messed up the versions a little we need to make sure the minor vwersion number is 2 digits long and has trailing zeroes.
+    # When Camtasia reaches major version 10 we can correct this.
+    # Chocolatey (or Nuget specs to be more precise) ignore any leading zeroes. and for some reason version 9.0.5 (and earlier) of Camtastia was being 
+    # reported as 9.05 - that needs looked into too but in the meantime this is a fix.
+
+    # extract the minor version
+    $version -match "\d\.(\d)" | Out-Null
+    $minor = if ($matches[1].length -lt 2 -and $matches[1][0] -ne "0") { 
+        "$($matches[1])0" 
+    } else { 
+        $matches[1]
+    }
+    $version = $version -replace "(\d)\.\d\.(\d)", "`$1.$minor.`$2"
+    
     return @{
         URL64        = $url
         Version      = $version
