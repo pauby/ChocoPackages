@@ -2,7 +2,7 @@
 
 $packageName  = 'streamdeck'
 $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64        = 'https://edge.elgato.com/egc/windows/sd/Stream_Deck_1.4.2.2668.msi'
+$url64        = 'https://edge.elgato.com/egc/windows/sd/Stream_Deck_1.4.3.2674.msi'
 
 . "$toolsDir\PSPackageExtensions.ps1"
 
@@ -15,7 +15,7 @@ $packageArgs = @{
   url64           = $url64
   softwareName    = 'Elgato Stream Deck*'
 
-  checksum64      = '916acd5ce724376014e0f9372b995084bc65eb222fce1e105afb04c88cbdca56'
+  checksum64      = 'e93dcbe92286e2e8fa0ec7e3ae2f3ba74d390d41030f39d1cb3d326cf6409cb7'
   checksumType64  = 'SHA256'
 
   silentArgs      = "/quiet"
