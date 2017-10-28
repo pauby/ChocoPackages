@@ -46,8 +46,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <tags>star wars starwars jedi republic game admin</tags>
     <summary>Play Star Wars™: The Old Republic™ and be the hero of your own Star Wars™ saga.</summary>
-    <description>    
-<description>Play Star Wars™: The Old Republic™ and be the hero of your own Star Wars™ saga in a story-driven massively-multiplayer online game from BioWare and LucasArts. 
+    <description>Play Star Wars™: The Old Republic™ and be the hero of your own Star Wars™ saga in a story-driven massively-multiplayer online game from BioWare and LucasArts. 
 
 Explore an age thousands of years before the rise of Darth Vader when war between the Galactic Republic and the Sith Empire divides the galaxy.
 </description>
