@@ -86,7 +86,7 @@ I also added percent of progress to the dialog, although the percent shows in ti
 
 I made a package of Easy 7-Zip that contains both x86 (32-bit) and x64 (64-bit) editions. In other word, the package installs x86 (32-bit) edition of Easy 7-Zip on 32-bit Windows and x64 (64-bit) edition on 64-bit Windows automatically. The package also allows user to associate 7-Zip with file extensions including 001, 7z, arj, bz2, bzip2, cab, cpio, deb, dmg, fat, gz, gzip, hfs, iso, lha, lzh, lzma, ntfs, rar, rpm, squashfs, swm, tar, taz, tbz2, tbz, tgz, tpz, txz, vhd, wim, xar, xz, z, and zip.
 </description>
-    <releaseNotes>[Release Notes](https://support.techsmith.com/hc/en-us/articles/115006443267%C2%A0)</releaseNotes>
+    <releaseNotes>http://www.e7z.org/free-download.htm</releaseNotes>
     <!-- =============================== -->
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
     <!--<dependencies><dependency id="" version="__MINIMUM_VERSION__" /><dependency id="" version="[__EXACT_VERSION__]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /><dependency id="" /><dependency id="chocolatey-uninstall.extension" /></dependencies>-->
