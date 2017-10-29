@@ -29,7 +29,7 @@ function global:au_GetLatest {
     $regexVer = "Iris-([\d\.]+).exe"
     if ($page.content -match $regexVer) { $version = $matches[1] }
     $url = "https://raw.githubusercontent.com/danielng01/Iris-Builds/master/Windows/Iris-$version.exe"
-    write-host "url is: $url"
+
     return @{
         URL32   = $url
         Version = $version
