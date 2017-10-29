@@ -13,9 +13,7 @@ $uninstalled = $false
 if ($key.Count -eq 1) {
     $key | % {
         $packageArgs.file = $_.UninstallString
-write-host "found uninstall key - $($packageargs.file)"
         Uninstall-ChocolateyPackage @packageArgs
-        write-host "here"
     }
 }
 elseif ($key.Count -eq 0) {
