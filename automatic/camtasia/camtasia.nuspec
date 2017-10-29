@@ -35,7 +35,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
     <title>Camtasia (Install)</title>
-    <authors>pauby</authors>
+    <authors>Techsmith</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.techsmith.com/camtasia.html</projectUrl>
     <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/2b1fa4d7/icons/camtasia.jpg</iconUrl>
