@@ -25,7 +25,7 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
     write-host "in getlatest"
-    $page = Invoke-WebRequest -Uri $releases
+    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $regexUrl = "KeeChallenge_(.*).zip"
 
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href

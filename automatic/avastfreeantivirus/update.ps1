@@ -20,7 +20,7 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
     $tempFile = New-TemporaryFile
-    Invoke-WebRequest -Uri $releases -OutFile $tempFile
+    Invoke-WebRequest -Uri $releases -OutFile $tempFile -UseBasicParsing
     $version = (Get-Item $tempfile).VersionInfo.FileVersion
 
     return @{

@@ -19,7 +19,7 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases
+    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $regexUrl = "GitterSetup-(.*).exe"
 
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href  

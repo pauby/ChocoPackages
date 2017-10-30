@@ -24,7 +24,7 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases
+    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $regexUrl = "(mysql-connector-net-(.*).msi)"
 
     $page.content -match $regexUrl | Out-Null

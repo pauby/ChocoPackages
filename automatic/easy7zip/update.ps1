@@ -24,7 +24,7 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases
+    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
     $regexVer = "Version([\d\.]+)"
     if ($page.ParsedHtml.body.outerText -match $regexVer) { $version = $matches[1] }
