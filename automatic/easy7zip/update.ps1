@@ -26,8 +26,8 @@ function global:au_AfterUpdate {
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $regexVer = "Version([\d\.]+)"
-    if ($page.ParsedHtml.body.outerText -match $regexVer) { $version = $matches[1] }
+    $regexVer = ">Version<.*?<\/td><td.*?>([\d\.]+)<\/td>"
+    if (($page.rawcontent -replace "`r`n") -match $regexVer) { $version = $matches[1] }
     return @{
         URL32   = "http://www.e7z.org/easy7zip_x86_x64.exe"
         Version = $version

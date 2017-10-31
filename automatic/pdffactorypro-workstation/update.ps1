@@ -29,8 +29,8 @@ function global:au_GetLatest {
     $regexUrl = 'pdf(.*)pro.exe'
     $link = $page.links | Where-Object href -match $regexUrl | Select -First 1
     $url = $link.href
-    $version = ($link.innertext | Select-Object -First 1 ).Split("v") | Select-Object -Skip 1 
-
+    if ($link.outerHTML -match "DOWNLOAD v([\d\.]+)") { $version = $matches[1] }
+        
     return @{
         URL32        = $url
         Version      = $version
