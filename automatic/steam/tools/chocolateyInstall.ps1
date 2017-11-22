@@ -11,7 +11,7 @@ $packageArgs = @{
     silentArgs     = '/S'
     # the setup spawns installer.exe to do the installation and exits with 2 for some reason.
     # it's a weird installer
-    validExitCodes = @(0)   
+    validExitCodes = @(0, 2)   
 }
 
 Install-ChocolateyPackage @packageArgs
