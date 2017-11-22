@@ -12,7 +12,7 @@ $packageArgs = @{
 
   softwareName  = 'adobedigitaleditions*'
 
-  checksum      = 'ed9e11cb1d4fe22b7fc3af94752d832504a0e9efa502a3d529176736db9bf188'
+  checksum      = '2db8e6b91dddd5a5442e7bb8f1715925a0b430a23db7646077f58d37bc444820'
   checksumType  = 'SHA256'
 
   silentArgs   = '/S'
