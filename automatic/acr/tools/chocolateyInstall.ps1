@@ -8,7 +8,6 @@ $executable = "client.bat"
 $packageArgs = @{
     packageName    = $packageName
     unzipLocation  = $toolsDir
-#    fileType       = 'EXE'
     url            = $url
 
     softwareName   = 'acr*'
@@ -16,7 +15,6 @@ $packageArgs = @{
     checksum       = '522163f665802d2b38c58cad3bddb98f4a236b6e8927bc7c179c82a19cd63db2'
     checksumType   = 'SHA256'
 
-#    silentArgs     = '/S'
     validExitCodes = @(0)
 }
 
