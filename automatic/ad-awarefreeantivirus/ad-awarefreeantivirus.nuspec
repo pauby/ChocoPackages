@@ -29,7 +29,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <version>11.12.945.9202</version>
     <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/ad-awarefreeantivirus</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
-    <owners>pauby</owners>
+    <owners>pauby, dtgm, adgellida</owners>
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->

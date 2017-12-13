@@ -12,7 +12,7 @@
     <version>2.25.0</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/outlookcaldav</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
-    <owners>pauby</owners>
+    <owners>pauby, tkriviradev</owners>
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
