@@ -3,7 +3,7 @@
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
     url            = 'https://justgetflux.com/flux-setup.exe'
-    checksum       = '7AFE75F642802F8E67EE30CE40E4F182A1DF73C8F9EB0EB33B67ECB37C7883AE'
+    checksum       = '79FC802D9225D98EE15A288393BB2D4708575315B9EDAD33DBFCF29D1AF578B1'
     checksumType   = 'SHA256'
     fileType       = 'EXE'
     silentArgs     = '/S'
