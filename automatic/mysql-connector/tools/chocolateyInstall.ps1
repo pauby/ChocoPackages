@@ -2,7 +2,7 @@
 
 $packageName = 'mysql-connector'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.10.5.msi'
+$url = 'https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.10.6.msi'
 
 
 $packageArgs = @{
@@ -13,7 +13,7 @@ $packageArgs = @{
 
     softwareName   = 'mysql connector net*'
 
-    checksum       = '28e025d89f743f7ad707d0e7f2cc04441e1c4572eb5e00c9c02ea8ed48f6253a'
+    checksum       = '372c900a891352f74e8e426bfa49a74948deef8a8ed829f5d4f83400d1869f8c'
     checksumType   = 'SHA256'
 
     silentArgs     = '/qn'
