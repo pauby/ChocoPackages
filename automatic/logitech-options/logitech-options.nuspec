@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>logitech-options</id>
@@ -15,8 +15,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>logitech options keyboard mouse utility notsilent</tags>
     <summary>Logitech Options software lets you customize your device settings.</summary>
-    <description>
-### Logitech Options software lets you customize your device's settings as follows:
+    <description>### Logitech Options software lets you customize your device's settings as follows:
 
 * Change function key shortcuts
 * Customize mouse buttons
@@ -24,7 +23,7 @@
 * Enable and disable touchpad gestures
 * Get on-screen notifications when your device's battery runs low or when you press a lock key	
 
-###Works with these products:
+### Works with these products:
 * Bluetooth Easy-Switch Keyboard K811
 * Bluetooth Mouse M557
 * Bluetooth Multi-Device Keyboard K480
@@ -57,8 +56,8 @@
 * Wireless Mouse M510
 * Wireless Solar Keyboard K760
 
-**[PACKAGE NOTES](https://github.com/bcurran3/ChocolateyPackages/blob/master/logitech-options/readme.md)**	
-	</description>
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+</description>
     <dependencies>
       <dependency id="autohotkey" />
     </dependencies>	
