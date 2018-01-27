@@ -5,4 +5,4 @@ The program helps you with daily work in Windows.
 
 A summary about the main features in FreeCommander is available: [here](http://freecommander.com/en/summary/
 
-**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+**NOTE**: This is an automatically updated package created using the FreeCommanderXE MSI installer. This generally lags behind the releqse of a new version by around a week. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
