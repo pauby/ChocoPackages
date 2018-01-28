@@ -27,8 +27,7 @@ function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
     $regex = 'KeePass (?<version>2\.\d+) \(Installer EXE for Windows\)'
-    $url = ($page.links | Where-Object innerText -match $regex | Select-Object -First 1).href
-    $url = 'https://sourceforge.net/projects/keepass/files/KeePass%202.x/2.38/KeePass-2.38-Setup.exe/download'
+    $url = ($page.links | Where-Object data-label -match $regex | Select-Object -First 1).href
 
     return @{
         URL32        = $url
