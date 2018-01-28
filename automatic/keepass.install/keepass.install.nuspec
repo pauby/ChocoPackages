@@ -12,9 +12,8 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
 <!-- * If you are an organization making private packages, you probably have no issues here -->
 <!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
-<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package 
-    xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šappear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
     <metadata>
         <!-- == PACKAGE SPECIFIC SECTION == -->
         <!-- This section is about this package, although id and version have ties back to the software -->
@@ -36,7 +35,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- projectUrl is required for the community feed -->
         <projectUrl>http://keepass.info/</projectUrl>
         <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/be7abc17/icons/keepass.png</iconUrl>
-        <copyright>© 2018 Dominik Reichl</copyright>
+        <copyright>Â© 2018 Dominik Reichl</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>http://keepass.info/help/v2/license.html</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -46,7 +45,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <bugTrackerUrl>https://sourceforge.net/p/keepass/bugs/</bugTrackerUrl>
         <tags>password safe admin</tags>
         <summary>Lightweight and easy-to-use password manager.</summary>
-        <description>KeePass is a free open source password manager, which helps you to manage your passwords in a secure way. You can put all your passwords in one database, which is locked with one master key or a key file. So you only have to remember one single master password or select the key file to unlock the whole database. The databases are encrypted using the best and most secure encryption algorithms currently known (AES and Twofish).
+        <description>>KeePass is a free open source password manager, which helps you to manage your passwords in a secure way. You can put all your passwords in one database, which is locked with one master key or a key file. So you only have to remember one single master password or select the key file to unlock the whole database. The databases are encrypted using the best and most secure encryption algorithms currently known (AES and Twofish).
 
 ### 1.x and 2.x
 
@@ -63,6 +62,8 @@ FAQs: [General](http://keepass.info/help/kb/faq.html), [Technical](http://keepas
 [Forum](https://sourceforge.net/p/keepass/discussion/)
 [Manual](http://keepass.info/help/base/index.html)
 [Command line options](http://keepass.info/help/base/cmdline.html)
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
         <releaseNotes>http://keepass.info/news/news_all.html</releaseNotes>
         <!-- =============================== -->
