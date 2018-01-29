@@ -30,7 +30,7 @@ function global:au_GetLatest {
     if ($page.content -match $regex) {
         $version = "$($matches.year).$($matches.build)" 
     }
-    $url = "https://freecommander.com/downloads/FreeCommanderXE-32-public_$($matches.build).msi"
+    $url = "http://freecommander.com/downloads/FreeCommanderXE-32-public_setup.zip"
 
     return @{
         URL32        = $url
