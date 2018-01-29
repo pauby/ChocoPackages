@@ -7,7 +7,7 @@ $releases    = 'https://keepass.info/download.html'
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*url\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL32)'"
+            '(^\s*url\s*=\s*)(''.*'')'              = "`$1'$($Latest.URL32)'"
             "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
             "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType32)'"
         }
@@ -15,8 +15,6 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate() {
-    $Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
-    $Latest.ChecksumType32 = 'SHA256'
 }
 
 function global:au_AfterUpdate { 
@@ -35,4 +33,4 @@ function global:au_GetLatest {
     }
 }
 
-Update-Package -ChecksumFor none
+Update-Package
