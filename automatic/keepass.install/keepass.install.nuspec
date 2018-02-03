@@ -31,15 +31,15 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- == SOFTWARE SPECIFIC SECTION == -->
         <!-- This section is about the software itself -->
         <title>Keepass 2.x (Install)</title>
-        <authors>Daniel Georgiev</authors>
+        <authors>Dominik Reichl</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>http://keepass.info/</projectUrl>
         <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/be7abc17/icons/keepass.png</iconUrl>
-        <copyright>ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© 2018 Dominik Reichl</copyright>
+        <copyright>2018 Dominik Reichl</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>http://keepass.info/help/v2/license.html</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <projectSourceUrl>https://github.com/danielng01/Iris-Builds</projectSourceUrl>
+        <projectSourceUrl>http://sourceforge.net/projects/keepass/files/KeePass%202.x/</projectSourceUrl>
         <docsUrl>http://keepass.info/help/base/index.html</docsUrl>
         <mailingListUrl>https://sourceforge.net/p/keepass/discussion/</mailingListUrl>
         <bugTrackerUrl>https://sourceforge.net/p/keepass/bugs/</bugTrackerUrl>
@@ -68,7 +68,7 @@ FAQs: [General](http://keepass.info/help/kb/faq.html), [Technical](http://keepas
         <releaseNotes>http://keepass.info/news/news_all.html</releaseNotes>
         <!-- =============================== -->
         <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
-        <!--- <dependencies><dependency id="autohotkey" /> -->
+        <!--- <dependencies> -->
         <!-- <dependency id="" version="[__EXACT_VERSION__]" /> -->
         <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /> -->
         <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /> -->
