@@ -33,4 +33,6 @@ function global:au_GetLatest {
     }
 }
 
-Update-Package
+if ($MyInvocation.InvocationName -ne '.') {
+    Update-Package
+}
