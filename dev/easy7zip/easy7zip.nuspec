@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements
+-->
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÆ’Ã†â€™Ãƒâ€¦Ã‚Â½ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â doesnÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¾Ãƒâ€šÃ‚Â¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>easy7zip</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>0.1.6</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/easy7zip</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby, benbristow</owners>
+    <!-- ============================== -->
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Easy 7-Zip (Install)</title>
+    <authors>James Hoo</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>http://www.e7z.org/</projectUrl>
+    <!-- <iconUrl></iconUrl> -->
+    <copyright>Copyright 2017 James Hoo</copyright>
+    <!-- If there is a license Url available, it is is required for the community feed -->
+    <licenseUrl>http://www.7-zip.org/license.txt</licenseUrl>
+    <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
+    <projectSourceUrl>http://www.e7z.org/free-download.htm</projectSourceUrl>
+    <!-- <docsUrl></docsUrl> -->
+    <!--<mailingListUrl></mailingListUrl>-->
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <tags>7zip extract unzip unrar compress utility</tags>
+    <summary>Easy 7-Zip is an easy-to-use version of 7-Zip.</summary>
+    <description>Briefly speaking, Easy 7-Zip is an easy-to-use version of 7-Zip. Originally, Easy 7-Zip was built based on 7-Zip 9.20. I kept all features of 7-Zip and added a few useful features that makes the software more user-friendly. Recently, 7-Zip upgraded to 16.04. So, I moved codes to the version.
+
+7-Zip is a free and great file decompression and compression software that handles 7z, AR, ARJ, BZIP2, CAB, CHM, CPIO, CramFS, DEB, DMG, EXT, FAT, GPT, GZIP, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RAR5, RPM, SquashFS, TAR, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR, XZ, Z, ZIP, and ZIPX archives. 7-Zip was developed by Igor Pavlov.
+Why did I make Easy 7-Zip?
+
+7-Zip is a great file archive freeware. I love the software very much. Thank Igor Pavlov! However, when I used the 7-Zip frequently, I thought the software could be better. So, I downloaded source code of 7-Zip and, studied and modified the code in my leisure time, and made the Easy 7-Zip. I hope the Easy 7-Zip is useful for everybody.
+
+# What features were added to Easy 7-Zip?
+
+1 Adds icons to context menu.
+
+2 Adds options to Extract dialog.
+  * Button "Open": Easy 7-Zip will open output folder when clicking on the button. 
+  * Button "Filename": When the button is clicked, Easy 7-Zip adds file name to end of output folder so that the program will create folder of file name and extract files to the folder.
+  * Show free and total space of output drive. It's useful for large file.
+  * Options "After extraction completes successfully":
+    * Open output folder: If the option is checked, Easy 7-Zip opens output folder after extraction.
+    * Delete source archive: Delete source archive after extraction completes successfully.
+    * Close 7-Zip: Close 7-Zip after extraction.
+
+3 Keeps same output folder history
+
+4 Minimizes to system tray when clicking "Background" on progress dialog
+
+5 Makes a new installation file
+
+I made a package of Easy 7-Zip that contains both x86 (32-bit) and x64 (64-bit) editions. In other word, the package installs x86 (32-bit) edition of Easy 7-Zip on 32-bit Windows and x64 (64-bit) edition on 64-bit Windows automatically. The package also allows user to associate 7-Zip with file extensions including 001, 7z, arj, bz2, bzip2, cab, cpio, deb, dmg, fat, gz, gzip, hfs, iso, lha, lzh, lzma, ntfs, rar, rpm, squashfs, swm, tar, taz, tbz2, tbz, tgz, tpz, txz, vhd, wim, xar, xz, z, and zip.
+</description>
+    <releaseNotes>http://www.e7z.org/free-download.htm</releaseNotes>
+    <!-- =============================== -->
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <!--<dependencies><dependency id="" version="__MINIMUM_VERSION__" /><dependency id="" version="[__EXACT_VERSION__]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /><dependency id="" /><dependency id="chocolatey-uninstall.extension" /></dependencies>-->
+    <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
