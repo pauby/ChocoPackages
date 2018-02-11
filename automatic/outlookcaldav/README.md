@@ -36,3 +36,5 @@ This project was initially developed as a master thesis project at the Universit
 * Configurable mapping of Outlook custom properties
 * create DAV server calendars/addressbooks with MKCOL
 * Map Outlook formatted RTFBody to html description via X-ALT-DESC attribute
+
+NOTE: Requires .NET framework 4.6.1.
