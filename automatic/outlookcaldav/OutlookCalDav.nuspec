@@ -68,13 +68,15 @@ This project was initially developed as a master thesis project at the Universit
 * Configurable mapping of Outlook custom properties
 * create DAV server calendars/addressbooks with MKCOL
 * Map Outlook formatted RTFBody to html description via X-ALT-DESC attribute
+
+NOTE: Requires .NET framework 4.6.1.
 </description>
     <releaseNotes>https://github.com/aluxnimm/outlookcaldavsynchronizer/releases</releaseNotes>
     <!-- =============================== -->
 
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
    <dependencies>
-      <dependency id="dotnet4.6.1"/>
+      <dependency id="dotnet4.6.1" />
       <!-- <dependency id="" version="[__EXACT_VERSION__]" />
       <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
       <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
