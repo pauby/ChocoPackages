@@ -4,8 +4,8 @@ $toolsDir      = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
-    url            = 'https://download01.logi.com/web/ftp/pub/techsupport/options/Options_6.72.344.exe'
-    checksum       = 'd1a44fa96049b8b0f9fb8a0b719588d7ae0dfebe7770ca26aff0a35d27fe502a'
+    url            = 'https://download01.logi.com/web/ftp/pub/techsupport/options/Options_6.80.372.exe'
+    checksum       = '2547498e32b106fb9b3a5365de50bc8eddef6ab0cd327d7dfdb352b65e1a8c3a'
     checksumType   = 'SHA256'
     fileType       = 'EXE'
     silentArgs     = ''
