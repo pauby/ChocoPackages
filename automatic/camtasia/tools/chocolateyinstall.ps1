@@ -2,7 +2,7 @@
 
 $packageName= 'camtasia'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64      = 'https://download.techsmith.com/camtasiastudio/enu/911/camtasia.msi'
+$url64      = 'https://download.techsmith.com/camtasiastudio/enu/912/camtasia.msi'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -12,7 +12,7 @@ $packageArgs = @{
 
   softwareName  = 'camtasia*'
 
-  checksum64    = 'f1cd370e837b22ee69c9ff0ee026c527a0eb488f905c984b76a186d843ee66f2'
+  checksum64    = '01ff0363e406efb086afa5cc2b5688b55b9cdc2f18d1d32be800fb09b5c43255'
   checksumType64= 'SHA256'
 
   silentArgs    = "/qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`"" # ALLUSERS=1 DISABLEDESKTOPSHORTCUT=1 ADDDESKTOPICON=0 ADDSTARTMENU=0
