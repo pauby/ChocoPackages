@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 Set-StrictMode -Version 2
 
-$packageName = 'azure-powershell'
+$packageName = 'azurepowershell'
 $moduleVersion = [version]'5.0.0'
 $url = 'https://github.com/Azure/azure-powershell/releases/download/v5.0.0-November2017/azure-powershell.5.0.0.msi'
 $checksum = '50C1A943739D2043C3D74B601908B6E21CEFF90CAD6E30D86F931016FA6A2F5D'
