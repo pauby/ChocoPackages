@@ -3,12 +3,12 @@
   <metadata>
     <id>azurepowershell</id>
     <version>5.0.0.0</version>
-    <packageSourceUrl>https://github.com/jberezanski/ChocolateyPackages/tree/master/azure-powershell</packageSourceUrl>
-    <owners>jberezanski</owners>
+    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/azurepowershell</packageSourceUrl>
+    <owners>jberezanski,pauby</owners>
     <title>Microsoft Azure PowerShell</title>
     <authors>Microsoft</authors>
     <projectUrl>https://github.com/Azure/azure-powershell</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/jberezanski/ChocolateyPackages/f0b24b6aef7a58ec03550035644ce872aba13c23/icons/dotnet.png</iconUrl>
+    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/c5b46bdfe07ce816de0ffc3b1366aab4c4e5a240/icons/azurepowershell.png</iconUrl>
     <licenseUrl>https://github.com/Azure/azure-powershell/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>https://docs.microsoft.com/en-us/powershell/azure/overview</docsUrl>
