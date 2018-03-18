@@ -2,8 +2,8 @@
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
-    url            = 'https://raw.githubusercontent.com/danielng01/Iris-Builds/master/Windows/Iris-0.9.4.1.exe'
-    checksum       = '25f17f6eb9b2dac992abf22e380d201be2ad10f3d62a08a1070c34f68a8b116a'
+    url            = 'https://raw.githubusercontent.com/danielng01/Iris-Builds/master/Windows/Iris-0.9.5.exe'
+    checksum       = 'e95e28155a77ce516523156f1848594ce3a96cc61790abec21f364987e3ce5fd'
     checksumType   = 'SHA256'
     fileType       = 'EXE'
     silentArgs     = '/S'
