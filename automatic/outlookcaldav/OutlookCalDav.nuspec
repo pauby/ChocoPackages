@@ -70,6 +70,16 @@ This project was initially developed as a master thesis project at the Universit
 * Map Outlook formatted RTFBody to html description via X-ALT-DESC attribute
 
 NOTE: Requires .NET framework 4.6.1.
+
+# Installation
+
+You can pass the following parameters:
+
+* Install for all users not just the current user: `/allusers`
+
+Example:
+
+`-params '"/allusers"'`
 </description>
     <releaseNotes>https://github.com/aluxnimm/outlookcaldavsynchronizer/releases</releaseNotes>
     <!-- =============================== -->
