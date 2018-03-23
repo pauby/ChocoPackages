@@ -1,8 +1,8 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>azurepowershell</id>
-    <version>5.0.0</version>
+    <version>5.5.0</version>
     <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/azurepowershell</packageSourceUrl>
     <owners>jberezanski,pauby</owners>
     <title>Microsoft Azure PowerShell</title>
@@ -21,12 +21,13 @@ Azure PowerShell requires PowerShell 3.0 or later, which can be installed using 
 
 This package modifies the Azure PowerShell installation process in order to stop the Azure PowerShell installer from:
 - killing all powershell.exe and powershell_ise.exe processes (to prevent data loss),
-- modifying the PowerShell execution policy (because the user should be in control of that).</description>
+- modifying the PowerShell execution policy (because the user should be in control of that).
+</description>
     <releaseNotes>
 ##### Software
 [Azure PowerShell release notes](https://docs.microsoft.com/en-us/powershell/azure/release-notes-azureps)
 ##### Package
-5.0.0: Initial package release for software version 5.0.0.
+5.5.0: Initial package release for software version 5.5.0.
     </releaseNotes>
     <dependencies>
       <dependency id="dotnet4.5.2" version="4.5.2.20140902" />
