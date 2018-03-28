@@ -9,7 +9,7 @@ $checksumType = 'SHA256'
 
 . (Join-Path -Path (Split-Path -Path $MyInvocation.MyCommand.Path) -ChildPath helpers.ps1)
 
-Ensure-RequiredPowerShellVersionPresent -RequiredVersion '3.0'
+Ensure-RequiredPowerShellVersionPresent -RequiredVersion '5.0'
 
 if (Test-AzurePowerShellInstalled -RequiredVersion $moduleVersion)
 {
