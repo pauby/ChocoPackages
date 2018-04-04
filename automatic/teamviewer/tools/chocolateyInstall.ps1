@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop';
+﻿$ErrorActionPreference = 'Stop';
 
 $packageName = 'teamviewer'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
@@ -12,7 +12,7 @@ $packageArgs = @{
 
   softwareName  = 'TeamViewer*'
 
-  checksum      = 'B6451F173C7A0E0BF91C2DB865E1D3FA94516D2778AFAD5CF3137AA6A12912D1'
+  checksum      = 'f60062cf21ed42ba0adf64a296f124074ef4ad92b6b58e2f488c4b028a286bf4'
   checksumType  = 'sha256'
 
   silentArgs    = "/S"
