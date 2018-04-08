@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package 
+    xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>WindowsAzurePowershell_0871</id>
+        <version>0.8.7.1001</version>
+        <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/deprecated/windowsazurepowershell_0871</packageSourceUrl>
+        <owners>pauby, andrewmyhre </owners>
+        <title>[Deprecated] Windows Azure Powershell</title>
+        <authors>Microsoft</authors>
+        <projectUrl>https://github.com/Azure/azure-powershell</projectUrl>
+        <licenseUrl>https://github.com/Azure/azure-powershell/blob/master/LICENSE.txt</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <docsUrl>https://docs.microsoft.com/en-us/powershell/azure/overview</docsUrl>
+        <bugTrackerUrl>https://github.com/Azure/azure-powershell/issues</bugTrackerUrl>
+        <tags>Windows Azure Powershell</tags>
+        <summary>A set of PowerShell cmdlets for developers and administrators to develop, deploy and manage Windows Azure applications.</summary>
+        <description>This package has been deprecated as it is no longer maintained and has been superceded by [Microsoft Azure PowerShell](https://chocolatey.org/packages/AzurePowerShell) package.</description>
+        <dependencies>
+            <dependency id="azurepowershell" />
+        </dependencies>
+    </metadata>
+    <files />
+</package>
