@@ -11,7 +11,7 @@ $packageArgs = @{
   url           = $url
 
   softwareName  = 'Avast Free Antivirus'
-  checksum      = '68fde5f3931eb62a41bc0e352657438ab9ad3764fe03a0d3fa0c63bf28b96225'
+  checksum      = '4633a1a08d80ba2ef9cc16c9b4007664670637bfe09001b4ce7fa505986485ae'
   checksumType  = 'sha256'
 
   silentArgs    = "/silent"
