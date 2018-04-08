@@ -1,11 +1,12 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'sharex'
+$url = 'https://github.com/ShareX/ShareX/releases/download/v12.0.0/ShareX-12.0.0-setup.exe' 
  
 $packageArgs = @{
     packageName    = $packageName
     fileType       = 'exe'       
-    url            = 'https://github.com/ShareX/ShareX/releases/download/v12.0.0/ShareX-12.0.0-setup.exe' 
+    url            = $url 
     checksum       = 'DAC621553C23297569CF9B863C27D5B93B52DAA378257E8DC7B12E4C7E26EAFF'
     checksumType   = 'sha256'
     silentArgs     = '/sp /silent /norestart'
