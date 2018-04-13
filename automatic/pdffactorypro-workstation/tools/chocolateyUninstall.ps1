@@ -1,39 +1,35 @@
-$ErrorActionPreference = 'Stop';
+$ErrorActionPreference = 'Stop'
 
-$packageName = 'pdffactorypro-workstation'
-$softwareName = 'pdfFactory Pro'
-$installerType = 'EXE'
+$packageArgs = @{
+    packageName    = $env:ChocolateyPackageName
+    softwareName   = 'pdfFactory Pro'
+    fileType       = 'EXE'
+    silentArgs     = '/uninstall /quiet /reboot=0'
+    validExitCodes = @(1)
+}
 
-$silentArgs = '/uninstall /quiet /reboot=0'
-$validExitCodes = @(1)
-
-$uninstalled = $false
-[array]$key = Get-UninstallRegistryKey -SoftwareName $softwareName
+[array]$key = Get-UninstallRegistryKey @packageArgs
 if ($key.Count -eq 1) {
-  $key | % {
-    $file = "$($_.UninstallString)"
-    # this uninstall string contains a parameter /uninstall - remove this or the
-    # Uninstall-ChocolateyPackage won't work
-    if ($file.Contains('/')) {
-        $file = $file.Split('/')[0].Trim()  # return just the filepath part
-    }
+    $key | ForEach-Object { 
+        # some uninstall strings include parameters - remove them as we will use our own
+        $packageArgs.file = "$($_.UninstallString)" -replace '/.*$', ''
 
-    if ($installerType -eq 'MSI') {
-      $silentArgs = "$($_.PSChildName) $silentArgs"
-      $file = ''
-    }
+        if ($packageArgs.fileType -eq 'MSI') {
+            $packageArgs.silentArgs = "$($_.PSChildName) $($packageArgs.silentArgs)"
+            $packageArgs.file = ''
+        }
 
-    Uninstall-ChocolateyPackage -PackageName $packageName `
-                                -FileType $installerType `
-                                -SilentArgs "$silentArgs" `
-                                -ValidExitCodes $validExitCodes `
-                                -File "$file"
-  }
-} elseif ($key.Count -eq 0) {
-  Write-Warning "$packageName has already been uninstalled by other means."
-} elseif ($key.Count -gt 1) {
-  Write-Warning "$key.Count matches found!"
-  Write-Warning "To prevent accidental data loss, no programs will be uninstalled."
-  Write-Warning "Please alert package maintainer the following keys were matched:"
-  $key | % {Write-Warning "- $_.DisplayName"}
+        Uninstall-ChocolateyPackage @packageArgs
+    }
+}
+elseif ($key.Count -eq 0) {
+    Write-Warning "$env:ChocolateyPackageName has already been uninstalled by other means."
+}
+elseif ($key.Count -gt 1) {
+    Write-Warning "$key.Count matches found!"
+    Write-Warning "To prevent accidental data loss, no programs will be uninstalled."
+    Write-Warning "Please alert package maintainer the following keys were matched:"
+    $key | ForEach-Object {
+        Write-Warning "- $_.DisplayName"
+    }
 }

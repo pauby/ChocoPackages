@@ -1,42 +1,56 @@
 ﻿$ErrorActionPreference = 'Stop'; # stop on all errors
 
-$packageName= 'pdffactorypro-workstation'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'http://fineprint.com/release/pdf625pro.exe'
 
 $packageArgs = @{
-    packageName   = $packageName
+    packageName   = $env:ChocolateyPackageName
     unzipLocation = $toolsDir
     fileType      = 'EXE'
-    url           = $url
-
-    softwareName  = 'pdfFactory Pro'
-
-    checksum      = '3c6d6582bb5ed03c91f2af76ebc2f33adabfa7e1a61475eccb168325a142d7ff'
+    url           = 'http://fineprint.com/release/pdf625pro.exe'
+    checksum      = '656D058539418B6B62B80CD70944EEF5C9C384665B7A78B147173B57174655EB'
     checksumType  = 'SHA256'
-
     silentArgs = '/quiet /reboot=0'
     validExitCodes= @(0)
 }
 
-. "$toolsDir\PaubyChocoExtensions.ps1"
-write-debug "OS Name: $($env:OS_NAME)"
-if (Test-ChocoServerOS) {
-    throw "Cannot be installed on a Server operating system ($($env:OS_NAME)."
+Write-debug "OS Name: $($env:OS_NAME)"
+if ($env:OS_NAME -like "*Server*") {
+    throw "Cannot be installed on a Server operating system ($($env:OS_NAME))."
 }
 
-$tempDir = Get-ChocoUniqueTempName
-New-Item -ItemType Directory -Path $tempDir
+# create temp directory
+do {
+    $tempDir = Join-Path -Path $env:TEMP -ChildPath ([System.Guid]::NewGuid().ToString())
+} while (Test-Path $tempDir)
+New-Item -ItemType Directory -Path $tempDir | Out-Null
 
-$file = Join-Path $tempDir "$($packageName)Install.exe"
-Get-ChocolateyWebFile -PackageName $packageArgs.packageName -FileFullPath $file -Url $packageArgs.url -Checksum $packageArgs.checksum -ChecksumType $packageArgs.checksumType
-Get-ChocolateyUnzip -FileFullPath $file -Destination $tempDir
+# Get installer and unzip it
+$packageArgs.file = Join-Path $tempDir "$($packageName)Install.exe"
+Get-ChocolateyWebFile @packageArgs
+Get-ChocolateyUnzip -FileFullPath $packageArgs.file -Destination $tempDir
 
-$arguments = ConvertFrom-ChocoParameters -Parameter $env:chocolateyPackageParameters
-$setup = Join-Path -Path $tempDir -ChildPath "setup.exe"
+# recurse through the args
+$arguments = Get-PackageParameters -Parameter $env:ChocolateyPackageParameters
+$packageArgs.file = Join-Path -Path $tempDir -ChildPath 'setup.exe'
 $paramLang = $paramName = $paramLicenseCode = $paramMargins = "<NOT SPECIFIED>"
-$languageMap = @{ "zh-CN" = "0804"; "zh-TW" = "0404"; "cs" = "0405"; "da" = "0406"; "nl" = "0413"; "en" = "0409"; "fr" = "040c"; "de" = "0407"; "it" = "0410"; "ja" = "0411"; "pl" = "0415"; "pt" = "0416"; "ru" = "0419"; "sk" = "041b"; "es" = "0c0a"; "sv" = "041d"; }
-
+$languageMap = @{ 
+    "zh-CN" = "0804"
+    "zh-TW" = "0404"
+    "cs"    = "0405"
+    "da"    = "0406"
+    "nl"    = "0413"
+    "en"    = "0409"
+    "fr"    = "040c"
+    "de"    = "0407"
+    "it"    = "0410"
+    "ja"    = "0411"
+    "pl"    = "0415"
+    "pt"    = "0416"
+    "ru"    = "0419"
+    "sk"    = "041b"
+    "es"    = "0c0a"
+    "sv"    = "041d"
+}
 $iniFile = Join-Path -Path $tempDir -ChildPath "fpp6.ini"
 
 if($arguments.ContainsKey("lang")) {
@@ -44,15 +58,17 @@ if($arguments.ContainsKey("lang")) {
     if(!$languageMap.ContainsKey($paramLang)) {
         throw "Unknown language '$paramLang' specified. The following languages are available:`n" + $languageMap.Keys -join "`n"
     }
-    $silentArgs += " /lang=" + $languageMap[$paramLang]
+    $packageArgs.silentArgs += " /lang=" + $languageMap[$paramLang]
 }
 
 if($arguments.ContainsKey("license")) {
     $paramLicenseCode = $arguments["license"]
-    $name = ""
-
+    
     if($arguments.ContainsKey("name")) {
         $paramName = $arguments["name"]
+    }
+    else {
+        $paramName = ''
     }
 
 @"
@@ -78,8 +94,7 @@ if($arguments.ContainsKey("margins")) {
    }
 }
 
-
 Write-Debug "Parameters:`n`tLanguage: $paramLang`n`tLicense:  $paramLicenseCode`n`tName:`t  $paramName`n`tMargins:  $paramMargins"
-Install-ChocolateyInstallPackage @packageArgs -File $setup
+Install-ChocolateyInstallPackage @packageArgs
 
-Remove-Item -Path $tempDir -Recurse
+Remove-Item -Path $tempDir -Recurse -ErrorAction SilentlyContinue
