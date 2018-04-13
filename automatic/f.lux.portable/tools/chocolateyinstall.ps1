@@ -50,8 +50,12 @@ Install-ChocolateyShortcut -shortcutFilePath (Join-Path -Path $progsFolder -Chil
 # only create the shortcut in startup if the /noautostart parameter has not been passed
 $arguments = ConvertFrom-ChocoParameters -Parameter $env:ChocolateyPackageParameters
 if (-not $arguments.ContainsKey("noautostart")) {
-    Install-ChocolateyShortcut -shortcutFilePath (Join-Path -Path $progsFolder -ChildPath 'Startup\f.lux.lnk') `
-        -targetPath "$($env:ChocolateyInstall)\lib\$packageName\tools\flux.exe" `
-        -WorkingDirectory "$($env:ChocolateyInstall)\lib\$packageName\tools\runtime" `
-        -Arguments "/noshow"
+    $params = @{
+        ShortcutFilePath = Join-Path -Path $progsFolder -ChildPath 'Startup\f.lux.lnk'
+        TargetPath       = "$($env:ChocolateyInstall)\lib\$packageName\tools\flux.exe"
+        WorkingDirectory = "$($env:ChocolateyInstall)\lib\$packageName\tools\runtime"
+        Arguments        = '/noshow'
+    }
+
+    Install-ChocolateyShortcut @params
 }
