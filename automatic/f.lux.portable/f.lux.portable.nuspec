@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements
+-->
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ãappear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+	<metadata>
+		<!-- == PACKAGE SPECIFIC SECTION == -->
+		<!-- This section is about this package, although id and version have ties back to the software -->
+		<!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+		<!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+		<id>f.lux.portable</id>
+		<!-- version should MATCH as closely as possible with the underlying software -->
+		<!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+		<!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+		<version>4.66</version>
+		<packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/f.lux.portable</packageSourceUrl>
+		<!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+		<owners>pauby, major251, starz0r</owners>
+		<!-- ============================== -->
+		<!-- == SOFTWARE SPECIFIC SECTION == -->
+		<!-- This section is about the software itself -->
+		<title>f.lux (Portable)</title>
+		<authors>Flux Software LLC</authors>
+		<!-- projectUrl is required for the community feed -->
+		<projectUrl>https://justgetflux.com/</projectUrl>
+		<iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/cc266fa2/icons/flux.png</iconUrl>
+		<copyright>2017 Flux Software LLC</copyright>
+		<!-- If there is a license Url available, it is is required for the community feed -->
+		<licenseUrl>https://justgetflux.com/news/pages/eula/</licenseUrl>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
+		<docsUrl>https://justgetflux.com/faq.html</docsUrl>
+		<mailingListUrl>https://forum.justgetflux.com/</mailingListUrl>
+		<!--<bugTrackerUrl></bugTrackerUrl>-->
+		<tags>f.lux flux lighting monitor color admin notsilent</tags>
+		<summary>f.lux - Better lighting...for your computer</summary>
+		<description>Ever notice how people texting at night have that eerie blue glow?
+
+Or wake up ready to write down the Next Great Idea, and get blinded by your computer screen?
+
+During the day, computer screens look good—they're designed to look like the sun. But, at 9PM, 10PM, or 3AM, you probably shouldn't be looking at the sun.
+
+f.lux fixes this: it makes the color of your computer's display adapt to the time of day, warm at night and like sunlight during the day.
+
+It's even possible that you're staying up too late because of your computer. You could use f.lux because it makes you sleep better, or you could just use it just because it makes your computer look better.
+
+f.lux makes your computer screen look like the room you're in, all the time. When the sun sets, it makes your computer look like your indoor lights. In the morning, it makes things look like sunlight again.
+
+Tell f.lux what kind of lighting you have, and where you live. Then forget about it. f.lux will do the rest, automatically.
+
+You can pass the following parameters:
+
+* No starting with Windows: By default a shortcut to f.lux will be created in your `Startup` folder so that it starts with Windows. Use `/noautostart` to stop this behaviour.
+
+Examples:
+
+`-params '"/noautostart"'`
+
+NOTE: This is the portable version of f.lux and installs in the Chocolatey tools folder - use this version if you want f.lux to be available to everybody on your system.
+</description>
+		<!-- <releaseNotes></releaseNotes> -->
+		<!-- =============================== -->
+		<!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+		<dependencies>
+			<!-- <dependency id="autohotkey" /> -->
+			<!-- <dependency id="" version="[__EXACT_VERSION__]" /> -->
+			<dependency id="chocolatey" version="0.10.8" />
+			<!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /> -->
+			<!-- <dependency id="" /> -->
+			<!-- <dependency id="chocolatey-uninstall.extension" /> -->
+		</dependencies>
+		<!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+		<!--<provides>NOT YET IMPLEMENTED</provides>-->
+		<!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+		<!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+	</metadata>
+	<files>
+		<!-- this section controls what actually gets packaged into the Chocolatey package -->
+		<file src="tools\**" target="tools" />
+		<!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+	</files>
+</package>
