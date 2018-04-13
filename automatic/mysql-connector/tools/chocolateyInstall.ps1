@@ -1,15 +1,12 @@
-﻿$ErrorActionPreference = 'Stop';
+﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'mysql-connector'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url = 'https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.10.6.msi'
-
 
 $packageArgs = @{
-    packageName    = $packageName
+    packageName    = $env:ChocolateyPackageName
     unzipLocation  = $toolsDir
     fileType       = 'MSI'
-    url            = $url
+    url            = 'https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.10.6.msi'
 
     softwareName   = 'mysql connector net*'
 
