@@ -8,10 +8,9 @@ $packageArgs = @{
     validExitCodes = @(0)
 }
 
-$uninstalled = $false
 [array]$key = Get-UninstallRegistryKey -SoftwareName $packageArgs.softwareName
 if ($key.Count -eq 1) {
-    $key | % {
+    $key | ForEach-Object {
         $packageArgs.file = $_.UninstallString
         Uninstall-ChocolateyPackage @packageArgs
     }
