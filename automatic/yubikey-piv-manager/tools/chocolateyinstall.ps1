@@ -1,21 +1,15 @@
-﻿$ErrorActionPreference = 'Stop';
-
-$packageName = 'yubikey-piv-manager'
-$url = 'https://github.com//Yubico/yubikey-piv-manager/releases/download/yubikey-piv-manager-1.4.2/yubikey-piv-manager-1.4.2-win.exe'
-$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+﻿$ErrorActionPreference = 'Stop'
 
 $packageArgs = @{
-    packageName    = $packageName
+    packageName    = $env:ChocolateyPackageName
     softwareName   = 'yubikey piv manager*'
     fileType       = 'exe'
     silentArgs     = "/S"
   
     validExitCodes = @(0)
-    url            = $url
+    url            = 'https://github.com//Yubico/yubikey-piv-manager/releases/download/yubikey-piv-manager-1.4.2/yubikey-piv-manager-1.4.2-win.exe'
     checksum       = 'fd6f3ef1497c065731f4c7dd270f99aebaba78ac63be71d62e8a9ec073b7de90'
     checksumType   = 'sha256'
-
-    destination    = $toolsDir
 }
 
 Install-ChocolateyPackage @packageArgs 
@@ -28,7 +22,7 @@ else {
     $targetPath = "C:\Program Files\Yubico\YubiKey PIV Manager"
 }
 
-$menuPath = (Join-Path -Path $env:APPDATA -ChildPath "Microsoft\Windows\Start Menu\Programs\Yubico\Yubikey PIV Manager")
+$menuPath = (Join-Path -Path ([Environment]::GetFolderPath('Programs')) -ChildPath 'Yubico\Yubikey PIV Manager')
 
 Install-ChocolateyShortcut `
     -ShortcutFilePath (Join-Path -Path $menuPath -ChildPath "Yubikey PIV Manager.lnk") `
