@@ -19,29 +19,28 @@ $packageArgs = @{
   validExitCodes= @(0, 3010, 1641)
 }
 
-. "$toolsDir\PSPackageExtensions.ps1"
 write-debug "OS Name: $($env:OS_NAME)"
-if (Test-ChocoServerOS) {
+if ($env:OS_NAME -like "*Server*") {
     throw "Cannot be installed on a Server operating system ($($env:OS_NAME))."
 }
 
-$arguments = ConvertFrom-ChocoParameters -Parameter $env:chocolateyPackageParameters
+$arguments = Get-PackageParameters -Parameter $env:chocolateyPackageParameters
 foreach ($param in $arguments.Keys) {
     switch ($param) {
         "licensekey" {
             $licenseKey = $arguments["licensekey"]
-            Write-Warning "Parameter - License Key: $licenseKey"
+            Write-Verbose "Parameter - License Key: $licenseKey"
             $packageArgs.silentArgs = "TSC_SOFTWARE_KEY=$licenseKey " + $packageArgs.silentArgs
 
             if ($arguments.ContainsKey("licensename")) {
                 $licenseName = $arguments["licensename"]
-                Write-Warning "Parameter - License Name: $licenseName"
+                Write-Verbose "Parameter - License Name: $licenseName"
                 $packageArgs.silentArgs = "TSC_SOFTWARE_USER=$licenseName " + $packageArgs.silentArgs
             }
         }
 
         "nodesktopshortcut" {
-            Write-Warning "Parameter - Desktop Shortcut: Disabled"
+            Write-Verbose "Parameter - Desktop Shortcut: Disabled"
             $packageArgs.silentArgs = "TSC_DESKTOP_LINK=0 " + $packageArgs.silentArgs
         }
     }
