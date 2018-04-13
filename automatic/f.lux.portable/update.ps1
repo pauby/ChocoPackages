@@ -20,12 +20,11 @@ function global:au_BeforeUpdate() {
 }
 
 function global:au_AfterUpdate { 
-    Set-DescriptionFromReadme -SkipFirst 2 
+    Set-DescriptionFromReadme -SkipFirst 2
 }
 
 function global:au_GetLatest {
     $tempFile = New-TemporaryFile
-    $tempPath = Split-Path -Path $tempFile -Parent
     Invoke-WebRequest -Uri $releases -OutFile $tempFile -UseBasicParsing
     & 7z.exe e -aoa $tempFile "flux.exe"
     $version = (Get-Item "flux.exe").VersionInfo.FileVersion -replace ", ", "." # version has commas between numbers !!!??!
