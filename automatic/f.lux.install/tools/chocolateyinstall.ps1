@@ -1,29 +1,5 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-function ConvertFrom-ChocoParameters ([string]$parameter) {
-    $arguments = @{};
-
-    if ($parameter) {
-        $match_pattern = "\/(?<option>([a-zA-Z]+)):(?<value>([`"'])?([a-zA-Z0-9- _\\:\.]+)([`"'])?)|\/(?<option>([a-zA-Z]+))"
-        $option_name = 'option'
-        $value_name = 'value'
-
-        if ($parameter -match $match_pattern) {
-            $results = $parameter | Select-String $match_pattern -AllMatches
-            $results.matches | ForEach-Object {
-                $arguments.Add(
-                    $_.Groups[$option_name].Value.Trim(),
-                    $_.Groups[$value_name].Value.Trim())
-            }
-        }
-        else {
-            throw "Package Parameters were found but were invalid (REGEX Failure). See package description for correct format."
-        }
-    }
-
-    return $arguments
-}
-
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
     url            = 'https://justgetflux.com/flux-setup.exe'
@@ -37,7 +13,7 @@ $packageArgs = @{
 Install-ChocolateyPackage @packageArgs
 
 # only create the shortcut in startup if the /noautostart parameter has not been passed
-$arguments = ConvertFrom-ChocoParameters -Parameter $env:ChocolateyPackageParameters
+$arguments = Get-PackageParameters -Parameter $env:ChocolateyPackageParameters
 if (-not $arguments.ContainsKey("noautostart")) {
     $params = @{
         ShortcutFilePath    = Join-Path -Path ([Environment]::GetFolderPath('Startup')) -ChildPath 'f.lux.lnk'

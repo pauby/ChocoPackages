@@ -1,29 +1,5 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-function ConvertFrom-ChocoParameters ([string]$parameter) {
-    $arguments = @{};
-
-    if ($parameter) {
-        $match_pattern = "\/(?<option>([a-zA-Z]+)):(?<value>([`"'])?([a-zA-Z0-9- _\\:\.]+)([`"'])?)|\/(?<option>([a-zA-Z]+))"
-        $option_name = 'option'
-        $value_name = 'value'
-
-        if ($parameter -match $match_pattern) {
-            $results = $parameter | Select-String $match_pattern -AllMatches
-            $results.matches | ForEach-Object {
-                $arguments.Add(
-                    $_.Groups[$option_name].Value.Trim(),
-                    $_.Groups[$value_name].Value.Trim())
-            }
-        }
-        else {
-            throw "Package Parameters were found but were invalid (REGEX Failure). See package description for correct format."
-        }
-    }
-
-    return $arguments
-}
-
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
@@ -34,7 +10,7 @@ $packageArgs = @{
     unzipLocation  = $toolsdir
 }
 
-# Taken from https://github.com/brianmego/Chocolatey/pull/6/files
+# Some of this was taken from https://github.com/brianmego/Chocolatey/pull/6
 Install-ChocolateyZipPackage @packageArgs
 
 # Start menu shortcuts
@@ -48,8 +24,9 @@ Install-ChocolateyShortcut -shortcutFilePath (Join-Path -Path $progsFolder -Chil
     -WorkingDirectory "$($env:ChocolateyInstall)\lib\$packageName\tools\runtime"
 
 # only create the shortcut in startup if the /noautostart parameter has not been passed
-$arguments = ConvertFrom-ChocoParameters -Parameter $env:ChocolateyPackageParameters
+$arguments = Get-PackageParameters -Parameter $env:ChocolateyPackageParameters
 if (-not $arguments.ContainsKey("noautostart")) {
+    Write-Verbose "Setting to autostart with Windows."
     $params = @{
         ShortcutFilePath = Join-Path -Path $progsFolder -ChildPath 'Startup\f.lux.lnk'
         TargetPath       = "$($env:ChocolateyInstall)\lib\$packageName\tools\flux.exe"
