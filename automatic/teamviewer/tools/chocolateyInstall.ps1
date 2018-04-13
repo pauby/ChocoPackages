@@ -1,14 +1,9 @@
-﻿$ErrorActionPreference = 'Stop';
-
-$packageName = 'teamviewer'
-$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'https://download.teamviewer.com/download/TeamViewer_Setup.exe'
+﻿$ErrorActionPreference = 'Stop'
 
 $packageArgs = @{
-  packageName   = $packageName
-  unzipLocation = $toolsDir
+  packageName   = $env:ChocolateyPackageName
   fileType      = 'EXE'
-  url           = $url
+  url           = 'https://download.teamviewer.com/download/TeamViewer_Setup.exe'
 
   softwareName  = 'TeamViewer*'
 
