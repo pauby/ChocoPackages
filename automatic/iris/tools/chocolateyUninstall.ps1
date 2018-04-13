@@ -13,11 +13,11 @@ $packageArgs = @{
 $ahkExe = 'AutoHotKey'
 $ahkFile = Join-Path -Path $env:TEMP -ChildPath "$(Get-Random).ahk" 
 $ahkSourceFile = Join-Path -Path $toolsDir -ChildPath "$($env:ChocolateyPackageName)_uninstall.ahk"
-Copy-Item -Path $ahkSourceFile -Destination $ahkFile
+Copy-Item -Path $ahkSourceFile -Destination $ahkFile -Force | Out-Null
 
 [array]$key = Get-UninstallRegistryKey -SoftwareName $packageArgs.softwareName
 if ($key.Count -eq 1) {
-    $key | % {
+    $key | ForEach-Object {
         $packageArgs.file = $_.UninstallString
 
         Write-Verbose "Running AutoHotkey install script $ahkFile"
@@ -36,7 +36,9 @@ elseif ($key.Count -gt 1) {
     Write-Warning "$key.Count matches found!"
     Write-Warning "To prevent accidental data loss, no programs will be uninstalled."
     Write-Warning "Please alert package maintainer the following keys were matched:"
-    $key | % {Write-Warning "- $_.DisplayName"}
+    $key | ForEach-Object {
+        Write-Warning "- $_.DisplayName"
+    }
 }
 
-Remove-Item $ahkFile -Force
+Remove-Item $ahkFile -Force -ErrorAction SilentlyContinue
