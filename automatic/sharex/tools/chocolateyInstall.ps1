@@ -1,12 +1,9 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageName = 'sharex'
-$url = 'https://github.com//ShareX/ShareX/releases/download/v12.1.1/ShareX-12.1.1-setup.exe' 
- 
 $packageArgs = @{
-    packageName    = $packageName
+    packageName    = $env:ChocolateyPackageName
     fileType       = 'exe'       
-    url            = $url 
+    url            = 'https://github.com//ShareX/ShareX/releases/download/v12.1.1/ShareX-12.1.1-setup.exe' 
     checksum       = 'ee590a66234c0f1dc57725173eb4c4d3c1babf40c516b64e7d1604eb37f85909'
     checksumType   = 'SHA256'
     silentArgs     = '/sp /silent /norestart'
