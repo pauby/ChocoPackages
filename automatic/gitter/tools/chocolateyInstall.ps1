@@ -15,7 +15,7 @@ $packageArgs = @{
 Install-ChocolateyPackage @packageArgs
 
 # Create a shim ignore file ignore
-New-Item -Name 'gitter.exe.ignore' -Path (Split-Path -Path $toolsDir -Parent) -ItemType File -ErrorAction SilentlyContinue
+New-Item -Name 'gitter.exe.ignore' -Path (Split-Path -Path $toolsDir -Parent) -ItemType File -ErrorAction SilentlyContinue | Out-Null
 
 # Start Menu shortcuts are created under the admin account - move them to All Users start menu
 Move-Item -Path (Join-Path -Path ([Environment]::GetFolderPath('Programs')) -ChildPath 'Gitter') `
