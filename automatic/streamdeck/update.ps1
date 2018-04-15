@@ -7,7 +7,7 @@ $releases    = 'https://gaming.help.elgato.com/customer/en/portal/articles/27936
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*\url64\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL64)'"
+            '(^\s*url64\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL64)'"
             "(?i)(^\s*checksum64\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum64)'"
             "(?i)(^\s*checksumType64\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType64)'"
         }
