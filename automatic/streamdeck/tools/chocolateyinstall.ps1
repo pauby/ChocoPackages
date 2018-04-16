@@ -5,10 +5,10 @@ $toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $packageArgs = @{
     packageName     = $env:ChocolateyPackageName
     fileType        = 'MSI'
-    url64           = 'https://edge.elgato.com/egc/windows/sd/Stream_Deck_2.2.0.5165.msi'
+    url64           = 'https://edge.elgato.com/egc/windows/sd/Stream_Deck_2.3.0.5268.msi'
     softwareName    = 'Elgato Stream Deck*'
 
-    checksum64      = 'eba8372f26e92ac9d92ee0edc9051f9adceabbce72bf10f5ecfa2d4bcd54584a'
+    checksum64      = '74a51f6341621e413af017ac0158538e201635fe56eed679acba38243ebe9fc0'
     checksumType64  = 'SHA256'
 
     silentArgs      = "/quiet"
