@@ -13,3 +13,5 @@ It's even possible that you're staying up too late because of your computer. You
 f.lux makes your computer screen look like the room you're in, all the time. When the sun sets, it makes your computer look like your indoor lights. In the morning, it makes things look like sunlight again.
 
 Tell f.lux what kind of lighting you have, and where you live. Then forget about it. f.lux will do the rest, automatically.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
