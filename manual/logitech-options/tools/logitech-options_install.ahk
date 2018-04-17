@@ -44,7 +44,7 @@ NoShareData:
 Loop, 30 
 {
     WinActivate, %winTitle%
-    PixelGetColor, colour, 625, 420, RGB
+    PixelGetColor, colour, 525, 420, RGB
     if (colour = "0x222425" || colour = "0x444646") {
         found = 1
         break, NoShareData

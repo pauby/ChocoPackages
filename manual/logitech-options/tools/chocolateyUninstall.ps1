@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop';
+$ErrorActionPreference = 'Stop'
 
 $toolsDir = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
 
@@ -36,3 +36,5 @@ if ($key.Count -eq 1) {
     Write-Warning "Please alert package maintainer the following keys were matched:"
     $key | ForEach-Object {Write-Warning "- $_.DisplayName"}
 }
+
+Remove-Item -Path $ahkFile -Force -ErrorAction SilentlyContinue

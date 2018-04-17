@@ -1,4 +1,4 @@
-﻿$ErrorActionPreference = 'Stop';
+﻿$ErrorActionPreference = 'Stop'
 
 $toolsDir      = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
@@ -24,3 +24,5 @@ Write-Debug "$ahkExe start time:`t$($ahkProc.StartTime.ToShortTimeString())"
 Write-Debug "Process ID:`t$ahkId"
 
 Install-ChocolateyPackage @packageArgs
+
+Remove-Item -Path $ahkFile -Force -ErrorAction SilentlyContinue
