@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>keepass-keeagent</id>
+    <version>0.8.1.20180426</version>
+    <title>[Deprecated] KeeAgent</title>
+    <authors>David Lechner</authors>
+    <owners>David Powell</owners>
+    <licenseUrl>https://raw.githubusercontent.com/dlech/KeeAgent/master/COPYING.txt</licenseUrl>
+    <projectUrl>http://lechnology.com/software/keeagent/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package is being deprecated in favour of https://chocolatey.org/packages/keepass-plugin-keeagent as they are duplicates.
+    </description>
+    <summary>ssh agent plugin for KeePass 2.x</summary>
+    <releaseNotes />
+    <copyright>GNU General Public Licese, Version 2</copyright>
+    <tags>password keepass admin</tags>
+    <dependencies>
+      <dependency id="keepass-plugin-keeagent" />
+    </dependencies>
+  </metadata>
+  <files />
+</package>
