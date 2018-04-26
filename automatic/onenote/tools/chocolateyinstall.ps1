@@ -4,11 +4,11 @@ $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
     fileType       = 'EXE' 
     url            = 'https://www.onenote.com/download/win32/x86/en-US'
-    checksum       = '641c19e3b78e73f5b9229ad416b8284d15ea26b15ccc0fd374e0b24c3412cfbb'
+    checksum       = '4bc9206dff19fe14cabeee866b9e18f43a22c2fe2ee7bf6ea12e8a147195bc81'
     checksumType   = 'sha256'
 
     url64          = 'https://www.onenote.com/download/win32/x64/en-US'
-    checksum64     = 'a75e2d54a20f042c7d7a78593596cf9ad5001f1f4e94a71a946ae157ecedb947'
+    checksum64     = '9049bd23137e0ce1e8f7f8defbfc7e430e4080a297b9f0f6e69be52e715b222c'
     checksumType64 = 'sha256'  
     
     silentArgs     = ''
