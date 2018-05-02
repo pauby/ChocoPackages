@@ -10,9 +10,9 @@ $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   unzipLocation = $tempPath
   fileType      = 'MSI'
-  url           = 'https://github.com//aluxnimm/outlookcaldavsynchronizer/releases/download/v3.1.0/OutlookCalDavSynchronizer-3.1.0.zip'
+  url           = 'https://github.com//aluxnimm/outlookcaldavsynchronizer/releases/download/v3.1.1/OutlookCalDavSynchronizer-3.1.1.zip'
 
-  checksum      = 'f4144f93a5157ef894b8f7a2ceb4a8cbfa5e6ab23c4ac93b5b8678c5487e09e1'
+  checksum      = '996f396c691c1505f7d542a7a01a41f72771f37973e5a3f5277b908a6cb6ed27'
   checksumType  = 'SHA256'
 
   silentArgs    = "/qn /norestart"
