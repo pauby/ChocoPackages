@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $toolsDir         = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$moduleName       = 'PSScriptAnalyzer'  # this may be different from the package name and different case
+$moduleName       = 'Jump.Location'  # this may be different from the package name and different case
 
 # module may already be installed outside of Chocolatey
 Remove-Module -Name $moduleName -Force -ErrorAction SilentlyContinue

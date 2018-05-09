@@ -20,37 +20,39 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- This section is about this package, although id and version have ties back to the software -->
         <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
         <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
-        <id>psscriptanalyzer</id>
+        <id>jump-location</id>
         <!-- version should MATCH as closely as possible with the underlying software -->
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-        <version>1.16.1</version>
-        <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/psscriptanalyzer</packageSourceUrl>
+        <version>0.6.0</version>
+        <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/jump-location</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
-        <owners>pauby</owners>
+        <owners>pauby, LCHarold, tkellogg, vors</owners>
         <!-- ============================== -->
         <!-- == SOFTWARE SPECIFIC SECTION == -->
         <!-- This section is about the software itself -->
-        <title>PSScriptAnalyzer (PowerShell Module)</title>
-        <authors>Microsoft Corporation</authors>
+        <title>Jump.Location (PowerShell Module)</title>
+        <authors>Tim Kellogg</authors>
         <!-- projectUrl is required for the community feed -->
-        <projectUrl>https://github.com/PowerShell/PSScriptAnalyzer</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/95cb2d6e/icons/psscriptanalyzer.png</iconUrl>
-        <copyright>2015 Microsoft Corporation</copyright>
+        <projectUrl>https://github.com/tkellogg/Jump-Location</projectUrl>
+        <!-- <iconUrl></iconUrl> -->
+        <copyright>2012 Tim Kellogg</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
-        <licenseUrl>https://github.com/PowerShell/PSScriptAnalyzer/blob/development/LICENSE</licenseUrl>
-        <requireLicenseAcceptance>true</requireLicenseAcceptance>
-        <projectSourceUrl>https://github.com/PowerShell/PSScriptAnalyzer</projectSourceUrl>
-        <docsUrl>https://github.com/PowerShell/PSScriptAnalyzer/blob/development/README.md</docsUrl>
+        <licenseUrl>https://github.com/tkellogg/Jump-Location/blob/master/License.md</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <projectSourceUrl>https://github.com/tkellogg/Jump-Location</projectSourceUrl>
+        <docsUrl>https://github.com/tkellogg/Jump-Location/blob/master/Readme.md</docsUrl>
         <!-- <mailingListUrl>https://sourceforge.net/p/keepass/discussion/</mailingListUrl> -->
-        <bugTrackerUrl>https://github.com/PowerShell/PSScriptAnalyzer/issues</bugTrackerUrl>
-        <tags>admin powershell module code analysis</tags>
-        <summary>PSScriptAnalyzer is a static code checker for Windows PowerShell modules and scripts.</summary>
-        <description>PSScriptAnalyzer is a static code checker for Windows PowerShell modules and scripts. PSScriptAnalyzer checks the quality of Windows PowerShell code by running a set of rules. The rules are based on PowerShell best practices identified by PowerShell Team and the community. It generates DiagnosticResults (errors and warnings) to inform users about potential code defects and suggests possible solutions for improvements.
+        <bugTrackerUrl>https://github.com/tkellogg/Jump-Location/issues</bugTrackerUrl>
+        <tags>admin powershell module jump location ps autojump</tags>
+        <summary>Jump.Location learns your behavior by keeping track of how long you spend in certain directories and favoring them over the ones you don't care about.</summary>
+        <description>If you spend any time in a console you know that `cd` is by far the most common command that you issue. I'll open up a console to it's default location in `C:\Users\tkellogg` or `C:\Windows\system32` and then issue a `cd C:\work\MyProject`. `Set-JumpLocation` is a cmdlet lets you issue a `j my` to jump directly to `C:\work\MyProject`.
 
-PSScriptAnalyzer is shipped with a collection of built-in rules that checks various aspects of PowerShell code such as presence of uninitialized variables, usage of PSCredential Type, usage of Invoke-Expression etc. Additional functionalities such as exclude/include specific rules are also supported.
+It learns your behavior by keeping track of how long you spend in certain directories and favoring them over the ones you don't care about. You don't have to use `Jump-Location` as a replacement for `cd`. Use `cd` to go local, and use `Set-JumpLocation` to jump further away.
+
+`Jump-Location` is a PowerShell implementation of autojump.
 </description>
-        <releaseNotes>https://github.com/PowerShell/PSScriptAnalyzer/blob/development/CHANGELOG.MD</releaseNotes>
+        <!-- <releaseNotes></releaseNotes> -->
         <!-- =============================== -->
         <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
         <!-- <dependencies> -->

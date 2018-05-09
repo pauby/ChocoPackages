@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 
-$moduleName = 'PSScriptAnalyzer'
+$moduleName = 'Jump.Location'
 $sourcePath = Join-Path -Path $env:ProgramFiles -ChildPath "WindowsPowerShell\Modules\$moduleName"
 
 Write-Verbose "Removing all version of '$moduleName' from '$sourcePath'."
