@@ -49,59 +49,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!--<bugTrackerUrl></bugTrackerUrl>-->
     <tags>gitter admin im messaging messenger chat</tags>
     <summary>Gitter. Where communities thrive.</summary>
-    <description>Make Amazing Videos with the Camtasia Video Editor.
-Camtasia makes video editing surprisingly easy. The drag-and-drop editor and video assets help you complete your videos faster. No video experience needed.
-
-If you need a previous version, [download it](https://www.techsmith.com/download/oldversions).       
-
-* SCREEN RECORDER
- Record any part of your screen, down to the pixel.
-
-* WEBCAM
- Webcam lets you add a personal touch to your video.
-
-* MEDIA
- Import images, audio, and video up to 4K resolution.
-
-* MULTI-TRACK TIMELINE
- Build your videos quickly with multiple tracks for images, video, text, and audio.
-
-* ANNOTATIONS
- Arrows, callouts, shapes, and more help you get your point across.
-
-* TRANSITIONS
- Add an intro/outro to the beginning or end of a clip, image, shape, or text.
-
-* ANIMATIONS
- Zoom, pan, or create your own custom motion effects.
-
-* VOICE NARRATION
- A great way to add context to what you’re showing.
-
-* AUDIO EFFECTS
- Add audio effects to recordings, music, or narration to enhance your video.
-
-* VISUAL EFFECTS
- Adjust colors, add a drop shadow, change the clip speed, and more.
-
-* INTERACTIVITY
- Add quizzes to see who is watching your videos, and how much they've viewed.
-
-* GREEN SCREEN
- Put yourself in your video making it appear like you're right in the action.
-
-# Parameters:
-
-* /licensekey:ABCD-EFGH-IJKL
- Registered license key. If this is missing a 30 day trial is installed.
-
-* /licensename:""Joe Bloggs""
- Registered name for the license. Can only be used if a /licensekey is specified
-
-* /nodesktopshortcut
- Does not install an application shortcut on the desktop.
-
-Example: **-params='"/licensekey:ABCD-EFGH-IJKL /licensename:""Joe Bloggs"" /nodesktopshortcut"'**
+    <description>Gitter is a chat and networking platform that helps to manage, grow and connect communities through messaging, content and discovery.
 </description>
     <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
     <!-- =============================== -->      
