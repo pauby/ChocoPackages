@@ -12,9 +12,8 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
 <!-- * If you are an organization making private packages, you probably have no issues here -->
 <!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
-<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ãâ€šÃ‚Â¡appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package 
-    xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¡appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
     <metadata>
         <!-- == PACKAGE SPECIFIC SECTION == -->
         <!-- This section is about this package, although id and version have ties back to the software -->
@@ -24,7 +23,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- version should MATCH as closely as possible with the underlying software -->
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-        <version>0.6.0</version>
+        <version>0.6.0.20180509</version>
         <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/jump-location</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
         <owners>pauby, LCHarold, tkellogg, vors</owners>
@@ -51,6 +50,8 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 It learns your behavior by keeping track of how long you spend in certain directories and favoring them over the ones you don't care about. You don't have to use `Jump-Location` as a replacement for `cd`. Use `cd` to go local, and use `Set-JumpLocation` to jump further away.
 
 `Jump-Location` is a PowerShell implementation of autojump.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
         <!-- <releaseNotes></releaseNotes> -->
         <!-- =============================== -->
