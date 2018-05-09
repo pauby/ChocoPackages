@@ -33,3 +33,5 @@ MySQL Connector/Net 6.8 (and earlier) does not support Express versions of Micro
 ## Note
 
 From Connector/Net 5.1 through 6.6, the Visual Studio Plugin is part of the main Connector/Net package. Starting with 6.7, the Visual Studio Plugin has been separated out and renamed to MySQL for Visual Studio. For release information, see MySQL for Visual Studio Release Notes.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

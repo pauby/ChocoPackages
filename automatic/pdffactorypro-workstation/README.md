@@ -34,3 +34,5 @@ Example:
 `-params '"/lang:en /license:ABCDE-12345-FGHIJ /name:""John Doe"" /margins:""0 0 0 0"""'`
 
 NOTE: This package installs a printer driver. If you have UAC prompts enabled, you will need to confirm the driver installation.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

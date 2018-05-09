@@ -27,3 +27,5 @@ Why did I make Easy 7-Zip?
 5 Makes a new installation file
 
 I made a package of Easy 7-Zip that contains both x86 (32-bit) and x64 (64-bit) editions. In other word, the package installs x86 (32-bit) edition of Easy 7-Zip on 32-bit Windows and x64 (64-bit) edition on 64-bit Windows automatically. The package also allows user to associate 7-Zip with file extensions including 001, 7z, arj, bz2, bzip2, cab, cpio, deb, dmg, fat, gz, gzip, hfs, iso, lha, lzh, lzma, ntfs, rar, rpm, squashfs, swm, tar, taz, tbz2, tbz, tgz, tpz, txz, vhd, wim, xar, xz, z, and zip.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

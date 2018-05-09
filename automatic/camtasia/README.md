@@ -53,3 +53,5 @@ If you need a previous version, [download it](https://www.techsmith.com/download
  Does not install an application shortcut on the desktop.
 
 Example: **-params='"/licensekey:ABCD-EFGH-IJKL /licensename:""Joe Bloggs"" /nodesktopshortcut"'**
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

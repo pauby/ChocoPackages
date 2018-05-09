@@ -8,5 +8,7 @@ Discord is an all-in-one voice and text chat for gamers that’s free, secure, a
 * Multiple Channels, Friends List, Direct Messaging
 * In-game Overlay
 * Cross-Platform: Windows, OSX, Linux, Android, iOS and Browser Support
-* Modern text and voice chat  
+* Modern text and voice chat
 * Many other features
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

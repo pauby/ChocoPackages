@@ -15,3 +15,5 @@ Ready. Set. Draw. A stylus or fingertip is the only tool you need. Take handwrit
 
 ## Access from anywhere
 Take note. It's easy to pull up your content from anywhere, even if you're offline. Start on your laptop then update notes on your phone. OneNote works on any device or platform.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

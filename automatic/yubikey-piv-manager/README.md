@@ -11,3 +11,5 @@ PIV, or FIPS 201, is a US government standard. It enables RSA or ECC sign/encryp
 You can read more about the PIV standards here: http://csrc.nist.gov/groups/SNS/piv/standards.html
 
 PIV is primarily used for non-web applications. It has built-in support under Windows, and can be used on OS X and Linux via the OpenSC project.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

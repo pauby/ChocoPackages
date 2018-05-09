@@ -13,3 +13,5 @@ Most major publishers use Adobe Digital Editions (ADE) to proof-read their books
 * Bookmarking, Highlights and Notes
 * File Organization of All eBooks
 * Supports Multiple File formats
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

@@ -10,3 +10,5 @@ If you want to add syncthing as a service that runs at system startup, execute t
 New-Service Syncthing $env:ChocolateyInstall/bin/syncthing.exe -StartupType Automatic
 Start-Service Syncthing
 ```
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

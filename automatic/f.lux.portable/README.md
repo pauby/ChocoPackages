@@ -23,3 +23,5 @@ Examples:
 `-params '"/noautostart"'`
 
 NOTE: This is the portable version of f.lux and installs in the Chocolatey tools folder - use this version if you want f.lux to be available to everybody on your system.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

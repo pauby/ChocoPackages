@@ -23,3 +23,5 @@ Screen capture, file sharing and productivity tool.
 * URL shorteners
 * Custom URL shortener
 * URL sharing services
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
