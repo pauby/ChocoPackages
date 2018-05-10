@@ -1,7 +1,7 @@
 import-module au
 
 #Virtual package uses dependency updater to get the version
-. $PSScriptRoot\..\flux.install\update.ps1
+. $PSScriptRoot\..\f.lux.install\update.ps1
 
 function global:au_SearchReplace {
     @{
