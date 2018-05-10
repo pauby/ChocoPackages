@@ -53,6 +53,7 @@ init:
 - git config --global user.name "Chocolatey"
 - git config --global core.safecrlf false
 - ps: |
+    # needed for modules
     $null = Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
     Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
     Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
