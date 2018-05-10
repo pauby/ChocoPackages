@@ -52,6 +52,10 @@ init:
 - git config --global user.email "chocolatey@realdimensions.net"
 - git config --global user.name "Chocolatey"
 - git config --global core.safecrlf false
+- ps: |
+  $null = Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+  Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
+  Set-PSRepository -Name PSGallery -InstallationPOlicy Trusted
 #- ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 install:
