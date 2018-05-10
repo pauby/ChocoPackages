@@ -5,7 +5,6 @@ import-module au
 $moduleName  = 'PSCodeHealth'
 
 function global:au_SearchReplace {
-    # AU breaks without this empty function and hashtable!
     @{
     }
 }
