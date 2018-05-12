@@ -3,7 +3,7 @@ Verification is intended to assist the Chocolatey moderators and community in ve
 
 To verify the files using the project source:
 
-1. Please go to the project source location (https://github.com/PowerShell/PSScriptAnalyzer/blob/development/LICENSE) and download the source files;
+1. Please go to the project source location (https://github.com/PowerShell/PSScriptAnalyzer) and download the source files;
 2. Build the source to create the binary files to verify;
 3. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the built file (from step 1 above) and the file from the package and compare them;
 
