@@ -4,7 +4,7 @@ $toolsDir         = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $moduleName       = 'PSCodeHealth'  # this may be different from the package name and different case
 
 if ($PSVersionTable.PSVersion.Major -lt 5) {
-    throw "PSCodeHealth module requires a minimum of PowerShell 5."
+    throw "PSCodeHealth module requires a minimum of PowerShell v5."
 }
 
 # module may already be installed outside of Chocolatey
