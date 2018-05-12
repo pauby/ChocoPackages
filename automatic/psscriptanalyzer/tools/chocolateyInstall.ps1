@@ -3,6 +3,10 @@
 $toolsDir         = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $moduleName       = 'PSScriptAnalyzer'  # this may be different from the package name and different case
 
+if ($PSVersionTable.PSVersion.Major -lt 3) {
+    throw "PSCodeHealth module requires a minimum of PowerShell v3."
+}
+
 # module may already be installed outside of Chocolatey
 Remove-Module -Name $moduleName -Force -ErrorAction SilentlyContinue
 
