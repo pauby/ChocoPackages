@@ -23,7 +23,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- version should MATCH as closely as possible with the underlying software -->
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-        <version>0.2.9</version>
+        <version>0.2.26</version>
         <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/pscodehealth</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
         <owners>pauby</owners>
@@ -45,7 +45,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <bugTrackerUrl>https://github.com/MathieuBuisson/PSCodeHealth/issues</bugTrackerUrl>
         <tags>admin powershell module code analysis health report</tags>
         <summary>PSCodeHealth allows you to measure the quality and maintainability of your PowerShell code, based on a variety of metrics.</summary>
-        <description>PSCodeHealth allows you to measure the quality and maintainability of your PowerShell code, based on a variety of metrics related to:
+        <description><![CDATA[PSCodeHealth allows you to measure the quality and maintainability of your PowerShell code, based on a variety of metrics related to:
 
 * Code length
 * Code complexity
@@ -60,7 +60,7 @@ These features can be leveraged from within your PowerShell release pipeline.
 PSCodeHealth can also generate a highly visual HTML report so that you can interpret the results at a glance, and easily share them.
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
-</description>
+]]></description>
         <!-- <releaseNotes></releaseNotes> -->
         <!-- =============================== -->
         <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
