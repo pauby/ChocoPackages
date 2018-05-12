@@ -12,8 +12,14 @@ $destPath   = Join-Path -Path $env:ProgramFiles -ChildPath "WindowsPowerShell\Mo
 if ($PSVersionTable.PSVersion.Major -ge 5)
 {
     $manifestFile = Join-Path -Path $toolsDir -ChildPath "$moduleName\$moduleName.psd1"
-    $manifest     = Test-ModuleManifest -Path $manifestFile -WarningAction Ignore -ErrorAction Stop
-    $destPath     = Join-Path -Path $destPath -ChildPath $manifest.Version.ToString()
+    Write-Verbose "Searching manifest file '$manifestFile' for module version."
+    $verFound = Get-Content -Path $manifestFile -Raw | ForEach-Object { $_ -match '\s*ModuleVersion\s*=\s*[''|""]{1}(?<version>[\d|\.]+)[''|""]{1}' }
+    if (-not $verFound) {
+        throw "Cannot find 'ModuleVersion' in manifest file '$manifestFile'."
+    }
+
+    Write-Verbose "Module version '$($matches.version)' found."
+    $destPath = Join-Path -Path $destPath -ChildPath $matches.version
 }
 
 Write-Verbose "Creating destination directory '$destPath' for module."
