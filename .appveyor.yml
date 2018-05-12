@@ -10,6 +10,8 @@ branches:
   - master
 #build:
 #  verbosity: minimal
+only_commits:
+  message: /\[AU|\[build\]/
 
 environment:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
