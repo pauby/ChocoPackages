@@ -59,6 +59,8 @@ These features can be leveraged from within your PowerShell release pipeline.
 
 PSCodeHealth can also generate a highly visual HTML report so that you can interpret the results at a glance, and easily share them.
 
+_**NOTE: This module requires a minimum of PowerShell v5.**_
+
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 ]]></description>
         <!-- <releaseNotes></releaseNotes> -->
