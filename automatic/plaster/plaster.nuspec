@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>Microsoft Corporation</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://github.com/PowerShell/Plaster</projectUrl>
-        <!-- <iconUrl></iconUrl> -->
+        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/b600177c/icons/plaster.png</iconUrl>
         <copyright>2018 Microsoft Corporation</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://raw.githubusercontent.com/PowerShell/Plaster/master/LICENSE</licenseUrl>
