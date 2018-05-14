@@ -1,14 +1,17 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $packageArgs = @{
-    packageName   = $env:ChocolateyPackageName
-    fileType      = 'exe'
-    silentArgs    = "/S"
+    packageName    = $env:ChocolateyPackageName
+    fileType       = 'exe'
+    silentArgs     = "/S"
     
-    validExitCodes= @(0)
-    url           = 'https://github.com//Yubico/yubikey-manager-qt/releases/download/0.3.0/yubikey-manager-qt-0.3.0-win.exe'
-    checksum      = 'e584acf51e01d22f3032f0cb78c24f2001d7c47151f628028bc722ac513e6351'
-    checksumType  = 'sha256'
+    validExitCodes = @(0)
+    url            = 'https://github.com//Yubico/yubikey-manager-qt/releases/download/yubikey-manager-qt-0.5.1/yubikey-manager-qt-0.5.1-win32.exe'
+    checksum       = 'f7ed30a925f03539df8cf84c60587d8e9f1a567a58e24e0e3070623cb1980f97'
+    checksumType   = 'sha256'
+    url64          = 'https://github.com//Yubico/yubikey-manager-qt/releases/download/yubikey-manager-qt-0.5.1/yubikey-manager-qt-0.5.1-win64.exe'
+    checksum64     = 'f074ac6e507824c02ee5a5e0acec6fee026348ca0253d6647b847de31f6411a0'
+    checksumType64 = 'sha256'
 }
 
 Install-ChocolateyPackage @packageArgs 
