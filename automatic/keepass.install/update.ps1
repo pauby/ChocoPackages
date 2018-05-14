@@ -24,7 +24,7 @@ function global:au_AfterUpdate {
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $regex = 'KeePass (?<version>2\.\d+) \(Installer EXE for Windows\)'
+    $regex = 'KeePass (?<version>2[\.\d]+) \(Installer EXE for Windows\)'
     $url = ($page.links | Where-Object data-label -match $regex | Select-Object -First 1).href
 
     return @{
