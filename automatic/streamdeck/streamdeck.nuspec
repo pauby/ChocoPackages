@@ -9,7 +9,7 @@
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>2.3.0.5268</version>
+    <version>3.0.0.6839</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/streamdeck</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>pauby</owners>
@@ -37,6 +37,8 @@
 Gone are the days of navigating myriad windows to trigger an action, and relying solely on automated plugins to expand your production value. Now, you hold the power to pioneer a new era of content creation, and lead your audience to uncharted frontiers of inspiration. Now, you’re in control.
 
 NOTE: This application ONLY supports Windows 10 x64.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
     <releaseNotes>https://gaming.help.elgato.com/customer/en/portal/articles/2793637-elgato-stream-deck-software-release-notes</releaseNotes>
     <!-- =============================== -->
