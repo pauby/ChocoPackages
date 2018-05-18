@@ -24,17 +24,4 @@ if ($arguments.ContainsKey("OneNotex64")) {
     $packageArgs.checksum = $checksum64
 }
 
-#$ahkExe = 'AutoHotKey'
-#$ahkFile = Join-Path -Path $env:TEMP -ChildPath "$(Get-Random).ahk" 
-#$ahkSourceFile = Join-Path -Path $toolsDir -ChildPath "$($env:ChocolateyPackageName)_install.ahk"
-#Copy-Item -Path $ahkSourceFile -Destination $ahkFile
-
-#Write-Verbose "Running AutoHotkey install script $ahkFile"
-#$ahkProc = Start-Process -FilePath $ahkExe -ArgumentList $ahkFile -PassThru
-#$ahkId = $ahkProc.Id
-#Write-Debug "$ahkExe start time:`t$($ahkProc.StartTime.ToShortTimeString())"
-#Write-Debug "Process ID:`t$ahkId"
-
 Install-ChocolateyPackage @packageArgs
-
-#Remove-Item -Path $ahkFile -Force -ErrorAction SilentlyContinue
