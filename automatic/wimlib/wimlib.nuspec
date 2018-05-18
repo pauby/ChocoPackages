@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+    <metadata>
+        <!-- == PACKAGE SPECIFIC SECTION == -->
+        <!-- This section is about this package, although id and version have ties back to the software -->
+        <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+        <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+        <id>wimlib</id>
+        <!-- version should MATCH as closely as possible with the underlying software -->
+        <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+        <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+        <version>1.12.0.20180518</version>
+        <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/wimlib</packageSourceUrl>
+        <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+        <owners>pauby</owners>
+        <!-- ============================== -->
+        <!-- == SOFTWARE SPECIFIC SECTION == -->
+        <!-- This section is about the software itself -->
+        <title>wimlib</title>
+        <authors>Eric Biggers</authors>
+        <!-- projectUrl is required for the community feed -->
+        <projectUrl>https://wimlib.net/index.html</projectUrl>
+        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/7b92203e/icons/wimlib.png</iconUrl>
+        <copyright>2012-2018 Eric Biggers</copyright>
+        <!-- If there is a license Url available, it is is required for the community feed -->
+        <licenseUrl>https://wimlib.net/git/?p=wimlib;a=blob_plain;f=COPYING;hb=HEAD</licenseUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <projectSourceUrl>https://wimlib.net/git/?p=wimlib;a=tree</projectSourceUrl>
+        <docsUrl>https://wimlib.net/index.html</docsUrl>
+        <mailingListUrl>https://wimlib.net/forums/index.php</mailingListUrl>
+        <bugTrackerUrl>https://wimlib.net/forums/index.php</bugTrackerUrl>
+        <tags>admin wimlib wim imagex</tags>
+        <summary>wimlib is an open source, cross-platform library for creating, extracting, and modifying Windows Imaging (WIM) archives.</summary>
+        <description>wimlib is an open source, cross-platform library for creating, extracting, and modifying Windows Imaging (WIM) archives. WIM is a file archiving format, somewhat comparable to ZIP (and many other file archiving formats); but unlike ZIP, it allows storing various Windows-specific metadata, allows storing multiple "images" in a single archive, automatically deduplicates all file contents, and supports optional solid compression to get a better compression ratio. wimlib and its command-line frontend wimlib-imagex provide a free and cross-platform alternative to Microsoft's WIMGAPI, ImageX, and DISM.
+
+Among other things, wimlib:
+
+* Provides fast and reliable file archiving on Windows and on UNIX-like systems such as Mac OS X and Linux.
+* Allows users of non-Windows operating systems to read and write Windows Imaging (WIM) files.
+* Supports correct archiving of files on Windows-style filesystems such as NTFS without making common mistakes such as not properly handling ACLs, file attributes, links, and named data streams.
+* Allows deployment of Windows operating systems from non-Windows operating systems such as Linux.
+* Provides independent, high quality open source compressors and decompressors for several compression formats used by Microsoft which are not as well known as more open formats, and are prone to be re-used in different applications and file formats (not just WIM).
+
+wimlib is distributed either as a source tarball (for UNIX/Linux), or as ready-to-use binaries (for Windows XP and later). The software consists of a C library along with the wimlib-imagex command-line frontend and its associated documentation. 
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+</description>
+        <releaseNotes>https://wimlib.net/git/?p=wimlib;a=log;h=HEAD</releaseNotes>
+        <!-- =============================== -->
+        <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+        <!-- <dependencies> -->
+        <!-- <dependency id="" /> -->
+        <!-- <dependency id="dotnet4.5"/><dependency id="" version="[__EXACT_VERSION__]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /><dependency id="" /><dependency id="chocolatey-uninstall.extension" /> -->
+        <!-- </dependencies> -->
+        <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+        <!--<provides>NOT YET IMPLEMENTED</provides>-->
+        <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+        <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+    </metadata>
+    <files>
+        <!-- this section controls what actually gets packaged into the Chocolatey package -->
+        <file src="tools\**" target="tools" />
+        <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+    </files>
+</package>
