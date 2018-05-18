@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package 
+    xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+    <metadata>
+        <!-- == PACKAGE SPECIFIC SECTION == -->
+        <!-- This section is about this package, although id and version have ties back to the software -->
+        <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+        <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+        <id>gocontactsyncmod</id>
+        <!-- version should MATCH as closely as possible with the underlying software -->
+        <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+        <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+        <version>3.10.14.20180518</version>
+        <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/gocontactsyncmod</packageSourceUrl>
+        <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+        <owners>pauby</owners>
+        <!-- ============================== -->
+        <!-- == SOFTWARE SPECIFIC SECTION == -->
+        <!-- This section is about the software itself -->
+        <title>gocontactsyncmod (Install)</title>
+        <authors>big-r,createsoftware,cybdis,floriwan,obelix30</authors>
+        <!-- projectUrl is required for the community feed -->
+        <projectUrl>https://googlesyncmod.sourceforge.io/</projectUrl>
+        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/26096f0d/icons/gocontactsyncmod.png</iconUrl>
+        <copyright>2016 big-r,createsoftware,cybdis,floriwan,obelix30</copyright>
+        <!-- If there is a license Url available, it is is required for the community feed -->
+        <!-- <licenseUrl></licenseUrl> <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
+        <projectSourceUrl>https://sourceforge.net/projects/googlesyncmod/</projectSourceUrl>
+        <docsUrl>https://sourceforge.net/p/googlesyncmod/faq/</docsUrl>
+        <!--<mailingListUrl></mailingListUrl>-->
+        <bugTrackerUrl>https://sourceforge.net/projects/googlesyncmod/support?source=navbar</bugTrackerUrl>
+        <tags>admin gocontactsyncmod google contacts sync outlook</tags>
+        <summary>GO Contact Sync Mod synchronizes your Microsoft Outlook contacts with your Google Mail address book, including pictures, categories and notes.</summary>
+        <description>GO Contact Sync Mod synchronizes your Microsoft Outlook contacts with your Google Mail address book, including pictures, categories and notes.
+Since version 3.7.0 it also syncs your Outlook Calendar Appointments on demand to Google Calendar. This Mod fork adds many enhancements and bug fixes to the obviously dead project 'Go Contact Sync'.
+
+Please find some guidelines how to sync your mobile phone contacts with Google Contacts here: http://www.google.com/mobile/sync
+
+## Features
+
+* Full support of OAuth2 - no need for your password!
+* Outlook Contacts sync
+* Outlook Calendar Appointments sync
+* Automatic syncing
+* Contact Pictures support
+* Categories support
+* Supports Outlook 2003, 2007, 2010, 2013 and 2016 (32 and 64 bit)
+* No Support for Outlook Express
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+</description>
+        <releaseNotes>https://sourceforge.net/projects/googlesyncmod/files/Releases/</releaseNotes>
+        <!-- =============================== -->
+        <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+        <!-- <dependencies> -->
+        <!-- <dependency id="" /> -->
+        <!-- <dependency id="dotnet4.5"/><dependency id="" version="[__EXACT_VERSION__]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /><dependency id="" /><dependency id="chocolatey-uninstall.extension" /> -->
+        <!-- </dependencies> -->
+        <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+        <!--<provides>NOT YET IMPLEMENTED</provides>-->
+        <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+        <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+    </metadata>
+    <files>
+        <!-- this section controls what actually gets packaged into the Chocolatey package -->
+        <file src="tools\**" target="tools" />
+        <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+    </files>
+</package>
