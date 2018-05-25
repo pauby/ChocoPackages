@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if Ã¢â‚¬Å“ÃŽÂ©Ã¢â‚¬Â doesnÃ¢â‚¬â„¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if ÃƒÂ¢Ã¢â€šÂ¬Ã…â€œÃƒÅ½Ã‚Â©ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â doesnÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>logitech-presentation</id>
-    <version>1.40.104</version>
+    <version>1.50.340</version>
     <owners>pauby</owners>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/logitech-spotlight</packageSourceUrl>
     <title>Logitech Presentation (Install)</title>
@@ -16,9 +16,9 @@
     <tags>logitech spotlight presentation utility notsilent</tags>
     <summary>This is the companion app for the Logitech Spotlight presentation device.</summary>
     <description>This is the companion app for the Logitech Spotlight presentation device.
-    
-    **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
-    </description>
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+</description>
     <dependencies>
       <dependency id="autohotkey" />
     </dependencies>	

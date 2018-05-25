@@ -10,7 +10,7 @@ $packageArgs = @{
 
   softwareName  = 'boxsync*'
 
-  checksum      = 'fbe1585203d37bb3cd9ae63d9749478e8f3bf73c40fef07cfbdf657fb0cda4d7'
+  checksum      = 'f8f6f5ccc6b4263ea89b3527da741b748504abe5fe4e1c19366c9acd025c4086'
   checksumType  = 'SHA256'
 
   silentArgs    = '/install /quiet /norestart'

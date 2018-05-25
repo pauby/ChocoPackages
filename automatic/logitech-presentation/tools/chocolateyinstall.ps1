@@ -2,8 +2,8 @@
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
-    url            = 'https://download01.logi.com/web/ftp/pub/techsupport/presentation/LogiPresentation_1.40.104.exe'
-    checksum       = '6B124E23EC0416C2BAC3A5456CE5A659121174DE5B0BE6E2B5BB9A47F837D629'
+    url            = 'https://download01.logi.com/web/ftp/pub/techsupport/presentation/LogiPresentation_1.50.340.exe'
+    checksum       = '8c7ee86c8c2dbf11d96250a249a1b5f3dcf3f8e719fad310b9fa4987f780f11e'
     checksumType   = 'sha256'
     fileType       = 'EXE'
     silentArgs     = '/s'
