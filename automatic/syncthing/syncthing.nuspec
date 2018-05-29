@@ -33,7 +33,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <title>Syncthing</title>
         <authors>Syncthing</authors>
         <!-- projectUrl is required for the community feed -->
-        <projectUrl>http://keepass.info/</projectUrl>
+        <projectUrl>https://syncthing.net</projectUrl>
         <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/9ffd3adf/icons/syncthing.png</iconUrl>
         <copyright>2018 Syncthing</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
