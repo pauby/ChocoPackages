@@ -1,4 +1,4 @@
-import-module au
+#import-module au
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
