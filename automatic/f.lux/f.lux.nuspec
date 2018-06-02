@@ -23,7 +23,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 		<!-- version should MATCH as closely as possible with the underlying software -->
 		<!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
 		<!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-		<version>4.66</version>
+		<version>4.73</version>
 		<packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/f.lux</packageSourceUrl>
 		<!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
 		<owners>pauby, major251, starz0r</owners>
@@ -45,7 +45,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 		<!--<bugTrackerUrl></bugTrackerUrl>-->
 		<tags>f.lux flux lighting monitor color admin notsilent</tags>
 		<summary>f.lux - Better lighting...for your computer</summary>
-		<description>Ever notice how people texting at night have that eerie blue glow?
+		<description><![CDATA[Ever notice how people texting at night have that eerie blue glow?
 
 Or wake up ready to write down the Next Great Idea, and get blinded by your computer screen?
 
@@ -60,12 +60,12 @@ f.lux makes your computer screen look like the room you're in, all the time. Whe
 Tell f.lux what kind of lighting you have, and where you live. Then forget about it. f.lux will do the rest, automatically.
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
-</description>
+]]></description>
 		<!-- <releaseNotes></releaseNotes> -->
 		<!-- =============================== -->
 		<!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
 		<dependencies>
-			<dependency id="f.lux.install" version="4.66"/>
+			<dependency id="f.lux.install" version="4.73" />
 			<!-- <dependency id="" version="[__EXACT_VERSION__]" /> -->
 			<!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /> -->
 			<!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /> -->
