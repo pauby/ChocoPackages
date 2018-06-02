@@ -1,8 +1,5 @@
 import-module au
 
-#Virtual package uses dependency updater to get the version
-. $PSScriptRoot\..\keepass.install\update.ps1
-
 function global:au_SearchReplace {
     @{
         "$($Latest.PackageName).nuspec" = @{
@@ -13,5 +10,13 @@ function global:au_SearchReplace {
 
 # Left empty intentionally to override BeforeUpdate in keepass.install
 function global:au_BeforeUpdate { }
+
+function global:au_GetLatest {
+    (clist keepass.install -e --by-id-only | select -Skip 1 | select -SkipLast 1) -match '^.+?\s+(?<version>.+?)\s+'
+    
+    return @{
+        Version = $matches.version
+    }
+}
 
 update -ChecksumFor none
