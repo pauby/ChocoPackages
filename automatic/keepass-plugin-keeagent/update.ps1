@@ -2,7 +2,7 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://github.com/brush701/keechallenge/releases/latest'
+$releases    = 'https://github.com/dlech/KeeAgent/releases'
 
 function global:au_SearchReplace {
     @{
@@ -19,20 +19,19 @@ function global:au_BeforeUpdate() {
     $Latest.ChecksumType32 = 'SHA256'
 }
 
-function global:au_AfterUpdate { 
-    Set-DescriptionFromReadme -SkipFirst 2 
+function global:au_AfterUpdate {
+    Set-DescriptionFromReadme -SkipFirst 2
 }
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = "KeeChallenge_(.*).zip"
+    $regexUrl = "KeeAgent_v(?<version>.*).zip"
 
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
-    $version = $matches[1]
 
     return @{
-        URL32        = "https://github.com$url"
-        Version      = $version
+        URL32        = $url
+        Version      = $matches.version
     }
 }
 
