@@ -1,0 +1,1 @@
+The latest version of Camtasia doesn't have the version numbers in the MSI so there is no way for us to detect when they release a new version. They do have a title to the MSI but it includes the wrong version (it was 18.0.0.3358 and not 2018.0.0.3358). Once this is fixed we can make this automatic again.
