@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements
+-->
+
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>visualstudio2017-powershelltools</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>3.0.569</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/visualstudio2017-powershelltools</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>PowerShell Tools for Visual Studio 2017</title>
+    <authors>Microsoft</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://marketplace.visualstudio.com/items?itemName=AdamRDriscoll.PowerShellToolsforVisualStudio2017-18561</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/4b9e7abb/icons/visualstudio2017-powershelltools.png</iconUrl>
+    <copyright>2018 Adam Driscoll</copyright>
+    <!-- If there is a license Url available, it is required for the community feed -->
+    <licenseUrl>https://marketplace.visualstudio.com/items/AdamRDriscoll.PowerShellToolsforVisualStudio2017-18561/license</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/adamdriscoll/poshtools/</projectSourceUrl>
+    <docsUrl>https://github.com/adamdriscoll/poshtools/wiki</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/adamdriscoll/poshtools/issues</bugTrackerUrl>
+    <tags>visualstudio2017 powershell tools vsix admin</tags>
+    <summary>A set of tools for developing and debugging PowerShell scripts and modules in Visual Studio.</summary>
+    <description>PowerShell Tools for Visual Studio - PowerShell editing and debugging in Visual Studio.
+
+#### Requirements
+- Microsoft Visual Studio 2017
+- PowerShell v3 or later
+
+#### Overview
+PowerShell Tools for Visual Studio brings the richness of the Visual Studio development experience together with the power of PowerShell. Using this extension you can:
+
+- Edit, run and debug PowerShell scripts locally and remotely using the Visual Studio debugger
+- Create projects for PowerShell scripts and modules
+- Leverage Visual Studio’s locals, watch, call stack for your scripts and modules
+- Use the PowerShell interactive REPL window to execute PowerShell scripts and command right from Visual Studio
+- Automated Testing support using Pester
+
+#### Details
+An improved editing experience offers syntax highlighting, IntelliSense and code folding. You can quickly navigate your scripts with a function selection drop down.
+A rich debugging experience allows you to execute and single step through local and remote scripts. With support for breakpoints, the locals window and the call stack window you can easily find and fix bugs in your scripts.
+Support for running utilizing features such as DSC, Workflows and 64-bit modules (e.g. Sharepoint).
+The PowerShell Interactive Window provides instant execution with IntelliSense and remote session support.
+A project system is available to organize scripts and easily integrate with source control systems. It also offers a mechanism to provide module information for use in MSBuild scripts.
+Test adapter support for discovering and running Pester tests.
+</description>
+    <releaseNotes>https://github.com/adamdriscoll/poshtools/releases</releaseNotes>
+    <!-- =============================== -->
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <dependencies>
+      <dependency id="chocolatey-visualstudio.extension" version="1.6.0" />
+      <!-- <dependency id="" version="[__EXACT_VERSION__]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
+      <dependency id="" />
+      <dependency id="chocolatey-core.extension" version="1.1.0" /> -->
+    </dependencies>
+    <!-- chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension
+         - You want to use Get-UninstallRegistryKey on less than 0.9.10 (in chocolateyUninstall.ps1)
+         - You want to use Get-PackageParameters and on less than 0.11.0
+         - You want to take advantage of other functions in the core community maintainer's team extension package
+    -->
+
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
