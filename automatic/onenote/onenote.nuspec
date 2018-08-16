@@ -45,9 +45,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- <bugTrackerUrl></bugTrackerUrl> -->
         <tags>microsoft office onenote note notes soaas notsilent</tags>
         <summary>Microsoft OneNote Online Desktop Client</summary>
-        <description>![Screenshot of Microsoft OneNote](https://site-cdn.onenote.net/1693041555_Images/on-rewind-and-replay_v2.gif)	
-
-### Ideas take shape in OneNote
+        <description>### Ideas take shape in OneNote
 
 ## Create your way
 Do you scribble great ideas on napkins and sticky notes? Is precise filing more your style? OneNote's got you covered whatever way you shape your thoughts. Type, write or draw with the free form feel of pen to paper. Search and clip from the web to picture ideas.
