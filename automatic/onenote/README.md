@@ -1,7 +1,5 @@
 # ![OneNote Logo](https://cdn.rawgit.com/pauby/ChocoPackages/2f2bb99a/icons/onenote.jpg "OneNote Logo") [OneNote](https://chocolatey.org/packages/onenote)
 
-![Screenshot of Microsoft OneNote](https://site-cdn.onenote.net/1693041555_Images/on-rewind-and-replay_v2.gif)	
-
 ### Ideas take shape in OneNote
 
 ## Create your way
