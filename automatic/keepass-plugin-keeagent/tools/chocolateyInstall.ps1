@@ -36,6 +36,18 @@ else {
     Write-Verbose "Found Keepass install location at '$installPath'."
 }
 
+# See https://github.com/pauby/ChocoPackages/issues/15
+$oldPlugin = Join-Path -Path $installPath -ChildPath 'Plugins\keepass-plugin-keeagent.plgx'
+if (Test-Path -Path $oldPlugin) {
+    try {
+        Remove-Item -Path $oldPlugin -Force
+        Write-Host "Old version of this plugin, with incorrect name, was deleted at '$oldPlugin'."
+    }
+    catch {
+        Write-Warning "Old versions of this package, with incorrect name was found at '$oldPlugin'. However we were unable to delete it. Please do this manually or you risk Keepass not working correctly!"
+    }
+}
+
 $packageArgs.unzipLocation = Join-Path -Path $installPath -ChildPath 'Plugins'
 Install-ChocolateyZipPackage @packageArgs
 
