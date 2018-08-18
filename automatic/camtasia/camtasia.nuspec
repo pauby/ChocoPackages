@@ -26,7 +26,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>2018.0.0.335800</version>
+    <version>2018.0.2.363401</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/camtasia</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>pauby</owners>
@@ -102,6 +102,10 @@ If you need a previous version, [download it](https://www.techsmith.com/download
  Does not install an application shortcut on the desktop.
 
 Example: **-params='"/licensekey:ABCD-EFGH-IJKL /licensename:""Joe Bloggs"" /nodesktopshortcut"'**
+
+**NOTE**: TechSmith seem to be okay with releasing a new version of the same version. This throws out the checksum of the package. If you find this happening, please raise an issue at https://github.com/pauby/chocopackages/issues. Thanks.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
     <releaseNotes>[Release Notes](https://support.techsmith.com/hc/en-us/articles/115006443267%C2%A0)</releaseNotes>
     <!-- =============================== -->

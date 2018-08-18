@@ -3,7 +3,7 @@
 Make Amazing Videos with the Camtasia Video Editor.
 Camtasia makes video editing surprisingly easy. The drag-and-drop editor and video assets help you complete your videos faster. No video experience needed.
 
-If you need a previous version, [download it](https://www.techsmith.com/download/oldversions).       
+If you need a previous version, [download it](https://www.techsmith.com/download/oldversions).
 
 * SCREEN RECORDER
  Record any part of your screen, down to the pixel.
@@ -53,5 +53,7 @@ If you need a previous version, [download it](https://www.techsmith.com/download
  Does not install an application shortcut on the desktop.
 
 Example: **-params='"/licensekey:ABCD-EFGH-IJKL /licensename:""Joe Bloggs"" /nodesktopshortcut"'**
+
+**NOTE**: TechSmith seem to be okay with releasing a new version of the same version. This throws out the checksum of the package. If you find this happening, please raise an issue at https://github.com/pauby/chocopackages/issues. Thanks.
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
