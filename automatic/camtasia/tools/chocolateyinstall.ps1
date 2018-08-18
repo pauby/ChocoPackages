@@ -2,7 +2,7 @@
 
 $packageName= 'camtasia'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-# Camtasia versions scan be found at https://www.techsmith.com/download/oldversions
+# Old Camtasia versions can be found at https://www.techsmith.com/download/oldversions
 $url64      = 'https://download.techsmith.com/camtasiastudio/enu/1801/camtasia.exe'
 
 $packageArgs = @{
