@@ -17,9 +17,13 @@ function global:au_BeforeUpdate() {
 
     New-Item -Path $tempPath -ItemType Directory | Out-Null
     Save-Module -Name $moduleName -RequiredVersion $Latest.ModuleVersion -Path $tempPath
+    $modulePath = Join-Path -Path $tempPath -ChildPath "\$ModuleName\$($Latest.ModuleVersion)\"
+    'tests', 'functions', 'internal\functions', 'bin/projects', 'bin/build', '.git', '.github' | ForEach-Object {
+        Remove-Item -Path (Join-Path -Path $modulePath -ChildPath $_) -Recurse -Force -ErrorAction SilentlyContinue
+    }
 
-    $params = @{ 
-        Path        = Join-Path -Path $tempPath -ChildPath "\$ModuleName\$($Latest.ModuleVersion)\"
+    $params = @{
+        Path        = $modulePath
         Destination = "tools\$moduleName\"
         Force       = $true
     }
