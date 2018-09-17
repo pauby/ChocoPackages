@@ -6,8 +6,8 @@ $packageArgs = @{
     packageName   = $env:ChocolateyPackageName
     unzipLocation = $toolsDir
     fileType      = 'EXE'
-    url           = 'http://fineprint.com/release/pdf625pro.exe'
-    checksum      = '656D058539418B6B62B80CD70944EEF5C9C384665B7A78B147173B57174655EB'
+    url           = 'https://fineprint.com/release/pdf632pro.exe'
+    checksum      = '81ff95ec3fdf23aecb6b838245884c9aaffafaf7993405ce023a0837579cfab9'
     checksumType  = 'SHA256'
     silentArgs = '/quiet /reboot=0'
     validExitCodes= @(0)
