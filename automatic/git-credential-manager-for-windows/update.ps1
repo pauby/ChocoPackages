@@ -23,7 +23,7 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = '/gcmw-v(?<version>[\d\.]+)\.zip'
+    $regexUrl = '/gcmw-(?<version>[\d\.]+)\.exe'
 
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
 
