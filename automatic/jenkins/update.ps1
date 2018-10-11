@@ -1,4 +1,6 @@
-import-module au
+#import-module au
+
+. $PSScriptRoot\..\..\scripts\all.ps1
 
 $releases = 'https://jenkins.io/download/'
 
