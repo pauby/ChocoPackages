@@ -15,6 +15,8 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
+    # needed for Invoke-WebRequest to work for this site
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $regexUrl = "Deploy Jenkins`n(?<version>[\d\.]+)"
