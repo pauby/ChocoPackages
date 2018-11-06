@@ -1,17 +1,13 @@
-﻿$ErrorActionPreference = 'Stop';
+﻿$ErrorActionPreference = 'Stop'
 
-$packageName= 'camtasia'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 # Old Camtasia versions can be found at https://www.techsmith.com/download/oldversions
 $url64      = 'https://download.techsmith.com/camtasiastudio/enu/1802/camtasia.msi'
 
 $packageArgs = @{
-  packageName   = $packageName
-  unzipLocation = $toolsDir
+  packageName   = $env:ChocolateyPackageName
   fileType      = 'MSI'
   url64bit      = $url64
-
-  softwareName  = 'camtasia*'
 
   checksum64    = 'D4BF888A0B40B14AE89E05F20BBB1E00BB58172E2F23685C6838168E3898D2C7'
   checksumType64= 'SHA256'
