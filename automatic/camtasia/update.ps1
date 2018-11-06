@@ -91,7 +91,7 @@ function global:au_GetLatest {
     $urlVersion = $urlVersion.Replace('.', '')
 
     # now we can construct what should be the url
-    $url = "https://download.techsmith.com/camtasiastudio/enu/$urlVersion/camtasia.msi"
+    $url = "https://download.techsmith.com/camtasiastudio/releases/$urlVersion/camtasia.msi"
     $tempFile = New-TemporaryFile
     Invoke-WebRequest -Uri $url -OutFile $tempFile -UseBasicParsing
     $version = Get-MsiProductVersion -Path $tempFile
