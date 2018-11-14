@@ -27,7 +27,7 @@ function global:au_GetLatest {
     Invoke-WebRequest -Uri $releases -OutFile $tempFile -UseBasicParsing
     & 7z.exe e -aoa $tempFile $exeFilename
 
-    $version = (Get-Item $exeFilename).VersionInfo.ProductVersion
+    $version = (Get-Item $exeFilename).VersionInfo.FileVersion
 
     return @{
         URL32          = $releases
