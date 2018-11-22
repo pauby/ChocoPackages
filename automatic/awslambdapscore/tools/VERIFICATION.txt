@@ -1,0 +1,13 @@
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
+
+To verify the files using the project source:
+
+1. Please go to the project source location (https://github.com/aws/aws-lambda-dotnet/tree/master/PowerShell) and download the source files;
+3. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the built file (from step 1 above) and the file from the package and compare them;
+
+Alternatively you can download the module from the PowerShell Gallery ...
+
+    Save-Module -Name AWSLambdaPSCore -Path <PATH TO DOWNLOAD TO>
+
+... and compare the files from the package against those in the installed module. Again use Get-FileHash -Path <FILE TO VERIFY> to retrieve those hash values.
