@@ -26,7 +26,7 @@ function global:au_GetLatest {
     $version = "$($fileVer.ProductMajorPart).$($fileVer.ProductMinorPart).$($fileVer.ProductBuildPart)"
 
     return @{
-        URL32   = "https://download.teamviewer.com/download/version_${versionForURL}x/TeamViewer_Setup.exe"
+        URL32   = "https://download.teamviewer.com/download/version_$(versionForURL)x/TeamViewer_Setup.exe"
         Version = $version
     }
 }
