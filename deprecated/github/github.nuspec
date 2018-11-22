@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>github</id>
+    <version>3.2.0.20181119</version>
+    <title>[Deprecated] GitHub Desktop</title>
+    <authors>GitHub Inc</authors>
+    <owners>pauby, dtgm</owners>
+    <licenseUrl>https://windows.github.com/eula.html</licenseUrl>
+    <projectUrl>https://windows.github.com</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package has been deprecated in favour of [github-desktop](https://chocolatey.org/packages/github-desktop) as that is being regularly maintained and replaces this.</description>
+    <summary>Git client for GitHub.com project hosting site</summary>
+    <releaseNotes></releaseNotes>
+    <copyright>© 2012 GitHub Inc</copyright>
+    <tags>unattended git client github scm distributed gui posh-git cli admin</tags>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/deprecated/github-desktop/</packageSourceUrl>
+    <dependencies>
+      <dependency id="github-desktop" />
+    </dependencies>
+  </metadata>
+</package>
