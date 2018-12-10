@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Troupe Technology Ltd</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://gitter.im</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/30a80e4c/icons/gitter.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@30a80e4c/icons/gitter.png</iconUrl>
     <copyright>Copyright 2017 Troupe Technology Ltd</copyright>
     <!-- If there is a license Url available, it is is required for the community feed -->
     <licenseUrl>https://gitter.zendesk.com/hc/en-us/articles/200944641-Terms-of-Service</licenseUrl>

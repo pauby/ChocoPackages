@@ -1,4 +1,4 @@
-# ![wimlib](https://cdn.rawgit.com/pauby/ChocoPackages/7b92203e/icons/wimlib.png "wimlib") [wimlib](https://chocolatey.org/packages/steam)
+# ![wimlib](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@7b92203e/icons/wimlib.png "wimlib") [wimlib](https://chocolatey.org/packages/steam)
 
 wimlib is an open source, cross-platform library for creating, extracting, and modifying Windows Imaging (WIM) archives. WIM is a file archiving format, somewhat comparable to ZIP (and many other file archiving formats); but unlike ZIP, it allows storing various Windows-specific metadata, allows storing multiple "images" in a single archive, automatically deduplicates all file contents, and supports optional solid compression to get a better compression ratio. wimlib and its command-line frontend wimlib-imagex provide a free and cross-platform alternative to Microsoft's WIMGAPI, ImageX, and DISM.
 

@@ -1,4 +1,4 @@
-# ![Alt-Tab Terminator](https://cdn.rawgit.com/pauby/ChocoPackages/f29a5ee0/icons/alt-tab-terminator.png "Alt-Tab Terminator) [Alt-Tab Terminator](https://chocolatey.org/packages/alt-tab-terminator)
+# ![Alt-Tab Terminator](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@f29a5ee0/icons/alt-tab-terminator.png "Alt-Tab Terminator) [Alt-Tab Terminator](https://chocolatey.org/packages/alt-tab-terminator)
 
 Alt-Tab Terminator is an elegant and powerful task management utility for Windows 7/8/10. Once installed, it replaces the default Alt-Tab dialog with a nice box that shows a list of all running tasks, with their names and preview snapshots, and enables the user to take actions on them using the mouse and keyboard shortcuts.
     

@@ -1,4 +1,4 @@
-# ![PowerShell Tools for Visual Studio 2017](https://cdn.rawgit.com/pauby/ChocoPackages/4b9e7abb/icons/visualstudio2017-powershelltools.png "PowerShell Tools for Visual Studio 2017") [PowerShell Tools for Visual Studio 2017](https://chocolatey.org/packages/visualstudio2017-powershelltools)
+# ![PowerShell Tools for Visual Studio 2017](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@4b9e7abb/icons/visualstudio2017-powershelltools.png "PowerShell Tools for Visual Studio 2017") [PowerShell Tools for Visual Studio 2017](https://chocolatey.org/packages/visualstudio2017-powershelltools)
 
 PowerShell Tools for Visual Studio - PowerShell editing and debugging in Visual Studio.
 

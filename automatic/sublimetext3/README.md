@@ -1,4 +1,4 @@
-# ![SublimeText3](https://cdn.rawgit.com/pauby/ChocoPackages/9bd04335/icons/sublimetext3.png<"SublimeText3 Logo") [SublimeText3](https://chocolatey.org/packages/sublimetext3)
+# ![SublimeText3](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@9bd04335/icons/sublimetext3.png<"SublimeText3 Logo") [SublimeText3](https://chocolatey.org/packages/sublimetext3)
 
 Sublime Text 3 is a sophisticated text editor for code, html and prose. You'll love the slick user interface and extraordinary features.
 

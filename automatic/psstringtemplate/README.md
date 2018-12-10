@@ -1,4 +1,4 @@
-# ![PSStringTemplate Logo](https://cdn.rawgit.com/pauby/ChocoPackages/6550452a/icons/psstringtemplate.png "PSStringTemplate")[PSStringTemplate](https://chocolatey.org/packages/psstringtemplate)
+# ![PSStringTemplate Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@6550452a/icons/psstringtemplate.png "PSStringTemplate")[PSStringTemplate](https://chocolatey.org/packages/psstringtemplate)
 
 The PSStringTemplate module provides a PowerShell friendly interface for creating templates using the StringTemplate4 template engine.
 

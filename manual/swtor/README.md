@@ -1,4 +1,4 @@
-# ![Star Wars: The Old Republic Logo](https://cdn.rawgit.com/pauby/ChocoPackages/1a61581b/icons/swtor.png "Star Wars: The Old Republic Logo") [Star Wars: The Old Republic](https://chocolatey.org/packages/swtor)
+# ![Star Wars: The Old Republic Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@1a61581b/icons/swtor.png "Star Wars: The Old Republic Logo") [Star Wars: The Old Republic](https://chocolatey.org/packages/swtor)
 
 Play Star Wars™: The Old Republic™ and be the hero of your own Star Wars™ saga in a story-driven massively-multiplayer online game from BioWare and LucasArts.
 

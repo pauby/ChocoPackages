@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>Mathieu Buisson</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://github.com/MathieuBuisson/PSCodeHealth</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/67812184/icons/pscodehealth.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@67812184/icons/pscodehealth.png</iconUrl>
         <copyright>2017 Mathieu Buisson</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://github.com/MathieuBuisson/PSCodeHealth/blob/master/LICENSE.md</licenseUrl>

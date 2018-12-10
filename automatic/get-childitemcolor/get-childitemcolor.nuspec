@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>Joon Ro</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://github.com/joonro/Get-ChildItemColor</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/d1f23852/icons/get-childitemcolor.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@d1f23852/icons/get-childitemcolor.png</iconUrl>
         <copyright>2018 Joon Ro</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://github.com/joonro/Get-ChildItemColor/blob/master/LICENSE</licenseUrl>

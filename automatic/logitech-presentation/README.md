@@ -1,4 +1,4 @@
-# ![Logitech Presentation](https://cdn.rawgit.com/pauby/ChocoPackages/ed4c1d25/icons/logitech-presentation.png "Logitech Presentation") [Logitech Presentation](https://chocolatey.org/packages/logitech-presentation)
+# ![Logitech Presentation](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@ed4c1d25/icons/logitech-presentation.png "Logitech Presentation") [Logitech Presentation](https://chocolatey.org/packages/logitech-presentation)
 
 This is the companion app for the Logitech Spotlight presentation device.
 

@@ -1,4 +1,4 @@
-# ![Camtasia](https://cdn.rawgit.com/pauby/ChocoPackages/2b1fa4d7/icons/camtasia.jpg "Camtasia Logo") [Camtasia](https://chocolatey.org/packages/camtasia)
+# ![Camtasia](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@2b1fa4d7/icons/camtasia.jpg "Camtasia Logo") [Camtasia](https://chocolatey.org/packages/camtasia)
 
 Make Amazing Videos with the Camtasia Video Editor.
 Camtasia makes video editing surprisingly easy. The drag-and-drop editor and video assets help you complete your videos faster. No video experience needed.

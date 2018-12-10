@@ -1,4 +1,4 @@
-# ![HackFont-Windows](https://cdn.rawgit.com/pauby/ChocoPackages/211611fe/icons/hackfont-windows.png "HackFontInstaller Logo") [HackFont-Windows](https://chocolatey.org/packages/hackfont-windows)
+# ![HackFont-Windows](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@211611fe/icons/hackfont-windows.png "HackFontInstaller Logo") [HackFont-Windows](https://chocolatey.org/packages/hackfont-windows)
 
 A Windows installer for the [Hack](https://github.com/source-foundry/Hack) typeface.
 

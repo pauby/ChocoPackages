@@ -1,4 +1,4 @@
-# ![HackFont](https://cdn.rawgit.com/pauby/ChocoPackages/5ed579e5/icons/hackfont.png "HackFont Logo") [HackFont](https://chocolatey.org/packages/hackfont)
+# ![HackFont](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@5ed579e5/icons/hackfont.png "HackFont Logo") [HackFont](https://chocolatey.org/packages/hackfont)
 
 No frills. No gimmicks. Hack is hand groomed and optically balanced to be a workhorse face for code.
 

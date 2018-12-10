@@ -10,7 +10,7 @@
     <title>Yubikey NEO Manager (Install)</title>
     <authors>Yubico</authors>
     <projectUrl>https://www.yubico.com/support/knowledge-base/categories/articles/yubikey-neo-manager/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/de7f14fe/icons/yubikey-neo-manager.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@de7f14fe/icons/yubikey-neo-manager.png</iconUrl>
     <copyright>2017 Yubico</copyright>
     <docsUrl>https://www.yubico.com/support/knowledge-base/categories/articles/yubikey-neo-manager-quick-start-guide/</docsUrl>
     <mailingListUrl>https://forum.yubico.com/</mailingListUrl>

@@ -1,4 +1,4 @@
-# ![ShareX](https://cdn.rawgit.com/pauby/ChocoPackages/c8c5acf9/icons/sharex.png "ShareX Logo") [ShareX](https://chocolatey.org/packages/sharex)
+# ![ShareX](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@c8c5acf9/icons/sharex.png "ShareX Logo") [ShareX](https://chocolatey.org/packages/sharex)
 
 Screen capture, file sharing and productivity tool.
         

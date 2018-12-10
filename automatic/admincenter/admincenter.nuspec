@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>Microsoft Corporation</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/windows-admin-center</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/70883e48/icons/admincenter.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@70883e48/icons/admincenter.png</iconUrl>
         <copyright>2018 Microsoft Corporation</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <!-- <licenseUrl></licenseUrl> <requireLicenseAcceptance>true</requireLicenseAcceptance> -->

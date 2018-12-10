@@ -1,4 +1,4 @@
-# ![InvokeBuild Logo](https://cdn.rawgit.com/pauby/ChocoPackages/499ec314/icons/invokebuild.png "InvokeBuild")[InvokeBuild](https://chocolatey.org/packages/invokebuild)
+# ![InvokeBuild Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@499ec314/icons/invokebuild.png "InvokeBuild")[InvokeBuild](https://chocolatey.org/packages/invokebuild)
 
 Invoke-Build is a build and test automation tool which invokes tasks defined in PowerShell v2.0+ scripts. It is similar to psake but arguably easier to use and more powerful. It is complete, bug free, well covered by tests.
 

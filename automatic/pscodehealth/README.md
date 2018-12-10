@@ -1,4 +1,4 @@
-# ![PSCodeHealth Logo](https://cdn.rawgit.com/pauby/ChocoPackages/67812184/icons/pscodehealth.png "PSCodeHealth") [PSCodeHealth](https://chocolatey.org/packages/pscodehealth)
+# ![PSCodeHealth Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@67812184/icons/pscodehealth.png "PSCodeHealth") [PSCodeHealth](https://chocolatey.org/packages/pscodehealth)
 
 PSCodeHealth allows you to measure the quality and maintainability of your PowerShell code, based on a variety of metrics related to:
 

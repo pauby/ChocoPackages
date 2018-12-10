@@ -1,4 +1,4 @@
-# ![FreeCommanderXE](https://cdn.rawgit.com/pauby/ChocoPackages/4d1df786/icons/freecommanderxe.png "FreeCommandrXE") [FreeCommanderXE](https://chocolatey.org/packages/freecommander-xe.install)
+# ![FreeCommanderXE](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@4d1df786/icons/freecommanderxe.png "FreeCommandrXE") [FreeCommanderXE](https://chocolatey.org/packages/freecommander-xe.install)
 
 FreeCommander is an easy-to-use alternative to the standard windows file manager.
 The program helps you with daily work in Windows.

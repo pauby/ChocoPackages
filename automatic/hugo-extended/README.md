@@ -1,4 +1,4 @@
-# ![Hugo-Extended](https://cdn.rawgit.com/pauby/ChocoPackages/e175f741/icons/hugo-extended.png "Hugo Logo") [Hugo-Extended](https://chocolatey.org/packages/hugo-extended)
+# ![Hugo-Extended](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@e175f741/icons/hugo-extended.png "Hugo Logo") [Hugo-Extended](https://chocolatey.org/packages/hugo-extended)
 
 Hugo is a static HTML and CSS website generator written in Go. It is optimized for speed, ease of use, and configurability. Hugo takes a directory with content and templates and renders them into a full HTML website.
 

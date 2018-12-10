@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 		<authors>Flux Software LLC</authors>
 		<!-- projectUrl is required for the community feed -->
 		<projectUrl>https://justgetflux.com/</projectUrl>
-		<iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/cc266fa2/icons/flux.png</iconUrl>
+		<iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@cc266fa2/icons/flux.png</iconUrl>
 		<copyright>2017 Flux Software LLC</copyright>
 		<!-- If there is a license Url available, it is is required for the community feed -->
 		<licenseUrl>https://justgetflux.com/news/pages/eula/</licenseUrl>

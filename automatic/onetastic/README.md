@@ -1,4 +1,4 @@
-# ![Onetastic](https://cdn.rawgit.com/pauby/ChocoPackages/44aebafe/icons/onetastic.png "Onetastic Logo") [Onetastic](https://chocolatey.org/packages/onetastic)
+# ![Onetastic](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@44aebafe/icons/onetastic.png "Onetastic Logo") [Onetastic](https://chocolatey.org/packages/onetastic)
 
 Onetastic is a multi-purpose addin for Microsoft OneNote.
 

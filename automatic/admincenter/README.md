@@ -1,4 +1,4 @@
-# ![Windows Admin Center](https://cdn.rawgit.com/pauby/ChocoPackages/70883e48/icons/admincenter.png "Windows Admin Center") [Windows Admin Center](https://chocolatey.org/packages/admincenter)
+# ![Windows Admin Center](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@70883e48/icons/admincenter.png "Windows Admin Center") [Windows Admin Center](https://chocolatey.org/packages/admincenter)
 
 Windows Admin Center is a new, locally-deployed, browser-based management tool set that lets you manage your Windows Servers with no Azure or cloud dependency. Windows Admin Center gives you full control over all aspects of your server infrastructure and is particularly useful for managing servers on private networks that are not connected to the Internet.
 

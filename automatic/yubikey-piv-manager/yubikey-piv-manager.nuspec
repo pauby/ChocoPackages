@@ -10,7 +10,7 @@
     <title>Yubikey PIV Manager (Install)</title>
     <authors>Yubico</authors>
     <projectUrl>https://github.com/Yubico/yubikey-piv-manager</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/8002542d/icons/yubikey-piv-manager.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@8002542d/icons/yubikey-piv-manager.png</iconUrl>
     <copyright>2017 Yubico</copyright>
     <!--<docsUrl>https://www.yubico.com/support/knowledge-base/categories/articles/yubikey-neo-manager-quick-start-guide/</docsUrl>-->
     <!--<mailingListUrl>https://forum.yubico.com/</mailingListUrl>-->

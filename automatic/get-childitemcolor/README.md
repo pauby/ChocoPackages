@@ -1,4 +1,4 @@
-# # ![Get-ChildItemColor Logo](https://cdn.rawgit.com/pauby/ChocoPackages/27a84273/icons/getchilditemcolor.png "Get-ChildItemColor")[Get-ChildItemColor](https://chocolatey.org/packages/getchilditemcolor)
+# # ![Get-ChildItemColor Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@27a84273/icons/getchilditemcolor.png "Get-ChildItemColor")[Get-ChildItemColor](https://chocolatey.org/packages/getchilditemcolor)
 
 Get-ChildItemColor provides colored version of Get-ChildItem Cmdlet and Get-ChildItem | Format-Wide (ls equivalent).
 

@@ -1,4 +1,4 @@
-# ![f.lux Logo](https://cdn.rawgit.com/pauby/ChocoPackages/cc266fa2/icons/flux.png "f.lux Logo") [f.lux](https://chocolatey.org/packages/f.lux)
+# ![f.lux Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@cc266fa2/icons/flux.png "f.lux Logo") [f.lux](https://chocolatey.org/packages/f.lux)
 
 Ever notice how people texting at night have that eerie blue glow?
 

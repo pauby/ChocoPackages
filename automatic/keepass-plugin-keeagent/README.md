@@ -1,4 +1,4 @@
-# ![KeePass Plugin KeeAgent](https://cdn.rawgit.com/pauby/ChocoPackages/4d273685/icons/keepass-plugin-keeagent.png "KeePass Plugin KeeAgent") [KeePass Plugin KeeAgent](https://chocolatey.org/packages/keepass-plugin-keeagent)
+# ![KeePass Plugin KeeAgent](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@4d273685/icons/keepass-plugin-keeagent.png "KeePass Plugin KeeAgent") [KeePass Plugin KeeAgent](https://chocolatey.org/packages/keepass-plugin-keeagent)
 
 KeeAgent is a plugin for KeePass 2.x. It allows other programs to access SSH keys stored in your KeePass database for authentication. It can either act as a stand-alone agent or it can interface with an external agent.
 

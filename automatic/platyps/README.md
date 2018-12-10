@@ -1,4 +1,4 @@
-# ![PlatyPS Logo](https://cdn.rawgit.com/pauby/ChocoPackages/ba1ed8c9/icons/platyps.png "PlatyPS")[PlatyPS](https://chocolatey.org/packages/platyps)
+# ![PlatyPS Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@ba1ed8c9/icons/platyps.png "PlatyPS")[PlatyPS](https://chocolatey.org/packages/platyps)
 
 PlatyPS provides a way to:
 

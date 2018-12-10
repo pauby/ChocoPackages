@@ -21,7 +21,7 @@
     <authors>Elgato Systems GmbH</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.elgato.com/gaming/downloads</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/f08050f3/icons/streamdeck.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@f08050f3/icons/streamdeck.png</iconUrl>
     <copyright>2017 Elgato Systems GmbH</copyright>
     <!-- If there is a license Url available, it is is required for the community feed -->
     <!-- <licenseUrl></licenseUrl>

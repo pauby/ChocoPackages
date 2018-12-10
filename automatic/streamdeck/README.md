@@ -1,4 +1,4 @@
-# ![Stream Deck](https://cdn.rawgit.com/pauby/ChocoPackages/f08050f3/icons/streamdeck.png "Stream Deck Logo") [Stream Deck](https://chocolatey.org/packages/streamdeck)
+# ![Stream Deck](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@f08050f3/icons/streamdeck.png "Stream Deck Logo") [Stream Deck](https://chocolatey.org/packages/streamdeck)
 
 Stream Deck is the companion application to the Elgato Stream Deck hardware allowing you to customise buttons.
     

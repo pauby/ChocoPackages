@@ -1,4 +1,4 @@
-# ![Gitter](https://cdn.rawgit.com/pauby/ChocoPackages/30a80e4c/icons/gitter.png "Gitter Logo") [Gitter](https://chocolatey.org/packages/gitter)
+# ![Gitter](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@30a80e4c/icons/gitter.png "Gitter Logo") [Gitter](https://chocolatey.org/packages/gitter)
 
 Gitter is a chat and networking platform that helps to manage, grow and connect communities through messaging, content and discovery.
 

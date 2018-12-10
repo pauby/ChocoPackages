@@ -1,4 +1,4 @@
-# ![pdfFactory Pro Workstation](https://cdn.rawgit.com/pauby/ChocoPackages/6024a73d/icons/pdffactorypro-workstation.png "pdfFactory Pro Workstation") [pdfFactory Pro Workstation](https://chocolatey.org/packages/pdffactorypro-workstation)
+# ![pdfFactory Pro Workstation](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@6024a73d/icons/pdffactorypro-workstation.png "pdfFactory Pro Workstation") [pdfFactory Pro Workstation](https://chocolatey.org/packages/pdffactorypro-workstation)
 
 Easy, reliable PDF creation from all applications.
 

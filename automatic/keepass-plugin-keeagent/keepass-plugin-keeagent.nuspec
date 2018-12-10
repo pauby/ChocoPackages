@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>David Lechner</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>http://lechnology.com/software/keeagent</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/4d273685/icons/keepass-plugin-keeagent.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@4d273685/icons/keepass-plugin-keeagent.png</iconUrl>
         <copyright>2012 David Lechner</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://github.com/dlech/KeeAgent/blob/master/LICENSE.txt</licenseUrl>
