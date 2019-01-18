@@ -1,4 +1,4 @@
-# ![Yubikey Manager](https://cdn.rawgit.com/pauby/ChocoPackages/d82c613a/icons/yubikey-manager.png "Yubikey Manager Logo") [Yubikey Manager](https://chocolatey.org/packages/yubikey-manager)
+# ![Yubikey Manager](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@d82c613a/icons/yubikey-manager.png "Yubikey Manager Logo") [Yubikey Manager](https://chocolatey.org/packages/yubikey-manager)
 
 Cross-platform application for configuring any YubiKey over all USB transports.
 

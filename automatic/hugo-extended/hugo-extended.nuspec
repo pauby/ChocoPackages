@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>Hugo Authors</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://gohugo.io</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/e175f741/icons/hugo-extended.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@e175f741/icons/hugo-extended.png</iconUrl>
         <!-- <copyright>2018 Michael Hex / Source Foundry</copyright> -->
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://github.com/gohugoio/hugo/blob/master/LICENSE</licenseUrl>

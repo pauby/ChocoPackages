@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>ATAY LLC</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://getonetastic.com</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/44aebafe/icons/onetastic.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@44aebafe/icons/onetastic.png</iconUrl>
         <copyright>2018 ATAY LLC</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://getonetastic.com/eula</licenseUrl>

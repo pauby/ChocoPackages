@@ -9,7 +9,7 @@
     <title>Yubico Authenticator (Install)</title>
     <authors>Yubico</authors>
     <projectUrl>https://github.com/Yubico/yubioath-desktop</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/ea3887ac/icons/yubico-authenticator.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@ea3887ac/icons/yubico-authenticator.png</iconUrl>
     <copyright>2017 Yubico</copyright>
     <licenseUrl>https://github.com/Yubico/yubioath-desktop/blob/master/BLURB</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

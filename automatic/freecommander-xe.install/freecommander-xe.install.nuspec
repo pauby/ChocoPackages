@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Marek Jasinski</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>http://freecommander.com</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/4d1df786/icons/freecommanderxe.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@4d1df786/icons/freecommanderxe.png</iconUrl>
     <copyright>2018 Marek Jasinski</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>http://freecommander.com/en/license</licenseUrl>

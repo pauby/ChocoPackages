@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Microsoft</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://marketplace.visualstudio.com/items?itemName=AdamRDriscoll.PowerShellToolsforVisualStudio2017-18561</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/4b9e7abb/icons/visualstudio2017-powershelltools.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@4b9e7abb/icons/visualstudio2017-powershelltools.png</iconUrl>
     <copyright>2018 Adam Driscoll</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>https://marketplace.visualstudio.com/items/AdamRDriscoll.PowerShellToolsforVisualStudio2017-18561/license</licenseUrl>

@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Box</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.box.com</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/28d631b1/icons/box.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@28d631b1/icons/box.png</iconUrl>
     <copyright>Copyright 2017 Box</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>https://www.box.com/en-gb/legal/termsofservice</licenseUrl>

@@ -35,7 +35,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>BioWare</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>http://www.swtor.com</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/1a61581b/icons/swtor.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@1a61581b/icons/swtor.png</iconUrl>
     <copyright>2017 BioWare</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>http://www.swtor.com/legalnotices/euala</licenseUrl>

@@ -1,4 +1,4 @@
-# # ![dbatools Logo](https://cdn.rawgit.com/pauby/ChocoPackages/306a1af5/icons/dbatools.png "dbatools")[dbatools](https://chocolatey.org/packages/dbatools)
+# # ![dbatools Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@306a1af5/icons/dbatools.png "dbatools")[dbatools](https://chocolatey.org/packages/dbatools)
 
 dbatools logo dbatools is sort of like a command-line SQL Server Management Studio. The project initially started out as Start-SqlMigration.ps1, but has now grown into a collection of over 300 commands that help automate SQL Server tasks and encourage best practices.
 

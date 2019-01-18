@@ -1,4 +1,4 @@
-# ![iris Logo](https://cdn.rawgit.com/pauby/ChocoPackages/a7618f46/icons/iris.png "iris Logo") [iris](https://chocolatey.org/packages/iris)
+# ![iris Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@a7618f46/icons/iris.png "iris Logo") [iris](https://chocolatey.org/packages/iris)
 
 Iris is software for eye protection, health and productivity.
 

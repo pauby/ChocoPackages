@@ -9,7 +9,7 @@
     <title>Logitech Presentation (Install)</title>
     <authors>Logitech</authors>
     <projectUrl>http://logitech.com/spotlight</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/ed4c1d25/icons/logitech-presentation.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@ed4c1d25/icons/logitech-presentation.png</iconUrl>
     <copyright>2018 Logitech. All rights reserved</copyright>
     <licenseUrl>https://secure.logitech.com/en-us/footer/terms-of-use</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

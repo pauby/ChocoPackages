@@ -1,4 +1,4 @@
-# ![poshwith Logo](https://cdn.rawgit.com/pauby/ChocoPackages/15bfe48e/icons/poshwith.png "poshwith") [poshwith](https://chocolatey.org/packages/poshwith)
+# ![poshwith Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@15bfe48e/icons/poshwith.png "poshwith") [poshwith](https://chocolatey.org/packages/poshwith)
 
 Program prefixing for continuous workflow using a single tool.
 

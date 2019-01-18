@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Diego Uscanga</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>http://www.atube.me/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/4a3beba6/icons/atubecatcher.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@4a3beba6/icons/atubecatcher.png</iconUrl>
     <copyright>2016 DsNET Corp.</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>http://www.atube.me/terms-and-conditions/</licenseUrl>

@@ -1,4 +1,4 @@
-# ![PowerShell Plus](https://cdn.rawgit.com/pauby/ChocoPackages/2de2df9d/icons/powershellplus.png "PowerShell Plus") [PowerShell Plus](https://chocolatey.org/packages/powershellplus)
+# ![PowerShell Plus](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@2de2df9d/icons/powershellplus.png "PowerShell Plus") [PowerShell Plus](https://chocolatey.org/packages/powershellplus)
 
 A PowerShell IDE which offers numerous unique and helpful features.
 

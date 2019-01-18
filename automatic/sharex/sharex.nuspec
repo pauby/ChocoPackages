@@ -20,7 +20,7 @@
         <authors>Berk Jaex</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>http://getsharex.com/</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/c8c5acf9/icons/sharex.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@c8c5acf9/icons/sharex.png</iconUrl>
         <copyright>2017 Gerhard Zehetbauer and Alexander Nimmervoll</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://github.com/ShareX/ShareX/blob/master/LICENSE.txt</licenseUrl>

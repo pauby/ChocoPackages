@@ -9,7 +9,7 @@
     <title>Logitech Options (Install)</title>
     <authors>Logitech</authors>
     <projectUrl>http://support.logitech.com/en_us/software/options</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/0d30f195/icons/logitech-options.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@0d30f195/icons/logitech-options.png</iconUrl>
     <copyright>2018 Logitech. All rights reserved</copyright>
     <licenseUrl>https://secure.logitech.com/en-us/footer/terms-of-use</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

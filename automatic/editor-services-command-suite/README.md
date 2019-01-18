@@ -1,4 +1,4 @@
-# ![EditorServicesCommandSuite Logo](https://cdn.rawgit.com/pauby/ChocoPackages/d3a195d0/icons/editor-services-command-suite.png "EditorServicesCommandSuite")[EditorServicesCommandSuite](https://chocolatey.org/packages/editor-services-command-suite)
+# ![EditorServicesCommandSuite Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@d3a195d0/icons/editor-services-command-suite.png "EditorServicesCommandSuite")[EditorServicesCommandSuite](https://chocolatey.org/packages/editor-services-command-suite)
 
 PlatyPS provides a way to:
 

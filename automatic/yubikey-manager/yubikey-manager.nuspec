@@ -10,7 +10,7 @@
     <title>Yubikey Manager (Install)</title>
     <authors>Yubico</authors>
     <projectUrl>https://github.com/Yubico/yubikey-manager-qt</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/d82c613a/icons/yubikey-manager.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@d82c613a/icons/yubikey-manager.png</iconUrl>
     <copyright>2017 Yubico</copyright>
     <!--<docsUrl>https://www.yubico.com/support/knowledge-base/categories/articles/yubikey-neo-manager-quick-start-guide/</docsUrl>-->
     <!--<mailingListUrl>https://forum.yubico.com/</mailingListUrl>-->

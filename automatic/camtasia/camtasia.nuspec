@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Techsmith</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.techsmith.com/camtasia.html</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/2b1fa4d7/icons/camtasia.jpg</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@2b1fa4d7/icons/camtasia.jpg</iconUrl>
     <copyright>Copyright 2018 Techsmith</copyright>
     <!-- If there is a license Url available, it is is required for the community feed -->
     <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl>

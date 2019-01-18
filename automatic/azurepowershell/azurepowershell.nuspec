@@ -8,7 +8,7 @@
     <title>Microsoft Azure PowerShell</title>
     <authors>Microsoft</authors>
     <projectUrl>https://github.com/Azure/azure-powershell</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/c5b46bdfe07ce816de0ffc3b1366aab4c4e5a240/icons/azurepowershell.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@c5b46bdfe07ce816de0ffc3b1366aab4c4e5a240/icons/azurepowershell.png</iconUrl>
     <licenseUrl>https://github.com/Azure/azure-powershell/blob/master/LICENSE.txt</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <docsUrl>https://docs.microsoft.com/en-us/powershell/azure/overview</docsUrl>

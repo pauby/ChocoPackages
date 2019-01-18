@@ -21,7 +21,7 @@
         <authors>big-r,createsoftware,cybdis,floriwan,obelix30</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://googlesyncmod.sourceforge.io/</projectUrl>
-        <!-- <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/26096f0d/icons/gocontactsyncmod.png</iconUrl> -->
+        <!-- <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@26096f0d/icons/gocontactsyncmod.png</iconUrl> -->
         <copyright>2016 big-r,createsoftware,cybdis,floriwan,obelix30</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <!-- <licenseUrl></licenseUrl> <requireLicenseAcceptance>true</requireLicenseAcceptance> -->

@@ -1,4 +1,4 @@
-# ![AC Reloaded Logo](https://cdn.rawgit.com/pauby/ChocoPackages/b8bb49ca/icons/acr.png "AC Realoded Logo") [AC Reloaded](https://chocolatey.org/packages/acr)
+# ![AC Reloaded Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@b8bb49ca/icons/acr.png "AC Realoded Logo") [AC Reloaded](https://chocolatey.org/packages/acr)
 
 AssaultCube Reloaded is a free and open source first person shooter based on the semi-popular AssaultCube, which was based on the Cube FPS. It is multi-platform and low on system and networking requirements (see below), allowing you to have fun playing even with a low-end computer and/or network connection. 
     

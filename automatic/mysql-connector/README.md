@@ -1,4 +1,4 @@
-# ![MySQL Connector Logo](https://cdn.rawgit.com/pauby/ChocoPackages/04a071d0/icons/mysql-connector.png "MySQL Connector Logo") [MySQL Connector](https://chocolatey.org/packages/mysql-connector)
+# ![MySQL Connector Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@04a071d0/icons/mysql-connector.png "MySQL Connector Logo") [MySQL Connector](https://chocolatey.org/packages/mysql-connector)
 
 MySQL Connector/Net enables you to develop .NET applications that require secure, high-performance data connectivity with MySQL. It implements the required ADO.NET interfaces and integrates into ADO.NET-aware tools. You can build applications using your choice of .NET languages. Connector/Net is a fully managed ADO.NET data provider written in 100% pure C#. It does not use the MySQL C client library.
 

@@ -20,7 +20,7 @@
         <authors>Eric Biggers</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://wimlib.net/index.html</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/7b92203e/icons/wimlib.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@7b92203e/icons/wimlib.png</iconUrl>
         <copyright>2012-2018 Eric Biggers</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://wimlib.net/git/?p=wimlib;a=blob_plain;f=COPYING;hb=HEAD</licenseUrl>

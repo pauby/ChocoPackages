@@ -1,4 +1,4 @@
-# ![Spiceworks Agent Logo](https://cdn.rawgit.com/pauby/ChocoPackages/ad9fd8dd/icons/spiceworks-agent-shell.png "Spiceworks Agent Logo") [Spiceworks Agent](https://chocolatey.org/packages/spiceworks-agent)
+# ![Spiceworks Agent Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@ad9fd8dd/icons/spiceworks-agent-shell.png "Spiceworks Agent Logo") [Spiceworks Agent](https://chocolatey.org/packages/spiceworks-agent)
 
 Spiceworks Agent is a tool that allows IOD IT Administrators to view details about your computer's configuration - What software is installed, if your anti-virus software is up to date, how much memory is in your machine, etc.  The information collected is used for a variety of purposes, such as:
 

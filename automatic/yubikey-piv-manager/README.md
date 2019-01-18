@@ -1,4 +1,4 @@
-# ![Yubikey PIV Manager](https://cdn.rawgit.com/pauby/ChocoPackages/8002542d/icons/yubikey-piv-manager.png "Yubikey PIV Manager Logo") [Yubikey PIV Manager](https://chocolatey.org/packages/yubikey-piv-manager)
+# ![Yubikey PIV Manager](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@8002542d/icons/yubikey-piv-manager.png "Yubikey PIV Manager Logo") [Yubikey PIV Manager](https://chocolatey.org/packages/yubikey-piv-manager)
 
 Graphical application for configuring a PIV-enabled YubiKey.
 

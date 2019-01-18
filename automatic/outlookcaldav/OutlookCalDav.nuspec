@@ -21,7 +21,7 @@
     <authors>Gerhard Zehetbauer, Alexander Nimmervoll</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://caldavsynchronizer.org/</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/ea075a55/icons/outlookcaldav.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@ea075a55/icons/outlookcaldav.png</iconUrl>
     <copyright>2017 Gerhard Zehetbauer and Alexander Nimmervoll</copyright>
     <!-- If there is a license Url available, it is is required for the community feed -->
     <licenseUrl>https://github.com/aluxnimm/outlookcaldavsynchronizer/blob/master/LICENSE.txt</licenseUrl>

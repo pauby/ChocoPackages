@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>Chris Wanstrath</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://hub.github.com/</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/2088cb28/icons/hub.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@2088cb28/icons/hub.png</iconUrl>
         <copyright>2009 Chris Wanstrath</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://github.com/github/hub/blob/master/LICENSE</licenseUrl>

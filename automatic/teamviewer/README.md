@@ -1,4 +1,4 @@
-# ![TeamViewer](https://cdn.rawgit.com/pauby/ChocoPackages/46f969b5/icons/teamviewer.png "TeamViewer") [TeamViewer](https://chocolatey.org/packages/teamviewer)
+# ![TeamViewer](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@46f969b5/icons/teamviewer.png "TeamViewer") [TeamViewer](https://chocolatey.org/packages/teamviewer)
 
 TeamViewer connects people, places and things around the world on the widest array of platforms and technologies.
 Free for private use. Commercial users are welcome to use for trial purposes.

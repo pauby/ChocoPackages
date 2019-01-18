@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>Dominik Reichl</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>http://keepass.info/</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/be7abc17/icons/keepass.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@be7abc17/icons/keepass.png</iconUrl>
         <copyright>2018 Dominik Reichl</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>http://keepass.info/help/v2/license.html</licenseUrl>

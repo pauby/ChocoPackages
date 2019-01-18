@@ -1,4 +1,4 @@
-# ![Logitech Options](https://cdn.rawgit.com/pauby/ChocoPackages/0d30f195/icons/logitech-options.png "Logitech Options") [Logitech OPtions](https://chocolatey.org/packages/logitech-options)
+# ![Logitech Options](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@0d30f195/icons/logitech-options.png "Logitech Options") [Logitech OPtions](https://chocolatey.org/packages/logitech-options)
 
 ### Logitech Options software lets you customize your device's settings as follows:
 

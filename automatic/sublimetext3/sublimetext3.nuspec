@@ -20,7 +20,7 @@
         <authors>Jon Skinner</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>http://www.sublimetext.com/3</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/9bd04335/icons/sublimetext3.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@9bd04335/icons/sublimetext3.png</iconUrl>
         <copyright>Sublime HQ Pty Ltd</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>http://www.sublimetext.com/eula</licenseUrl>

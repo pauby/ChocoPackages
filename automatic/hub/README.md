@@ -1,4 +1,4 @@
-# ![Hub](https://cdn.rawgit.com/pauby/ChocoPackages/2088cb28/icons/hub.png "Hub Logo") [Hub](https://chocolatey.org/packages/hub)
+# ![Hub](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@2088cb28/icons/hub.png "Hub Logo") [Hub](https://chocolatey.org/packages/hub)
 
 hub is a command line tool that wraps git in order to extend it with extra features and commands that make working with GitHub easier.
 

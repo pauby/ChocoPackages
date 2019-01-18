@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>Christopher Simpkins, 22+ contributors</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>http://sourcefoundry.org/hack/</projectUrl>
-        <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/5ed579e5/icons/hackfont.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@5ed579e5/icons/hackfont.png</iconUrl>
         <copyright>2015-2018, Christopher Simpkins with Reserved Font Name Hack</copyright>
         <!-- If there is a license Url available, it is required for the community feed -->
         <licenseUrl>https://github.com/source-foundry/Hack/blob/master/LICENSE.md</licenseUrl>

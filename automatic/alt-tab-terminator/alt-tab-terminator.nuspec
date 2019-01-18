@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>pauby</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.ntwind.com/software/alttabter.html</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/f29a5ee0/icons/alt-tab-terminator.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@f29a5ee0/icons/alt-tab-terminator.png</iconUrl>
     <copyright>Copyright 2018, NTWind Software. All rights reserved.</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl>

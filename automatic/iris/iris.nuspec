@@ -7,7 +7,7 @@
     <authors>Daniel Georgiev</authors>
     <owners>pauby</owners>
     <projectUrl>https://iristech.co</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/a7618f46/icons/iris.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@a7618f46/icons/iris.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Iris is software for eye protection, health and productivity.
 

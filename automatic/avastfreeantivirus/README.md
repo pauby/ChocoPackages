@@ -1,4 +1,4 @@
-# ![Avast Free Antivirus](https://cdn.rawgit.com/pauby/ChocoPackages/6cf2f9f5/icons/avastfreeantivirus.png "Avast Free Antivirus") [Avast Free Antivirus](https://chocolatey.org/packages/avastfreeantivirus)
+# ![Avast Free Antivirus](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@6cf2f9f5/icons/avastfreeantivirus.png "Avast Free Antivirus") [Avast Free Antivirus](https://chocolatey.org/packages/avastfreeantivirus)
 
 Free antivirus software from Avast.
 

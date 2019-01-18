@@ -1,4 +1,4 @@
-# ![Outlook CalDav Synchronizer](https://cdn.rawgit.com/pauby/ChocoPackages/ea075a55/icons/outlookcaldav.png "Outlook CalDav Synchronizer Logo") [Outlook CalDav Synchronizer](https://chocolatey.org/packages/outlookcaldav)
+# ![Outlook CalDav Synchronizer](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@ea075a55/icons/outlookcaldav.png "Outlook CalDav Synchronizer Logo") [Outlook CalDav Synchronizer](https://chocolatey.org/packages/outlookcaldav)
 
 Outlook Plugin, which synchronizes events, tasks and contacts between Outlook and Google, SOGo, Horde or any other CalDAV or CardDAV server. Supported Outlook versions are 2016, 2013, 2010 and 2007.
 

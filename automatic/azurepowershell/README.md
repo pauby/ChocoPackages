@@ -1,4 +1,4 @@
-﻿# ![Azure PowerShell Logo](https://cdn.rawgit.com/pauby/ChocoPackages/c5b46bdfe07ce816de0ffc3b1366aab4c4e5a240/icons/azurepowershell.png "Azure PowerShell Logo") [Azure PowerShell](https://chocolatey.org/packages/azurepowershell)
+﻿# ![Azure PowerShell Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@c5b46bdfe07ce816de0ffc3b1366aab4c4e5a240/icons/azurepowershell.png "Azure PowerShell Logo") [Azure PowerShell](https://chocolatey.org/packages/azurepowershell)
 
 Azure PowerShell provides a set of cmdlets that use the Azure Resource Manager model for managing your Azure resources. You can use it in your browser with Azure Cloud Shell, or you can install it on your local machine and use it in any PowerShell session.
 

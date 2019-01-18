@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <authors>Lavasoft</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://www.adaware.com/antivirus</projectUrl>
-    <iconUrl>https://cdn.rawgit.com/pauby/ChocoPackages/3c903619/icons/ad-awarefreeantivirus.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@3c903619/icons/ad-awarefreeantivirus.png</iconUrl>
     <copyright>2017 Lavasoft</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl>
