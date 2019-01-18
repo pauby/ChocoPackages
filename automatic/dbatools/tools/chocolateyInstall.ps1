@@ -24,7 +24,9 @@ Write-Verbose "Creating destination directory '$destPath' for module."
 New-Item -Path $destPath -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null
 
 Write-Verbose "Moving '$moduleName' files from '$sourcePath' to '$destPath'."
-Move-Item -Path $sourcePath -Destination $destPath -Force
+#Move-Item -Path $sourcePath -Destination $destPath -Force
+Get-ChocolateyUnzip -FileFullPath (Join-Path -Path $toolsdir -ChildPath "$modulename.zip") `
+    -Destination $destPath
 
 if ($PSVersionTable.PSVersion.Major -lt 4)
 {

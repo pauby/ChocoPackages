@@ -21,13 +21,16 @@ function global:au_BeforeUpdate() {
     # 'tests', 'functions', 'internal\functions', 'bin/projects', 'bin/build', '.git', '.github' | ForEach-Object {
     #     Remove-Item -Path (Join-Path -Path $modulePath -ChildPath $_) -Recurse -Force -ErrorAction SilentlyContinue
     # }
-
-    $params = @{
-        Path        = $modulePath
-        Destination = "tools\$moduleName\"
-        Force       = $true
-    }
-    Move-Item @params
+    # Remove the compressed module if it already exists in the tools folder
+    #   only needed when working locally
+    Remove-Item -Path "tools\$moduleName.zip" -Force -ErrorAction SilentlyContinue
+    Compress-Archive -Path (Join-Path -Path $modulePath -ChildPath "*") -DestinationPath "tools\$moduleName.zip"
+    # $params = @{
+    #     Path        = $modulePath
+    #     Destination = "tools\$moduleName\"
+    #     Force       = $true
+    # }
+    # Move-Item @params
 }
 
 function global:au_AfterUpdate {
