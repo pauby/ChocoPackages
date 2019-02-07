@@ -7,10 +7,10 @@ $packageArgs = @{
     
     validExitCodes = @(0)
     url            = 'https://github.com//Yubico/yubikey-manager-qt/releases/download/yubikey-manager-qt-0.5.1/yubikey-manager-qt-0.5.1-win32.exe'
-    checksum       = 'f7ed30a925f03539df8cf84c60587d8e9f1a567a58e24e0e3070623cb1980f97'
+    checksum       = 'c84bc170b5e9bc4979aac242d19b80fa2b8f5587a540dcc7233ee2aafacc77f5'
     checksumType   = 'sha256'
     url64          = 'https://github.com//Yubico/yubikey-manager-qt/releases/download/yubikey-manager-qt-0.5.1/yubikey-manager-qt-0.5.1-win64.exe'
-    checksum64     = 'f074ac6e507824c02ee5a5e0acec6fee026348ca0253d6647b847de31f6411a0'
+    checksum64     = '1161de1953b1f5cd98be28b3117fb9972bfec08e1548cc5c08633c05b7f434ce'
     checksumType64 = 'sha256'
 }
 
