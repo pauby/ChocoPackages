@@ -5,7 +5,7 @@
     <version>0.8.4.20190208</version>
     <title>[Deprecated] RoboMongo</title>
     <authors>outworlder</authors>
-    <owners>outworlder</owners>
+    <owners>pauby, outworlder</owners>
     <licenseUrl>https://github.com/paralect/robomongo#License</licenseUrl>
     <projectUrl>http://robomongo.org</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -14,6 +14,7 @@
     <releaseNotes />
     <copyright />
     <tags>RoboMongo admin</tags>
+    <packageSourceUrl>https://github.com/pauby/chocopackages</packageSourceUrl>
     <dependencies>
         <dependency id="robo3t" />
     </dependencies>
