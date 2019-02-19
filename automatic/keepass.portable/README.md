@@ -13,12 +13,12 @@ KeePass 2.x may be obtained via this package.
 
 The following package parameter can be set:
 
-* `/target:` specify a custom extract location as a full path - defaults to choco folder.
+* `/installPath:` specify a custom extract location as a full path - defaults to choco folder.
 
 To specify a custom location for the portable files use:
 
 ```PowerShell
-choco install keepass.portable --params="'/target:C:\Users\username\OneDrive\KeePass'"
+choco install keepass.portable --params="'/installPath:C:\Users\username\OneDrive\KeePass'"
 ```
 
 ### Additional resources

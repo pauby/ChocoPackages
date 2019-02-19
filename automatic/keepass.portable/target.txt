@@ -1,0 +1,2 @@
+﻿MyCustomPath Value
+A second Value
