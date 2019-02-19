@@ -2,7 +2,7 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://github.com/Yubico/yubikey-manager-qt/releases'
+$releases    = 'https://developers.yubico.com/yubikey-manager-qt/Releases/'
 
 function global:au_SearchReplace {
     @{
@@ -25,15 +25,15 @@ function global:au_AfterUpdate {
 function global:au_GetLatest {
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = "/yubikey-manager-qt-(?<Version>[\d\.]+)-win\d{2}.exe$"
+    $regexUrl = "yubikey-manager-qt-(?<Version>[\d\.]+)-win\d{2}.exe$"
 
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 2 -expand href
     $url32 = $url | Where-Object { $_ -like '*win32.exe' }
     $url64 = $url | Where-Object { $_ -like '*win64.exe' }
 
     return @{
-        URL32   = "https://github.com/$url32"
-        URL64   = "https://github.com/$url64"
+        URL32   = "$releases$url32"
+        URL64   = "$releases$url64"
         Version = $matches.Version
     }
 }
