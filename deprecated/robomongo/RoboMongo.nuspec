@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>RoboMongo</id>
+    <version>0.8.4.20190208</version>
+    <title>[Deprecated] RoboMongo</title>
+    <authors>outworlder</authors>
+    <owners>pauby, outworlder</owners>
+    <licenseUrl>https://github.com/paralect/robomongo#License</licenseUrl>
+    <projectUrl>http://robomongo.org</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package has been deprecated in favour of the new [Robo 3T](https://chocolatey.org/packages/robo3t) package which supercedes this.</description>
+    <summary>RoboMongo</summary>
+    <releaseNotes />
+    <copyright />
+    <tags>RoboMongo admin</tags>
+    <packageSourceUrl>https://github.com/pauby/chocopackages</packageSourceUrl>
+    <dependencies>
+        <dependency id="robo3t" />
+    </dependencies>
+  </metadata>
+</package>
