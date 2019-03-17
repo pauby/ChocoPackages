@@ -5,7 +5,7 @@ To verify the files using the project source:
 
 1. Please go to the project source location (https://github.com/sqlcollaborative/dbatools) and download the source files;
 2. Build the source to create the binary files to verify;
-3. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the built file (from step 1 above) and the file from the package and compare them;
+3. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the built file (from step 1 above) and the file from the dbatools.zip within the package and compare them;
 
 Alternatively you can download the module from the PowerShell Gallery ...
 
