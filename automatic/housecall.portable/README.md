@@ -1,4 +1,4 @@
-# ![Trend Micro Housecall](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@1663d59/icons/housecall.portable.png "Trend Micro Housecall) [aTube Catcher](https://chocolatey.org/packages/housecall.portable)
+# ![Trend Micro Housecall](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@1663d59/icons/housecall.portable.png "Trend Micro Housecall") [aTube Catcher](https://chocolatey.org/packages/housecall.portable)
 
 How HouseCall can help you:
 
