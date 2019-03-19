@@ -15,9 +15,7 @@ $destPath   = Join-Path -Path $env:ProgramFiles -ChildPath "WindowsPowerShell\Mo
 
 if ($PSVersionTable.PSVersion.Major -ge 5)
 {
-    $manifestFile = Join-Path -Path $toolsDir -ChildPath "$moduleName\$moduleName.psd1"
-    $manifest     = Test-ModuleManifest -Path $manifestFile -WarningAction Ignore -ErrorAction Stop
-    $destPath     = Join-Path -Path $destPath -ChildPath $manifest.Version.ToString()
+    $destPath     = Join-Path -Path $destPath -ChildPath $env:ChocolateyPackageVersion
 }
 
 Write-Verbose "Creating destination directory '$destPath' for module."
