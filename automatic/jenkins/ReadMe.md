@@ -1,5 +1,7 @@
 ﻿# ![Jenkins Logo](https://cdn.jsdelivr.net/gh/pauby/chocopackages@ae92e032839a27a3633db7018593b075df44269f/icons/jenkins.png "Jenkins Logo") [Jenkins](https://chocolatey.org/packages/jenkins)
 
+This is the LTS version of Jenkins.
+
 Jenkins is an open source automation server which enables developers around the world to reliably build, test, and deploy their software.
 
 * Continuous Integration and Continuous Delivery
