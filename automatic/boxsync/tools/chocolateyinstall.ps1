@@ -1,20 +1,25 @@
 ﻿$ErrorActionPreference = 'Stop'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
-$url        = 'https://e3.boxcdn.net/box-installers/sync/Sync+4+External/BoxSyncSetup.exe'
+$url32          = 'https://e3.boxcdn.net/box-installers/sync/Sync+4+External/SyncMSI32.msi'
+$url64          = 'https://e3.boxcdn.net/box-installers/sync/Sync+4+External/SyncMSI64.msi'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
-  fileType      = 'EXE'
-  url           = $url
+  fileType      = 'MSI'
+  url           = $url32
+  checksum      = '5d233c74cbef37308e6b264d70946216d846936d804b55f06ca6e5ea3ec8c047'
+  checksumType  = 'SHA256'
+
+  url64         = $url64
+  checksum64    = '6ba75e974821a85d5e11060f0651f5e69ccc13147cbc34508ced9d4c84b8ad6e'
+  checksumType64= 'SHA256'
 
   softwareName  = 'boxsync*'
 
-  checksum      = 'f8f6f5ccc6b4263ea89b3527da741b748504abe5fe4e1c19366c9acd025c4086'
-  checksumType  = 'SHA256'
-
-  silentArgs    = '/install /quiet /norestart'
+  silentArgs    = "/quiet /norestart /l*v `"$($env:TEMP)\$($env:chocolateyPackageName).$($env:chocolateyPackageVersion).MsiInstall.log`""
   validExitCodes= @(0)
 }
 
 Install-ChocolateyPackage @packageArgs
+Write-Verbose "Boxsync install log file is available at '$($env:TEMP)\$($env:chocolateyPackageName).$($env:chocolateyPackageVersion).MsiInstall.log'"

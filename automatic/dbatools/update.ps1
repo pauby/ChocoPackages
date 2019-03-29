@@ -21,10 +21,12 @@ function global:au_BeforeUpdate() {
     # 'tests', 'functions', 'internal\functions', 'bin/projects', 'bin/build', '.git', '.github' | ForEach-Object {
     #     Remove-Item -Path (Join-Path -Path $modulePath -ChildPath $_) -Recurse -Force -ErrorAction SilentlyContinue
     # }
+    $zipPath = Join-Path -Path $tempPath -ChildPath "$moduleName.zip"
+    Compress-Archive -Path (Join-Path -Path $modulePath -ChildPath "*") -DestinationPath $zipPath -CompressionLevel Optimal
 
     $params = @{
-        Path        = $modulePath
-        Destination = "tools\$moduleName\"
+        Path        = $zipPath
+        Destination = "tools\"
         Force       = $true
     }
     Move-Item @params

@@ -5,7 +5,7 @@ $packageArgs = @{
     fileType       = 'EXE'
     url            = 'http://files.dsnetwb.com/aTube_Catcher.exe'
 
-    checksum       = 'A6976364942431A09A925AA93D8EBA0AF339903D7E0253B1A4D4922363A7D6D3'
+    checksum       = '5AC711FB525EBDED5649240F83B596F992CB17EE4725A356B795EFF6C2D17271'
     checksumType   = 'SHA256' #default is md5, can also be sha1, sha256 or sha512
 
     silentArgs   = '/silent'

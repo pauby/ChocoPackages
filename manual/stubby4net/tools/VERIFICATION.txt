@@ -1,0 +1,9 @@
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+1. Clone the https://github.com/mrak/stubby4net repository;
+2. Compile the source code;
+3. Run Get-FileHash stubby.exe;
+
+stubby.exe SHA256 - D6F74839533CB7482E32462806E543F5CF13AF99B774D414C84CCDC650AAEF5E

@@ -23,18 +23,17 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- version should MATCH as closely as possible with the underlying software -->
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-        <version>1.1.1804.25001</version>
+        <version>1.1.1902.25004</version>
         <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/admincenter</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
         <owners>pauby</owners>
         <!-- ============================== -->
         <!-- == SOFTWARE SPECIFIC SECTION == -->
         <!-- This section is about the software itself -->
-        <title>Windows Admin Center (Install)</title>
+        <title>[Deprecated] Windows Admin Center (Install)</title>
         <authors>Microsoft Corporation</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/windows-admin-center</projectUrl>
-        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@70883e48/icons/admincenter.png</iconUrl>
         <copyright>2018 Microsoft Corporation</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <!-- <licenseUrl></licenseUrl> <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
@@ -44,30 +43,26 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <bugTrackerUrl>https://github.com/MicrosoftDocs/windowsserverdocs/issues/bugTrackerUrl</bugTrackerUrl>
         <tags>admin center windows server</tags>
         <summary>Windows Admin Center is a locally deployed, browser-based app for managing servers, clusters, hyper-converged infrastructure, and Windows 10 PCs. It comes at no additional cost beyond Windows and is ready to use in production.</summary>
-        <description>Windows Admin Center is a new, locally-deployed, browser-based management tool set that lets you manage your Windows Servers with no Azure or cloud dependency. Windows Admin Center gives you full control over all aspects of your server infrastructure and is particularly useful for managing servers on private networks that are not connected to the Internet.
+        <description>**NOTE:** This package has been deprecated in favour of [windows-admin-center](https://chocolatey.org/packages/windows-admin-center/).
+
+Windows Admin Center is a new, locally-deployed, browser-based management tool set that lets you manage your Windows Servers with no Azure or cloud dependency. Windows Admin Center gives you full control over all aspects of your server infrastructure and is particularly useful for managing servers on private networks that are not connected to the Internet.
 
 Windows Admin Center is the modern evolution of "in-box" management tools, like Server Manager and MMC. It complements System Center and Operations Management Suite - it's not a replacement.
-
-**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
         <releaseNotes>https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/overview#latest-features</releaseNotes>
         <!-- =============================== -->
         <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
-        <!-- <dependencies> -->
-        <!-- <dependency id="" version="" /> -->
+        <dependencies>
+            <dependency id="windows-admin-center" />
         <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /> -->
         <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /> -->
         <!-- <dependency id="" /> -->
         <!-- <dependency id="chocolatey-uninstall.extension" /> -->
-        <!-- </dependencies> -->
+        </dependencies>
         <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
         <!--<provides>NOT YET IMPLEMENTED</provides>-->
         <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
         <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
     </metadata>
-    <files>
-        <!-- this section controls what actually gets packaged into the Chocolatey package -->
-        <file src="tools\**" target="tools" />
-        <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
-    </files>
+    <files />
 </package>

@@ -10,21 +10,19 @@ if ($PSVersionTable.PSVersion.Major -lt 3) {
 # module may already be installed outside of Chocolatey
 Remove-Module -Name $moduleName -Force -ErrorAction SilentlyContinue
 
-$sourcePath = Join-Path -Path $toolsDir -ChildPath "$modulename\*"
+$sourcePath = Join-Path -Path $toolsDir -ChildPath "$modulename.zip"
 $destPath   = Join-Path -Path $env:ProgramFiles -ChildPath "WindowsPowerShell\Modules\$moduleName"
 
 if ($PSVersionTable.PSVersion.Major -ge 5)
 {
-    $manifestFile = Join-Path -Path $toolsDir -ChildPath "$moduleName\$moduleName.psd1"
-    $manifest     = Test-ModuleManifest -Path $manifestFile -WarningAction Ignore -ErrorAction Stop
-    $destPath     = Join-Path -Path $destPath -ChildPath $manifest.Version.ToString()
+    $destPath     = Join-Path -Path $destPath -ChildPath $env:ChocolateyPackageVersion
 }
 
 Write-Verbose "Creating destination directory '$destPath' for module."
 New-Item -Path $destPath -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null
 
-Write-Verbose "Moving '$moduleName' files from '$sourcePath' to '$destPath'."
-Move-Item -Path $sourcePath -Destination $destPath -Force
+Write-Verbose "Extracting '$moduleName' files from '$sourcePath' to '$destPath'."
+Get-ChocolateyUnzip -FileFullPath $sourcePath -Destination $destPath
 
 if ($PSVersionTable.PSVersion.Major -lt 4)
 {

@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>stubby</name>
+    </assembly>
+    <members>
+        <member name="T:stubby.Arguments">
+            <summary>
+            The options container class used by Stubby constructors.
+            </summary>
+        </member>
+        <member name="T:stubby.IArguments">
+            <summary>
+            The options container class used by Stubby constructors.
+            </summary>
+        </member>
+        <member name="P:stubby.IArguments.Admin">
+            <summary>
+            Port for admin portal.
+            </summary>
+        </member>
+        <member name="P:stubby.IArguments.Stubs">
+            <summary>
+            Port for stubs portal.
+            </summary>
+        </member>
+        <member name="P:stubby.IArguments.Tls">
+            <summary>
+            Port for stubs https portal.
+            </summary>
+        </member>
+        <member name="P:stubby.IArguments.Location">
+            <summary>
+            Hostname at which to bind stubby.
+            </summary>
+        </member>
+        <member name="P:stubby.IArguments.Data">
+            <summary>
+            Data file location to pre-load endpoints.
+            </summary>
+        </member>
+        <member name="P:stubby.IArguments.Watch">
+            <summary>
+            Monitor supplied Data file for changes and reload endpoints if necessary.
+            </summary>
+        </member>
+        <member name="P:stubby.IArguments.Mute">
+            <summary>
+            Prevent stubby from loggin to the console.
+            </summary>
+        </member>
+        <member name="P:stubby.Arguments.Admin">
+            <summary>
+             Port for admin portal. Defaults to 8889.
+            </summary>
+        </member>
+        <member name="P:stubby.Arguments.Stubs">
+            <summary>
+             Port for stubs portal. Defaults to 8882.
+            </summary>
+        </member>
+        <member name="P:stubby.Arguments.Tls">
+            <summary>
+             Port for stubs https portal. Defaults to 7443.
+            </summary>
+        </member>
+        <member name="P:stubby.Arguments.Location">
+            <summary>
+             Hostname at which to bind stubby. Defaults to localhost.
+            </summary>
+        </member>
+        <member name="P:stubby.Arguments.Data">
+            <summary>
+             Data file location to pre-load endpoints. YAML format.
+            </summary>
+        </member>
+        <member name="P:stubby.Arguments.Watch">
+            <summary>
+             Monitor supplied data file for changes and reload endpoints if necessary. Defaults to false.
+            </summary>
+        </member>
+        <member name="P:stubby.Arguments.Mute">
+            <summary>
+             Prevent stubby from logging to the console. Muted by default.
+            </summary>
+        </member>
+        <member name="T:stubby.Domain.Endpoint">
+            <summary>
+            A representation of a Request/Response pairing used by stubby.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Endpoint.Request">
+            <summary>
+            Used to match against incoming requests.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Endpoint.Response">
+            <summary>
+            Used to generate a response to the client.
+            </summary>
+        </member>
+        <member name="T:stubby.Domain.Request">
+            <summary>
+            Represents the data to match incoming requests against.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Request.Url">
+            <summary>
+            A regex string to match incoming URI paths to. Incoming query parameters are ignored.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Request.Method">
+            <summary>
+            A list of acceptable HTTP verbs such as GET or POST. Defaults to GET.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Request.Headers">
+            <summary>
+            Name/Value headers that incoming requests must at least possess.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Request.Query">
+            <summary>
+            A Name/Value collection of URI Query parameters that must be present.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Request.Post">
+            <summary>
+            The post body contents of the incoming request. If File is specified and exists upon request, this value is ignored.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Request.File">
+            <summary>
+            A filepath whose file contains the incoming request body to match against. If the file cannot be found, Post is used instead.
+            </summary>
+        </member>
+        <member name="T:stubby.Domain.Response">
+            <summary>
+            Represents the configuration of a stubby response.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Response.Status">
+            <summary>
+            The HTTP/1.1 Status code (100-599).
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Response.Headers">
+            <summary>
+            Name/Value Collection of HTTP Response Headers.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Response.Latency">
+            <summary>
+            The time in milliseconds to wait before responding.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Response.Body">
+            <summary>
+            The content body of the response. If File is supplied and the file exists, this property is ignored.
+            </summary>
+        </member>
+        <member name="P:stubby.Domain.Response.File">
+            <summary>
+            A filepath whose file contains the content of the response body. If defined, overrides the Body property.
+            </summary>
+        </member>
+        <member name="T:stubby.Stubby">
+            <summary>
+            The main stubby class whose instances host stubbed endpoints.
+            </summary>
+        </member>
+        <member name="M:stubby.Stubby.#ctor">
+            <summary>
+            Construct stubby with default parameters.
+            </summary>
+        </member>
+        <member name="M:stubby.Stubby.#ctor(stubby.IArguments)">
+            <summary>
+            Costruct with specific options.
+            </summary>
+            <param name="arguments">The collection of options used by stubby.</param>
+        </member>
+        <member name="M:stubby.Stubby.Start">
+            <summary>
+            Start stubby's services
+            </summary>
+        </member>
+        <member name="M:stubby.Stubby.Stop">
+            <summary>
+            Stop stubby's services
+            </summary>
+        </member>
+        <member name="M:stubby.Stubby.GetAll">
+            <summary>
+            Get a listing of all of stubby's configured endpoints
+            </summary>
+        </member>
+        <member name="M:stubby.Stubby.Get(System.UInt32)">
+            <summary>
+            Get an endpoint back by id
+            </summary>
+            <param name="id">The id of the endpoint to retrieve</param>
+        </member>
+        <member name="M:stubby.Stubby.Find(stubby.Domain.Request)">
+            <summary>
+            Find an endpoint by it's matching Request
+            </summary>
+            <param name="request">The signature of the request to find by</param>
+        </member>
+        <member name="M:stubby.Stubby.Replace(System.UInt32,stubby.Domain.Endpoint)">
+            <summary>
+            Swap out the configuration of one of the endpoints
+            </summary>
+            <param name="id">The id of the endpoint to replace</param>
+            <param name="endpoint">The new endpoint data</param>
+            <returns>True if the operation succeeded</returns>
+        </member>
+        <member name="M:stubby.Stubby.Replace(System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{System.UInt32,stubby.Domain.Endpoint}})">
+            <summary>
+            Swap out the configuration of several endpoints
+            </summary>
+            <param name="endpoints">An &lt;id, endpoint&gt; Map of endpoints to swap out</param>
+            <returns>True if all given endpoints were replaced</returns>
+        </member>
+        <member name="M:stubby.Stubby.Delete(System.UInt32)">
+            <summary>
+            Remove an endpoint by id
+            </summary>
+            <param name="id">The id as returned by Add(..) or the Admin portal listing.</param>
+            <returns>True if the operation succeeded</returns>
+        </member>
+        <member name="M:stubby.Stubby.DeleteAll">
+            <summary>
+            Remove all configured endpoints from stubby
+            </summary>
+        </member>
+        <member name="M:stubby.Stubby.Add(stubby.Domain.Endpoint,System.UInt32@)">
+            <summary>
+            Add a new endpoint configuration
+            </summary>
+            <param name="endpoint">The new endpoint data</param>
+            <param name="id">The new generated id, for use with Replace/Delete</param>
+            <returns>True if the operation succeeded</returns>
+        </member>
+        <member name="M:stubby.Stubby.Add(System.Collections.Generic.IEnumerable{stubby.Domain.Endpoint},System.Collections.Generic.IList{System.UInt32}@)">
+            <summary>
+            Add many new endpoint configurations
+            </summary>
+            <param name="endpoints">The new endpoints data</param>
+            <param name="ids">The new generated ids of the inserted endpoints</param>
+            <returns>True if all endpoints were added</returns>
+        </member>
+    </members>
+</doc>

@@ -51,7 +51,7 @@ _**NOTE: This module requires PowerShell Core.**_
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
-        <!-- <releaseNotes></releaseNotes> -->
+        <releaseNotes>https://github.com/aws/aws-lambda-dotnet/blob/master/RELEASE.CHANGELOG.md</releaseNotes>
         <!-- =============================== -->
         <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
         <!-- <dependencies> -->
