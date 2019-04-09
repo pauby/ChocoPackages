@@ -1,4 +1,4 @@
-# # ![dbachecks Logo](https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/dbachecks.png "dbachecks")[dbachecks](https://chocolatey.org/packages/dbachecks)
+# ![dbachecks Logo](https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/dbachecks.png "dbachecks")[dbachecks](https://chocolatey.org/packages/dbachecks)
 
 dbachecks is a framework created by and for SQL Server pros who need to validate their environments. Basically, we all share similar checklists and mostly just the server names and RPO/RTO/etc change.
 
