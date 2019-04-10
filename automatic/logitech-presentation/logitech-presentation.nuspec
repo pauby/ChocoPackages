@@ -5,7 +5,7 @@
     <id>logitech-presentation</id>
     <version>1.50.340</version>
     <owners>pauby</owners>
-    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/logitech-spotlight</packageSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/logitech-presentation</packageSourceUrl>
     <title>Logitech Presentation (Install)</title>
     <authors>Logitech</authors>
     <projectUrl>http://logitech.com/spotlight</projectUrl>
