@@ -1,6 +1,11 @@
-﻿$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop';
 
 $installDir = Join-Path -Path (Get-ToolsLocation) -ChildPath $env:ChocolateyPackageName
+
+$pp = Get-PackageParameters
+if ($pp["installPath"]) {
+    $installDir = $pp["installPath"]
+}
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName

@@ -9,6 +9,18 @@ KeePass currently is available in [two different editions](http://keepass.info/c
 KeePass 1.x may be obtained via chocolatey package [keepass-classic](https://chocolatey.org/packages/keepass-classic).
 KeePass 2.x may be obtained via this package.
 
+### Package Parameters
+
+The following package parameter can be set:
+
+* `/installPath:` specify a custom extract location as a full path - defaults to choco folder.
+
+To specify a custom location for the portable files use:
+
+```PowerShell
+choco install keepass.portable --params="'/installPath:C:\Users\username\OneDrive\KeePass'"
+```
+
 ### Additional resources
 
 [Features](http://keepass.info/features.html)
