@@ -1,4 +1,4 @@
-# # ![Virtualbox Logo](https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/virtualbox-guest-additions.install.png "Virtualbox Logo")[Virtualbox Guest Additions Install](https://chocolatey.org/packages/virtualbox-guest-additions.install)
+# # ![Virtualbox Logo](https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/virtualbox-guest-additions-guest.install.png "Virtualbox Logo")[Virtualbox Guest Additions Install](https://chocolatey.org/packages/virtualbox-guest-additions-guest.install)
 
 **NOTE**: This package should be installed _inside your guest Windows VM_ and is useful for automating the building of Virtualbox VM's. It is _not_ meant to be installed on the host.
 
