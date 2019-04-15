@@ -27,7 +27,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
         <version>6.0.4</version>
-        <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/virtualbox-guest-additions.install</packageSourceUrl>
+        <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/virtualbox-guest-additions-guest.install</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
         <owners>pauby</owners>
         <!-- ============================== -->
@@ -38,7 +38,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <authors>Oracle Corporation</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>http://www.virtualbox.org/</projectUrl>
-        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/virtualbox-guest-additions.install.png</iconUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/virtualbox-guest-additions-guest.install.png</iconUrl>
         <copyright>Oracle Corporation</copyright>
         <!-- If there is a license Url available, it is required for the community feed -->
         <licenseUrl>https://www.virtualbox.org/wiki/GPL</licenseUrl>
