@@ -43,7 +43,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>https://gnu.org/licenses/gpl.html</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://adblockplus.org/en/source</projectSourceUrl>
+    <projectSourceUrl>https://gitlab.com/eyeo/adblockplus</projectSourceUrl>
     <docsUrl>https://adblockplus.org/en/documentation</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
     <bugTrackerUrl>https://adblockplus.org/en/bugs</bugTrackerUrl>
