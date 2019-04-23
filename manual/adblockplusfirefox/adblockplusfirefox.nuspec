@@ -78,9 +78,10 @@ NOTE: This package now only installs the [adblockplus-firefox](https://chocolate
     <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
     <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
   </metadata>
-  <!-- <files> -->
+  <files>
     <!-- this section controls what actually gets packaged into the Chocolatey package -->
     <!-- <file src="tools\**" target="tools" /> -->
     <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
-  <!-- </files> -->
+    <file src="*.*" exclude="*.*" />
+  </files>
 </package>
