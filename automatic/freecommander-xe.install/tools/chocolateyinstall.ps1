@@ -12,7 +12,7 @@ $packageArgs = @{
   url           = $url
 
   softwareName  = 'FreeCommander XE*'
-  checksum      = 'ed39749a3c77f24869bd8f3b07267d989e9db1fe1b561b227a8342c9556b2a83'
+  checksum      = 'D92E0DC33094F0DAD293D560DC95A1293B4CE025B2CC1F93D435535BA919D017'
   checksumType  = 'SHA256' #default is md5, can also be sha1, sha256 or sha512
   silentArgs    = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
   validExitCodes= @(0)
