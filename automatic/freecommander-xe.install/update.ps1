@@ -26,9 +26,17 @@ function global:au_AfterUpdate {
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $regex  = 'FreeCommander XE (?<year>\d{4}) Build (?<build>\d+)'
+    $regex  = 'FreeCommander XE (?<year>\d{4}) Build (?<minor>\d+)(?<patch>[a-z]?)'
     if ($page.content -match $regex) {
-        $version = "$($matches.year).$($matches.build)" 
+        $version = "$($matches.year).$($matches.minor)"
+
+        if ($matches.patch) {
+            # to have a patch of 'a' be a '.1' we need to reduce it by the ASCII
+            # value of 'a', minus 1
+            $lowerVal = [int]([char]'a') - 1
+            $asciiVal = [int]([char]($matches.patch.ToLower())) - $lowerVal
+            $version += ".$asciiVal"
+        }
     }
     $url = "http://freecommander.com/downloads/FreeCommanderXE-32-public_setup.zip"
 
