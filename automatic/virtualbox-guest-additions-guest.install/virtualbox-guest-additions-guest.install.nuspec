@@ -41,7 +41,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <iconUrl>https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/virtualbox-guest-additions-guest.install.png</iconUrl>
         <copyright>Oracle Corporation</copyright>
         <!-- If there is a license Url available, it is required for the community feed -->
-        <licenseUrl>https://www.virtualbox.org/wiki/GPL</licenseUrl>
+        <licenseUrl>https://www.virtualbox.org/wiki/VirtualBox_PUEL</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
         <docsUrl>https://www.virtualbox.org/manual/ch04.html</docsUrl>
