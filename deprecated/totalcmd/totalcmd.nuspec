@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>totalcmd</id>
+    <version>1.0.0</version>
+    <title>[Deprecated] Total Commander</title>
+    <authors>Christian Ghisler</authors>
+    <owners>pauby, singlet</owners>
+    <projectUrl>http://www.ghisler.com</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package is being deprecated in favour of the 'totalcommander' package which is more up to date and regularly maintained.</description>
+    <summary>Total Commander Power Pack</summary>
+    <tags>administrator tools</tags>
+    <dependencies>
+      <dependency id="totalcommander" />
+    </dependencies>
+  </metadata>
+</package>
