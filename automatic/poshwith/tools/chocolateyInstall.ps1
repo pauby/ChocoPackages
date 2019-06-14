@@ -2,6 +2,7 @@
 
 $toolsDir = Split-Path -parent $MyInvocation.MyCommand.Definition
 $moduleName = 'posh-with'  # this may be different from the package name and different case
+$moduleVersion = $env:ChocolateyPackageVersion      # this may change so keep this here
 $savedParamsPath = Join-Path $toolsDir -ChildPath 'parameters.saved'
 
 if ($PSVersionTable.PSVersion.Major -lt 3) {
@@ -23,7 +24,7 @@ function Copy-Module {
 
     if (-not (Test-Path -Path $Destination)) {
         Write-Verbose "Creating destination directory '$Destination' for module."
-        New-Item -Path $Destination -ItemType Directory -Force #-ErrorAction SilentlyContinue | Out-Null
+        New-Item -Path $Destination -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null
     }
 
     Write-Verbose "Copying '$($script:moduleName)' files from '$Source' to '$Destination'."
@@ -49,7 +50,7 @@ if ($params.Desktop -or (-not $params.Core)) {
     Write-Verbose "Installing '$modulename' for Windows PowerShell (Desktop)."
 
     if ($PSVersionTable.PSVersion.Major -ge 5) {
-        $destPath = Join-Path -Path $destPath -ChildPath $env:ChocolateyPackageVersion
+        $destPath = Join-Path -Path $destPath -ChildPath $moduleVersion
     }
 
     Copy-Module -Source $sourcePath -Destination $destPath
@@ -69,7 +70,7 @@ if ($params.Desktop -or (-not $params.Core)) {
 
 if ($params.Core) {
     $sourcePath = Join-Path -Path $toolsDir -ChildPath "$modulename\*"
-    $destPath = Join-Path -Path $env:ProgramFiles -ChildPath "PowerShell\Modules\$moduleName\$($env:ChocolateyPackageVersion)"
+    $destPath = Join-Path -Path $env:ProgramFiles -ChildPath "PowerShell\Modules\$moduleName\$moduleVersion"
 
     Write-Verbose "Installing '$modulename' for PowerShell Core)."
 
