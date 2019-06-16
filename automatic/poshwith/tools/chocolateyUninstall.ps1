@@ -8,7 +8,7 @@ if (Test-Path -Path $savedParamsPath) {
     $uninstallEdition = Get-Content -Path $savedParamsPath
 }
 else {
-    $uinstallEdition = 'Desktop'
+    $uninstallEdition = 'Desktop'
 }
 
 ForEach ($edition in $uninstallEdition) {
