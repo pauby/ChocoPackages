@@ -12,4 +12,6 @@ You can read more about the PIV standards here: http://csrc.nist.gov/groups/SNS/
 
 PIV is primarily used for non-web applications. It has built-in support under Windows, and can be used on OS X and Linux via the OpenSC project.
 
+**NOTE**: Yubikey uses letters after some versions (so you might get 1.4.2g). This doesn't work for versions here so the letter is converted to its ASCII value. So if Yubikeys version is 1.4.2g then the version here will be 1.4.2.103 (as 103 is the ASCII value for g).
+
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
