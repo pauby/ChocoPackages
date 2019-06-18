@@ -2,7 +2,7 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://github.com/Yubico/yubikey-piv-manager/releases'
+$releases    = 'https://developers.yubico.com/yubikey-piv-manager/Releases/'
 
 function global:au_SearchReplace {
     @{
@@ -20,13 +20,18 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = "/yubikey-piv-manager-([\d\.]+)-win.exe$"
+    $regexUrl = "yubikey-piv-manager-(?<version>[\d\.]+)(?<letter>[a-z]{1})*-win.exe$"
 
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
-    $version = $matches[1]
+    if ($matches.letter) {
+        $version = "{0}.{1}" -f $matches.version, [convert]::ToInt16([char]$matches.letter)
+    }
+    else {
+        $version = "{0}.0" -f $matches.version
+    }
 
     return @{
-        URL32        = "https://github.com/$url"
+        URL32        = "https://developers.yubico.com/yubikey-piv-manager/Releases/$url"
         Version      = $version
     }
 }
