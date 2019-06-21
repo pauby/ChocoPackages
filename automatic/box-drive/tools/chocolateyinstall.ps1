@@ -20,8 +20,7 @@ $packageArgs = @{
 }
 
 # Check OS
-$osName = (Get-WmiObject -Class Win32_OperatingSystem).Caption
-if (-not ($osName -like "*Windows 10*" -or $osName -like "*Windows Server 2016*")) {
+if ([version](Get-WmiObject -Class Win32_OperatingSystem).version -lt [version]"10.0") {
   Write-Error "Box Drive ONLY supports Windows 10 (or later) or Windows Server 2016 (or later). Please use the Box Sync package (https://chocolatey.org/packages/boxsync) if you need support for earlier operating systems."
 }
 
