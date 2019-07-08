@@ -17,15 +17,17 @@ function global:au_BeforeUpdate() {
 
     New-Item -Path $tempPath -ItemType Directory | Out-Null
     Save-Module -Name $moduleName -RequiredVersion $Latest.ModuleVersion -Path $tempPath
+    $modulePath = Join-Path -Path $tempPath -ChildPath "\$ModuleName\$($Latest.ModuleVersion)\"
+    $zipPath = Join-Path -Path $tempPath -ChildPath "$moduleName.zip"
+    Compress-Archive -Path (Join-Path -Path $modulePath -ChildPath "*") -DestinationPath $zipPath -CompressionLevel Optimal
 
-    $params = @{ 
-        Path        = Join-Path -Path $tempPath -ChildPath "\$ModuleName\$($Latest.ModuleVersion)\"
-        Destination = "tools\$moduleName\"
+    $params = @{
+        Path        = $zipPath
+        Destination = 'tools\'
         Force       = $true
     }
     Move-Item @params
 }
-
 function global:au_AfterUpdate {
 }
 

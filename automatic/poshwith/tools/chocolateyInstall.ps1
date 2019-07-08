@@ -2,35 +2,12 @@
 
 $toolsDir = Split-Path -parent $MyInvocation.MyCommand.Definition
 $moduleName = 'posh-with'  # this may be different from the package name and different case
-$moduleVersion = $env:ChocolateyPackageVersion      # this may change so keep this here
+$moduleVersion = '1.0.2'  # this may change so keep this here
 $savedParamsPath = Join-Path $toolsDir -ChildPath 'parameters.saved'
 
 if ($PSVersionTable.PSVersion.Major -lt 3) {
     throw "$moduleName module requires a minimum of PowerShell v3."
 }
-
-function Copy-Module {
-    [CmdletBinding()]
-    Param (
-        [Parameter(Mandatory)]
-        [ValidateScript( { Test-Path $_ })]
-        [string]
-        $Source,
-
-        [Parameter(Mandatory)]
-        [string]
-        $Destination
-    )
-
-    if (-not (Test-Path -Path $Destination)) {
-        Write-Verbose "Creating destination directory '$Destination' for module."
-        New-Item -Path $Destination -ItemType Directory -Force -ErrorAction SilentlyContinue | Out-Null
-    }
-
-    Write-Verbose "Copying '$($script:moduleName)' files from '$Source' to '$Destination'."
-    Copy-Item -Path $Source -Destination $Destination -Force -Recurse
-}
-
 # module may already be installed outside of Chocolatey
 Remove-Module -Name $moduleName -Force -ErrorAction SilentlyContinue
 
@@ -41,41 +18,46 @@ if (Test-Path -Path $savedParamsPath) {
 
 $params = Get-PackageParameters
 
-# install the module to the correct folder depending on parameters
-# by default, if no parameters, we install for Windows PowerShell (ie. Desktop)
+$sourcePath = Join-Path -Path $toolsDir -ChildPath "$modulename.zip"
+$destinationPath = @()
 if ($params.Desktop -or (-not $params.Core)) {
-    $sourcePath = Join-Path -Path $toolsDir -ChildPath "$modulename\*"
-    $destPath = Join-Path -Path $env:ProgramFiles -ChildPath "WindowsPowerShell\Modules\$moduleName"
+    $desktopPath = Join-Path -Path $env:ProgramFiles -ChildPath "WindowsPowerShell\Modules\$moduleName"
 
-    Write-Verbose "Installing '$modulename' for Windows PowerShell (Desktop)."
-
+    # PS > 5 needs to extract to a folder with the module version
     if ($PSVersionTable.PSVersion.Major -ge 5) {
-        $destPath = Join-Path -Path $destPath -ChildPath $moduleVersion
+        $desktopPath = Join-Path -Path $desktopPath -ChildPath $moduleVersion
     }
 
-    Copy-Module -Source $sourcePath -Destination $destPath
-    Add-Content -Path $savedParamsPath -Value 'Desktop'
-
-    if ($PSVersionTable.PSVersion.Major -lt 4) {
-        $modulePaths = [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine') -split ';'
-        if ($modulePaths -notcontains $destPath) {
-            Write-Verbose "Adding '$destPath' to PSModulePath."
-            $newModulePath = @($destPath, $modulePaths) -join ';'
-
-            [Environment]::SetEnvironmentVariable('PSModulePath', $newModulePath, 'Machine')
-            $env:PSModulePath = $newModulePath
-        }
-    }
+    $destinationPath += $desktopPath
 }
 
 if ($params.Core) {
-    $sourcePath = Join-Path -Path $toolsDir -ChildPath "$modulename\*"
-    $destPath = Join-Path -Path $env:ProgramFiles -ChildPath "PowerShell\Modules\$moduleName\$moduleVersion"
+    $destinationPath += Join-Path -Path $env:ProgramFiles -ChildPath "PowerShell\Modules\$moduleName\$moduleVersion"
+}
 
-    Write-Verbose "Installing '$modulename' for PowerShell Core)."
+ForEach ($destPath in $destinationPath) {
+    Write-Verbose "Installing '$modulename' to '$destPath'."
 
-    Copy-Module -Source $sourcePath -Destination $destPath
-    Add-Content -Path $savedParamsPath -Value 'Core'
+    # check destination path exists and create if not
+    if (Test-Path -Path $destPath) {
+        $null = New-Item -Path $destPath -ItemType Directory -Force
+    }
+    Get-ChocolateyUnzip -FileFullPath $sourcePath -Destination $destPath -PackageName $moduleName
+
+    # save the locations where the module was installed so we can uninstall it
+    Add-Content -Path $savedParamsPath -Value $destPath
+}
+
+# For PowerShell 4 the module destination needs to be added to the PSModulePath
+if ($PSVersionTable.PSVersion.Major -lt 4) {
+    $modulePaths = [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine') -split ';'
+    if ($modulePaths -notcontains $destPath) {
+        Write-Verbose "Adding '$destPath' to PSModulePath."
+        $newModulePath = @($destPath, $modulePaths) -join ';'
+
+        [Environment]::SetEnvironmentVariable('PSModulePath', $newModulePath, 'Machine')
+        $env:PSModulePath = $newModulePath
+    }
 }
 
 # cleanup the module from the Chocolatey $toolsDir folder
