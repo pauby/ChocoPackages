@@ -8,6 +8,7 @@ $savedParamsPath = Join-Path $toolsDir -ChildPath 'parameters.saved'
 if ($PSVersionTable.PSVersion.Major -lt 3) {
     throw "$moduleName module requires a minimum of PowerShell v3."
 }
+
 # module may already be installed outside of Chocolatey
 Remove-Module -Name $moduleName -Force -ErrorAction SilentlyContinue
 
