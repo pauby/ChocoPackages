@@ -1,11 +1,22 @@
 $ErrorActionPreference = 'Stop'
 
-$moduleName = $env:ChocolateyPackageName
-$sourcePath = Join-Path -Path $env:ProgramFiles -ChildPath "WindowsPowerShell\Modules\$moduleName"
+$toolsDir = Split-Path -parent $MyInvocation.MyCommand.Definition
+$moduleName = $env:ChocolateyPackageName  # this may be different from the package name and different case
+$savedParamsPath = Join-Path $toolsDir -ChildPath 'parameters.saved'
 
-Write-Verbose "Removing all version of '$moduleName' from '$sourcePath'."
-Remove-Item -Path $sourcePath -Recurse -Force -ErrorAction SilentlyContinue
+if (Test-Path -Path $savedParamsPath) {
+    $removePath = Get-Content -Path $savedParamsPath
+}
+else {
+    $removePath = Join-Path -Path $env:ProgramFiles -ChildPath "WindowsPowerShell\Modules\$moduleName"
+}
 
+ForEach ($path in $removePath) {
+    Write-Verbose "Removing all version of '$moduleName' from '$path'."
+    Remove-Item -Path $path -Recurse -Force -ErrorAction SilentlyContinue
+}
+
+# remove path of module from $env:PSModulePath
 if ($PSVersionTable.PSVersion.Major -lt 4) {
     $modulePaths = [Environment]::GetEnvironmentVariable('PSModulePath', 'Machine') -split ';'
 
