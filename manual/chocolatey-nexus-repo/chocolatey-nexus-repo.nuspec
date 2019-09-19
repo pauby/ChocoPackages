@@ -5,12 +5,12 @@
         <!-- This section is about this package, although id and version have ties back to the software -->
         <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
         <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
-        <id>nexus-choco-repo</id>
+        <id>chocolatey-nexus-repo</id>
         <!-- version should MATCH as closely as possible with the underlying software -->
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
         <version>1.0.0</version>
-        <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/nexus-choco-repo</packageSourceUrl>
+        <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/chocolatey-nexus-repo</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
         <owners>pauby, steviecoaster</owners>
         <!-- ============================== -->
@@ -19,14 +19,14 @@
         <title>Nexus - Create Chocolatey Repository</title>
         <authors>Paul Broadwith</authors>
         <!-- projectUrl is required for the community feed -->
-        <projectUrl>https://github.com/pauby/chocopackages/tree/master/automatic/nexus-choco-repo</projectUrl>
-        <iconUrl>https://rawcdn.githack.com/pauby/ChocoPackages/53d087737359e5b19588374db7bbdd1c6ac42829/icons/nexus-choco-repo.png</iconUrl>
+        <projectUrl>https://github.com/pauby/chocopackages/tree/master/automatic/chocolatey-nexus-repo</projectUrl>
+        <iconUrl>https://rawcdn.githack.com/pauby/ChocoPackages/0eee89ce0a577b6d780c24f7c4cd2de52177e34b/icons/chocolatey-nexus-repo.png</iconUrl>
         <copyright>2019 Paul Broadwith</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <!-- <licenseUrl></licenseUrl> -->
         <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
-        <projectSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/nexus-choco-repo</projectSourceUrl>
-        <docsUrl>https://github.com/pauby/chocopackages/tree/master/automatic/nexus-choco-repo/README.md</docsUrl>
+        <projectSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/chocolatey-nexus-repo</projectSourceUrl>
+        <docsUrl>https://github.com/pauby/chocopackages/tree/master/automatic/chocolatey-nexus-repo/README.md</docsUrl>
         <!--<mailingListUrl></mailingListUrl>-->
         <bugTrackerUrl>https://github.com/pauby/chocopackages/issues</bugTrackerUrl>
         <tags>nexus repository</tags>

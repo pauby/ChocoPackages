@@ -1,4 +1,4 @@
-# ![Create A Chocolatey Repository Under Nexus](https://rawcdn.githack.com/pauby/ChocoPackages/53d087737359e5b19588374db7bbdd1c6ac42829/icons/nexus-choco-repo.png "Nexus Logo") [Create A Chocolatey Repository Under Nexus](https://chocolatey.org/packages/nexus-choco-repo)
+# ![Create A Chocolatey Repository Under Nexus](https://rawcdn.githack.com/pauby/ChocoPackages/0eee89ce0a577b6d780c24f7c4cd2de52177e34b/icons/chocolatey-nexus-repo.png "Nexus Logo") [Create A Chocolatey Repository Under Nexus](https://chocolatey.org/packages/chocolatey-nexus-repo)
 
 Creates a NuGet repository under Nexus for use with Chocolatey.
 
