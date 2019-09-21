@@ -21,7 +21,7 @@
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://github.com/pauby/chocopackages/tree/master/automatic/chocolatey-nexus-repo</projectUrl>
         <iconUrl>https://rawcdn.githack.com/pauby/ChocoPackages/0eee89ce0a577b6d780c24f7c4cd2de52177e34b/icons/chocolatey-nexus-repo.png</iconUrl>
-        <copyright>2019 Paul Broadwith</copyright>
+        <copyright>2019 Chocolatey Software</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <!-- <licenseUrl></licenseUrl> -->
         <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
@@ -33,7 +33,7 @@
         <summary>Create a Chocolatey Repository with Nexus.</summary>
         <description>Creates a NuGet repository under Nexus for use with Chocolatey.
 
-You can pass the following parameters:
+You can pass the following parameters (to not log sensitive parameters, replace `--params` with `--package-parameters-sensitive` below):
 
 * `/ServerUri`      - The Uri of your Nexus server. Defaults to `https://localhost:8081` (e.g. `--params="'/ServerUri=http://localhost:8081'"`);
 * `/Username`       - [Required] Username with permissions to create repositories and add the NuGet Realm on your Nexus server (e.g. `--params="'/Username=admin'"`);
