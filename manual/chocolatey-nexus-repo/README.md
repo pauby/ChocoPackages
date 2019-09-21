@@ -2,7 +2,7 @@
 
 Creates a NuGet repository under Nexus 3 for use with Chocolatey. Note that Nexus 3 **MUST** already be installed _somewhere_. The package does not take a dependency on Nexus 3 to allow you to have it installed elsewhere in your environment. If it is not installed, please install the Chocolatey package `nexus-repository`.
 
-You can pass the following parameters:
+You can pass the following parameters (to not log sensitive parameters, replace `--params` with `--package-parameters-sensitive` below):
 
 * `/ServerUri`      - The Uri of your Nexus server. Defaults to `https://localhost:8081` (e.g. `--params="'/ServerUri=http://localhost:8081'"`);
 * `/Username`       - [Required] Username with permissions to create repositories and add the NuGet Realm on your Nexus server (e.g. `--params="'/Username=admin'"`);
