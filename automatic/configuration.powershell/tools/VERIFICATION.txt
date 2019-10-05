@@ -1,0 +1,9 @@
+VERIFICATION
+
+NOTE: There is no releases on the GitHub project source page.
+
+1. Download the module from the PowerShell Gallery either using the PowerShell below or directly from the gallery:
+
+    Save-Module -Name configuration -Path <PATH TO DOWNLOAD TO>
+
+2. Compare the files from the package against those in the installed module. Again use Get-FileHash -Path <FILE TO VERIFY> to retrieve those hash values.

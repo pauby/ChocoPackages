@@ -1,0 +1,1 @@
+License is not explicitly provided. However see `PERMISSION TO REDISTRIBUTE.pdf` in the package for permission, from AppVeyor, to redistribute the module.
