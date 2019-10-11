@@ -21,8 +21,8 @@ $packageArgs = @{
   fileFullPath   = Join-Path -Path $tempPath -ChildPath 'vboxadditions.iso'
   destination    = Join-Path -Path $tempPath -ChildPath 'extracted'
   fileType       = 'ZIP'
-  url            = 'https://download.virtualbox.org/virtualbox/6.0.4/VBoxGuestAdditions_6.0.4.iso'
-  checksum       = '749b0c76aa6b588e3310d718fc90ea472fdc0b7c8953f7419c20be7e7fa6584a'
+  url            = 'https://download.virtualbox.org/virtualbox/6.0.4/VBoxGuestAdditions_6.0.12.iso'
+  checksum       = '78fa2ba78e91c7d6f16f8c7fa88676cc9772c7689ba47e2b19913670fad2d441'
   checksumType   = 'sha256'
 }
 
@@ -40,11 +40,10 @@ $installArgs = @{
   validExitCodes = @(0)
 }
 
-$ahkExe = 'AutoHotKey'
-$ahkFile = Join-Path -Path $toolsDir -ChildPath "install.ahk"
-Write-Verbose "Running AutoHotkey install script $ahkFile"
-$ahkProc = Start-Process -FilePath $ahkExe -ArgumentList $ahkFile -PassThru
-Write-Debug "$ahkExe Start Time:`t$($ahkProc.StartTime.ToShortTimeString())"
-Write-Debug "Process ID:`t$($ahkProc.Id)"
+# certificate can be found inside the GPL version of virtualbox:
+# https://www.virtualbox.org/svn/vbox/trunk/src/VBox/HostDrivers/Support/Certificates/Trusted-OracleCorporationVirtualBox-05308b76ac2e15b29720fb4395f65f38.cer
+# current is expired 3/23/2022
+$certFile = Join-Path -Path $toolsDir -ChildPath "Trusted-OracleCorporationVirtualBox-05308b76ac2e15b29720fb4395f65f38.cer"
+certutil -addstore -f "TrustedPublisher" $certFile
 
 Install-ChocolateyInstallPackage @installArgs
