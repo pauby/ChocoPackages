@@ -90,7 +90,7 @@ function global:au_GetLatest {
     $urlVersion = $urlVersion.Replace('.', '')
 
     # now we can construct what should be the url
-    $url = "https://download.techsmith.com/snagit/enu/$urlVersion/snagit.msi"
+    $url = "https://download.techsmith.com/snagit/releases/$urlVersion/snagit.msi"
     $tempFile = New-TemporaryFile
     Invoke-WebRequest -Uri $url -OutFile $tempFile -UseBasicParsing
     $version = Get-MsiProductVersion -Path $tempFile
