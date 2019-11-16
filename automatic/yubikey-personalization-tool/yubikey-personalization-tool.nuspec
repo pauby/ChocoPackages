@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>yubikey-personalization-tool</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>3.1.25</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/yubikey-personalization-tool</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby, graffen</owners>
+    <!-- ============================== -->
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Yubikey Personalization Tool (Install)</title>
+    <authors>Yubico</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://support.yubico.com/support/solutions/articles/15000006463</projectUrl>
+    <iconUrl>https://rawcdn.githack.com/pauby/ChocoPackages/abf082baff57f6465e8fb0d245c44ade6969bd17/icons/yubikey-personalization-tool.png</iconUrl>
+    <copyright>2019 Yubico</copyright>
+    <!-- If there is a license Url available, it is is required for the community feed -->
+    <licenseUrl>https://www.yubico.com/yubico-license-agreement/</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/Yubico/yubikey-personalization-gui</projectSourceUrl>
+    <docsUrl>https://www.yubico.com/products/services-software/personalization-tools/use/</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/Yubico/yubikey-personalization-gui/issues</bugTrackerUrl>
+    <tags>admin yubikey yubico</tags>
+    <summary>The YubiKey Personalization Tool is used to program the two configuration slots in your YubiKey.</summary>
+    <description>The YubiKey Personalization Tool is used to program the two configuration slots in your YubiKey. The tool:
+
+* is valid with any YubiKey (except the Security Key)
+* works on Microsoft Windows, Apple macOS, and Linux operating systems
+* provides a graphical user interface
+
+Use the YubiKey Personalization Tool to program your YubiKey in the following modes:
+
+* Yubico OTP
+* OATH-HOTP
+* Static password
+* Challenge-response
+
+You can also use the tool to check the type and firmware of a YubiKey, or to perform batch programming of a large number of YubiKeys.
+
+In addition, you can use the extended settings to specify other settings, such as to disable fast triggering, which will prevent the accidental triggering of the nano-sized YubiKeys when only slot 1 is configured.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+</description>
+    <releaseNotes>https://github.com/Yubico/yubikey-personalization-gui/releases</releaseNotes>
+    <!-- =============================== -->
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <!-- <dependencies> -->
+    <!-- <dependency id="" /> -->
+    <!-- <dependency id="dotnet4.5"/><dependency id="" version="[__EXACT_VERSION__]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /><dependency id="" /><dependency id="chocolatey-uninstall.extension" /> -->
+    <!-- </dependencies> -->
+    <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
