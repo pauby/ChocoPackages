@@ -15,7 +15,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
 <!-- * If you are an organization making private packages, you probably have no issues here -->
 <!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
-<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€ appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬ appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
@@ -26,7 +26,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>2.5.127</version>
+    <version>2.10.219</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/box-drive</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>pauby</owners>
@@ -55,17 +55,17 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 * Automatic version control
 * Back up files to Box directly from your desktop
 
+**NOTE**: Box Drive automatically updates itself. If we try to install this software when it's already installed it will error so we have added detection to determine if it is already installed and if that is the case ti will not try to install the software but the package will be successfully installed as far as Chocolatey is concerned. Unfortunately this is how we have to deal with this installer.
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
     <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
     <!-- =============================== -->
 
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
-    <!-- <dependencies>
-      <dependency id="dotnet4.5.2 " />
-      <dependency id="vcredist2008" />
-      <dependency id="vcredist2010" />
-    </dependencies> -->
+    <dependencies>
+      <dependency id="dotnet4.5.2" />
+      <dependency id="vcredist2008" version="9.0.30729.6161" />
+    </dependencies>
     <!-- chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension
          - You want to use Get-UninstallRegistryKey on less than 0.9.10 (in chocolateyUninstall.ps1)
          - You want to use Get-PackageParameters and on less than 0.11.0
