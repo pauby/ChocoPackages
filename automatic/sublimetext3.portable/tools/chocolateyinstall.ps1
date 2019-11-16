@@ -1,6 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$toolsDir   = Join-Path -Path (Get-ToolsLocation) -ChildPath 'sublimetext3.portable'
+#"$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
@@ -16,11 +17,12 @@ $packageArgs = @{
 
 # Some of this was taken from https://github.com/brianmego/Chocolatey/pull/6
 Install-ChocolateyZipPackage @packageArgs
+Install-BinFile -Name 'sublime_text' -Path (Join-Path -Path $toolsdir -ChildPath 'sublime_text.exe')
 
 # Start menu shortcuts
 $progsFolder = [Environment]::GetFolderPath('Programs')
 If ( Test-ProcessAdminRights ) {
-    $progsFolder = [Environment]::GetFolderPath('CommonPrograms') 
+    $progsFolder = [Environment]::GetFolderPath('CommonPrograms')
 }
 
 Install-ChocolateyShortcut -shortcutFilePath (Join-Path -Path $progsFolder -ChildPath 'Sublime Text 3 Portable.lnk') `
