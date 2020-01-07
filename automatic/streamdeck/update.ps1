@@ -2,7 +2,7 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://gaming.help.elgato.com/customer/en/portal/articles/2793637-elgato-stream-deck-software-release-notes'
+$releases    = 'https://gc-updates.elgato.com/windows/sd-update/final/download-website.php'
 
 function global:au_SearchReplace {
     @{
@@ -19,19 +19,19 @@ function global:au_BeforeUpdate() {
     $Latest.ChecksumType64 = 'SHA256'
 }
 
-function global:au_AfterUpdate { 
-    Set-DescriptionFromReadme -SkipFirst 2 
+function global:au_AfterUpdate {
+    Set-DescriptionFromReadme -SkipFirst 2
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = "Stream_Deck_(?<version>.*).msi"
 
-    $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
+    $tempFile = New-TemporaryFile
+    Invoke-WebRequest -Uri $releases -OutFile $tempFile -UseBasicParsing
+    $version = Get-MsiProductVersion -Path $tempFile
 
     return @{
-        URL64        = $url
-        Version      = $matches.version
+        URL64   = "https://edge.elgato.com/egc/windows/sd/Stream_Deck_$version.msi"
+        Version = $version
     }
 }
 

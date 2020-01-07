@@ -1,38 +1,26 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$toolsDir     = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$toolsDir    = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$logFilename = "{0}-{1}.log" -f $env:ChocolateyPackageName, $env:ChocolateyPackageVersion
+$logPath     = Join-Path -Path $env:TEMP -ChildPath $logFilename
 
 $packageArgs = @{
     packageName     = $env:ChocolateyPackageName
     fileType        = 'MSI'
-    url64           = 'https://edge.elgato.com/egc/windows/sd/Stream_Deck_3.0.0.6839.msi'
-    softwareName    = 'Elgato Stream Deck*'
+    url64           = 'https://edge.elgato.com/egc/windows/sd/Stream_Deck_4.5.0.12226.msi'
+    softwareName    = 'Elgato Stream Deck'
 
-    checksum64      = '506f8b5268cab839066ad2413621d4833236b0706ec70951f139ab7317544066'
+    checksum64      = '87E8959DBE10A6218B7B2B1CA7B1CA58E78FB7EA3696E1F8DEC8D5E9F60C731B'
     checksumType64  = 'SHA256'
 
-    silentArgs      = "/quiet"
+    silentArgs      = "/quiet /lv $logPath"
     validExitCodes  = @(0, 3010, 1641)
 }
 
-# get a temporary directory
-do {
-    $tempPath = Join-Path -Path $env:TEMP -ChildPath ([System.Guid]::NewGuid().ToString())
-} while (Test-Path $tempPath)
-$packageArgs.fileFullPath = Join-Path -Path $tempPath -ChildPath "$packageName.$($packageArgs.fileType.ToLower())"
-
 # Check OS version
-write-debug "OS Name: $($env:OS_NAME)"
+Write-Debug "OS Name: $($env:OS_NAME)"
 if ($env:OS_NAME -ne "Windows 10") {
-    throw "Cannot be installed on this version of Windows - $packageName only supports Windows 10 x64 ($($env:OS_NAME))."
+    throw "Cannot be installed on this version of Windows ($($env:OS_NAME)) - $($env:packageName) only supports Windows 10 x64."
 }
 
-$ahkExe = 'AutoHotKey'
-$ahkFile = Join-Path $toolsDir "$($packageName)Install.ahk"
-$ahkProc = Start-Process -FilePath $ahkExe -ArgumentList $ahkFile -PassThru
-$ahkId = $ahkProc.Id
-Write-Debug "$ahkExe start time:`t$($ahkProc.StartTime.ToShortTimeString())"
-Write-Debug "Process ID:`t$ahkId"
-
-Get-ChocolateyWebFile @packageArgs 
-Install-ChocolateyInstallPackage @packageArgs
+Install-ChocolateyPackage @packageArgs
