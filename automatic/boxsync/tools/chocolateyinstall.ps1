@@ -8,11 +8,11 @@ $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   fileType      = 'MSI'
   url           = $url32
-  checksum      = '5d233c74cbef37308e6b264d70946216d846936d804b55f06ca6e5ea3ec8c047'
+  checksum      = 'D3954C8473FD38DC8F40F90AF04270B03B81B1710A33E64F3B8A2310BC5C25FB'
   checksumType  = 'SHA256'
 
   url64         = $url64
-  checksum64    = '6ba75e974821a85d5e11060f0651f5e69ccc13147cbc34508ced9d4c84b8ad6e'
+  checksum64    = '3CB19C4271607A53BAC772BCB460CD366BF5C60BC447E87F30DC7C20A7838DCF'
   checksumType64= 'SHA256'
 
   softwareName  = 'boxsync*'
