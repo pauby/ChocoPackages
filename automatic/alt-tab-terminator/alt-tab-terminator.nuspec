@@ -47,11 +47,13 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <docsUrl>https://www.ntwind.com/tutorials.html</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
     <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <tags>alt-tab-terminator alt-tab admin</tags>
+    <tags>alt-tab trial admin</tags>
     <summary>Alt-Tab Terminator is an elegant and powerful task management utility for Windows 7/8/10.</summary>
     <description>Alt-Tab Terminator is an elegant and powerful task management utility for Windows 7/8/10. Once installed, it replaces the default Alt-Tab dialog with a nice box that shows a list of all running tasks, with their names and preview snapshots, and enables the user to take actions on them using the mouse and keyboard shortcuts.
     
 An average PC-user switches between windows with Alt+Tab hundreds of times per day! It’s one of the most common actions performed on a computer. With Alt-Tab Terminator, you can not only switch tasks faster, but have the full control over any opened window, all within one click away.
+
+**NOTE: This is trial software. Alt-Tab Terminator is shareware now and you have to purchase a license to use it. Licenses are lifetime and per user. Pay once and use forever on any PC you own now or in future!**
 </description>
     <releaseNotes>https://www.ntwind.com/blog/</releaseNotes>
     <!-- =============================== -->      
