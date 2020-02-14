@@ -1,0 +1,11 @@
+﻿VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+1. Please go to the project releases at https://github.com/cli/cli/releases;
+2. Download the same binary file with the same version as included with the package;
+3. From a PowerShell command line run:
+
+     Get-FileHash <filename>
+
+   against both the binary file included in the package and the one downloaded and they should match;
