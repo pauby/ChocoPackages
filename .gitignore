@@ -29,3 +29,5 @@ Update-AUPackages.md
 Update-History.md
 *.nupkg
 codealike.*
+*.exe
+*.msi
