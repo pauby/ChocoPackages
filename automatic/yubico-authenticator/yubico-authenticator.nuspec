@@ -11,7 +11,7 @@
     <projectUrl>https://github.com/Yubico/yubioath-desktop</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@ea3887ac/icons/yubico-authenticator.png</iconUrl>
     <copyright>2017 Yubico</copyright>
-    <licenseUrl>https://github.com/Yubico/yubioath-desktop/blob/master/BLURB</licenseUrl>
+    <licenseUrl>https://github.com/Yubico/yubioath-desktop/blob/master/COPYING</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/Yubico/yubioath-desktop</projectSourceUrl>
     <docsUrl>https://github.com/Yubico/yubioath-desktop</docsUrl>
