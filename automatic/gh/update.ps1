@@ -26,7 +26,7 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = '/download/v(?<version>[\d\.]+)/gh_'
+    $regexUrl = '/download/v(?<version>[\d\.]+)/gh_[\d\.]+_windows_amd64.msi'
     $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
     $version = $matches.version
 
