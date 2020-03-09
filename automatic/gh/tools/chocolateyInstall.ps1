@@ -7,7 +7,7 @@ $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
     fileType       = 'MSI'
     silentArgs     = "/qn /norestart /l*v `"$logMsi`""
-    file64         = "gh_$($env:ChocolateyPackageVersion)_windows_amd64.msi"
+    file64         = Join-Path -Path $toolsDir -ChildPath "gh_$($env:ChocolateyPackageVersion)_windows_amd64.msi"
 }
 
 Install-ChocolateyInstallPackage @packageArgs
