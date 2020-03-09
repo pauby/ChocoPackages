@@ -2,8 +2,7 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-# no trailing slash!
-$releases    = 'https://github.com/cli/cli/releases'
+$releases    = 'https://github.com/cli/cli/releases' # no trailing slash!
 
 function global:au_SearchReplace {
 }
@@ -16,22 +15,21 @@ function global:au_BeforeUpdate {
 
     New-Item -Path $tempPath -ItemType Directory | Out-Null
     $filename = "gh_{0}_windows_amd64.msi" -f $Latest.Version
-    $uri = "{0}/download/v{1}/{2}" -f $releases, $Latest.Version, $filename
-    Invoke-WebRequest -Uri $uri -UseBasicParsing -OutFile (Join-Path -Path 'tools' -ChildPath $filename)
+    Invoke-WebRequest -Uri $Latest.URL64 -UseBasicParsing -OutFile (Join-Path -Path 'tools' -ChildPath $filename)
 }
 
-function global:au_AfterUpdate { 
-    Set-DescriptionFromReadme -SkipFirst 2 
+function global:au_AfterUpdate {
+    Set-DescriptionFromReadme -SkipFirst 2
 }
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $regexUrl = '/download/v(?<version>[\d\.]+)/gh_[\d\.]+_windows_amd64.msi'
     $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
-    $version = $matches.version
 
     return @{
-        Version      = $version
+        URL64 = ("{0}{1}" -f $releases, $matches[0])
+        Version = $matches.version
     }
 }
 
