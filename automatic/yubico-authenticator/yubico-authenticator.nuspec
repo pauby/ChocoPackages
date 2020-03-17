@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†‚Â¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€ â€šÃ‚Â¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>yubico-authenticator</id>
-    <version>4.3.4</version>
+    <version>5.0.2</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/yubico-authenticator</packageSourceUrl>
     <owners>pauby</owners>
     <title>Yubico Authenticator (Install)</title>
@@ -26,9 +26,6 @@ Requires a capable Yubikey device.
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
     <releaseNotes>https://developers.yubico.com/yubioath-desktop/Release_Notes.html</releaseNotes>
-	<dependencies>
-      <dependency id="autohotkey" />
-    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
