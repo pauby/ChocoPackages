@@ -1,0 +1,11 @@
+﻿VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+1. Please go to the project releases at https://github.com/imbushuo/mac-precision-touchpad/releases;
+2. Download the same binary file with the same version as included with the package. Note that the package versions start with '0.' but the releases start with a different number. Remove the '0.' from the package version to get the version you are looking for. For example package version 0.202.3805 is actually release 202.3805.
+3. From a PowerShell command line run:
+
+     Get-FileHash <filename>
+
+   against both the binary file included in the package and the one downloaded and they should match;
