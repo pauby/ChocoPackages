@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <!-- Read this before publishing packages to chocolatey.org: https://github.com/chocolatey/chocolatey/wiki/CreatePackages -->
+        <id>obs</id>
+        <title>[DEPRECATED] Open Broadcaster Software</title>
+        <version>0.659.20200402</version>
+        <authors>https://github.com/jp9000/OBS/graphs/contributors</authors>
+        <owners>pauby, angryhussord</owners>
+        <summary>Open Broadcaster Software is free and open source software for video recording and live streaming.</summary>
+        <description>**NOTE: This package has been deprecated in favour of [obs-studio](https://chocolatey.org/packages/obs-studio).**
+
+        Open Broadcaster Software is free and open source software for video recording and live streaming. Supported features include:
+
+Encoding using H264 (x264) and AAC.
+Support for Intel Quick Sync Video (QSV) and NVENC.
+Unlimited number of scenes and sources.
+Live RTMP streaming to Twitch, YouTube, DailyMotion, Hitbox and more.
+File output to MP4 or FLV.
+GPU-based game capture for high performance game streaming.
+DirectShow capture device support (webcams, capture cards, etc).
+Windows 8 high speed monitor capture support.
+Bilinear or lanczos3 resampling.</description>
+        <projectUrl>https://obsproject.com/</projectUrl>
+        <tags>twitch open foss broadcast streaming video recording</tags>
+        <copyright></copyright>
+        <projectSourceUrl>https://github.com/jp9000/OBS/</projectSourceUrl>
+        <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/deprecated/admincenter</packageSourceUrl>
+        <licenseUrl>https://github.com/jp9000/OBS/blob/master/COPYING</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <dependencies>
+            <dependency id="obs-studio" />
+        </dependencies>
+        <releaseNotes>https://obsproject.com/changelog</releaseNotes>
+    </metadata>
+    <files />
+</package>
