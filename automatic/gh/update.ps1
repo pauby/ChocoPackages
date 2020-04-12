@@ -5,6 +5,8 @@
 $releases    = 'https://github.com/cli/cli/releases' # no trailing slash!
 
 function global:au_SearchReplace {
+    @{
+    }
 }
 
 function global:au_BeforeUpdate {
