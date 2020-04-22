@@ -1,0 +1,11 @@
+﻿VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+1. Please go to the project releases at https://keepass.info/plugins.html#keeautoexec;
+2. Click the 'Download plugin' link to download the ZIP file;
+3. From a PowerShell command line run:
+
+     Get-FileHash <filename>
+
+   against both the ZIP file included in the package and the one downloaded and they should match;
