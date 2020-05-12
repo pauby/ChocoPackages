@@ -2,8 +2,8 @@
 
 $packageArgs = @{
     packageName   = $env:ChocolateyPackageName
-    url           = 'https://sourceforge.net/projects/kpenhentryview/files/v2.0/KPEnhancedEntryView-v2.0.zip/download'
-    checksum      = '3c4583c64d3f57c077e68e9d3b47381b3db75d5b7e1e82c77ec801a62a76a744'
+    url           = 'https://sourceforge.net/projects/kpenhentryview/files/v2.1.4/KPEnhancedEntryView-v2.1.4.zip/download'
+    checksum      = '6a06e33a6c1494466a91715b9b69a7c732b68f73d3906e0674efaae99ce326e0'
     checksumType  = 'sha256'
 }
 
@@ -16,26 +16,27 @@ if ([array]$key = Get-UninstallRegistryKey -SoftwareName $packageSearch) {
 }
 
 if ([string]::IsNullOrEmpty($installPath)) {
-    Write-Verbose "Searching '$env:ChocolateyBinRoot' for portable install..."
-    $portPath = Join-Path -Path $env:ChocolateyBinRoot -ChildPath "keepass"
+    Write-Verbose "Cannot find '$packageSearch' in Add / Remove Programs or Programs and Features."
+    Write-Verbose "Searching '$env:ChocolateyToolsLocation' for portable install..."
+    $portPath = Join-Path -Path $env:ChocolateyToolsLocation -ChildPath "keepass"
     $installPath = Get-ChildItem -Directory "$portPath*" -ErrorAction SilentlyContinue
+
+    if ([string]::IsNullOrEmpty($installPath)) {
+        Write-Verbose "Searching '$env:Path' for unregistered install..."
+        $installFullName = Get-Command -Name keepass -ErrorAction SilentlyContinue
+        if ($installFullName) {
+            $installPath = Split-Path $installFullName.Path -Parent
+        }
+    }
 }
 
 if ([string]::IsNullOrEmpty($installPath)) {
-  Write-Verbose "Searching '$env:Path' for unregistered install..."
-  $installFullName = Get-Command -Name keepass -ErrorAction SilentlyContinue
-  if ($installFullName) {
-      $installPath = Split-Path $installFullName.Path -Parent
-  }
+    # if we get here we haven't found Keepass
+    throw "Cannot find Keepass! Exiting now as it's needed to install the plugin."
 }
 
-if ([string]::IsNullOrEmpty($installPath)) {
-  throw "$($packageSearch) not found."
-}
-else {
-    Write-Verbose "Found Keepass install location at '$installPath'."
-}
 
+Write-Verbose "Found Keepass install location at '$installPath'."
 $packageArgs.unzipLocation = Join-Path -Path $installPath -ChildPath 'Plugins'
 
 Install-ChocolateyZipPackage @packageArgs
