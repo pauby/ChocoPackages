@@ -8,4 +8,6 @@ Hugo renders a typical website of moderate size in a fraction of a second. A goo
 
 Hugo is designed to work well for any kind of website including blogs, tumbles, and docs.
 
+**NOTE: Between version 0.51 and 0.71 the x86 version only installs v0.51 of Hugo (x64 version is fine). This is fixed from the version after 0.71 [here](https://github.com/pauby/ChocoPackages/issues/53) thanks to [mikee](https://github.com/mikeee).**
+
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
