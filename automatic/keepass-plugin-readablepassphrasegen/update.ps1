@@ -25,10 +25,10 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = 'ReadablePassphrase\.(.*)\.plgx$'
+    $regexUrl = 'ReadablePassphrase\.(?<version>[\d\.]+)\.plgx$'
 
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -first 1 -expand href
-    $version = $matches[1]
+    $version = $matches.version
 
     return @{
         URL32        = "https://github.com$url"
