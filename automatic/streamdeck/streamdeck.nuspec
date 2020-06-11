@@ -9,7 +9,7 @@
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>3.0.0.6839</version>
+    <version>4.7.0.12981</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/streamdeck</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>pauby</owners>
@@ -20,14 +20,14 @@
     <title>Stream Deck (Install)</title>
     <authors>Elgato Systems GmbH</authors>
     <!-- projectUrl is required for the community feed -->
-    <projectUrl>https://www.elgato.com/gaming/downloads</projectUrl>
+    <projectUrl>https://www.elgato.com/en/gaming/stream-deck</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@f08050f3/icons/streamdeck.png</iconUrl>
     <copyright>2017 Elgato Systems GmbH</copyright>
     <!-- If there is a license Url available, it is is required for the community feed -->
     <!-- <licenseUrl></licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
     <!-- <projectSourceUrl></projectSourceUrl> -->
-    <docsUrl>https://gaming.help.elgato.com/customer/en/portal/topics/1061842-elgato-stream-deck/articles</docsUrl>
+    <docsUrl>https://help.elgato.com</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
     <!-- <bugTrackerUrl></bugTrackerUrl> -->
     <tags>streamdeck stream deck admin</tags>
@@ -40,7 +40,7 @@ NOTE: This application ONLY supports Windows 10 x64.
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
-    <releaseNotes>https://gaming.help.elgato.com/customer/en/portal/articles/2793637-elgato-stream-deck-software-release-notes</releaseNotes>
+    <releaseNotes>https://help.elgato.com/hc/en-us/articles/360028242631-Elgato-Stream-Deck-Software-Release-Notes</releaseNotes>
     <!-- =============================== -->
 
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
