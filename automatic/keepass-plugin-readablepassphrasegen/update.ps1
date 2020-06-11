@@ -2,7 +2,7 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://bitbucket.org/ligos/readablepassphrasegenerator/wiki/Home'
+$releases    = 'https://github.com/ligos/readablepassphrasegenerator/releases/latest'
 
 function global:au_SearchReplace {
     @{
@@ -25,15 +25,14 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = 'Version (?<version>[\d\.]+)'
+    $regexUrl = 'ReadablePassphrase\.(.*)\.plgx$'
 
-    $null = $page.content -match $regexUrl
-    $version = $matches.version
-    $url = "https://bitbucket.org/ligos/readablepassphrasegenerator/downloads/ReadablePassphrase%20$version.plgx"
+    $url = $page.links | Where-Object href -match $regexUrl | Select-Object -first 1 -expand href
+    $version = $matches[1]
 
     return @{
-        URL32        = $url
-        Version      = $matches.version
+        URL32        = "https://github.com$url"
+        Version      = $version
     }
 }
 
