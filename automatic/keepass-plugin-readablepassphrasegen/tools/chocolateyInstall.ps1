@@ -36,8 +36,13 @@ else {
     Write-Verbose "Found Keepass install location at '$installPath'."
 }
 
-$null = $packageArgs.url -match '(?:.+\/)(?<filename>.+)'
-$pluginFilename = $matches.filename
+$oldPackageVersion = Get-ChildItem -Path Test-Path -Path (Join-Path -Path $installPath -ChildPath 'ReadablePassphrase*.plgx')
+if ($oldPackageVersion) {
+    Write-Verbose 'Found old versions of this plugin. Removing.'
+    $oldPackageVersion | Remove-Item -ErrorAction SilentlyContinue
+}
+
+$pluginFilename = 'ReadablePassphrase.plgx'
 $pluginPath = Join-Path -Path $installPath -ChildPath 'Plugins'
 $packageArgs.FileFullPath = Join-Path -Path $pluginPath -ChildPath $pluginFilename
 Get-ChocolateyWebFile @packageArgs
