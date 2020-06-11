@@ -30,9 +30,9 @@ function global:au_GetLatest {
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
 
     return @{
-        URL32        = $url
+        URL32        = "https://github.com$url"
         Version      = $matches.version
     }
 }
 
-update -ChecksumFor none
+Update-Package -ChecksumFor none
