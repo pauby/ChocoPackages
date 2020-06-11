@@ -23,7 +23,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- version should MATCH as closely as possible with the underlying software -->
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-        <version>1.1.1</version>
+        <version>1.2.1</version>
         <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/keepass-plugin-readablepassphrasegen</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
         <owners>pauby</owners>
@@ -33,16 +33,16 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <title>KeePass Plugin Readable Passphrase Generator</title>
         <authors>Murray Grant</authors>
         <!-- projectUrl is required for the community feed -->
-        <projectUrl>https://bitbucket.org/ligos/readablepassphrasegenerator/wiki/Home</projectUrl>
+        <projectUrl>https://github.com/ligos/readablepassphrasegenerator</projectUrl>
         <!-- <iconUrl></iconUrl> -->
         <copyright>2018 Murray Grant</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
-        <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+        <licenseUrl>https://github.com/ligos/readablepassphrasegenerator/blob/master/LICENSE.txt</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <projectSourceUrl>https://bitbucket.org/ligos/readablepassphrasegenerator/wiki/Home</projectSourceUrl>
-        <docsUrl>https://bitbucket.org/ligos/readablepassphrasegenerator/wiki/Home</docsUrl>
+        <projectSourceUrl>https://github.com/ligos/readablepassphrasegenerator</projectSourceUrl>
+        <docsUrl>https://github.com/ligos/readablepassphrasegenerator/wiki</docsUrl>
         <!-- <mailingListUrl>https://sourceforge.net/p/keepass/discussion/</mailingListUrl> -->
-        <bugTrackerUrl>https://bitbucket.org/ligos/readablepassphrasegenerator/issues</bugTrackerUrl>
+        <bugTrackerUrl>https://github.com/ligos/readablepassphrasegenerator/issues</bugTrackerUrl>
         <tags>keepass plugin password generator admin</tags>
         <summary>The Readable Passphrase Generator generates passphrases which are (mostly) grammatically correct but nonsensical. These are easy to remember (for humans) but difficult to guess (for humans and computers).</summary>
         <description>The Readable Passphrase Generator generates passphrases which are (mostly) grammatically correct but nonsensical. These are easy to remember (for humans) but difficult to guess (for humans and computers).
@@ -82,7 +82,7 @@ Much, much easier, I think. (So does my wife!)
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
-        <releaseNotes>https://bitbucket.org/ligos/readablepassphrasegenerator/wiki/Home</releaseNotes>
+        <releaseNotes>https://github.com/ligos/readablepassphrasegenerator/blob/master/README.md</releaseNotes>
         <!-- =============================== -->
         <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
         <dependencies>
