@@ -37,7 +37,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <iconUrl>https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/gh.png</iconUrl>
         <copyright>Copyright 2020 GitHub</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
-        <licenseUrl>https://github.com/cli/cli/blob/master/LICENSE</licenseUrl>
+        <licenseUrl>https://github.com/cli/cli/blob/trunk/LICENSE</licenseUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <projectSourceUrl>https://github.com/cli/cli/</projectSourceUrl>
         <docsUrl>https://cli.github.com/manual</docsUrl>
