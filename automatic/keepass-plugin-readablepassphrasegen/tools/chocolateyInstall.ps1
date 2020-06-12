@@ -36,8 +36,8 @@ else {
     Write-Verbose "Found Keepass install location at '$installPath'."
 }
 
-$oldPackageVersion = Get-ChildItem -Path Test-Path -Path (Join-Path -Path $installPath -ChildPath 'ReadablePassphrase*.plgx')
-if ($oldPackageVersion) {
+$oldPackageVersion = Join-Path -Path $installPath -ChildPath 'ReadablePassphrase*.plgx'
+if (Test-Path $oldPackageVersion) {
     Write-Verbose 'Found old versions of this plugin. Removing.'
     $oldPackageVersion | Remove-Item -ErrorAction SilentlyContinue
 }
