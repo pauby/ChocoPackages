@@ -6,8 +6,9 @@ You can pass the following parameters (to not log sensitive parameters, replace 
 
 * `/ServerUri`      - The Uri of your Nexus server. Defaults to `https://localhost:8081` (e.g. `--params="'/ServerUri=http://localhost:8081'"`);
 * `/Username`       - [Required] Username with permissions to create repositories and add the NuGet Realm on your Nexus server (e.g. `--params="'/Username=admin'"`);
-* `/Password`       - [Required] Password for the username parameter (e.g. `--params="'/Username=admin /Password=abc'"`);
+* `/Password`       - [Required or use /EnterPassword] Password for the username parameter (e.g. `--params="'/Username=admin /Password=abc'"`);
 * `/RepositoryName` - The name to use for the created repository. Defaults to `choco-base` (e.g. `--params="'/RepositoryName=my-repo'"`);
 * `/BlobStoreName`  - Name of the blob store to create the repository on. Defaults to `default`. (e.g. `--params="'/BlobStoreName=myblob'"`);
+* `/EnterPassword`  - [Required or use /Password] Prompts you to enter a password when installing the package (e.g. `--params"'/EnterPassword'"`) ;
 
 NOTE: Uninstalling this package does not remove the repository created or disable the NuGet Realm in Nexus. This must be done manually.

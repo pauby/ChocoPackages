@@ -1,8 +1,5 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-# mandatory parameters that must be supplied
-$requiredParams = @( 'Username', 'Password' )
-
 # default parameters
 $defaultParams = @{
     ServerUri      = 'http://localhost:8081'
@@ -53,16 +50,33 @@ function Invoke-NexusScript {
 $params = Get-PackageParameters
 
 # Check for mandatory parameters
-$missingParams = $false
-$requiredParams | ForEach-Object {
-    if (-not $params.$_) {
-        Write-Error "Mandatory parameter missing - '$_'." -ErrorAction Continue
-        $missingParams = $true
-    }
+if (-not ($params.Username)) {
+    Write-Error "Mandatory parameter 'Username' missing." -ErrorAction Continue
+    $missingParams = $true
+}
+
+if (-not ($params.Password -or $params.EnterPassword)) {
+    Write-Error "Mandatory parameter 'Password' OR 'EnterPassword' missing." -ErrorAction Continue
+    $missingParams = $true
 }
 
 if ($missingParams) {
-    throw "One or more mandatory parameters have not been provided."
+    Write-Error "Please re-run the package install providing the missing parameters."
+}
+
+# Prompt for the password if the /EnterPassword parameter has been added
+if ($params.EnterPassword) {
+    # Use -AsSecureString so the characters are not echoed to the screen. 
+    # But it does mean we need to extrac tht plain test password later.
+    $securePassword = Read-Host -Prompt "Enter the password for user '$($params.Username)'." -AsSecureString
+
+    # Now unencrypt the password
+    $bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)
+    $params.Password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($bstr) 
+
+    # Remove the EnterPassword parameter as it shows up later when we list the parameter values we are going to use.
+    # I feel like it will cause confusion.
+    $params.Remove('EnterPassword')
 }
 
 # loop through the defaults
@@ -79,7 +93,14 @@ $params.ServerUri = $params.ServerUri.trim('/')
 # Tell the user the details we are going to use
 Write-Host "Will create a repository using these details:"
 $params.Keys | ForEach-Object {
-    Write-Host ("    {0,-20} : {1}" -f $_, $params.$_)
+    if ($_ -eq 'password' -or $_ -eq 'enterpassword') {
+        $msg = '******'
+    }
+    else {
+        $msg = $params.$_
+    }
+
+    Write-Host ("    {0,-20} : {1}" -f $_, $msg)
 }
 
 # Create the Api header
