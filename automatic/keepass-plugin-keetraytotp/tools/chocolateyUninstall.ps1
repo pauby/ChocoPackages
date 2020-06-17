@@ -1,11 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageArgs = @{
-    packageName   = $env:ChocolateyPackageName
-    url           = 'https://bitbucket.org/ligos/readablepassphrasegenerator/downloads/ReadablePassphrase%201.1.1.plgx'
-    checksum      = '34d634250b38ba6fb9f9537e41d2ba8ee668d10b4ce3fcae2ec36d68bd68f701'
-    checksumType  = 'SHA256'
-}
+$pluginFilename = 'KeeTrayTOTP.plgx'
 
 $packageSearch = 'KeePass Password Safe*'
 $installPath = ''
@@ -36,20 +31,12 @@ else {
     Write-Verbose "Found Keepass install location at '$installPath'."
 }
 
-$oldPackageVersion = Get-ChildItem -Path (Join-Path -Path $installPath -ChildPath 'Plugins\ReadablePassphrase*.plgx')
-if ($oldPackageVersion) {
-    Write-Verbose 'Found old versions of this plugin. Removing.'
-    $oldPackageVersion | Remove-Item -ErrorAction SilentlyContinue
-}
-
-$pluginFilename = 'ReadablePassphrase.plgx'
 $pluginPath = Join-Path -Path $installPath -ChildPath 'Plugins'
-$packageArgs.FileFullPath = Join-Path -Path $pluginPath -ChildPath $pluginFilename
-Get-ChocolateyWebFile @packageArgs
+Remove-Item -Path (Join-Path -Path $pluginPath -ChildPath $pluginFilename) -Force -ErrorAction SilentlyContinue
 
 if (Get-Process -Name 'KeePass' -ErrorAction SilentlyContinue) {
-    Write-Warning "Keepass is currently running. '$($packageArgs.packageName)' will be available at next restart."
+    Write-Warning "Keepass is currently running. '$($env:ChocolateyPackageName)' has been removed and will be unavailable at next restart."
 }
 else {
-    Write-Host "'$($packageArgs.packageName)' will be loaded the next time KeePass is started."
+    Write-Host "'$($env:ChocolateyPackageName)' will be loaded the next time KeePass is started."
 }

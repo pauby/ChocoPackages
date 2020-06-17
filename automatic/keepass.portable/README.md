@@ -13,7 +13,7 @@ KeePass 2.x may be obtained via this package.
 
 The following package parameter can be set:
 
-* `/installPath:` specify a custom extract location as a full path - defaults to choco folder.
+* `/installPath:` specify a custom extract location as a full path - defaults to the Chocolatey tools folder.
 
 To specify a custom location for the portable files use:
 

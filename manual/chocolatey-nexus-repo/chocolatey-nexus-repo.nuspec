@@ -9,8 +9,8 @@
         <!-- version should MATCH as closely as possible with the underlying software -->
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-        <version>1.0.0</version>
-        <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/chocolatey-nexus-repo</packageSourceUrl>
+        <version>1.0.1</version>
+        <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/chocolatey-nexus-repo</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
         <owners>pauby, steviecoaster</owners>
         <!-- ============================== -->
@@ -19,14 +19,14 @@
         <title>Nexus - Create Chocolatey Repository</title>
         <authors>Paul Broadwith</authors>
         <!-- projectUrl is required for the community feed -->
-        <projectUrl>https://github.com/pauby/chocopackages/tree/master/automatic/chocolatey-nexus-repo</projectUrl>
+        <projectUrl>https://github.com/pauby/chocopackages/tree/master/manual/chocolatey-nexus-repo</projectUrl>
         <iconUrl>https://rawcdn.githack.com/pauby/ChocoPackages/0eee89ce0a577b6d780c24f7c4cd2de52177e34b/icons/chocolatey-nexus-repo.png</iconUrl>
         <copyright>2019 Chocolatey Software</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <!-- <licenseUrl></licenseUrl> -->
         <!-- <requireLicenseAcceptance>true</requireLicenseAcceptance> -->
-        <projectSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/chocolatey-nexus-repo</projectSourceUrl>
-        <docsUrl>https://github.com/pauby/chocopackages/tree/master/automatic/chocolatey-nexus-repo/README.md</docsUrl>
+        <projectSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/chocolatey-nexus-repo</projectSourceUrl>
+        <docsUrl>https://github.com/pauby/chocopackages/tree/master/manual/chocolatey-nexus-repo/README.md</docsUrl>
         <!--<mailingListUrl></mailingListUrl>-->
         <bugTrackerUrl>https://github.com/pauby/chocopackages/issues</bugTrackerUrl>
         <tags>nexus repository</tags>
@@ -37,9 +37,10 @@ You can pass the following parameters (to not log sensitive parameters, replace 
 
 * `/ServerUri`      - The Uri of your Nexus server. Defaults to `https://localhost:8081` (e.g. `--params="'/ServerUri=http://localhost:8081'"`);
 * `/Username`       - [Required] Username with permissions to create repositories and add the NuGet Realm on your Nexus server (e.g. `--params="'/Username=admin'"`);
-* `/Password`       - [Required] Password for the username parameter (e.g. `--params="'/Username=admin /Password=abc'"`);
+* `/Password`       - [Required or use /EnterPassword] Password for the username parameter (e.g. `--params="'/Username=admin /Password=abc'"`);
 * `/RepositoryName` - The name to use for the created repository. Defaults to `choco-base` (e.g. `--params="'/RepositoryName=my-repo'"`);
 * `/BlobStoreName`  - Name of the blob store to create the repository on. Defaults to `default`. (e.g. `--params="'/BlobStoreName=myblob'"`);
+* `/EnterPassword`  - [Required or use /Password] Prompts you to enter a password when installing the package (e.g. `--params"'/EnterPassword'"`) ;
 
 NOTE: Uninstalling this package does not remove the repository created or disable the NuGet Realm in Nexus. This must be done manually.</description>
         <!-- <releaseNotes></releaseNotes> -->

@@ -1,0 +1,6 @@
+VERIFICATION
+
+To verify the files:
+
+1. Please go to the project releases location - https://github.com/KeeTrayTOTP/KeeTrayTOTP/releases - and download the correct version of the plugin (PLGX) file;
+2. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the official release (downloaded in step 1 above) and the file from the package and compare them;
