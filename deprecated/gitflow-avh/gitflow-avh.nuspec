@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>gitflow-avh</id>
+        <version>0.0.0.20200718</version>
+        <title>[Deprecated] git-flow AVH Edition</title>
+        <authors>Vincent Driessen, Peter van der Does</authors>
+        <owners>pauby, Daniel Hilgarth</owners>
+        <licenseUrl>https://github.com/petervanderdoes/gitflow/blob/develop/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/petervanderdoes/gitflow</projectUrl>
+        <iconUrl>https://github.com/michfield/devbox-choco/raw/master/Devbox-GitFlow/Devbox-GitFlow.png</iconUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>This package has been deprecated in favour of the `git` package as that now includes this functionality. See [here](https://github.com/petervanderdoes/gitflow-avh/wiki/Installing-on-Windows#git-for-windows) for more information.</description>
+        <summary>This package has been deprecated in favour of the `git` package as that now includes this functionality. See [here](https://github.com/petervanderdoes/gitflow-avh/wiki/Installing-on-Windows#git-for-windows) for more information.</summary>
+        <copyright>Copyright: Copyright 2012 - 2015 Peter van der Does. Copyright 2010 Vincent Driessen. All rights reserved.</copyright>
+        <tags>vcs scm git gitflow git-flow git-flow-avh gitflow-avh</tags>
+        <dependencies>
+            <dependency id="git" />
+        </dependencies>
+    </metadata>
+</package>
