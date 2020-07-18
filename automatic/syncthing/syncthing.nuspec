@@ -37,7 +37,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@9ffd3adf/icons/syncthing.png</iconUrl>
         <copyright>2018 Syncthing</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
-        <licenseUrl>https://raw.githubusercontent.com/syncthing/syncthing/master/LICENSE</licenseUrl>
+        <licenseUrl>https://raw.githubusercontent.com/syncthing/syncthing/main/LICENSE</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <projectSourceUrl>https://github.com/syncthing/syncthing</projectSourceUrl>
         <docsUrl>https://docs.syncthing.net/</docsUrl>
