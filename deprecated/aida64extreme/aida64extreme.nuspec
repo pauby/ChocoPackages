@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>aida64extreme</id>
+        <version>4.60.3100.20200730</version>
+        <title>[Deprecated] AIDA64 Extreme Edition</title>
+        <authors>FinalWire</authors>
+        <owners>pauby,adgellida,dtgm</owners>
+        <licenseUrl>http://www.aida64.com/licensing-aida64</licenseUrl>
+        <projectUrl>http://www.aida64.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>**This package has been deprecated in favour of the [aida64-extreme](https://chocolatey.org/packages/aida64-extreme) package.**
+
+        AIDA64 Extreme Edition is a streamlined Windows diagnostic and benchmarking software for home users.
+AIDA64 Extreme Edition provides a wide range of features to assist in overclocking, hardware error diagnosis, stress testing, and sensor monitoring.
+It has unique capabilities to assess the performance of the processor, system memory, and disk drives.
+AIDA64 is compatible with all current 32-bit and 64-bit Microsoft Windows operating systems, including Windows 8 and Windows Server 2012.</description>
+        <summary>>**This package has been deprecated in favour of the [aida64-extreme](https://chocolatey.org/packages/aida64-extreme) package.** AIDA64 Extreme Edition is a streamlined Windows diagnostic and benchmarking software for home users.</summary>
+        <copyright />
+        <tags>trial-version benchmark</tags>
+        <dependencies>
+            <dependency id="aida64-extreme" />
+        </dependencies>
+    </metadata>
+</package>
