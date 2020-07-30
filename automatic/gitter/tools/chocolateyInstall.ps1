@@ -1,22 +1,19 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$installDir = Join-Path -Path $toolsDir -ChildPath $env:ChocolateyPackageName
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
-    url            = 'https://update.gitter.im/win/GitterSetup-3.1.0.exe'
-    checksum       = '897c7a0e2b45f57c2e2651b7cca795f681407378d5974d3694dfd986070fca7b'
-    checksumType   = 'sha256'
+    file           = Get-Item -Path (Join-Path -Path $toolsDir -ChildPath '*_x32.exe')
     fileType       = 'EXE'
-    silentArgs     = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /DIR=$env:chocolateyPackageFolder"
+    silentArgs     = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /DIR=$installDir"
     validExitCodes = @(0)
 }
 
-Install-ChocolateyPackage @packageArgs
+Install-ChocolateyInstallPackage @packageArgs
 
-# Create a shim ignore file ignore
-New-Item -Name 'gitter.exe.ignore' -Path (Split-Path -Path $toolsDir -Parent) -ItemType File -ErrorAction SilentlyContinue | Out-Null
-
-# Start Menu shortcuts are created under the admin account - move them to All Users start menu
-Move-Item -Path (Join-Path -Path ([Environment]::GetFolderPath('Programs')) -ChildPath 'Gitter') `
-    -Destination ([Environment]::GetFolderPath('CommonPrograms')) -Force
+# Create shim ignore file(s)
+Get-ChildItem -Path (Join-Path -Path $installDir -ChildPath '*.exe') | ForEach-Object {
+    New-Item -Name "$($_.Name).ignore" -Path $installDir -ItemType File -ErrorAction SilentlyContinue | Out-Null
+}

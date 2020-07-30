@@ -23,7 +23,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- version should MATCH as closely as possible with the underlying software -->
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-        <version>2020.0.0</version>
+        <version>2020.1.3</version>
         <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/snagit</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
         <owners>pauby, DavidPeters,d.hilgarth</owners>
@@ -35,7 +35,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://www.techsmith.com/screen-capture.html</projectUrl>
         <iconUrl>https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/snagit.png</iconUrl>
-        <copyright>2018 TechSmith</copyright>
+        <copyright>2020 TechSmith</copyright>
         <!-- If there is a license Url available, it is required for the community feed -->
         <licenseUrl>http://www.techsmith.com/snagit-eula.html</licenseUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>

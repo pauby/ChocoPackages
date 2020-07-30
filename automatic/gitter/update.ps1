@@ -5,13 +5,12 @@
 $releases    = 'https://update.gitter.im/win/latest'
 
 function global:au_SearchReplace {
-    @{
-        ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*url\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType32)'"
-        }
-    }
+}
+
+function global:au_BeforeUpdate {
+
+    # embed the installer in the package
+    Get-RemoteFiles -Purge
 }
 
 function global:au_AfterUpdate { 
@@ -31,4 +30,4 @@ function global:au_GetLatest {
     }
 }
 
-update -ChecksumFor 32
+update-package -ChecksumFor None
