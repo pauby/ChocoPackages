@@ -23,7 +23,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- version should MATCH as closely as possible with the underlying software -->
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-        <version>0.14.47</version>
+        <version>1.7.0.20200708</version>
         <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/syncthing</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
         <owners>pauby, Ferk</owners>
@@ -37,7 +37,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@9ffd3adf/icons/syncthing.png</iconUrl>
         <copyright>2018 Syncthing</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
-        <licenseUrl>https://raw.githubusercontent.com/syncthing/syncthing/master/LICENSE</licenseUrl>
+        <licenseUrl>https://raw.githubusercontent.com/syncthing/syncthing/main/LICENSE</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <projectSourceUrl>https://github.com/syncthing/syncthing</projectSourceUrl>
         <docsUrl>https://docs.syncthing.net/</docsUrl>
