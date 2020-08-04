@@ -16,12 +16,14 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regex  = 'jenkins-.+\.zip$'
-    $url = $page.links | Where-Object href -match $regex | Select-Object -Last 1 -expand href
-    $version = ([Regex]::Matches($url, '(\d+\.\d+.\d+)+')).Value
+    $pageFiltered = $page.links | Where-Object href -match '\.zip$' | Select-Object -Last 1 -expand href
+
+    $regexUrl = 'jenkins-(?<version>[\d\.]+).zip$'
+    $pageFiltered -match $regexUrl
+    $version = $matches.version
 
     return @{
-        URL   = "http://mirrors.jenkins-ci.org/windows-stable/$url"
+        URL   = "http://mirrors.jenkins-ci.org/windows-stable/jenkins-$version.zip"
         Version = $version
     }
 }
