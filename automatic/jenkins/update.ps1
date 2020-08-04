@@ -2,7 +2,7 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases = 'https://jenkins.io/download/'
+$releases = 'http://mirrors.jenkins-ci.org/windows-stable/'
 
 function global:au_SearchReplace {
     @{
@@ -15,16 +15,13 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    # needed for Invoke-WebRequest to work for this site
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = "Deploy Jenkins`n(?<version>[\d\.]+)"
-    $page.RawContent -match $regexUrl
-    $version = $matches.version
+    $regex  = 'jenkins-.+\.zip$'
+    $url = $page.links | Where-Object href -match $regex | Select-Object -Last 1 -expand href
+    $version = ([Regex]::Matches($url, '(\d+\.\d+.\d+)+')).Value
 
     return @{
-        URL   = "http://mirrors.jenkins-ci.org/windows-stable/jenkins-$version.zip"
+        URL   = "http://mirrors.jenkins-ci.org/windows-stable/$url"
         Version = $version
     }
 }
