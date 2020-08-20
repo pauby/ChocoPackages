@@ -74,12 +74,11 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
 * Access your favorite pages from a menu or pin shortcuts to them on your desktop
 
-This will install Onetastic for a 32-bit version of Microsoft OneNote. Use the `OneNotex64` parameter to install for a 64-bit version of Microsoft OneNote.
-**NOTE: This has nothing to do with your operating system but your version of Microsoft OneNote! Find out more on [how to identify which version of Microsoft OneNote you have](https://getonetastic.com/how-to/find-office-bitness).**
+**NOTE: This will install Onetastic for a 32-bit version of Microsoft OneNote. Use the `OneNotex64` parameter to install for a 64-bit version of Microsoft OneNote. This has nothing to do with your operating system but your version of Microsoft OneNote! Find out more on [how to identify which version of Microsoft OneNote you have](https://getonetastic.com/how-to/find-office-bitness).**
 
 Example:
 
-`-params '"/onenotex64"'`
+`--params '"/onenotex64"'`
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
