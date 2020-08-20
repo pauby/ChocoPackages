@@ -6,21 +6,11 @@ $releases = 'https://github.com/syncthing/syncthing/releases/latest'
 
 function global:au_SearchReplace {
     @{
-        ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*url\s*=\s*)(''.*'')'              = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType32)'"
-            '(^\s*url64\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL64)'"
-            "(?i)(^\s*checksum64\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum64)'"
-            "(?i)(^\s*checksumType64\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType64)'"
-        }
     }
 }
 
 function global:au_BeforeUpdate() {
     Get-RemoteFiles -Purge
-    $Latest.ChecksumType32 = 'SHA256'
-    $Latest.ChecksumType64 = 'SHA256'
 }
 
 function global:au_AfterUpdate {
@@ -39,6 +29,7 @@ function global:au_GetLatest {
         URL32   = "https://github.com/$url32"
         URL64   = "https://github.com/$url64"
         Version = $version
+        PayloadVersion = $version
     }
 }
 
