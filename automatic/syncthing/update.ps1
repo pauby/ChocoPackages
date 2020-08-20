@@ -18,10 +18,8 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate() {
-    Invoke-WebRequest -Uri $Latest.Url32 -UseBasicParsing -OutFile
-    $Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
+    Get-RemoteFiles -Purge
     $Latest.ChecksumType32 = 'SHA256'
-    $Latest.Checksum64 = Get-RemoteChecksum $Latest.Url64
     $Latest.ChecksumType64 = 'SHA256'
 }
 
