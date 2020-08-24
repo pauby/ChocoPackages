@@ -2,8 +2,8 @@
 
 $packageArgs = @{
     packageName   = $env:ChocolateyPackageName
-    url           = 'https://bitbucket.org/ligos/readablepassphrasegenerator/downloads/ReadablePassphrase%201.1.1.plgx'
-    checksum      = '34d634250b38ba6fb9f9537e41d2ba8ee668d10b4ce3fcae2ec36d68bd68f701'
+    url           = 'https://github.com/ligos/readablepassphrasegenerator/releases/download/release-1.2.1/ReadablePassphrase.1.2.1.plgx'
+    checksum      = 'd91261ae0001fd1c78775e8d4354b69bb4b33432811e8e66a4ba19eb185ac35a'
     checksumType  = 'SHA256'
 }
 
