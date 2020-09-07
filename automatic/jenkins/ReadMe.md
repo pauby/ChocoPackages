@@ -22,4 +22,5 @@ Jenkins can be extended via its plugin architecture, providing nearly infinite p
 * Distributed
 Jenkins can easily distribute work across multiple machines, helping drive builds, tests and deployments across multiple platforms faster.
 
+**NOTE**: You need Java JRE 1.8 or 11 for Jenkins to install. This has not been added as a dependency as there are so many flavours. The package used in testing was `openjdk11jre` but others should work without issue.
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
