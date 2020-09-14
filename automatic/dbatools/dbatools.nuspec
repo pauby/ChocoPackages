@@ -40,7 +40,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <licenseUrl>https://github.com/sqlcollaborative/dbatools/blob/master/LICENSE</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <projectSourceUrl>https://github.com/sqlcollaborative/dbatools</projectSourceUrl>
-        <docsUrl>https://dbatools.io/functions/</docsUrl>
+        <docsUrl>https://docs.dbatools.io/</docsUrl>
         <!-- <mailingListUrl>https://sourceforge.net/p/keepass/discussion/</mailingListUrl> -->
         <bugTrackerUrl>https://github.com/sqlcollaborative/dbatools/issues</bugTrackerUrl>
         <tags>admin powershell module template dba sqlserver sql tools database</tags>
