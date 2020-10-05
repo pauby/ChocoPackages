@@ -16,7 +16,8 @@ if (Test-Path -Path $savedParamsPath) {
 
 $params = Get-PackageParameters
 
-# Taken from the AZ.psm1 script module - allows us to detect thgis at installatin rather than after
+# Taken from the AZ.psm1 script module - allows us to detect this at installatin rather than after
+# Note that this is not added as a dependency as if you intend to run this in PS Core, .NET 4.7.2 is not required.
 function Test-DotNet {
     try {
         if ((Get-PSDrive 'HKLM' -ErrorAction Ignore) -and (-not (Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\' -ErrorAction Stop | Get-ItemPropertyValue -ErrorAction Stop -Name Release | where { $_ -ge 461808 }))) {
