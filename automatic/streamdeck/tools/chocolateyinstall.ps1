@@ -20,7 +20,7 @@ $packageArgs = @{
 # Check OS version
 Write-Debug "OS Name: $($env:OS_NAME)"
 if ($env:OS_NAME -ne "Windows 10") {
-    throw "Cannot be installed on this version of Windows ($($env:OS_NAME)) - $($env:packageName) only supports Windows 10 x64."
+    Write-Warning "Stream deck is only supported on Windows 10 x64 and later. Installing it on any other operating system means you won't be supported by Elgato and your mileage may vary!"
 }
 
 Install-ChocolateyPackage @packageArgs
