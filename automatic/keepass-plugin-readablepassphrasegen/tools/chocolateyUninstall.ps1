@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$pluginFilename = 'ReadablePassphrase%201.1.1.plgx'
+$pluginFilename = 'ReadablePassphrase.1.2.1.plgx'
 
 $packageSearch = 'KeePass Password Safe*'
 $installPath = ''
