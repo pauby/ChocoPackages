@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements
+-->
+
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬ appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>manycam</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>7.7.0.33</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/manycams</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>ManyCam Virtual Webcam (Install) (Install)</title>
+    <authors>Visicom Media Inc.</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://manycam.com/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@8b6a833/icons/manycam.png</iconUrl>
+    <copyright>Copyright 2006-2020 Visicom Media Inc.</copyright>
+    <!-- If there is a license Url available, it is is required for the community feed -->
+    <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>-->
+    <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
+    <docsUrl>https://manycam.com/help/</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <tags>admin webcam zoom hangouts teams skype ndi camera</tags>
+    <summary>ManyCam is the go-to software to enhance your live video on streaming platform, video conferencing app and distant classes.</summary>
+    <description>
+## Live Video Made Better
+ManyCam is the go-to software to enhance your live video on streaming platform, video conferencing app and distant classes.
+
+Add multiple cameras and video sources, such as mobile and PowerPoint, use virtual backgrounds, create layers and presets, screencast desktop, and more.
+NOTE: This package installs a printer driver. If you have UAC prompts enabled, you will need to confirm the driver installation.
+
+### Virtual Backgrounds
+Blur, remove or replace your background with images during web conferences, video chats, and virtual classrooms without a green screen. If you have a green screen, activate the Chroma Key for an even more professional virtual background.
+
+### Stream to Facebook and YouTube Live
+Streaming has never been easier! Quickly set up your RTMP stream and broadcast to your chosen streaming service or go live on multiple platforms at once to increase your online reach.
+
+### NDI® Source
+With NDI® Input, users can add NDI-compatible software and hardware as a video source within ManyCam. Skype and Microsoft Teams are two examples of potential NDI® sources. In other words, your meeting or one-on-one video call interview can be broadcasted live with ManyCam.
+
+ManyCam also offers NDI® Output, which enables users to add ManyCam as an NDI® source on any compatible product with low-latency.
+
+Network Device Interface (NDI®) is a free protocol for Video over IP developed by NewTek that allows video-compatible products to communicate, send, and receive high-quality videos with low-latency - ideal for live productions. 
+
+**NOTE: The uninstall _on some earlier operating systems_ is not silent as it requires answer to what data you wish to uninstall.**
+
+**NOTE: Please note the [system requirements](https://help.manycam.com/knowledge-base/system-requirements/) particularly if you want to use virtual backgrounds.**
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+</description>
+    <!--<releaseNotes></releaseNotes>-->
+    <!-- =============================== -->
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <dependencies>
+      <dependency id="autohotkey" />
+      <!-- <dependency id="" version="__MINIMUM_VERSION__" />
+      <dependency id="" version="[__EXACT_VERSION__]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
+      <dependency id="" />
+      <dependency id="chocolatey-uninstall.extension" /> -->
+    </dependencies>
+    <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
