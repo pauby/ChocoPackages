@@ -14,11 +14,6 @@ $packageArgs = @{
     validExitCodes = @(0, -1073741819)
 }
 
-# Write-debug "OS Name: $($env:OS_NAME)"
-# if ($env:OS_NAME -like "*Server*") {
-#     throw "Cannot be installed on a Server operating system ($($env:OS_NAME))."
-# }
-
 $ahkExe = 'AutoHotKey'
 $ahkFile = Join-Path -Path $env:TEMP -ChildPath "$(Get-Random).ahk"
 $ahkSourceFile = Join-Path -Path $toolsDir -ChildPath "$($env:ChocolateyPackageName)_install.ahk"
