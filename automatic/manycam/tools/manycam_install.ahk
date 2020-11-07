@@ -10,7 +10,7 @@ CoordMode, Mouse, Window
 winTitle = Windows Security
 winText = You should only install driver software from publishers you trust
 
-WinWait, %winTitle%, %winText%, 90
+WinWait, %winTitle%, %winText%, 300
 if (Errorlevel)
 {
     ExitApp
