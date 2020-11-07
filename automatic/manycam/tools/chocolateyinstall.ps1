@@ -35,3 +35,13 @@ if (-not (Test-Path -Path $startFolderPath)) {
 }
 
 Remove-Item $ahkFile -Force -ErrorAction SilentlyContinue
+
+# The ManyCam window doesn't appear immediately so lets wait for 5 secs
+for ($i = 0; $i -le 5; $i++) {
+    if ($proc = Get-Process -Name 'ManyCam' -ErrorAction SilentlyContinue) {
+        $proc | Stop-Process -ErrorAction SilentlyContinue
+        break
+    }
+
+    Start-Sleep -Seconds 1
+}
