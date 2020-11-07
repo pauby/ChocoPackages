@@ -47,7 +47,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <docsUrl>https://manycam.com/help/</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
     <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <tags>admin webcam zoom hangouts teams skype ndi camera</tags>
+    <tags>admin webcam zoom hangouts teams skype ndi camera notSilent</tags>
     <summary>ManyCam is the go-to software to enhance your live video on streaming platform, video conferencing app and distant classes.</summary>
     <description>
 ## Live Video Made Better
