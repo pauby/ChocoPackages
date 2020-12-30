@@ -11,9 +11,10 @@ $packageArgs = @{
     validExitCodes = @(0)
 }
 
-Install-ChocolateyInstallPackage @packageArgs
+New-Item $installDir\notification_helper.exe.ignore -ItemType File -ErrorAction SilentlyContinue
+New-Item $installDir\chromedriver.exe.ignore -ItemType File -ErrorAction SilentlyContinue
+New-Item $installDir\nacl64.exe.ignore -ItemType File -ErrorAction SilentlyContinue
+New-Item $installDir\nwjc.exe.ignore -ItemType File -ErrorAction SilentlyContinue
+New-Item $installDir\payload.exe.ignore -ItemType File -ErrorAction SilentlyContinue
 
-# Create shim ignore file(s)
-Get-ChildItem -Path (Join-Path -Path $installDir -ChildPath '*.exe') | ForEach-Object {
-    New-Item -Name "$($_.Name).ignore" -Path $installDir -ItemType File -ErrorAction SilentlyContinue | Out-Null
-}
+Install-ChocolateyInstallPackage @packageArgs
