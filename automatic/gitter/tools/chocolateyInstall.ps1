@@ -11,6 +11,7 @@ $packageArgs = @{
     validExitCodes = @(0)
 }
 
+New-Item $installDir -ItemType Directory -ErrorAction SilentlyContinue
 New-Item $installDir\notification_helper.exe.ignore -ItemType File -ErrorAction SilentlyContinue
 New-Item $installDir\chromedriver.exe.ignore -ItemType File -ErrorAction SilentlyContinue
 New-Item $installDir\nacl64.exe.ignore -ItemType File -ErrorAction SilentlyContinue
