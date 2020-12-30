@@ -11,11 +11,11 @@ $packageArgs = @{
     validExitCodes = @(0)
 }
 
-New-Item $installDir -ItemType Directory -ErrorAction SilentlyContinue
-New-Item $installDir\notification_helper.exe.ignore -ItemType File -ErrorAction SilentlyContinue
-New-Item $installDir\chromedriver.exe.ignore -ItemType File -ErrorAction SilentlyContinue
-New-Item $installDir\nacl64.exe.ignore -ItemType File -ErrorAction SilentlyContinue
-New-Item $installDir\nwjc.exe.ignore -ItemType File -ErrorAction SilentlyContinue
-New-Item $installDir\payload.exe.ignore -ItemType File -ErrorAction SilentlyContinue
+New-Item $installDir -ItemType Directory -ErrorAction SilentlyContinue | Out-Null
+New-Item $installDir\notification_helper.exe.ignore -ItemType File -ErrorAction SilentlyContinue | Out-Null
+New-Item $installDir\chromedriver.exe.ignore -ItemType File -ErrorAction SilentlyContinue | Out-Null
+New-Item $installDir\nacl64.exe.ignore -ItemType File -ErrorAction SilentlyContinue | Out-Null
+New-Item $installDir\nwjc.exe.ignore -ItemType File -ErrorAction SilentlyContinue | Out-Null
+New-Item $installDir\payload.exe.ignore -ItemType File -ErrorAction SilentlyContinue | Out-Null
 
 Install-ChocolateyInstallPackage @packageArgs
