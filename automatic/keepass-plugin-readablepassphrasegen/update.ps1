@@ -6,20 +6,12 @@ $releases    = 'https://github.com/ligos/readablepassphrasegenerator/releases/la
 
 function global:au_SearchReplace {
     @{
-        ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*url\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType32)'"
-        }
-        ".\tools\chocolateyUninstall.ps1" = @{
-            '(^\s*\$pluginFilename\s*=\s*)(''ReadablePassphrase%20.*'')' = "`$1'ReadablePassphrase%20$($Latest.Version).plgx'"
-        }
     }
 }
 
+
 function global:au_BeforeUpdate() {
-    $Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
-    $Latest.ChecksumType32 = 'SHA256'
+    Invoke-WebRequest -Uri $Latest.Url32 -UseBasicParsing -OutFile 'tools\ReadablePassphrase.plgx'
 }
 
 function global:au_AfterUpdate {
