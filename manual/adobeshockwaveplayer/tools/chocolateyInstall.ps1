@@ -1,28 +1,37 @@
-﻿$packageName = 'adobeshockwaveplayer'
-$checksum = 'BB5A21A38919483E25F8C84F51E5FD426CA96F061060FA096CD9520687E73B7E'
-$checksumType = 'sha256'
-$installerType = 'exe'
-$silentArgs = '/S /NCRC'
-$validExitCodes = @(0)
 
-$toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$ahkFile = Join-Path $toolsDir 'chocolateyInstall.ahk'
-$installFile = Join-Path $toolsDir "$($packageName).exe"
-Import-Module (Join-Path "$toolsDir" 'Get-HtmlFromRegex.psm1')
+$ErrorActionPreference = 'Stop';
+$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$url        = 'https://download.macromedia.com/pub/shockwave/default/english/win95nt/latest/sw_lic_full_installer.msi'
 
-$urlAppId = 'https://filehippo.com/download_shockwave/download/cac7bf9138874f29ccab21667ac2510c/'
-$search = 'download_shockwave/download/([\w\d]+)/'
-$replace = 'https://www.filehippo.com/en/download_shockwave/download/$1/'
-$urlTemp = Get-HtmlFromRegex $urlAppId $search $replace
-$search = '/download/file/([\w\d]+)/'
-$replace = 'https://www.filehippo.com/download/file/$1/'
-$url = Get-HtmlFromRegex $urlTemp $search $replace
+$packageArgs = @{
+  packageName   = $env:ChocolateyPackageName
+  unzipLocation = $toolsDir
+  fileType      = 'MSI'
+  url           = $url
+  softwareName  = 'adobeshockwaveplayer*'
+  checksum      = '8E414C1A218157D2B83877FB0B6A5002C2E9BFF4DC2A3095BAE774A13E3E9DBF'
+  checksumType  = 'sha256'
+  silentArgs    = "/qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`""
+  validExitCodes= @(0, 3010, 1641)
+}
 
-Start-Process 'AutoHotKey' $ahkFile
-Install-ChocolateyPackage -PackageName "$packageName" `
-                          -FileType "$installerType" `
-                          -SilentArgs "$silentArgs" `
-                          -Url "$url" `
-                          -ValidExitCodes $validExitCodes `
-                          -Checksum "$checksum" `
-                          -ChecksumType "$checksumType"
+Install-ChocolateyPackage @packageArgs
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
