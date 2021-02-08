@@ -1,4 +1,4 @@
-﻿# ![Adobe Shockwave Player Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@master/icons/adobeshockwaveplayer.svg "Adobe Shockwave Player") [Adobe Shockwave Player](https://chocolatey.org/packages/adobeshowaveplayer)
+﻿# ![Adobe Shockwave Player Logo](https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/adobeshockwaveplayer.png "Adobe Shockwave Player") [Adobe Shockwave Player](https://chocolatey.org/packages/adobeshockwaveplayer)
 
 Adobe Shockwave (formerly Macromedia Shockwave) is a multimedia platform used to add animation and interactivity to web pages. It allows Adobe Director applications to be published on the Internet and viewed in a web browser on any computer which has the Shockwave plug-in installed. It was first developed by Macromedia, and released in 1995 and was later acquired by Adobe Systems in 2005.
 
