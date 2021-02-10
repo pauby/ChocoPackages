@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>windows-tweaker</id>
+    <version>5.3.1.20210210</version>
+    <title>Windows Tweaker</title>
+    <authors>Siddharth Srivastava</authors>
+    <owners>Redsandro tonigellida dtgm</owners>
+    <licenseUrl>https://github.com/siddharth96/windows-tweaker/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/siddharth96/windows-tweaker</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/chocopackages@855065b/icons/windows-tweaker.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Windows Tweaker is an open source program that can tweak many system settings.  Windows Tweaker has been written in C# and WPF using .net Framework 4.5, to allow users to easily change every possible setting in Windows without having to dig deep into registry.
+
+More than 100+ tweaks that allow you to customize your system and display settings, schedule shutdowns and lots more. Access to more than 35 Windows tools at your fingertip.
+</description>
+    <summary>Open source program that can tweak many system settings without digging in registry</summary>
+    <releaseNotes>https://github.com/siddharth96/windows-tweaker/releases</releaseNotes>
+    <copyright>Siddharth Srivastava</copyright>
+    <tags>customization tweaker registry</tags>
+    <dependencies>
+      <dependency id="windows-tweaker.install" version="[5.3.1.20210210]" />
+    </dependencies>
+  </metadata>
+</package>

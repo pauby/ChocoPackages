@@ -1,0 +1,7 @@
+VERIFICATION
+
+NOTE: There are no binary releases on the GitHub project source page.
+
+1. Download the installer from https://tweaker.blob.core.windows.net/downloads/Windows_Tweaker_5.3.1-Setup.exe (this was the download location from the previous package version).
+
+2. Compare the downloaded installer hash with the installer bundled in the package.
