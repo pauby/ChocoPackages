@@ -31,15 +31,15 @@ if ([string]::IsNullOrEmpty($installPath)) {
 }
 
 if ([string]::IsNullOrEmpty($installPath)) {
-  Write-Verbose "Searching '$env:Path' for unregistered install..."
-  $installFullName = Get-Command -Name keepass -ErrorAction SilentlyContinue
-  if ($installFullName) {
-      $installPath = Split-Path $installFullName.Path -Parent
-  }
+    Write-Verbose "Searching '$env:Path' for unregistered install..."
+    $installFullName = Get-Command -Name keepass -ErrorAction SilentlyContinue
+    if ($installFullName) {
+        $installPath = Split-Path $installFullName.Path -Parent
+    }
 }
 
 if ([string]::IsNullOrEmpty($installPath)) {
-  throw "$($packageSearch) not found."
+    throw "$($packageSearch) not found."
 }
 else {
     Write-Verbose "Found Keepass install location at '$installPath'."
@@ -47,11 +47,10 @@ else {
 
 Install-ChocolateyZipPackage @packageArgs
 
-# copy the items from the chocolatey install folder to the Keepass install location
+# copy the items from the chocolatey install folder to the Keepass plugin folder
+$installPath = Join-Path -Path $installPath -ChildPath 'plugins'
 $sourcePath = Join-Path -Path $packageArgs.unzipLocation -ChildPath $zipFolder
-Get-ChildItem -Path $sourcePath -Recurse | ForEach-Object {
-    Copy-Item -Path $_.FullName -Destination ($_.FullName.Replace($sourcePath, $installPath)) -Force -ErrorAction SilentlyContinue
-}
+Copy-Item -Path $sourcePath -Destination $installPath -Recurse -Force -ErrorAction SilentlyContinue -Verbose
 
 if (Get-Process -Name 'KeePass' -ErrorAction SilentlyContinue ) {
     Write-Warning "Keepass is currently running. '$($packageArgs.packageName)' will be available at next restart."
