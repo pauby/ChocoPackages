@@ -1,0 +1,4 @@
+To verify the files in the package, follow these steps:
+
+* Go to https://github.com/ryanoasis/nerd-fonts/tree/fa69496f5a3291fbcb6c0ad5bcec9c8bcab842fc/patched-fonts/Hack (this is the commit for the version that matches the package version).
+* For each file in the nerdfont-hack.zip file, compare the checksum to that of file in the commit above use `Get-FileHash` for PowerShell or another checksum comparison tool.
