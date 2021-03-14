@@ -16,9 +16,17 @@ $unzipArgs = @{
 
 Get-ChocolateyUnzip @unzipArgs
 
-$fontCount = (Get-ChildItem -Path $tempPath -Include '*.ttf').count
+$fontCount = (Get-ChildItem -Path $tempPath -Recurse -Filter '*.ttf').count
+Write-Host "$fontCount fonts found to install."
+
 $fontInstalled = Install-ChocolateyFont $tempPath -Multiple
+Write-Host "$fontInstalled fonts installed."
 
 if ($fontInstalled -ne $fontCount) {
-    throw ("{0} fonts out {1] failed to install." -f $fountCount - $fontInstalled, $fountCount)
+    throw ("{0} fonts out {1} failed to install." -f ($fontCount - $fontInstalled), $fontCount)
 }
+
+# Remove our temporary files
+Remove-Item $tempPath -Recurse -ErrorAction SilentlyContinue
+
+Write-Warning 'If the fonts are not available in your applications or receive any errors installing or upgrading, please reboot to release the font files.'
