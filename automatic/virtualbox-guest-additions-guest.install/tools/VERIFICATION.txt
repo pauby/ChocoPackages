@@ -1,7 +1,12 @@
 VERIFICATION
 Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
 
-To verify the files using the project source:
+To verify the Certificate files using the project source:
 
 1. Please go to the project source location (https://www.virtualbox.org/svn/vbox/trunk/src/VBox/HostDrivers/Support/Certificates/) and download the source files;
 2. Use Get-FileHash -Path Trusted-OracleCorporationVirtualBox-05308b76ac2e15b29720fb4395f65f38.cer to get the file hash value from both the built file (from step 1 above) and the file from the package and compare them;
+
+To verify the ISO:
+
+1. Please go to the project source location https://download.virtualbox.org/virtualbox/ and download the correct version;
+2. Use `Get-FileHash <filename>` to compare the embedded ISO file hash with the one downloaded;

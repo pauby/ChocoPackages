@@ -18,15 +18,11 @@ $null = New-Item -ItemType Directory -Path $tempPath
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
-  fileFullPath   = Join-Path -Path $tempPath -ChildPath 'vboxadditions.iso'
+  fileFullPath   = Join-Path -Path $toolsDir -ChildPath 'VBoxGuestAdditions.iso'
   destination    = Join-Path -Path $tempPath -ChildPath 'extracted'
   fileType       = 'ZIP'
-  url            = 'https://download.virtualbox.org/virtualbox/6.0.4/VBoxGuestAdditions_6.0.12.iso'
-  checksum       = '78fa2ba78e91c7d6f16f8c7fa88676cc9772c7689ba47e2b19913670fad2d441'
-  checksumType   = 'sha256'
 }
 
-Get-ChocolateyWebFile @packageArgs
 Get-ChocolateyUnzip @packageArgs
 
 $binX86Filename = 'VBoxWindowsAdditions-x86.exe'
