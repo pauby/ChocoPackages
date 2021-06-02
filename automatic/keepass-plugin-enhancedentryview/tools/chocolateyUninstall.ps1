@@ -2,7 +2,7 @@
 
 $packageArgs = @{
     packageName = $env:ChocolateyPackageName
-    zipFileName = "KPEnhancedEntryView-v$($env:ChocolateyPackageVersion).zip"
+    zipFileName = "KPEnhancedEntryView.zip"
 }
 
 Uninstall-ChocolateyZipPackage @packageArgs

@@ -3,7 +3,7 @@ $ErrorActionPreference = 'Stop'
 $invalidExitCode = @(2)
 
 $installedDriver = Get-CimInstance win32_PnPSignedDriver `
-    -Filter "Manufacturer = 'Bingxing Wang' and DeviceName like 'Apple USB Precision Touchpad Device%'"
+    -Filter "Manufacturer = 'Bingxing Wang' and DeviceName like 'Apple % Precision Touchpad Device%'"
 if (-not $installedDriver) {
     throw "Could not uninstall the driver we installed as it could not be found! Perhaps it has been removed outside of the package."
 }

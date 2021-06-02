@@ -1,0 +1,4 @@
+To verify the embedded files:
+
+1. Go to https://sourceforge.net/projects/kpenhentryview/files/ and download the files with the same version as the package;
+2. Use `Get-FileHash <filename>`` to check the SHA256 of the file downloaded and compare with the embedded one.

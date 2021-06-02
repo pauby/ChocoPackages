@@ -1,11 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$packageArgs = @{
-    packageName   = $env:ChocolateyPackageName
-    url           = 'https://sourceforge.net/projects/kpenhentryview/files/v2.1.4/KPEnhancedEntryView-v2.1.4.zip/download'
-    checksum      = '6a06e33a6c1494466a91715b9b69a7c732b68f73d3906e0674efaae99ce326e0'
-    checksumType  = 'sha256'
-}
+$toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+$pluginFilename = 'KPEnhancedEntryView.zip'
+$pluginSourcePath = Join-Path -Path $toolsDir -ChildPath $pluginFilename
 
 $packageSearch = 'KeePass Password Safe*'
 $installPath = ''
@@ -35,11 +32,15 @@ if ([string]::IsNullOrEmpty($installPath)) {
     throw "Cannot find Keepass! Exiting now as it's needed to install the plugin."
 }
 
-
 Write-Verbose "Found Keepass install location at '$installPath'."
-$packageArgs.unzipLocation = Join-Path -Path $installPath -ChildPath 'Plugins'
 
-Install-ChocolateyZipPackage @packageArgs
+$packageArgs = @{
+    packageName  = $env:ChocolateyPackageName
+    fileFullPath = $pluginSourcePath
+    destination  = Join-Path -Path $installPath -ChildPath 'Plugins'
+}
+
+Get-ChocolateyUnzip @packageArgs
 
 if (Get-Process -Name 'KeePass' -ErrorAction SilentlyContinue) {
     Write-Warning "Keepass is currently running. '$($packageArgs.packageName)' will be available at next restart."
