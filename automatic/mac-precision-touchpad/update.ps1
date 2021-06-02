@@ -18,9 +18,10 @@ function global:au_BeforeUpdate {
     Expand-Archive -Path $filename -Destination "tools" -Force
 }
 
-function global:au_AfterUpdate {
-    Set-DescriptionFromReadme -SkipFirst 2
-}
+# This was failing which may have been failing the build.
+# function global:au_AfterUpdate {
+#     Set-DescriptionFromReadme -SkipFirst 2
+# }
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing

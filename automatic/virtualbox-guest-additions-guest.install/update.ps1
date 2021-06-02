@@ -6,15 +6,18 @@ $releases = 'https://www.virtualbox.org/wiki/Downloads'
 
 function global:au_SearchReplace {
     @{
-        ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*url\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksumType\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType32)'"
-        }
+        # ".\tools\chocolateyInstall.ps1" = @{
+        #     '(^\s*url\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL32)'"
+        #     "(?i)(^\s*checksum\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum32)'"
+        #     "(?i)(^\s*checksumType\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType32)'"
+        # }
     }
 }
 
 function global:au_BeforeUpdate() {
+    Invoke-WebRequest -Uri $Latest.Url32 -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox `
+        -UseBasicParsing -OutFile 'tools\VBoxGuestAdditions.iso'
+
 }
 
 function global:au_AfterUpdate {
@@ -33,4 +36,4 @@ function global:au_GetLatest {
     }
 }
 
-Update-Package
+Update-Package -ChecksumFor None
