@@ -2,9 +2,9 @@
 Set-StrictMode -Version 2
 
 $packageName = 'azurepowershell'
-$moduleVersion = [version]'6.1.0'
-$url = 'https://github.com/Azure/azure-powershell/releases/download/v6.1.0-May2018/azure-powershell.6.1.0.msi'
-$checksum = '28bcb88d79897593cea79be964d419c14be98ddd6984e272d040ee4cc5c2c63e'
+$moduleVersion = [version]'6.2.1'
+$url = 'https://github.com/Azure/azure-powershell/releases/download/v6.2.1-July2021/Az-Cmdlets-6.2.1.34515-x64.msi'
+$checksum = '16d634fdfede659cc05ca7cd8ad9b7cedc09dcacd7264fc55f4d0c93ca3036f2'
 $checksumType = 'SHA256'
 
 . (Join-Path -Path (Split-Path -Path $MyInvocation.MyCommand.Path) -ChildPath helpers.ps1)
