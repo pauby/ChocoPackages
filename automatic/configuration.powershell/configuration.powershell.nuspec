@@ -23,7 +23,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- version should MATCH as closely as possible with the underlying software -->
         <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
         <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-        <version>1.3.1</version>
+        <version>1.5.0</version>
         <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/configuration.powershell</packageSourceUrl>
         <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
         <owners>pauby</owners>
@@ -39,7 +39,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://github.com/PoshCode/Configuration/blob/master/LICENSE</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <projectSourceUrl>https://github.com/PoshCode/Configurationd</projectSourceUrl>
+        <projectSourceUrl>https://github.com/PoshCode/Configuration</projectSourceUrl>
         <docsUrl>https://github.com/PoshCode/Configuration/blob/master/README.md</docsUrl>
         <!-- <mailingListUrl>https://sourceforge.net/p/keepass/discussion/</mailingListUrl> -->
         <bugTrackerUrl>https://github.com/PoshCode/Configuration/issues</bugTrackerUrl>
