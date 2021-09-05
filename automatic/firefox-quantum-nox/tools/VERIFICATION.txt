@@ -1,0 +1,12 @@
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+1. Please go to the project releases at https://github.com/Izheil/Quantum-Nox-Firefox-Dark-Full-Theme/releases;
+2. Download the binary file named Multirow-Patcher-Quantum-Nox-Installer-Windows-<VERSION>.exe where <VERSION> is same version as included with the package. Note that for simplicity, the binary that is released is renamed to `quantum-nox.exe` when included with the package;
+3. From a PowerShell command line run:
+
+     Get-FileHash <filename>
+
+   against both the binary file included in the package and the one downloaded and they should match;
