@@ -1,8 +1,6 @@
 # [Firefox Quantum Nox](https://chocolatey.org/packages/firefox-quantum-nox)
 
-Firefox customizations for a full dark theme, multi-row tabs, custom scrollbar, and other functions.
-
-This theme is mainly intended to be used alongside a lightweight theme, and for the stable release of Firefox (This means that while it will most probably work with nightly and ESR for the most part, it may have less support for those versions). You can use it to fully change the colors of most of firefox UI to dark-gray colors (with #222-#444 colors mostly), including scrollbars, tooltips, sidebar, as well as dialogs. With the files here you can also as remove some context menu options, enable multirow tabs, change the font of the url bar.
+This package allows you patch Firefox to enable the use of external Javascript files to extend it's functionability. Some of the features you can install are multirow tabs, tabs below, or focus tab on hover.
 
 ### How To Use
 
