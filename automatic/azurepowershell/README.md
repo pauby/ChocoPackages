@@ -4,4 +4,6 @@ Azure PowerShell provides a set of cmdlets that use the Azure Resource Manager m
 
 Azure PowerShell requires PowerShell 3.0 or later, which can be installed using the [powershell](https://chocolatey.org/packages/powershell) package. This package does not define a dependency on that package to avoid causing a potentially undesired update to the newest PowerShell.
 
+**NOTE**: The [AzureRM PowerShell module has been deprecated](https://docs.microsoft.com/en-us/powershell/azure/azureps-support-lifecycle?view=azps-6.5.0#azurerm-powershell-modules) in favour of the [Az PowerShell Module](/packages/az.powershell).
+
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.

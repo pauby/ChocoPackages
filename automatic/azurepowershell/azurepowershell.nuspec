@@ -2,10 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>azurepowershell</id>
-    <version>6.1.0</version>
+    <version>6.9.0.20211025</version>
     <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/azurepowershell</packageSourceUrl>
     <owners>jberezanski,pauby</owners>
-    <title>Microsoft Azure PowerShell</title>
+    <title>Microsoft AzureRM PowerShell Module</title>
     <authors>Microsoft</authors>
     <projectUrl>https://github.com/Azure/azure-powershell</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@c5b46bdfe07ce816de0ffc3b1366aab4c4e5a240/icons/azurepowershell.png</iconUrl>
@@ -18,6 +18,8 @@
     <description>Azure PowerShell provides a set of cmdlets that use the Azure Resource Manager model for managing your Azure resources. You can use it in your browser with Azure Cloud Shell, or you can install it on your local machine and use it in any PowerShell session.
 
 Azure PowerShell requires PowerShell 3.0 or later, which can be installed using the [powershell](https://chocolatey.org/packages/powershell) package. This package does not define a dependency on that package to avoid causing a potentially undesired update to the newest PowerShell.
+
+**NOTE**: The [AzureRM PowerShell module has been deprecated](https://docs.microsoft.com/en-us/powershell/azure/azureps-support-lifecycle?view=azps-6.5.0#azurerm-powershell-modules) in favour of the [Az PowerShell Module](/packages/az.powershell).
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>

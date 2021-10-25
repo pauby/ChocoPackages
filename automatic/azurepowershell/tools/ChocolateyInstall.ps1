@@ -2,17 +2,16 @@
 Set-StrictMode -Version 2
 
 $packageName = 'azurepowershell'
-$moduleVersion = [version]'6.1.0'
-$url = 'https://github.com/Azure/azure-powershell/releases/download/v6.1.0-May2018/azure-powershell.6.1.0.msi'
-$checksum = '28bcb88d79897593cea79be964d419c14be98ddd6984e272d040ee4cc5c2c63e'
+$moduleVersion = [version]'6.9.0'
+$url = 'https://github.com/Azure/azure-powershell/releases/download/v6.9.0-September2018/azure-powershell.6.9.0.msi'
+$checksum = '6938baf0cee2448665bd2d2c88840491b2203758ac2a589f844b6889e774e6d6'
 $checksumType = 'SHA256'
 
 . (Join-Path -Path (Split-Path -Path $MyInvocation.MyCommand.Path) -ChildPath helpers.ps1)
 
 Ensure-RequiredPowerShellVersionPresent -RequiredVersion '5.0'
 
-if (Test-AzurePowerShellInstalled -RequiredVersion $moduleVersion)
-{
+if (Test-AzurePowerShellInstalled -RequiredVersion $moduleVersion) {
     return
 }
 
@@ -20,10 +19,10 @@ $scriptDirectory = $PSScriptRoot # safe to use because we test for PS 3.0+ earli
 $originalMsiLocalPath = Join-Path -Path $scriptDirectory -ChildPath "azure-powershell.${moduleVersion}.msi"
 
 $downloadArguments = @{
-    packageName = $packageName
+    packageName  = $packageName
     fileFullPath = $originalMsiLocalPath
-    url = $url
-    checksum = $checksum
+    url          = $url
+    checksum     = $checksum
     checksumType = $checksumType
 }
 
@@ -32,10 +31,10 @@ Get-ChocolateyWebFile @downloadArguments | Out-Null
 Set-StrictMode -Version 2
 
 $instArguments = @{
-    packageName = $packageName
-    installerType = 'msi'
-    file = $originalMsiLocalPath
-    silentArgs = '/Quiet /NoRestart /Log "{0}\{1}_{2:yyyyMMddHHmmss}.log"' -f $Env:TEMP, $packageName, (Get-Date)
+    packageName    = $packageName
+    installerType  = 'msi'
+    file           = $originalMsiLocalPath
+    silentArgs     = '/Quiet /NoRestart /Log "{0}\{1}_{2:yyyyMMddHHmmss}.log"' -f $Env:TEMP, $packageName, (Get-Date)
     validExitCodes = @(
         0, # success
         3010 # success, restart required
