@@ -32,16 +32,26 @@ NOTE: This is a trial install of Snagit. To use your license key see Parameters 
 # Parameters:
 
 * /licensekey:ABCD-EFGH-IJKL
- Registered license key. If this is missing a 30 day trial is installed.
+  Registered license key. If this is missing a 30 day trial is installed.
 
 * /licensename:""Joe Bloggs""
- Registered name for the license. Can only be used if a /licensekey is specified
+  Registered name for the license. Can only be used if a /licensekey is specified. NOTE: Snagit 2022 onwards (and possibly earlier) do no support this parameter.
 
 * /nodesktopshortcut
- Does not install an application shortcut on the desktop.
+  Does not install an application shortcut on the desktop.
 
-Example: **-params='"/licensekey:ABCD-EFGH-IJKL /licensename:""Joe Bloggs"" /nodesktopshortcut"'**
+* /installdir:""C:\TMP""
+  The location Snagit is installed.
 
-**NOTE**: TechSmith seem to be okay with releasing a new version of the same version. This throws out the checksum of the package. If you find this happening, please raise an issue at https://github.com/pauby/chocopackages/issues. Thanks.
+* /disableautostart
+  By default Snagit runs when Windows starts. This disables that behaviour.
+
+* /datastoredir:""C:\TMP""
+  The path to save automatically stored files.
+
+* /appdatadir:""C:\TMP""
+  The path to store user preferences and user released data files..
+
+Example: **-params='"/licensekey:ABCD-EFGH-IJKL /appdatadir=""C:\TEMP"" /nodesktopshortcut "'**
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
