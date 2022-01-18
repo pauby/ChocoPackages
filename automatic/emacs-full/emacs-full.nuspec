@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>emacs-full</id>
+    <version>27.1.0.20220118</version>
+    <title>Emacs Full</title>
+    <authors>The GNU Project</authors>
+    <owners>Tim Schumacher</owners>
+    <licenseUrl>http://www.gnu.org/software/emacs/manual/html_node/emacs/Distrib.html</licenseUrl>
+    <projectUrl>http://www.gnu.org/software/emacs/</projectUrl>
+    <iconUrl>http://cvs.savannah.gnu.org/viewvc/*checkout*/emacs/emacs/etc/images/icons/hicolor/48x48/apps/emacs.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>GNU Emacs is an extensible, customizable text editor—and more. At its core is an interpreter for Emacs Lisp, a dialect of the Lisp programming language with extensions to support text editing.
+This is the full package for the complete experience.</description>
+    <summary>The Emacs editor</summary>
+    <releaseNotes>https://www.gnu.org/software/emacs/</releaseNotes>
+    <copyright>Copyright (C) 2020 Free Software Foundation, Inc.</copyright>
+    <tags>emacs editor</tags>
+    <projectSourceUrl>https://github.com/emacs-mirror/emacs</projectSourceUrl>
+    <packageSourceUrl>https://github.com/enko/EmacsChocolateyPackage</packageSourceUrl>
+    <bugTrackerUrl>https://github.com/enko/EmacsChocolateyPackage/issues</bugTrackerUrl>
+  </metadata>
+</package>
