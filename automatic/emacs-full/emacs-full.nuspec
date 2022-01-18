@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>emacs-full</id>
-    <version>27.1.0.20220118</version>
+    <version>27.2.0.20210423</version>
     <title>Emacs Full</title>
     <authors>The GNU Project</authors>
     <owners>Tim Schumacher</owners>

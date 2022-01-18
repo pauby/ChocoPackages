@@ -1,7 +1,7 @@
 $packageName = 'emacs'
 
 $majorVersion = '27'
-$minorVersion = '1'
+$minorVersion = '2'
 
 $emacsNameVersion = "$($packageName)-$($majorVersion).$($minorVersion)"
 $installDir = $(Split-Path -parent $MyInvocation.MyCommand.Definition) + '/' + $packageName
@@ -11,9 +11,9 @@ $FullPackageArgs = @{
     unzipLocation  = $installDir
     url            = "https://ftpmirror.gnu.org/emacs/windows/emacs-$($majorVersion)/$($emacsNameVersion)-i686.zip"
     url64bit       = "https://ftpmirror.gnu.org/emacs/windows/emacs-$($majorVersion)/$($emacsNameVersion)-x86_64.zip"
-    checksum       = 'A52A1126825F3BF02B727F727874BFCCB82FFAAB4E914DEFBEAEC28EB3ED6F1E'
+    checksum       = '626792EA6C4C5347E1F17960072440AF1CB05CB6767389FC8195A744A0B428CA'
     checksumType   = 'sha256'
-    checksum64     = '65F1B01BCD14E59D7DA0EBAD3979C5DF9F9BD8D24B2FF2E32A5AF3AACB226229'
+    checksum64     = '5396AA4239C9AC2F65A6B084CCF588D01BDD6DDB701419B7FDA5B97B45846093'
     checksumType64 = 'sha256'
 }
 
