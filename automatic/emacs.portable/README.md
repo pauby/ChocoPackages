@@ -1,4 +1,4 @@
-## ![GNU Emacs](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@c120885/icons/emacs.png "GNU Emacs") [GNU Emacs](https://community.chocolatey.org/packages/emacs.portable)
+## ![GNU Emacs](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@c120885/icons/emacs.png "GNU Emacs") [GNU Emacs (Portable)](https://community.chocolatey.org/packages/emacs.portable)
 
 GNU Emacs.
 
