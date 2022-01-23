@@ -1,0 +1,11 @@
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
+
+To verify the files using the project source:
+
+1. If the version you need to verify is a stable (ie. non-prerelease version) then they can be found on https://ftp.gnu.org/gnu/emacs/windows/ where you can download the binary and verify the checksum.
+2. If the version you need to verify is a prerelease version, then these may be available on https://alpha.gnu.org/gnu/emacs/pretest/windows but the most recent prerelease and stable version is all that is kept there.
+
+Checksums:
+
+* emacs-28.0.50-snapshot-2021-01-15-installer.exe - SHA256 - ca2528e7537deb73dea66c6da60e892f1676a8434ecd8bc0042da6efe6e6e5fd
