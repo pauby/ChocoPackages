@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements
+-->
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>vivaldi.portable</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>5.1.2567.49</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/vivaldi.portable</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby, bc3tech</owners>
+    <!-- ============================== -->
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Vivaldi (Portable)</title>
+    <authors>Vivaldi Technologies</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>http://vivaldi.com</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@55d09a2/icons/vivaldi.png</iconUrl>
+    <copyright>Copyright Vivaldi Technologies</copyright>
+    <!-- If there is a license Url available, it is is required for the community feed -->
+    <licenseUrl>https://vivaldi.com/privacy/vivaldi-end-user-license-agreement</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://vivaldi.com/source/</projectSourceUrl>
+    <docsUrl>https://help.vivaldi.com/</docsUrl>
+    <!-- <mailingListUrl></mailingListUrl> -->
+    <bugTrackerUrl>https://vivaldi.com/bugreport/</bugTrackerUrl>
+    <tags>vivaldi chromium browser googlechrome chrome</tags>
+    <summary>It's a browser. But fun. It comes with a bunch of clever features built-in. It's freakishly flexible and private too.</summary>
+    <description>It's a browser. But fun. It comes with a bunch of clever features built-in. It's freakishly flexible and private too.
+
+## What makes Vivaldi different?
+
+### More features, not less
+
+You spend a lot of time in your browser. It should do everything you need out-of-the-box. Vivaldi comes with built-in features like Notes, Screen Capture, Image Properties and (a lot) more.
+
+### Everything's an option
+
+We want Vivaldi to work for anyone so we give you options. Lots and lots of options. You choose how Vivaldi works, what features to use and how it looks. This is your browser, after all.
+
+### There are no rules
+
+How your browser works is up to you. There are multiple ways to access and control most things in Vivaldi. Play around and find what works for you.
+
+### Your browser, your business
+
+Being “privacy first” is not something we say lightly. We don’t track you. And we mean it. Nothing, zero, zilch. Making the browser is our job. How you use it is none of our business.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+    </description>
+    <!--<releaseNotes></releaseNotes>-->
+    <!-- =============================== -->
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <!--<dependencies>-->
+    <!-- <dependency id="" version="" /> -->
+    <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /> -->
+    <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /> -->
+    <!-- <dependency id="" /> -->
+    <!-- <dependency id="chocolatey-uninstall.extension" /> -->
+    <!--</dependencies>-->
+    <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
