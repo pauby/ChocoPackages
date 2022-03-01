@@ -66,7 +66,7 @@ How your browser works is up to you. There are multiple ways to access and contr
 Being “privacy first” is not something we say lightly. We don’t track you. And we mean it. Nothing, zero, zilch. Making the browser is our job. How you use it is none of our business.
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
-    </description>
+</description>
     <!--<releaseNotes></releaseNotes>-->
     <!-- =============================== -->
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
