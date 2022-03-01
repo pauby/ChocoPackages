@@ -30,7 +30,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- ============================== -->
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>Vivaldi (Install)</title>
+    <title>Vivaldi</title>
     <authors>Vivaldi Technologies</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>http://vivaldi.com</projectUrl>
