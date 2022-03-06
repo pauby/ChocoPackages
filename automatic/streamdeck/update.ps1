@@ -1,7 +1,7 @@
 Import-Module AU
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://help.elgato.com/hc/en-us/articles/360028242631-Elgato-Stream-Deck-Software-Release-Notes'
+$releases    = 'https://gc-updates.elgato.com/windows/sd-update/final/app-version-check.json'
 
 function global:au_SearchReplace {
   @{
@@ -25,14 +25,11 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
 
-  $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $regex = 'Stream_Deck_(?<version>[\d\.]+).msi'
-  $url64 = $page.links | Where-Object { $_.href -match $regex } | Select-Object -First 1 -ExpandProperty href
-
+  $update = Invoke-RestMethod -Uri $releases
 
   return @{
-    Url64   = $url64
-    Version = $matches.version
+    Url64   = $update.automatic.fileURL
+    Version = $update.automatic.version
   }
 }
 
