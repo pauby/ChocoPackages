@@ -9,26 +9,14 @@ body:
         Thank you for taking the time to fill out this bug report! Please fill out out the necessary information as complete as you can. Remember, it is better to include too much information, than too little. Additionally, make sure that the issue title starts with the name of the package you were seeing the issue with inside parenthesis (e.g. `(putty)`).
 
         Note that if you do not provide the required information your issue will likely be closed without investigation.
-  - type: dropdown
+  - type: input
     id: choco-version
     attributes:
       label: Chocolatey Version
       description: |
-        What version of Chocolatey do you have installed on the machine where this bug occurred (check all versions that apply, if there are any other versions you know of that are affected please add this to the Additional Details box further down)?
-        Issues affecting any version other than the latest are unlikely to be supported.
+        What version of Chocolatey do you have installed on the machine where this bug occurred. Issues affecting any version other than the latest are unlikely to be supported.
 
-        Tip:
-          - To get the Chocolatey CLI version, run `choco --version`.
-      multiple: true
-      options:
-        - 0.12.1
-        - 0.12.0
-        - 0.11.3
-        - 0.11.2
-        - 0.11.1
-        - 0.11.0
-        - 0.10.15
-        - Other (note in the comments)
+        To get the Chocolatey CLI version, run `choco --version`.
     validations:
       required: true
   - type: dropdown
@@ -38,8 +26,7 @@ body:
       description: |
         Select the license that you are using for Chocolatey when you discovered this bug (Open Source users should select None).
 
-        Tip:
-          - To get the Chocolatey CLI License type, run `choco` and check the type after the version (ie. `Chocolatey 0.12.1 Business` is the Business license).
+        To get the Chocolatey CLI License type, run `choco` and note the name after the version (ie. `Chocolatey 0.12.1 Business` is the Business license).
       options:
         - Professional
         - Business
@@ -91,13 +78,9 @@ body:
         What environment did you encounter the bug in? Operating System, .NET Version, PowerShell Version and the shell / terminal emulator used (ie. PowerShell, CMD).
 
         NOTE: _PowerShell Core is not supported_.
-
-        Tip:
-        - To get the Operating System, run `[System.Environment]::OSVersion.ToString()` in a PowerShell session.
-        - To get the PowerShell Version, run `$PSVersionTable` in a PowerShell session.
       value: |
-        - Operating System:
-        - PowerShell Version:
+        - Operating System (run `[System.Environment]::OSVersion.ToString()` in a PowerShell session):
+        - PowerShell Version (run `$PSVersionTable` in a PowerShell session):
         - Shell:
       render: markdown
     validations:
@@ -109,8 +92,7 @@ body:
       description: |
         Include the log that has been created by Chocolatey. It is preferred that this be a link to a file located at https://gist.github.com instead of embedded directly inside the issue. Remember to remove any **sensitive information** from the log before posting.
 
-        Tip:
-          - For standard installations, the Chocolatey log file is located at `C:\ProgramData\chocolatey\logs\chocolatey.log`.
+        For standard installations, the Chocolatey log file is located at `C:\ProgramData\chocolatey\logs\chocolatey.log`.
       render: shell
     validations:
       required: true
@@ -121,7 +103,6 @@ body:
       description: |
         Links? References? Anything that will give us more context about the issue you are encountering?
 
-        Tip:
-          - You can attach images by clicking this area to highlight it and then drag files in.
+        You can attach images by clicking this area to highlight it and then drag files in.
     validations:
       required: false
