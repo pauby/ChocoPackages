@@ -34,13 +34,7 @@ NOTE: This is a trial install of Snagit. To use your license key see Parameters 
 * /licensekey:ABCD-EFGH-IJKL
  Registered license key. If this is missing a 30 day trial is installed.
 
-* /licensename:""Joe Bloggs""
- Registered name for the license. Can only be used if a /licensekey is specified
-
-* /nodesktopshortcut
- Does not install an application shortcut on the desktop.
-
-Example: **-params='"/licensekey:ABCD-EFGH-IJKL /licensename:""Joe Bloggs"" /nodesktopshortcut"'**
+Example: **--params='"/licensekey:ABCD-EFGH-IJKL"'**
 
 **NOTE**: TechSmith seem to be okay with releasing a new version of the same version. This throws out the checksum of the package. If you find this happening, please raise an issue at https://github.com/pauby/chocopackages/issues. Thanks.
 
