@@ -12,7 +12,7 @@
     <version>4.7.0.12981</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/streamdeck</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
-    <owners>pauby</owners>
+    <owners>pauby,virtualex</owners>
     <!-- ============================== -->
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->

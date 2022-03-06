@@ -7,10 +7,10 @@ $logPath     = Join-Path -Path $env:TEMP -ChildPath $logFilename
 $packageArgs = @{
     packageName     = $env:ChocolateyPackageName
     fileType        = 'MSI'
-    url64           = 'https://edge.elgato.com/egc/windows/sd/Stream_Deck_4.5.0.12226.msi'
+    url64           = 'https://edge.elgato.com/egc/windows/sd/Stream_Deck_5.2.0.14948.msi'
     softwareName    = 'Elgato Stream Deck'
 
-    checksum64      = '87E8959DBE10A6218B7B2B1CA7B1CA58E78FB7EA3696E1F8DEC8D5E9F60C731B'
+    checksum64      = 'd0940e4796c18de7a9747d205dd8a7929d4f9664ec88e052f61872b394fbba40'
     checksumType64  = 'SHA256'
 
     silentArgs      = "/quiet /lv $logPath"
