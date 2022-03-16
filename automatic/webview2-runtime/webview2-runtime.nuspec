@@ -40,7 +40,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <projectUrl>https://developer.microsoft.com/en-us/microsoft-edge/webview2</projectUrl>
     <!-- There are a number of CDN Services that can be used for hosting the Icon for a package. More information can be found here: https://docs.chocolatey.org/en-us/create/create-packages#package-icon-guidelines -->
     <!-- Here is an example using Githack -->
-    <!--<iconUrl>http://rawcdn.githack.com/__REPLACE_YOUR_REPO__/master/icons/webview2-runtime.png</iconUrl>-->
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@1f90182/icons/webview2-runtime.png</iconUrl>
     <copyright>Copyright 2022 Microsoft Corporation</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <!-- <licenseUrl>Software License Location __REMOVE_OR_FILL_OUT__</licenseUrl>
