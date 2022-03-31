@@ -6,6 +6,9 @@ $releases = 'https://update.vivaldi.com/update/1.0/public/appcast.x64.xml'
 
 function global:au_SearchReplace {
     @{
+        "$($Latest.PackageName).nuspec" = @{
+            "(\<dependency .+?`"$($Latest.PackageName).portable`" version=)`"([^`"]+)`"" = "`$1`"[$($Latest.Version)]`""
+        }
     }
 }
 
