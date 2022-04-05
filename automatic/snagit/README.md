@@ -29,19 +29,38 @@ The human brain processes visuals 60,000 times faster than text. Snagit makes it
 
 NOTE: This is a trial install of Snagit. To use your license key see Parameters below.
 
-# Parameters:
+## Parameters
 
-* /licensekey:ABCD-EFGH-IJKL
- Registered license key. If this is missing a 30 day trial is installed.
+* /licensekey=ABCD-EFGH-IJKL
+  Registered license key. If this is missing a 30 day trial is installed.
 
-* /licensename:""Joe Bloggs""
- Registered name for the license. Can only be used if a /licensekey is specified
+Example: **--params='"/licensekey=ABCD-EFGH-IJKL"'**
 
-* /nodesktopshortcut
- Does not install an application shortcut on the desktop.
+* /NoDesktopShortcut
+  Does not install an application shortcut on the desktop. Note Snagit no longer creates a desktop icon by default so this option no longer does anything,
 
-Example: **-params='"/licensekey:ABCD-EFGH-IJKL /licensename:""Joe Bloggs"" /nodesktopshortcut"'**
+* /DisableAutoStart
+  This disables Snagit from automatically starting with Windows.
 
-**NOTE**: TechSmith seem to be okay with releasing a new version of the same version. This throws out the checksum of the package. If you find this happening, please raise an issue at https://github.com/pauby/chocopackages/issues. Thanks.
+  Example: **--params='"/DisableAutoStart"'**
 
-**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+* /DisableStartNow
+  This disables Snagit from starting right after installation / upgrade.
+
+  Example: **--params='"/DisableStartNow"'**
+
+* /HideRegistrationKey
+  Prevents Snagit from displaying the registration key in the Help menu > About Snagit > Support Information dialog.
+
+  Example: **--params='"/HideRegistrationKey"'**
+
+* /Language='ENU' | 'DEU' | 'ESP' | 'FRA' | 'JPN' | 'PTB'
+ Choose the language Snagit will use with one of these values (English, German, Spanish, French, Japanese or Portugese).
+
+  Example: **--params='"/Language=JPN"'**
+
+## Notes
+
+* TechSmith seem to be okay with releasing a new version of the same version. This throws out the checksum of the package. Until the next version is released, please use the `--ignore-checksums` switch with Chocolatey CLI.
+* This package installs the Microsoft WebView2 Runtime. However, it will not be removed on uninstall so please remove it manually.
+* This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
