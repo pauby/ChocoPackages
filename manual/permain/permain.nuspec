@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>permain</id>
+    <version>0.7</version>
+    <title>Performance Maintainer</title>
+    <authors>PC Starters</authors>
+    <owners>pauby,Sasha Chernykh</owners>
+    <projectUrl>https://sourceforge.net/projects/pcsm/</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/Kristinita/SashaChocolatey/master/icons/Performance-Maintainer.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Performance Maintainer has combined open source tool such as Little registry Cleaner, Bleachbit and Ultradefrag that run periodically for PC maintenance and performance. It is simple and automated.  
+
+* 1. Little Registry Cleaner Scan and Cleans the registry,  
+
+* 2. Bleachbit Performs Disk Cleanup  
+
+* 3. Ultradefrag defragments System Drive.  
+
+The Programs also allows to install additional tools for tweaking and better performance.  
+
+Disk, registry Cleanup and disk defragmentation in one click
+Scheduled maintenance to maintain system speed.</description>
+    <summary>Performance Maintainer — open source tools for regular maintenance of Disk, Registry and Processes.</summary>
+    <releaseNotes>Bugs fixed</releaseNotes>
+    <copyright>2015 PC Starters. All Rights Reserved.</copyright>
+    <tags>performance-maintainer registry disk-space disk-performance defragmentation startup shortcut task-manager admin</tags>
+    <packageSourceUrl>https://github.com/Kristinita/SashaChocolatey/tree/master/packages/Performance Maintainer</packageSourceUrl>
+    <docsUrl>http://www.pcstarters.net/performance-maintainer/</docsUrl>
+    <mailingListUrl>https://sourceforge.net/p/pcsm/discussion/</mailingListUrl>
+    <bugTrackerUrl>https://bugs.launchpad.net/pcsm</bugTrackerUrl>
+    <dependencies>
+      <dependency id="dotnet3.5" version="3.5.20160716" />
+    </dependencies>
+  </metadata>
+</package>
