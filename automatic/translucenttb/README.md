@@ -6,16 +6,16 @@ A lightweight (uses a few MB of RAM and almost no CPU) utility that makes the Wi
 
 * Advanced color picker supporting alpha and live preview to change the taskbar's color.
 * Taskbar states (choose one - color can be customized on every state except Normal):
-  * Blur: Will make the taskbar slightly blurred.
-  * Clear: Transparent taskbar.
-  * Normal: Regular Windows style. (as if TranslucentTB was not running)
-  * Opaque: No transparency.
-  * Fluent: Windows 10 April 2018 update and up only. Will give the taskbar an appearance similar to Microsoft's Fluent Design guidelines.
+    * Normal: Regular Windows style. (as if TranslucentTB was not running)
+    * Opaque: Tinted taskbar, without transparency.
+    * Clear: Tinted taskbar.
+    * Blur: Will make the taskbar slightly blurred.
+    * Acrylic: Will give the taskbar an appearance similar to Microsoft's Fluent Design guidelines.
 * Dynamic modes (these can be used together and each of them provides a taskbar state and color you can customize):
-  * Dynamic Windows: Will change the taskbar to a different appearance if a window is currently maximised.
-  * Dynamic Start Menu: Will change the taskbar appearance when the start menu is opened.
-  * Dynamic Cortana: Will change the taskbar appearance when Cortana (or the search menu if Cortana is disabled) is open.
-  * Dynamic Timeline/Task View: Will change the taskbar apperance when the Timeline (or Task View on older builds) is open.
+    * Dynamic Windows: Will change the taskbar to a different appearance if a window is currently maximised.
+    * Dynamic Start Menu: Will change the taskbar appearance when the start menu is opened.
+    * Dynamic Cortana: Will change the taskbar appearance when Cortana (or the search menu if Cortana is disabled) is open.
+    * Dynamic Timeline: Will change the taskbar appearance when the Timeline is open.
 * Ability to show or hide the Aero Peek button. Can be customized at will or dynamic.
 
 You can see it in action [here](https://gfycat.com/TidyFelineCrownofthornsstarfish) (short) and [here](https://gfycat.com/ConsciousCriminalDassie) (longer).
