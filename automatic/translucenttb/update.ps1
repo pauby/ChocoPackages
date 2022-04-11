@@ -5,11 +5,16 @@
 $releases = 'https://github.com/TranslucentTB/TranslucentTB/releases/latest'
 
 function global:au_SearchReplace {
-    @{}
+    @{
+        ".\tools\chocolateyInstall.ps1" = @{
+            "(?i)(^[$]version\s*=\s*)('.*')"     = "`$1'$($Latest.Version)'"
+        }
+    }
 }
 
 function global:au_BeforeUpdate() {
     Get-RemoteFiles -Purge
+    Rename-Item -Path 'tools\bundle_x32.msixbundle' -NewName 'translucenttb.msixbundle'
 }
 
 function global:au_AfterUpdate {
@@ -18,7 +23,7 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = '/download/(?<version>[\d\.]+)/TranslucentTB-Setup.exe$'
+    $regexUrl = '/download/(?<version>[\d\.]+)/bundle.msixbundle$'
 
     $url32 = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
     $version = $matches.version
