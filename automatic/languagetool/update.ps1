@@ -7,15 +7,16 @@ $releases = 'https://api.github.com/repos/languagetool-org/languagetool/tags'
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*url\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksumType\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType32)'"
+            '(^\s*url\s*=\s*)(''.*'')'              = "`$1'$($Latest.URL32)'"
+            # "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
+            # "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType32)'"
+            "(?i)(^\s*specificFolder\s*=\s*)('.*')" = "`$1'LanguageTool-$($Latest.Version)'"
         }
     }
 }
 
 function global:au_BeforeUpdate() {
-    $Latest.Checksum32 = Get-RemoteChecksum -Url $Latest.URL32 -Algorithm 'SHA256'
+    #$Latest.Checksum32 = Get-RemoteChecksum -Url $Latest.URL32 -Algorithm 'SHA256'
 }
 
 function global:au_AfterUpdate {
