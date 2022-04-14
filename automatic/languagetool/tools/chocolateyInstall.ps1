@@ -11,8 +11,9 @@ $packageArgs = @{
     unzipLocation  = $toolsDir
 }
 
+# warn if no java detected but don't stop the install as it's not needed for installation only for running the server
 if (-not (Get-Command -Name 'java.exe' -ErrorAction SilentlyContinue)) {
-    Write-Error "LanguageTool requires a flavour of jre8 to be installed. As there are so many flavours, this package does not take a dependency on a specific one. Please install a flavour of jre8 before trying to install again."
+    Write-Warning "LanguageTool requires a flavour of jre8 to be installed in order to run the server. As there are so many flavours, this package does not recommend a specific one. Please install a flavour of jre8 before trying to run the 'languagetool' server."
 }
 
 Install-ChocolateyZipPackage @packageArgs
