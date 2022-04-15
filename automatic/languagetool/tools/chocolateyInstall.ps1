@@ -29,3 +29,5 @@ Get-ChildItem -Path (Join-Path -Path $toolsDir -ChildPath 'LanguageTool-*\*') -R
 
 # this folder should be empty so no need for -Recurse
 Remove-Item -Path (Join-Path -Path $toolsDir -ChildPath 'LanguageTool-*') -Force
+
+Write-Host "LanguageTool installed to $destination ..."
