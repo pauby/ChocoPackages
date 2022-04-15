@@ -49,7 +49,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
 ## Notes
 
-* The LanguageTool binaries are extracted to the `languagetool` folder of the local tools folder (by default `c:\tools` - see `Get-ToolsLocation`](https://docs.chocolatey.org/en-us/create/functions/get-toolslocation)` for more information). This provides a 
+* The LanguageTool binaries are extracted to the `languagetool` folder of the local tools folder (by default `c:\tools` - see [`Get-ToolsLocation`](https://docs.chocolatey.org/en-us/create/functions/get-toolslocation) for more information). This provides a consistent location for the binaries and allows easier management when upgrading versions.
 * **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
     <releaseNotes>https://languagetool.org/download/CHANGES.md</releaseNotes>
