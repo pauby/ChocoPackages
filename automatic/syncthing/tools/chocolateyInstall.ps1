@@ -11,3 +11,6 @@ $packageArgs = @{
 }
 
 Get-ChocolateyUnzip @packageArgs
+
+# cleanup embedded zips
+Remove-Item -Path (Join-Path -Path $toolsDir -ChildPath 'syncthing-windows-*.zip') -Force
