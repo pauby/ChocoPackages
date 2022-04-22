@@ -1,5 +1,4 @@
-﻿
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
@@ -10,7 +9,10 @@ $packageArgs = @{
     Destination     = $toolsDir
 }
 
+# remove the old folder(s) first
+Get-Item -Path (Join-Path -Path $toolsDir -ChildPath 'syncthing-windows-*') | Where-Object PSIsContainer -eq $true | Remove-Item -Recurse -Force
+
 Get-ChocolateyUnzip @packageArgs
 
-# cleanup embedded zips
+# clean up embedded zips
 Remove-Item -Path (Join-Path -Path $toolsDir -ChildPath 'syncthing-windows-*.zip') -Force
