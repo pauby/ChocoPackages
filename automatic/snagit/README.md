@@ -63,4 +63,5 @@ Example: **--params='"/licensekey=ABCD-EFGH-IJKL"'**
 
 * TechSmith seem to be okay with releasing a new version of the same version. This throws out the checksum of the package. Until the next version is released, please use the `--ignore-checksums` switch with Chocolatey CLI.
 * This package installs the Microsoft WebView2 Runtime. However, it will not be removed on uninstall so please remove it manually.
+* The Snagit installer does not remove the previous major software version from your system. Please manually uninstall any old major versions.
 * This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
