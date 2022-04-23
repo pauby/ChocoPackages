@@ -25,17 +25,23 @@ function global:au_AfterUpdate {
 function global:au_GetLatest {
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = "yubioath-desktop-(?<version>[\d\.]+)-win\d{2}.msi$"
+    $regexUrl = "yubioath-desktop-(?<version>[\d\.]+)(?<beta>[b]?)-win\d{2}.msi$"
 
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 2 -expand href
     $url32 = $url | Where-Object { $_ -like '*win32.msi' }
     $url64 = $url | Where-Object { $_ -like '*win64.msi' }
 
+    $version = $matches.version
+    if ($matches.beta) {
+        # this is a beta version - matched from the regex above
+        $version = "$version-beta"
+    }
+
     return @{
         URL32   = "https://developers.yubico.com/yubioath-desktop/Releases/$url32"
         URL64   = "https://developers.yubico.com/yubioath-desktop/Releases/$url64"
-        Version = $matches.version
+        Version = $version
     }
 }
 
-update -ChecksumFor all
+Update-Package -ChecksumFor all
