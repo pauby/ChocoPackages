@@ -45,11 +45,13 @@ Install-ChocolateyZipPackage @packageArgs
 Rename-Item -Path (Join-Path -Path $installToolsPath -ChildPath $extractedFolderName) -NewName 'languagetool' -Force | Out-Null
 
 # remove the languagetool.backup folder
-try {
-    Remove-Item -Path $backupPath -Force -Recurse | Out-Null
-}
-catch {
-    Write-Warning ("Could not remove the backup folder {0}. Please remove this manually." -f $backupPath)
+if (Test-Path -Path $backupPath) {
+    try {
+        Remove-Item -Path $backupPath -Force -Recurse | Out-Null
+    }
+    catch {
+        Write-Warning ("Could not remove the backup folder {0}. Please remove this manually." -f $backupPath)
+    }
 }
 
 Write-Host "LanguageTool installed to $installPath"
