@@ -4,6 +4,7 @@
 
 $releasesx86 = 'https://download.teamviewer.com/download/TeamViewer_Setup.exe'
 $releasesx64 = 'https://download.teamviewer.com/download/TeamViewer_Setup_x64.exe'
+$hashAlgorithm = 'SHA256'
 
 function global:au_SearchReplace {
     @{
@@ -33,7 +34,9 @@ function global:au_GetLatest {
         URL32   = "https://download.teamviewer.com/download/version_$($versionForURL)x/TeamViewer_Setup.exe"
         URL64   = "https://download.teamviewer.com/download/version_$($versionForURL)x/TeamViewer_Setup_x64.exe"
         Version = $version
+        Checksum32 = (Get-FileHash -Path $tempFile -Algorithm $hashAlgorithm).Hash
+        ChecksumType32 = $hashAlgorithm
     }
 }
 
-update -ChecksumFor all
+Update-Package -ChecksumFor 64
