@@ -1,0 +1,7 @@
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
+
+To verify the files using the project source:
+
+1. Go to the releases page at https://developers.yubico.com/yubico-piv-tool/Releases/ and download the correct version and architecture type installer.
+2. Run Get-FileHash -Path <PATH TO DOWNLOADED FILE> -Algorithm 'SHA256' and compare the checksum to that found on the package page.
