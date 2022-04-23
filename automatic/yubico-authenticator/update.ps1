@@ -25,16 +25,18 @@ function global:au_AfterUpdate {
 function global:au_GetLatest {
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = "yubioath-desktop-(?<version>[\d\.]+)(?<beta>[b]?)-win\d{2}.msi$"
+    $regexUrl = "yubioath-desktop-(?<version>[\d\.]+)(?<letter>[a-z]?)-win\d{2}.msi$"
 
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 2 -expand href
     $url32 = $url | Where-Object { $_ -like '*win32.msi' }
     $url64 = $url | Where-Object { $_ -like '*win64.msi' }
 
-    $version = $matches.version
-    if ($matches.beta) {
+    if ($matches.letter) {
         # this is a beta version - matched from the regex above
-        $version = "$version-beta"
+        $version = "{0}.{1}" -f $matches.version, [convert]::ToInt16([char]$matches.letter)
+    }
+    else {
+        $version = "{0}.0" -f $matches.version
     }
 
     return @{
