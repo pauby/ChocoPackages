@@ -5,6 +5,6 @@ if (Get-Process -Name 'syncthing' -ErrorAction SilentlyContinue) {
     Write-Warning "Syncthing process is running. Shutting it down gracefully."
     syncthing cli operations shutdown
 
-    # can takle a few seconds to shutdown
+    # can take a few seconds to shutdown
     Start-Sleep -Seconds 2
 }
