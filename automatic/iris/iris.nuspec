@@ -22,7 +22,7 @@ By default Iris works automatically and detects if it’s day or night. Based on
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.</description>
     <summary>Iris is software for eye protection, health and productivity.</summary>
-    <tags>iris lighting monitor color admin notsilent</tags>
+    <tags>iris lighting monitor color admin notsilent trial</tags>
     <projectSourceUrl>https://github.com/danielng01/Iris-Builds</projectSourceUrl>
     <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/iris</packageSourceUrl>
     <docsUrl>https://iristech.co/help/</docsUrl>
