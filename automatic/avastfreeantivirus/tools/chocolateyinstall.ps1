@@ -18,4 +18,9 @@ $packageArgs = @{
   validExitCodes= @(0)
 }
 
+Write-Debug "OS Name: $($env:OS_NAME)"
+if ($env:OS_NAME -like "*Server*") {
+  throw "Cannot be installed on a Server operating system ($($env:OS_NAME))."
+}
+
 Install-ChocolateyPackage @packageArgs

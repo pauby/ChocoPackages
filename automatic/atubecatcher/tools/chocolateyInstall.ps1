@@ -3,9 +3,9 @@
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
     fileType       = 'EXE'
-    url            = 'http://files3.dsnetwb.com/aTube_Catcher.exe'
+    url            = 'https://files.dsnetwb.com/aTube_Catcher_FREE_9961.exe'
 
-    checksum       = '5AC711FB525EBDED5649240F83B596F992CB17EE4725A356B795EFF6C2D17271'
+    checksum       = '9F340A8DD6ED01B9C021D0DE77BD8F50161676E54E3600A40591D6E97E46C4E5'
     checksumType   = 'SHA256' #default is md5, can also be sha1, sha256 or sha512
 
     silentArgs   = '/silent'
