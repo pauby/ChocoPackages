@@ -1,0 +1,9 @@
+VERIFICATION
+
+1. Download the software from https://www.isc.org/download/#BIND
+
+2. Compare the Zip file from the package against those downloaded using Get-FileHash -Path <FILE TO VERIFY> to retrieve those hash values.
+
+File: BIND9.16.28.x64
+Algorithm: SHA256
+Hash: 72EF760DEDB5B2B08CE81CC7F9E7C9DDAC4EDFA7C8758EE2956D704EFC91618F
