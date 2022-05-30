@@ -7,10 +7,10 @@ $logPath     = Join-Path -Path $env:TEMP -ChildPath $logFilename
 $packageArgs = @{
     packageName     = $env:ChocolateyPackageName
     fileType        = 'MSI'
-    url64           = 'https://edge.elgato.com/egc/windows/wavelink/1.4.1/WaveLink_1.4.1.2726_x64.msi'
+    url64           = 'https://edge.elgato.com/egc/windows/wavelink/1.5.0/WaveLink_1.5.0.2889_x64.msi'
     softwareName    = 'Elgato Wave Link'
 
-    checksum64      = 'b66a0f39fc73060a6e3985c974afea1dc8b8110d040f1bb9ac25e23790760618'
+    checksum64      = '57315287d516d21d587945cf986233ef4b70833a9b5e534b50c0c7c89a643ed6'
     checksumType64  = 'SHA256'
 
     silentArgs      = "/quiet /lv $logPath"
@@ -19,8 +19,9 @@ $packageArgs = @{
 
 # Check OS version
 Write-Debug "OS Name: $($env:OS_NAME)"
-if ($env:OS_NAME -ne "Windows 10") {
-    Write-Warning "Wave Link is only supported on Windows 10 x64 and later. Installing it on any other operating system means you won't be supported by Elgato and your mileage may vary!"
+Write-Debug "OS Version $($env:OS_Version)"
+if ($env:OS_NAME -ne "Windows 10" -and [version]$env:OS_VERSION -lt [version]"10.0.1607") {
+    throw "Wave Link is only supported on Windows 10 x64 Anniversary Edition (1607) and later."
 }
 
 Install-ChocolateyPackage @packageArgs

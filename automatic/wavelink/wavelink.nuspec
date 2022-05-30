@@ -9,7 +9,7 @@
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>1.4.1.2726</version>
+    <version>1.5.0.2889</version>
     <!-- <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>-->
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>pauby,bosmak</owners>
@@ -40,7 +40,8 @@ Inputs into Wave Link can be program audio, such as games, Discord voice chat, m
 
 NOTE: This application states that ONLY supports Windows 10 x64 and later. If you use it on anything than Windows 10 x64 you won't be supported by Elgato and your mileage may vary.
 
-**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.</description>
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+</description>
     <releaseNotes>https://help.elgato.com/hc/en-us/articles/360043289491-Elgato-Wave-Link-Software-Release-Notes</releaseNotes>
     <!-- =============================== -->
 
