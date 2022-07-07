@@ -28,8 +28,8 @@ function global:au_GetLatest {
   $update = Invoke-RestMethod -Uri $releases
 
   return @{
-    Url64   = $update.automatic.fileURL
-    Version = $update.automatic.version
+    Url64   = $update.manual.fileURL
+    Version = $update.manual.version
   }
 }
 
