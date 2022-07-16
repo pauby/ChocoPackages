@@ -57,5 +57,5 @@ Example: **-params='"/licensekey:ABCD-EFGH-IJKL /licensename:""Joe Bloggs"" /nod
 ## Notes
 
 - TechSmith seem to be okay with releasing a new version of the same version. This throws out the checksum of the package. Until the next version is released, please use the `--ignore-checksums` switch with Chocolatey CLI.
-- The Camtasia installer does not remove the previous major software version from your system. Please manually uninstall any old major versions.
+* The Camtasia installer does not remove the previous major software version from your system. So for example, if you upgrade from 2021.x to 2022.x you will have to uninstall 2021.x manually.
 - This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
