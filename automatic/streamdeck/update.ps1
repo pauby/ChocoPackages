@@ -15,8 +15,6 @@ function global:au_SearchReplace {
 
 
 function global:au_BeforeUpdate() {
-  $Latest.ChecksumType64 = 'SHA256'
-  $Latest.Checksum64 = Get-RemoteChecksum $Latest.Url64 -Algorithm $Latest.ChecksumType64
 }
 
 function global:au_AfterUpdate {
@@ -28,9 +26,9 @@ function global:au_GetLatest {
   $update = Invoke-RestMethod -Uri $releases
 
   return @{
-    Url64   = $update.automatic.fileURL
-    Version = $update.automatic.version
+    Url64   = $update.manual.fileURL
+    Version = $update.manual.version
   }
 }
 
-Update-Package -ChecksumFor none
+Update-Package -ChecksumFor 64
