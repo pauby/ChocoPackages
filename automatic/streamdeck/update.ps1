@@ -15,8 +15,6 @@ function global:au_SearchReplace {
 
 
 function global:au_BeforeUpdate() {
-  $Latest.ChecksumType64 = 'SHA256'
-  $Latest.Checksum64 = Get-RemoteChecksum $Latest.Url64 -Algorithm $Latest.ChecksumType64
 }
 
 function global:au_AfterUpdate {
@@ -33,4 +31,4 @@ function global:au_GetLatest {
   }
 }
 
-Update-Package -ChecksumFor none
+Update-Package -ChecksumFor 64
