@@ -15,6 +15,6 @@ The features of GNU Emacs include:
   * A wide range of functionality beyond text editing, including a project planner, mail and news reader, debugger interface, calendar, IRC client, and more.
   * A packaging system for downloading and installing extensions.
 
-**NOTE**: This is the `.portable` version of Emacs. Unlike previous versions this will unpack the files to the `$env:ChocolateyToolsLocation` folder.
+**NOTE**: This is the `.portable` version of Emacs. Unlike previous versions this will unpack the files to the `$env:ChocolateyToolsLocation\emacs` folder (usually c:\tools\emacs).
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
