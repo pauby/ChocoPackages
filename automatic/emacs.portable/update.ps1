@@ -7,7 +7,7 @@ $releases = 'https://ftp.gnu.org/gnu/emacs/windows' # no trailing slash
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            '(?i)(^\s*\$softwareVersion\s*=\s*)(''.*'')' = "`$1'$($Latest.Version)'"
+            '(?i)(^\s*\$softwareVersion\s*=\s*)(''.*'')' = "`$1'$($Latest.SoftwareVersion)'"
         }
         ".\tools\VERIFICATION.txt" = @{
             "(^\s*x64 URL:\s*)(.*)"           = "`$1$($Latest.URL64)"
@@ -20,7 +20,7 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate() {
     $Latest.ChecksumType64 = 'SHA256'
     Get-RemoteFiles -Purge
-    $Latest.Checksum64 = (Get-FileHash -Path "tools\emacs-$($Latest.Version)_x64.zip" -Algorithm $Latest.ChecksumType64).Hash
+    $Latest.Checksum64 = (Get-FileHash -Path "tools\emacs-$($Latest.SoftwareVersion)_x64.zip" -Algorithm $Latest.ChecksumType64).Hash
 }
 
 function global:au_AfterUpdate { 
@@ -52,10 +52,19 @@ function global:au_GetLatest {
     }
     # we assume at this stage that they are sorted in the correct order so we just grab the last one 
     $version = $versions | Select-Object -Unique -Last 1
+    $softwareVersion = $version     # this stores the emacs version
 
+    # we should use a 3 part version number
+    if (([version]$version).minor -eq -1) {
+        $version += '.0.0'
+    }
+    elseif (([version]$version).build -eq -1) {
+        $version += '.0'
+    }
     return @{
-        URL64   = "$releases/emacs-$majorVer/emacs-$version.zip"
-        Version = $version
+        URL64           = "$releases/emacs-$majorVer/emacs-$softwareVersion.zip"
+        SoftwareVersion = $softwareVersion
+        Version         = $version
     }
 }
 
