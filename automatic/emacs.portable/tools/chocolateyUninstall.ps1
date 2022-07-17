@@ -13,4 +13,4 @@ Uninstall-ChocolateyZipPackage @packageArgs
     Uninstall-BinFile -Name $_
 }
 
-Remove-Item -Path (Join-Path -Path (Get-ToolsLocation) -ChildPath 'emacs') -Force
+Remove-Item -Path (Join-Path -Path (Get-ToolsLocation) -ChildPath 'emacs') -Recurse -Force
