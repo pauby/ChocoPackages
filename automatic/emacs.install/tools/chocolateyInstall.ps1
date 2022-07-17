@@ -1,8 +1,11 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
+
+$softwareVersion = '28.1'
+$exeFile = "emacs-$($softwareVersion)-installer_x64.exe"
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
-$filePath = Get-Item -Path (Join-Path -Path $toolsDir -ChildPath 'emacs-*.exe')
-$installPath = Join-Path -Path $env:ProgramFiles -ChildPath "emacs\emacs-$($env:ChocolateyPackageVersion)"
+$filePath = Join-Path -Path $toolsDir -ChildPath $exeFile
+$installPath = Join-Path -Path $env:ProgramFiles -ChildPath "emacs\emacs-$softwareVersion"
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
