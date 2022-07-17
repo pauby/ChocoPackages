@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>emacs-full</id>
+    <version>28.1.0</version>
+    <title>[Deprecated] Emacs Full</title>
+    <authors>The GNU Project</authors>
+    <owners>pauby, Tim Schumacher</owners>
+    <licenseUrl>http://www.gnu.org/software/emacs/manual/html_node/emacs/Copying.html</licenseUrl>
+    <projectUrl>http://www.gnu.org/software/emacs/</projectUrl>
+    <!--<iconUrl>http://cvs.savannah.gnu.org/viewvc/*checkout*/emacs/emacs/etc/images/icons/hicolor/48x48/apps/emacs.png</iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package always installed the 'portable' version of Emacs. Package names have been created following Chocolatey best practices and this package is now being deprecated in favour of the [emacs.portable](https://community.chocolatey.org/packages/emacs.portable) package.</description>
+    <summary>GNU Emacs - An extensible, customizable, free/libre text editor - and more.</summary>
+    <!--<releaseNotes>https://www.gnu.org/software/emacs/</releaseNotes>-->
+    <copyright>Copyright (C) 2020 Free Software Foundation, Inc.</copyright>
+    <tags>emacs editor</tags>
+    <projectSourceUrl>https://github.com/emacs-mirror/emacs</projectSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/emacs-full</packageSourceUrl>
+    <dependencies>
+      <dependency id="emacs.portable" version="[28.1.0,]" />
+    </dependencies>
+  </metadata>
+</package>
