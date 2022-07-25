@@ -16,7 +16,7 @@
     <copyright>Copyright (C) 2020 Free Software Foundation, Inc.</copyright>
     <tags>emacs editor</tags>
     <projectSourceUrl>https://github.com/emacs-mirror/emacs</projectSourceUrl>
-    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/emacs-full</packageSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/deprecated/emacs-full</packageSourceUrl>
     <dependencies>
       <dependency id="emacs.portable" version="[28.1.0,]" />
     </dependencies>
