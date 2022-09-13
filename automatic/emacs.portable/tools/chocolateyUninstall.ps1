@@ -1,6 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
-$zipTextPath = Get-Item -Path (Join-Path -Path ($env:ChocolateyPackageFolder) -ChildPath 'emacs-*.zip.txt')
+$toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
+$zipTextPath = Get-Item -Path (Join-Path -Path $toolsDir -ChildPath 'emacs-*.zip.txt')
 
 $packageArgs = @{
     packageName = $env:ChocolateyPackageName
