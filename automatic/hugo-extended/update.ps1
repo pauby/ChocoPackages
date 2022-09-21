@@ -1,8 +1,7 @@
 #import-module au
+Import-Module PowerShellForGitHub
 
 . $PSScriptRoot\..\..\scripts\all.ps1
-
-$releases    = 'https://github.com/gohugoio/hugo/releases'
 
 function global:au_SearchReplace {
     @{
@@ -17,19 +16,22 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate {
 }
 
-function global:au_AfterUpdate { 
-    Set-DescriptionFromReadme -SkipFirst 2 
+function global:au_AfterUpdate {
+    Set-DescriptionFromReadme -SkipFirst 2
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = '/hugo_extended_(?<version>[\d\.]+)_windows-amd64\.zip'
+    $release = Get-GitHubRelease -OwnerName gohugoio -RepositoryName hugo -Latest
+    $version = $release.tag_name
+    if ($version.StartsWith('v')) {
+        $version = $version.Substring(1)    # skip over 'v' in tag
+    }
 
-    $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
+    $url = (Get-GitHubReleaseAsset -OwnerName gohugoio -RepositoryName hugo -Release $release.id | Where-Object name -eq "hugo_extended_$($version)_windows-amd64.zip").browser_download_url
 
     return @{
-        URL64        = "https://github.com/$url"
-        Version      = $matches.version
+        URL64        = $url
+        Version      = $version
     }
 }
 
