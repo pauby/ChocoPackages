@@ -23,7 +23,7 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = '/hugo_extended_(?<version>[\d\.]+)_Windows-64bit\.zip'
+    $regexUrl = '/hugo_extended_(?<version>[\d\.]+)_windows-amd64\.zip'
 
     $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
 
