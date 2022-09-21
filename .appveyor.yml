@@ -65,6 +65,7 @@ install:
       Invoke-WebRequest -Uri https://github.com/pauby/capu/releases/download/0.1.1/capu-0.1.1.zip -OutFile capu.zip -UseBasicParsing
       Expand-Archive capu.zip
       Import-Module -Name .\capu\capu.psd1
+      Install-Module -Name PowerShellForGitHub
 #      git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
 #    . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
 
