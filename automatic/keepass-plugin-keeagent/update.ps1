@@ -2,21 +2,20 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://github.com/dlech/KeeAgent/releases'
+Import-Module PowerShellForGitHub
+$repoOwner = 'dlech'
+$repoName = 'KeeAgent'
 
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*url\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType32)'"
+            '(^\s*\$zipFile\s*=\s*)(''.*'')'            = "`$1'$($Latest.Filename)'"
         }
     }
 }
 
 function global:au_BeforeUpdate() {
-    $Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
-    $Latest.ChecksumType32 = 'SHA256'
+    Get-GitHubReleaseAsset -OwnerName $repoOwner -RepositoryName $repoName -Asset $Latest.ReleaseAssetID -Path "tools\$($Latest.Filename)" -Force
 }
 
 function global:au_AfterUpdate {
@@ -24,14 +23,21 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = "KeeAgent_v(?<version>.*).zip"
 
-    $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
+    $release = Get-GitHubRelease -OwnerName $repoOwner -RepositoryName $repoName -Latest
+    $version = $release.tag_name
+    if ($version.StartsWith('v')) {
+        $version = $version.Substring(1)    # skip over 'v' in tag
+    }
+
+    $asset = Get-GitHubReleaseAsset -OwnerName $repoOwner -RepositoryName $repoName -Release $release.id | Where-Object name -match "KeeAgent_v(?<version>.*).zip"
+    $url = $asset.browser_download_url
 
     return @{
-        URL32        = "https://github.com$url"
-        Version      = $matches.version
+        ReleaseAssetID = $asset.id
+        Filename       = $asset.name
+        URL32          = $url
+        Version        = $version
     }
 }
 

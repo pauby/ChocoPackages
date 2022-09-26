@@ -1,10 +1,11 @@
 ﻿$ErrorActionPreference = 'Stop'
 
+$toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+$zipFile = 'KeeAgent_v0.13.2.zip'
+
 $packageArgs = @{
     packageName   = $env:ChocolateyPackageName
-    url           = 'https://lechnology.com/wp-content/uploads/2018/04/KeeAgent_v0.10.1.zip'
-    checksum      = '71E96081CFC03F54D1CCB21B9EB1EC49FA4B51D4C0E20B7C985E49CAC320FB70'
-    checksumType  = 'SHA256'
+    fileFullPath  = Join-Path -Path $toolsDir -ChildPath $zipFile
 }
 
 $packageSearch = 'KeePass Password Safe*'
@@ -48,8 +49,8 @@ if (Test-Path -Path $oldPlugin) {
     }
 }
 
-$packageArgs.unzipLocation = Join-Path -Path $installPath -ChildPath 'Plugins'
-Install-ChocolateyZipPackage @packageArgs
+$packageArgs.Destination = Join-Path -Path $installPath -ChildPath 'Plugins'
+Get-ChocolateyUnzip @packageArgs
 
 if (Get-Process -Name 'KeePass' -ErrorAction SilentlyContinue) {
     Write-Warning "Keepass is currently running. '$($packageArgs.packageName)' will be available at next restart."
