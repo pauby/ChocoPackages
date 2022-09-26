@@ -14,8 +14,8 @@ if ([array]$key = Get-UninstallRegistryKey -SoftwareName $packageSearch) {
 
 if ([string]::IsNullOrEmpty($installPath)) {
     Write-Verbose "Cannot find '$packageSearch' in Add / Remove Programs or Programs and Features."
-    Write-Verbose "Searching '$env:ChocolateyToolsLocation' for portable install..."
-    $portPath = Join-Path -Path $env:ChocolateyToolsLocation -ChildPath "keepass"
+    Write-Verbose "Searching '$toolsDir' for portable install..."
+    $portPath = Join-Path -Path $toolsDir -ChildPath "keepass"
     $installPath = Get-ChildItem -Directory "$portPath*" -ErrorAction SilentlyContinue
 
     if ([string]::IsNullOrEmpty($installPath)) {
