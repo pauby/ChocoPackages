@@ -27,7 +27,7 @@ function global:au_GetLatest {
         $version = $version.Substring(1)    # skip over 'v' in tag
     }
 
-    $asset = Get-GitHubReleaseAsset -OwnerName gohugoio -RepositoryName hugo -Release $release.id | Where-Object name -EQ "hugo_$($version)_windows-amd64.zip"
+    $asset = Get-GitHubReleaseAsset -OwnerName gohugoio -RepositoryName hugo -Release $release.id | Where-Object name -match "hugo_$($version)_windows-amd64.zip"
     $url = $asset.browser_download_url
 
     return @{
