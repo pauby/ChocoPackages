@@ -11,4 +11,5 @@ KeeAgent is a plugin for KeePass 2.x. It allows other programs to access SSH key
 * Works with both PuTTY (and PuTTY compatible programs) and Cygwin/Msys on Windows.
 * Works with native SSH agent on Linux/Mac.
 
+**NOTE**: This package will not install unless you have either `keepass`, `keepass.install` or `keepass.portable` installed.
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
