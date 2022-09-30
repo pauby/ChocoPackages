@@ -3,6 +3,8 @@
 . $PSScriptRoot\..\..\scripts\all.ps1
 
 Import-Module PowerShellForGitHub
+$repoOwner = 'gohugoio'
+$repoName = 'hugo'
 
 function global:au_SearchReplace {
     @{
@@ -13,7 +15,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate {
-    Get-GitHubReleaseAsset -OwnerName gohugoio -RepositoryName hugo -Asset $Latest.ReleaseAssetID -Path "tools\$($Latest.Filename)" -Force
+    Get-GitHubReleaseAsset -OwnerName $repoOwner -RepositoryName $repoName -Asset $Latest.ReleaseAssetID -Path "tools\$($Latest.Filename)" -Force
 }
 
 function global:au_AfterUpdate {
@@ -21,13 +23,13 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $release = Get-GitHubRelease -OwnerName gohugoio -RepositoryName hugo -Latest
+    $release = Get-GitHubRelease -OwnerName $repoOwner -RepositoryName $repoName -Latest
     $version = $release.tag_name
     if ($version.StartsWith('v')) {
         $version = $version.Substring(1)    # skip over 'v' in tag
     }
 
-    $asset = Get-GitHubReleaseAsset -OwnerName gohugoio -RepositoryName hugo -Release $release.id | Where-Object name -match "hugo_$($version)_windows-amd64.zip"
+    $asset = Get-GitHubReleaseAsset -OwnerName $repoOwner -RepositoryName $repoName -Release $release.id | Where-Object name -match "hugo_$($version)_windows-amd64.zip"
     $url = $asset.browser_download_url
 
     return @{

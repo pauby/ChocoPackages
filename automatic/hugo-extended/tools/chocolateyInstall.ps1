@@ -11,4 +11,3 @@ $packageArgs = @{
 }
 
 Get-ChocolateyUnzip @packageArgs
-#Install-ChocolateyZipPackage @packageArgs
