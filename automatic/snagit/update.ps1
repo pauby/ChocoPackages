@@ -20,7 +20,6 @@ function global:au_BeforeUpdate() {
 }
 
 function global:au_BeforeUpdate {
-  $Latest.Checksum64 = Get-RemoteChecksum $Latest.Url64 -Algorithm $Latest.ChecksumType64
 }
 
 function global:au_GetLatest {
