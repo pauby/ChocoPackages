@@ -1,8 +1,6 @@
-Import-Module AU
-Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
+. $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases = 'https://support.techsmith.com/hc/en-us/articles/115006435067-Snagit-Windows-Version-History'
-
+# $releases = 'https://support.techsmith.com/hc/en-us/articles/115006435067-Snagit-Windows-Version-History'
 $releases    = 'https://updater.techsmith.com/tscupdate_deploy/Updates.asmx'
 $requestBody = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><CheckForUpdates xmlns="http://localhost/TSCUpdater"><product>Snagit</product><currentVersion>1.0.0</currentVersion><language>ENU</language><keyType>Single User</keyType><key></key><os>6.2.9200.0</os><dotNet>4.8.4084</dotNet><processor>x86</processor><bitness>64</bitness><osBitness>64</osBitness><KeyVersion>0</KeyVersion></CheckForUpdates></soap:Body></soap:Envelope>'
 #$requestBody = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><CheckForUpdates xmlns="http://localhost/TSCUpdater"><product>Snagit</product><currentVersion>1.0.0</currentVersion><language>ENU</language><keyType>Single User</keyType><key></key><os>6.2.9200.0</os><dotNet>4.8.4084</dotNet><processor>x86</processor><bitness>64</bitness><osBitness>64</osBitness><KeyVersion>0</KeyVersion></CheckForUpdates></soap:Body></soap:Envelope>'
