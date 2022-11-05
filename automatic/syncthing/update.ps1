@@ -18,7 +18,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate() {
-    Get-RemoteFiles -Purge
+    Remove-Item -Path 'tools\*.zip'
     Invoke-WebRequest -Uri $Latest.URL32 -OutFile "tools\$($Latest.Asset32.name)"
     Invoke-WebRequest -Uri $Latest.URL64 -OutFile "tools\$($Latest.Asset64.name)"
 }
