@@ -1,7 +1,15 @@
-VERIFICATION
+﻿VERIFICATION
 Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
 
 To verify the files using the project source:
 
-1. Please go to the project source location (https://github.com/syncthing/syncthing/releases) and download the release matching the package version;
-2. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the official release file (from step 1 above) and the file from the package and compare them;
+1. Please go to the project source location and download the release matching the package version.
+2. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the official release file (from step 1 above) and the file from the package and compare them.
+
+x86 URL: https://github.com/syncthing/syncthing/releases/download/v1.22.1/syncthing-windows-386-v1.22.1.zip
+x86 Checksum Type: SHA256
+x86 Checksum: 48F5E1CEBBAFE9B9F6140EEAE21456855D35EB7F934889E75374D2E5955757C1
+
+x64 URL: https://github.com/syncthing/syncthing/releases/download/v1.22.1/syncthing-windows-amd64-v1.22.1.zip
+x64 Checksum Type: SHA256
+x64 Checksum: E191F58C444D1A2B5AA8D7AEAF28503077C35D77F3ECF1E2054397BC3007D9D9

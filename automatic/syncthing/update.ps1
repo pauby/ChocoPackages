@@ -14,6 +14,14 @@ function global:au_SearchReplace {
             '(^\s*\$zip32Filename\s*=\s*)(''.*'')' = "`$1'$($Latest.Asset32.name)'"
             '(^\s*\$zip64Filename\s*=\s*)(''.*'')' = "`$1'$($Latest.Asset64.name)'"
         }
+        ".\tools\VERIFICATION.txt"      = @{
+            "(^\s*x86 URL:\s*)(.*)"           = "`$1$($Latest.URL32)"
+            "(^\s*x86 Checksum Type:\s*)(.*)" = "`$1$($Latest.ChecksumType32)"
+            "(^\s*x86 Checksum:\s*)(.*)"      = "`${1}$($Latest.Checksum32)"
+            "(^\s*x64 URL:\s*)(.*)"           = "`$1$($Latest.URL64)"
+            "(^\s*x64 Checksum Type:\s*)(.*)" = "`$1$($Latest.ChecksumType64)"
+            "(^\s*x64 Checksum:\s*)(.*)"      = "`${1}$($Latest.Checksum64)"
+        }
     }
 }
 
@@ -21,6 +29,10 @@ function global:au_BeforeUpdate() {
     Remove-Item -Path 'tools\*.zip'
     Invoke-WebRequest -Uri $Latest.URL32 -OutFile "tools\$($Latest.Asset32.name)"
     Invoke-WebRequest -Uri $Latest.URL64 -OutFile "tools\$($Latest.Asset64.name)"
+
+    $Latest.ChecksumType32 = $Latest.ChecksumType64 = 'SHA256'
+    $Latest.Checksum32 = (Get-FileHash -Path "tools\$($Latest.Asset32.name)" -Algorithm $Latest.ChecksumType32).Hash
+    $Latest.Checksum64 = (Get-FileHash -Path "tools\$($Latest.Asset64.name)" -Algorithm $Latest.ChecksumType64).Hash
 }
 
 function global:au_AfterUpdate {
