@@ -7,7 +7,7 @@ $repoName = 'syncthing'
 
 function global:au_SearchReplace {
     @{
-        ".\syncthing.nuspec" = @{
+        "$($Latest.PackageName).nuspec" = @{
             "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
         }
         ".\tools\chocolateyInstall.ps1" = @{
