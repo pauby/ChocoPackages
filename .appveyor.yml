@@ -21,8 +21,7 @@ environment:
   # Github token to commit pushed packages to repository
   github_user_repo: pauby/chocopackages
   github_api_key:
-    secure: gpoCHhwl+nbSGr2dJKk9GB7JDBCIywkKRS1fd1NpEOgUUS95RC41ZoGkUylqVn9Y #https://ci.appveyor.com/tools/encrypt
-
+    secure: 5tsbhdApHx6WunUoMa7ZQ/DThECXU52clanPgPOA112NBDhr7rjuMihiT27hEIOC
 
   # Mail credentials - for error notifications
   mail_user:
@@ -65,7 +64,6 @@ install:
       Invoke-WebRequest -Uri https://github.com/pauby/capu/releases/download/0.1.1/capu-0.1.1.zip -OutFile capu.zip -UseBasicParsing
       Expand-Archive capu.zip
       Import-Module -Name .\capu\capu.psd1
-      Install-Module -Name PowerShellForGitHub
 #      git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
 #    . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
 
