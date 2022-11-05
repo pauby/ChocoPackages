@@ -1,11 +1,13 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$zip32Filename = ''
+$zip64Filename = ''
 
 $packageArgs = @{
     packageName     = $env:ChocolateyPackageName
-    fileFullPath    = Get-Item -Path "$toolsdir\syncthing-windows-386-v*_x32.zip"
-    fileFullPath64  = Get-Item -Path "$toolsdir\syncthing-windows-amd64-v*_x64.zip"
+    fileFullPath    = Join-Path -Path $toolsdir -ChildPath $zip32Filename
+    fileFullPath64  = Join-Path -Path $toolsdir -ChildPath $zip64Filename
     Destination     = $toolsDir
 }
 
