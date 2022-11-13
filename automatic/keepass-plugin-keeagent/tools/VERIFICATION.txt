@@ -1,4 +1,12 @@
+﻿VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
+
 To verify the embedded files:
 
-1. Go to https://github.com/dlech/KeeAgent/releases and download the files with the same version as the package.
-2. Use `Get-FileHash <filename>` to check the SHA256 of the file downloaded and compare with the embedded one.
+1. Please go to the project source location and download the release matching the package version.
+2. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the official release file (from step 1 above) and the file from the package and compare them.
+
+x86 URL: https://github.com/dlech/KeeAgent/releases/download/v0.13.3/KeeAgent_v0.13.3.zip
+x86 Checksum Type: SHA256
+x86 Checksum: 274204D27A7B09C62852C2B2A003C395AA5E3DCB9F4AE71923B63D1F411903A4
