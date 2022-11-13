@@ -1,4 +1,3 @@
-Import-Module AU
 . $PSScriptRoot\..\..\scripts\all.ps1
 
 $releases    = 'https://gc-updates.elgato.com/windows/wl-update/final/app-version-check.json'
