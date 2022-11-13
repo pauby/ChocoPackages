@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>yubikey-neo-manager</id>
+    <version>1.4.0</version>
+    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/yubikey-neo-manager</packageSourceUrl>
+    <owners>pauby</owners>
+
+    <title>Yubikey NEO Manager (Install)</title>
+    <authors>Yubico</authors>
+    <projectUrl>https://www.yubico.com/support/knowledge-base/categories/articles/yubikey-neo-manager/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@de7f14fe/icons/yubikey-neo-manager.png</iconUrl>
+    <copyright>2017 Yubico</copyright>
+    <docsUrl>https://www.yubico.com/support/knowledge-base/categories/articles/yubikey-neo-manager-quick-start-guide/</docsUrl>
+    <mailingListUrl>https://forum.yubico.com/</mailingListUrl>
+    <tags>yubikey yubico admin neo</tags>
+    <summary>Use the YubiKey NEO Manager to change the connection mode of your YubiKey NEO device.</summary>
+    <description>Use the YubiKey NEO Manager to change the connection mode of your YubiKey NEO device. For example, older YubiKey NEO devices were not shipped with CCID mode enabled (required to manage apps on your device).  Note that all YubiKey NEOs shipped after November 2015 come preconfigured with all modes enabled. Use this tool to change them. </description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
