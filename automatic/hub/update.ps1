@@ -2,7 +2,8 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://github.com/github/hub/releases'
+$repoOwner = 'github'
+$repoName = 'hub'
 
 function global:au_SearchReplace {
     @{
@@ -26,16 +27,30 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = '/download/v(?<version>[\d\.]+)/hub-windows-'
-    $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
-    $version = $matches.version
+
+    $release = Get-GitHubRelease -OwnerName $repoOwner -RepositoryName $repoName -Latest
+    $version = $release.tag_name
+    if ($version.StartsWith('v')) {
+        $version = $version.Substring(1)    # skip over 'v' in tag
+    }
+
+    $asset32 = $release.assets | Where-Object name -Match "hub-windows-386-$($version).zip"
+    $asset64 = $release.assets | Where-Object name -Match "hub-windows-amd64-$($version).zip"
+    $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
+        $release.html_url
+    }
+    else {
+        $release.body
+    }
 
     return @{
-        URL32        = "https://github.com/github/hub/releases/download/v$version/hub-windows-386-$version.zip"
-        URL64        = "https://github.com/github/hub/releases/download/v$version/hub-windows-amd64-$version.zip"
+        Asset32      = $asset32
+        Asset64      = $asset64
+        URL32        = $asset32.browser_download_url
+        URL64        = $asset64.browser_download_url
         Version      = $version
+        ReleaseNotes = $releaseNotes
     }
 }
 
-update -ChecksumFor all
+Update-Package -ChecksumFor all
