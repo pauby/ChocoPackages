@@ -2,20 +2,31 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-Import-Module PowerShellForGitHub
 $repoOwner = 'gohugoio'
 $repoName = 'hugo'
 
 function global:au_SearchReplace {
     @{
+        "$($Latest.PackageName).nuspec" = @{
+            "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$([System.Web.HttpUtility]::HtmlEncode($Latest.ReleaseNotes))`$2"
+        }
         ".\tools\chocolateyInstall.ps1" = @{
-            '(^\$zipFile\s*=\s*)(''.*'')'           = "`$1'$($Latest.Filename)'"
+            '(^\$zipFile\s*=\s*)(''.*'')' = "`$1'$($Latest.Asset64.name)'"
+        }
+        ".\tools\VERIFICATION.txt"      = @{
+            "(^\s*x64 URL:\s*)(.*)"           = "`$1$($Latest.URL64)"
+            "(^\s*x64 Checksum Type:\s*)(.*)" = "`$1$($Latest.ChecksumType64)"
+            "(^\s*x64 Checksum:\s*)(.*)"      = "`${1}$($Latest.Checksum64)"
         }
     }
 }
 
 function global:au_BeforeUpdate {
-    Get-GitHubReleaseAsset -OwnerName $repoOwner -RepositoryName $repoName -Asset $Latest.ReleaseAssetID -Path "tools\$($Latest.Filename)" -Force
+    Remove-Item -Path 'tools\*.zip' -Force
+    Invoke-WebRequest -Uri $Latest.URL64 -OutFile "tools\$($Latest.Asset64.name)"
+
+    $Latest.ChecksumType64 = 'SHA256'
+    $Latest.Checksum64 = (Get-FileHash -Path "tools\$($Latest.Asset64.name)" -Algorithm $Latest.ChecksumType64).Hash
 }
 
 function global:au_AfterUpdate {
@@ -29,14 +40,19 @@ function global:au_GetLatest {
         $version = $version.Substring(1)    # skip over 'v' in tag
     }
 
-    $asset = Get-GitHubReleaseAsset -OwnerName $repoOwner -RepositoryName $repoName -Release $release.id | Where-Object name -match "hugo_extended_$($version)_windows-amd64.zip"
-    $url = $asset.browser_download_url
+    $asset64 = $release.assets | Where-Object name -Match "hugo_extended_$($version)_windows-amd64.zip"
+    $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
+        $release.html_url
+    }
+    else {
+        $release.body
+    }
 
     return @{
-        ReleaseAssetID = $asset.id
-        Filename       = $asset.name
-        URL64          = $url
-        Version        = $version
+        Asset64      = $asset64
+        URL64        = $asset64.browser_download_url
+        Version      = $version
+        ReleaseNotes = $releaseNotes
     }
 }
 
