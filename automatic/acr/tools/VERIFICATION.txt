@@ -1,0 +1,12 @@
+
+VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
+
+To verify the files using the project source:
+
+1. Download the file from the URL below and verify its checksum using Get-FileHash and compare it to the details below.
+
+x86 URL: https://github.com/acreloaded/acr/releases/download/v2.18.2/acr_v2.18.2-w.zip
+x86 Checksum Type: SHA256
+x86 Checksum: C74EB27ACA1E277D8AD46B535996E6DB212BAE39FEFE1A533CA545495F32E2B4
