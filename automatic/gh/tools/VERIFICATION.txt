@@ -1,11 +1,12 @@
 ﻿VERIFICATION
-Verification is intended to assist the Chocolatey moderators and community
-in verifying that this package's contents are trustworthy.
 
-1. Please go to the project releases at https://github.com/cli/cli/releases;
-2. Download the same binary file with the same version as included with the package;
-3. From a PowerShell command line run:
+Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
 
-     Get-FileHash <filename>
+To verify the files using the project source:
 
-   against both the binary file included in the package and the one downloaded and they should match;
+1. Please go to the project source location and download the release matching the package version.
+2. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the official release file (from step 1 above) and the file from the package and compare them.
+
+x64 URL: https://github.com/cli/cli/releases/download/v2.19.0/gh_2.19.0_windows_amd64.msi
+x64 Checksum Type: SHA256
+x64 Checksum: A4539FB1B9708A9208C496E3637EA36414450057B25E188A57C377061E018467

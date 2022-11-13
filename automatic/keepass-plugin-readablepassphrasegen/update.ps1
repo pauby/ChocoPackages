@@ -1,8 +1,7 @@
-#import-module au
-
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://github.com/ligos/readablepassphrasegenerator/releases/latest'
+$repoOwner = 'ligos'
+$repoName = 'readablepassphrasegenerator'
 
 function global:au_SearchReplace {
     @{
@@ -19,16 +18,25 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = 'ReadablePassphrase\.(?<version>[\d\.]+)\.plgx$'
 
-    $url = $page.links | Where-Object href -match $regexUrl | Select-Object -first 1 -expand href
+    $release = Get-GitHubRelease -OwnerName $repoOwner -RepositoryName $repoName -Latest
+    $release.tag_name -match '(?<version>[\d\.]+)'
     $version = $matches.version
 
+    $asset32 = $release.assets | Where-Object name -eq "ReadablePassphrase.$($version).plgx"
+    $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
+        $release.html_url
+    }
+    else {
+        $release.body
+    }
+
     return @{
-        URL32        = "https://github.com$url"
+        Asset32      = $asset32
+        URL32        = $asset32.browser_download_url
         Version      = $version
+        ReleaseNotes = $releaseNotes
     }
 }
 
-update -ChecksumFor none
+Update-Package -ChecksumFor none

@@ -2,9 +2,11 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases = 'https://github.com/imbushuo/mac-precision-touchpad/releases'
+$repoOwner = 'imbushuo'
+$repoName = 'mac-precision-touchpad'
 
 function global:au_SearchReplace {
+    @{}
 }
 
 function global:au_BeforeUpdate {
@@ -24,15 +26,27 @@ function global:au_BeforeUpdate {
 # }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = 'releases/download/(?<version>[\d-]+)/Driver(s)?-amd64-ReleaseMSSigned\.zip'
-    $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
-    $dotVersion = $matches.version.Replace('-', '.')
+
+    $release = Get-GitHubRelease -OwnerName $repoOwner -RepositoryName $repoName -Latest
+    $version = ("0.{0}" -f $release.tag_name.replace('-', '.'))
+    if ($version.StartsWith('v')) {
+        $version = $version.Substring(1)    # skip over 'v' in tag
+    }
+
+    $asset64 = $release.assets | Where-Object name -eq 'Drivers-amd64-ReleaseMSSigned.zip'
+    $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
+        $release.html_url
+    }
+    else {
+        $release.body
+    }
 
     return @{
-        URL64   = "https://github.com/$url"
-        Version = "0.$dotVersion"
+        Asset64      = $asset64
+        URL64        = $asset64.browser_download_url
+        Version      = $version
+        ReleaseNotes = $releaseNotes
     }
 }
 
-update -ChecksumFor none
+Update-Package -ChecksumFor none
