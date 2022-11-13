@@ -26,7 +26,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate() {
-    Remove-Item -Path 'tools\*.zip'
+    Remove-Item -Path 'tools\*.zip' -Force -ErrorAction SilentlyContinue
     Invoke-WebRequest -Uri $Latest.URL32 -OutFile "tools\$($Latest.Asset32.name)"
     Invoke-WebRequest -Uri $Latest.URL64 -OutFile "tools\$($Latest.Asset64.name)"
 
@@ -49,6 +49,12 @@ function global:au_GetLatest {
 
     $asset32 = $release.assets | Where-Object name -match 'syncthing-windows-386-v(?<version>.*).zip'
     $asset64 = $release.assets | Where-Object name -Match 'syncthing-windows-amd64-v(?<version>.*).zip'
+    $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
+        $release.html_url
+    }
+    else {
+        $release.body
+    }
 
     return @{
         Asset32          = $asset32
@@ -56,7 +62,7 @@ function global:au_GetLatest {
         URL32            = $asset32.browser_download_url
         URL64            = $asset64.browser_download_url
         Version          = $version
-        ReleaseNotes    = $release.body
+        ReleaseNotes     = $releaseNotes
     }
 }
 
