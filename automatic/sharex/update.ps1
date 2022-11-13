@@ -2,7 +2,8 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://github.com/ShareX/ShareX/releases'
+$repoOwner = 'sharex'
+$repoName = 'sharex'
 
 function global:au_SearchReplace {
     @{
@@ -15,8 +16,6 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate() {
-    $Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
-    $Latest.ChecksumType32 = 'SHA256'
 }
 
 function global:au_AfterUpdate { 
@@ -24,16 +23,27 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = "ShareX-(.*)-setup.exe"
 
-    $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 1 -expand href
-    $version = $matches[1]
+    $release = Get-GitHubRelease -OwnerName $repoOwner -RepositoryName $repoName -Latest
+    $version = $release.tag_name
+    if ($version.StartsWith('v')) {
+        $version = $version.Substring(1)    # skip over 'v' in tag
+    }
+
+    $asset32 = $release.assets | Where-Object name -eq "ShareX-$($version)-setup.exe"
+    $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
+        $release.html_url
+    }
+    else {
+        $release.body
+    }
 
     return @{
-        URL32        = "https://github.com/$url"
+        Asset32      = $asset32
+        URL32        = $asset32.browser_download_url
         Version      = $version
+        ReleaseNotes = $releaseNotes
     }
 }
 
-update -ChecksumFor none
+Update-Package -ChecksumFor 32
