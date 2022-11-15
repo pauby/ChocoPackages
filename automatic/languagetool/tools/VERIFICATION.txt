@@ -1,0 +1,12 @@
+﻿VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
+
+To verify the files using the project source:
+
+1. Please go to the project source location and download the release matching the package version.
+2. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the official release file (from step 1 above) and the file from the package and compare them.
+
+x86 URL: 
+x86 Checksum Type: 
+x86 Checksum: 
