@@ -7,32 +7,22 @@ function global:au_SearchReplace {
         ".\tools\chocolateyInstall.ps1" = @{
             '(^\s*\$extractedFolderName\s*=\s*)(''.*'')'    = "`$1'languagetool-$($Latest.Version)'"
             '(^\s*\$zipFile\s*=\s*)(''.*'')'                = "`$1'languagetool-$($Latest.Version).zip'"
-            # "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
-            # "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType32)'"
-        }
-
-        ".\tools\VERIFICATION.txt"      = @{
-            "(^\s*x86 URL:\s*)(.*)"          = "`$1$($Latest.URL32)"
-            "(^\s*x86 Checksum Type:\s*)(.*)" = "`$1$($Latest.ChecksumType32)"
-            "(^\s*x86 Checksum:\s*)(.*)"      = "`${1}$($Latest.Checksum32)"
+            '(^\s*url\s*=\s*)(''.*'')'                      = "`$1'$($Latest.Url32)'"
+            "(?i)(^\s*checksum\s*=\s*)('.*')"               = "`$1'$($Latest.Checksum32)'"
+            "(?i)(^\s*checksumType\s*=\s*)('.*')"           = "`$1'$($Latest.ChecksumType32)'"
         }
     }
 }
 
 function global:au_BeforeUpdate() {
 
-    Write-Host "Downloading 'installer' file $localFile"
-
-    $localFile = ("tools\languagetool-{0}.zip" -f $Latest.version)
-    Get-Item -Path 'tools\*.zip' -Force -ErrorAction SilentlyContinue | Out-Null
+    # we can't embed this package as it's too large!
+    $Latest.ChecksumType32 = 'SHA256'
 
     $localProgressPref = $ProgressPreference
-    $ProgressPreference = 'SilentyCntinue'
-    Invoke-WebRequest -UseBasicParsing -Uri $Latest.URL32 -OutFile $localFile
+    $ProgressPreference = 'SilentyContinue'
+    $Latest.Checksum32 = Get-RemoteChecksum -Algorithm $Latest.ChecksumType32 -Url $Latest.Url32
     $ProgressPreference = $localProgressPref
-
-    $Latest.ChecksumType32 = 'SHA256'
-    $Latest.Checksum32 = (Get-FileHash $localFile -Algorithm $Latest.ChecksumType32).Hash
 }
 
 function global:au_AfterUpdate {
@@ -48,7 +38,7 @@ function global:au_GetLatest {
 
     $url = ("https://languagetool.org/download/LanguageTool-{0}.zip" -f $version)   # case of the filename matters here
     return @{
-        URL32   = $url
+        Url32   = $url
         Version = $version
     }
 }

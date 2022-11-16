@@ -1,6 +1,5 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 $installToolsPath = Get-ToolsLocation
 $installPath = Join-Path -Path $installToolsPath -ChildPath 'languagetool\'
 $backupFolderName = 'languagetool-backup.CREATED-BY-PACKAGE'
@@ -10,8 +9,10 @@ $zipFile = 'languagetool-5.9.zip'
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
-    fileFullPath   = Join-Path -Path $toolsDir -ChildPath $zipFile
-    destination    = $installToolsPath
+    url            = 'https://languagetool.org/download/LanguageTool-5.9.zip'
+    checksum       = '0d06c2e8b016c105d24a242aa4967329a4cc8f7ffc95fb0e11113bd9db48c4ac'
+    checksumType   = 'SHA256'
+    unzipLocation  = $installToolsPath
     specificFolder = $extractedFolderName
 }
 
@@ -38,7 +39,7 @@ if (Test-Path -Path $installPath) {
     Rename-Item -Path $installPath -NewName $backupFolderName -Force
 }
 
-Get-ChocolateyUnzip @packageArgs
+Install-ChocolateyZipPackage @packageArgs
 
 # rename the extracted folder to make it the installed package path
 Rename-Item -Path (Join-Path -Path $installToolsPath -ChildPath $extractedFolderName) -NewName 'languagetool' -Force | Out-Null
