@@ -37,7 +37,7 @@ function Get-GitHubRelease {
         $apiUrl = "https://api.github.com/repos/$OwnerName/$RepositoryName/releases/latest"
 
         if ($Tag -and $Tag -ne 'latest') {
-            $apiUrl = "https://api.github.com/repos/$OwnerName/$RepositoryName/releases/tags/$TagName"
+            $apiUrl = "https://api.github.com/repos/$OwnerName/$RepositoryName/releases/tags/$Tag"
         }
 
         $Request = @{
