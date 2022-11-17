@@ -2,20 +2,34 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://developers.yubico.com/yubioath-desktop/Releases/'
+$repoOwner = 'yubico'
+$repoName = 'yubioath-flutter'
 
 function global:au_SearchReplace {
     @{
+        "$($Latest.PackageName).nuspec" = @{
+            "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$([System.Web.HttpUtility]::HtmlEncode($Latest.ReleaseNotes))`$2"
+        }
         ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*url\s*=\s*)(''.*'')'              = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType32)'"
-            '(^\s*url64\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL64)'"
-            "(?i)(^\s*checksum64\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum64)'"
-            "(?i)(^\s*checksumType64\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumType64)'"
-
+            '(^\s*\$installerFile\s*=\s*)(''.*'')'  = "`$1'$($Latest.Asset64.name)'"
+        }
+        ".\tools\VERIFICATION.txt"      = @{
+            "(^\s*x64 URL:\s*)(.*)"           = "`$1$($Latest.URL64)"
+            "(^\s*x64 Checksum Type:\s*)(.*)" = "`$1$($Latest.ChecksumType64)"
+            "(^\s*x64 Checksum:\s*)(.*)"      = "`${1}$($Latest.Checksum64)"
         }
     }
+}
+
+function global:au_BeforeUpdate {
+    Remove-Item -Path 'tools\*.msi' -Force
+    $tempProgressPref = $ProgressPreference
+    $ProgressPreference = 'SilentlyContinue'
+    Invoke-WebRequest -Uri $Latest.URL64 -OutFile "tools\$($Latest.Asset64.name)"
+    $ProgressPreference = $tempProgressPref
+
+    $Latest.ChecksumType64 = 'SHA256'
+    $Latest.Checksum64 = (Get-FileHash -Path "tools\$($Latest.Asset64.name)" -Algorithm $Latest.ChecksumType64).Hash
 }
 
 function global:au_AfterUpdate {
@@ -23,27 +37,31 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = "yubioath-desktop-(?<version>[\d\.]+)(?<letter>[a-z]?)-win\d{2}.msi$"
 
-    $url = $page.links | Where-Object href -match $regexUrl | Select-Object -First 2 -expand href
-    $url32 = $url | Where-Object { $_ -like '*win32.msi' }
-    $url64 = $url | Where-Object { $_ -like '*win64.msi' }
+    $release = Get-GitHubRelease -OwnerName $repoOwner -RepositoryName $repoName -Latest
+    $version = $release.tag_name
+    if ($version.StartsWith('v')) {
+        $version = $version.Substring(1)    # skip over 'v' in tag
+    }
 
-    if ($matches.letter) {
-        # this is a beta version - matched from the regex above
-        $version = "{0}.{1}" -f $matches.version, [convert]::ToInt16([char]$matches.letter)
+    $asset64 = $release.assets | Where-Object name -Match "yubico-authenticator-$($version)-win64.msi$"
+    if (-not $asset64) {
+        # we haven't found a match
+        exit
+    }
+    $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
+        $release.html_url
     }
     else {
-        $version = "{0}.0" -f $matches.version
+        $release.body
     }
 
     return @{
-        URL32   = "https://developers.yubico.com/yubioath-desktop/Releases/$url32"
-        URL64   = "https://developers.yubico.com/yubioath-desktop/Releases/$url64"
-        Version = $version
+        Asset64      = $asset64
+        URL64        = $asset64.browser_download_url
+        Version      = $version
+        ReleaseNotes = $releaseNotes
     }
 }
 
-Update-Package -ChecksumFor all
+Update-Package -ChecksumFor none
