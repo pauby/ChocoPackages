@@ -1,0 +1,20 @@
+name: Free Text Issue
+description: Only use this issue form if you are not raising a bug report, outdated report or an enhancement. Issues using this template, will be closed for those reports.
+title: "(packageName) "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to fill out this report! Please fill out out the necessary information as complete as you can. Remember, it is better to include too much information, than too little. Additionally, make sure that the issue title starts with the name of the package you were seeing the issue with inside parenthesis (e.g. `(putty)`).
+
+        Note that if you do not provide the required information your issue will likely be closed without investigation.
+  - type: textarea
+    id: details
+    attributes:
+      label: issue-details
+      description: |
+        Please enter the issue information below.
+
+        You can attach images by clicking this area to highlight it and then drag files in.
+    validations:
+      required: true
