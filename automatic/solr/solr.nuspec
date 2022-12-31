@@ -23,7 +23,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>8.11.2</version>
+    <version>9.0.0</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/solr</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>pauby, Miodrag Milic</owners>
@@ -78,22 +78,22 @@ See more at [features page](https://lucene.apache.org/solr/features.html)
 
 ## Package Parameters
 
-- `/InstallDir` - Install/unpack to a custom location. Chocolatey will **NOT** remove any files from this custom location on uninstall of the package.  Nor will it upgrade files in this custom location without using the `/InstallDir` parameter again.
+- `/InstallDir` - Install/unpack to a custom location. Chocolatey will remove files from this custom location on uninstall but **WILL NOT** upgrade files in this custom location without using the `/InstallDir` parameter again.
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
     </description>
-    <releaseNotes>https://archive.apache.org/dist/lucene/solr/8.9.0/changes/Changes.html</releaseNotes>
+    <releaseNotes>https://solr.apache.org/docs/9_0_0/changes/Changes.html</releaseNotes>
     <!-- =============================== -->
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
-    <dependencies>
+    <!-- <dependencies>
       <dependency id="chocolatey" version="0.9.10" />
-      <dependency id="jre8" version="8.0.151" />
+      <dependency id="jre8" version="8.0.151" /> -->
     <!-- <dependency id="" version="[__EXACT_VERSION__]" /> -->
     <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /> -->
     <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /> -->
     <!-- <dependency id="" /> -->
     <!-- <dependency id="chocolatey-uninstall.extension" /> -->
-    </dependencies>
+    <!-- </dependencies> -->
     <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
     <!--<provides>NOT YET IMPLEMENTED</provides>-->
     <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
