@@ -24,9 +24,9 @@ if (-not (Get-Command -Name 'java.exe' -ErrorAction SilentlyContinue)) {
 
 $packageArgs = @{
    PackageName   = 'solr'
-   url           = 'https://archive.apache.org/dist/solr/solr/9.0.0/solr-9.0.0.tgz'
+   url           = 'https://www.apache.org/dyn/closer.lua/solr/solr/9.1.0/solr-9.1.0.tgz?action=download'
    unzipLocation = $unzipPath
-   checksum      = '383c6b6f352f2a385ece99b2b0a82e1552430aea65c6c33e5569da422138844192db4e06f58699325af55ee631694e16f836a5bbf8556f86fdeabc0cfa0533d5'
+   checksum      = '16715fe50a74bc4906f655531523875e9e5d4a013aea22afff10a52dc6f05a8b62e079aee75cd9f2e250300e40071140c0a966cbd51af811a622f2f1f0b0c926'
    checksumType  = 'sha512'
 }
 
