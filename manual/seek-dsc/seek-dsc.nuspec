@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>seek-dsc</id>
+    <version>2.0.0.20220103-alpha9</version>
+    <title>SEEK DSC Resources</title>
+    <authors>SEEK Ltd.</authors>
+    <owners>SEEK Ltd.</owners>
+    <licenseUrl>http://www.seek.com.au/terms</licenseUrl>
+    <projectUrl>https://github.com/SEEK-Jobs/DSC</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Custom DSC Resources</description>
+    <releaseNotes />
+    <copyright>© 2015 SEEK Ltd. All rights reserved.</copyright>
+    <tags>admin DSC</tags>
+    <dependencies>
+      <dependency id="seek-dsc-harddisk" version="2.0.0.20220103-alpha9" />
+      <dependency id="seek-dsc-networking" version="2.0.0.20220103-alpha9" />
+      <dependency id="seek-dsc-messagequeue" version="2.0.0.20220103-alpha9" />
+      <dependency id="seek-dsc-nservicebus" version="2.0.0.20220103-alpha9" />
+      <dependency id="seek-dsc-software" version="2.0.0.20220103-alpha9" />
+      <dependency id="seek-dsc-topshelf" version="2.0.0.20220103-alpha9" />
+      <dependency id="seek-dsc-webadministration" version="2.0.0.20220103-alpha9" />
+      <dependency id="seek-dsc-database" version="2.0.0.20220103-alpha9" />
+      <dependency id="seek-dsc-appfabric-hosting" version="2.0.0.20220103-alpha9" />
+    </dependencies>
+  </metadata>
+</package>
