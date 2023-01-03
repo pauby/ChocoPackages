@@ -1,0 +1,8 @@
+[ClassVersion("1.0.0"), FriendlyName("cWindowsUpdate")]
+class SEEK_cWindowsUpdate : OMI_BaseResource
+{
+    [Key, Description("Fully qualified path or URL of the MSU file")] String Update;
+    [Key, Description("Specifies the package by using its KB number")] String Kb;
+    [Write, Description("Queue Present/Absent"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
+};
+
