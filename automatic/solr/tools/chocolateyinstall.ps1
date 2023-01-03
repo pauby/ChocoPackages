@@ -1,7 +1,6 @@
 $ErrorActionPreference = 'Stop'
 
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
-$savedParamsPath = Join-Path $toolsDir -ChildPath 'parameters.saved'
 
 $pp = Get-PackageParameters
 if (-not $pp['InstallDir']) {
@@ -10,6 +9,7 @@ if (-not $pp['InstallDir']) {
 else {
    if (Test-Path -Path $pp['InstallDir']) {
       $unzipPath = $pp['InstallDir']
+      Write-Warning 'On uninstall, files will not be removed from a custom install location. Please remove them manually.'
    }
    else {
       throw "Custom install location, '$($pp['InstallDir'])', is invalid or does not exist. Cannot install to this location."
@@ -30,27 +30,13 @@ $packageArgs = @{
    checksumType  = 'sha512'
 }
 
-# we need to know the software version (not the package version) as it's part of the install folder path
-if ($packageArgs.url -match 'solr-(?<version>[\d\.]+)\.tgz') {
-   $softwareVersion = $matches.version
-   # save the custom install location so we can uninstall it later
-   # the path will be, for example with Solr 9.0.0, 'c:\tools\solr-9.0.0' (last part is the basename of the tar file)
-   $solrFullPath = Join-Path -Path $unzipPath -ChildPath "solr-$($softwareVersion)"
-   Add-Content -Path $savedParamsPath -Value $solrFullPath
-   Write-Host "Solr will be unpacked to '$solrFullPath'."
-}
-else {
-   Write-Warning 'Could not determine software version. Will be unable to automatically uninstall so you will need to remove files manually.'
-}
+Write-Host "Solr will be unpacked to '$unzipPath'."
 
 # The tgz file is a tar file inside a zip file. We need to extract the tar file and then extract the contents
 $tempPath = Join-Path -Path $env:TEMP -ChildPath (([GUID]::NewGuid()).Guid)
 $tgzPath = Join-Path -Path $tempPath -ChildPath 'solr.tgz'
 Get-ChocolateyWebFile @packageArgs -FileFullPath $tgzPath            # get the file
-Get-ChocolateyUnzip -FileFullPath $tgzPath -Destination $tempPath    # extract the tar file from the tgz file
+Get-ChocolateyUnzip -PackageName $packageArgs.PackageName -FileFullPath $tgzPath -Destination $tempPath    # extract the tar file from the tgz file
 
 $tarPath = Join-Path -Path $tempPath -ChildPath 'solr.tar'           # get the extracted tar file
-Get-ChocolateyUnzip -FileFullPath $tarPath -Destination $unzipPath   # extract the tar file contents to the final location
-
-# remove any zip.txt files as we don't need them and they'll just cause confusion
-Remove-Item -Path (Join-Path -Path $toolsDir -ChildPath '*.zip.txt') -ErrorAction SilentlyContinue | Out-Null
+Get-ChocolateyUnzip -PackageName $packageArgs.PackageName -FileFullPath $tarPath -Destination $unzipPath   # extract the tar file contents to the final location
