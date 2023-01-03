@@ -1,0 +1,14 @@
+
+[ClassVersion("1.0.0"), FriendlyName("cWebVirtualDirectory")]
+class SEEK_cWebVirtualDirectory : OMI_BaseResource
+{
+    [Key, Description("Name of virtual directory")] string Name;
+    [Key, Description("Name of website with which Web Application is associated")] string Website;
+    [Write, Description("Web application name for the virtual directory")] string WebApplication;
+    [Write, Description("Physical path for the virtual directory")] string PhysicalPath;
+    [Write, Description("Login method for the physical path"), ValueMap{"ClearText","Network,Interactive,Batch"}] string LogonMethod;
+    [Write, Description("Username to access physical path, or leave blank for application user")] string Username;
+    [Write, Description("Username to access physical path, or leave blank for application user")] string Password;
+    [Write, Description("Whether virtual directory should be present or absent"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
+};
+

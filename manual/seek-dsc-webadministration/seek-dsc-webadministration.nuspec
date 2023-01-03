@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>seek-dsc-webadministration</id>
+    <version>2.0.0.20230301-alpha9</version>
+    <title>SEEK DSC WebAdministration</title>
+    <authors>SEEK Ltd.</authors>
+    <owners>pauby, SEEK Ltd.</owners>
+    <licenseUrl>https://github.com/mefellows/DSC/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/mefellows/DSC</projectUrl>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/seek-dsc-webadministration</packageSourceUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Custom DSC Resources for administration of an IIS web server</description>
+    <copyright>© 2015 SEEK Ltd. All rights reserved.</copyright>
+    <tags>admin DSC</tags>
+  </metadata>
+</package>

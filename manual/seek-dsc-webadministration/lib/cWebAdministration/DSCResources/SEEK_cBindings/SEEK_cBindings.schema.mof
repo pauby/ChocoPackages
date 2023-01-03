@@ -1,0 +1,28 @@
+[ClassVersion("1.0.0")]
+class SEEK_cBinding
+{
+	[ValueMap{"http", "https", "net.msmq", "net.pipe", "net.tcp"},Values{"http", "https", "net.msmq", "net.pipe", "net.tcp"}] string Protocol;
+
+	// Derived for HTTP and HTTPS
+	string BindingInformation;
+
+	// HTTP*
+	UInt16 Port;
+	string IPAddress;
+
+	// HTTP
+	string HostName;
+
+	// HTTPS
+	string CertificatePath;
+	string CertificateSubject;
+};
+
+[ClassVersion("1.0.0"), FriendlyName("cBindings")]
+class SEEK_cBindings : OMI_BaseResource
+{
+    [Key, Description("Name of Site")] string Site;
+    [Write, ValueMap{"Present","Absent"}] string Ensure;
+    [Write, EmbeddedInstance("SEEK_cBinding"), Description("Bindings")] string Bindings[];
+    [Write] boolean Clear;
+};

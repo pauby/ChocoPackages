@@ -1,0 +1,6 @@
+[ClassVersion("1.0.0"), FriendlyName("cFeatureDelegation")]
+class SEEK_cFeatureDelegation : OMI_BaseResource
+{
+    [Key, Description("Section path of feature to toggle")] string Section;
+    [Write, Description("Whether feature delegate should be locked or unlocked"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
+};

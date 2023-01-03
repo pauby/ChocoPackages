@@ -1,0 +1,23 @@
+[ClassVersion("1.0.0")]
+Class SEEK_cWebApplicationAuthenticationInformation
+{
+    [write,ValueMap{"true", "false"},Values{"true", "false"}]string Anonymous;
+    [write,ValueMap{"true", "false"},Values{"true", "false"}]string Basic;
+    [write,ValueMap{"true", "false"},Values{"true", "false"}]string Digest;
+    [write,ValueMap{"true", "false"},Values{"true", "false"}]string Windows;
+};
+
+[ClassVersion("1.0.0"), FriendlyName("cWebApplication")]
+class SEEK_cWebApplication : OMI_BaseResource
+{
+    [Key, Description("Name of website with which web application is associated")] string Website;
+    [Key, Description("Name of web application")] string Name;
+    [Write, Description("Web application pool for the web application")] string WebAppPool;
+    [Write, Description("Physical path for the web application directory")] string PhysicalPath;
+    [Write, Description("Whether web application should be present or absent"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
+    [write] string SslFlags;
+    [write, EmbeddedInstance("SEEK_cWebApplicationAuthenticationInformation"), Description("Hashtable containing authentication information (Anonymous, Basic, Digest, Windows)")] string AuthenticationInfo;
+    [write, Description("A comma separated list of protocols, for example: http,net.msmq")] string EnabledProtocols;
+    [write, ValueMap{"All", "Custom", "Disable"}, Values{"All", "Custom", "Disable"}] string AutoStartMode;
+};
+

@@ -1,0 +1,44 @@
+[ClassVersion("1.0.0")]
+Class SEEK_cWebBindingInformation
+{
+    [write]UInt16 Port;
+    [Write,ValueMap{"http", "https", "net.pipe", "net.tcp", "net.msmq"},Values{"http", "https", "net.pipe", "net.tcp", "net.msmq"}] string Protocol;
+    [write]String IPAddress;
+    [write]String HostName;
+    [write]String CertificateThumbprint;
+    [write,ValueMap{"Personal", "WebHosting", "My"},Values{"Personal", "WebHosting", "My"}] string CertificateStoreName;
+    [write]String SslSubject;
+    [write]String SslCertPath;
+};
+
+[ClassVersion("1.0.0")]
+Class SEEK_cHostEntryFileInformation
+{
+    [write,ValueMap{"true","false"},Values{"true", "false"}]String RequireHostFileEntry;
+    [write]String HostEntryName;
+    [write]String HostIpAddress;
+};
+
+[ClassVersion("1.0.0")]
+Class SEEK_cWebAuthenticationInformation
+{
+    [write,ValueMap{"true", "false"},Values{"true", "false"}]string Anonymous;
+    [write,ValueMap{"true", "false"},Values{"true", "false"}]string Basic;
+    [write,ValueMap{"true", "false"},Values{"true", "false"}]string Digest;
+    [write,ValueMap{"true", "false"},Values{"true", "false"}]string Windows;
+};
+
+[ClassVersion("1.0.0"), FriendlyName("cWebsite")]
+class SEEK_cWebsite : OMI_BaseResource
+{
+  [Key] string Name;
+  [write] string PhysicalPath;
+  [write,ValueMap{"Present", "Absent"},Values{"Present", "Absent"}] string Ensure;
+  [write,ValueMap{"Started","Stopped"},Values{"Started", "Stopped"}] string State;
+  [write, EmbeddedInstance("SEEK_cWebBindingInformation"), Description("Hashtable containing binding information (Port, Protocol, IPAddress, HostName, CertificateThumbPrint, CertificateStore)")] string BindingInfo[];
+  [write, EmbeddedInstance("SEEK_cWebAuthenticationInformation"), Description("Hashtable containing authentication information (Anonymous, Basic, Digest, Windows)")] string AuthenticationInfo;
+  [write, EmbeddedInstance("SEEK_cHostEntryFileInformation"), Description("Hashtable containing binding information (HostEntryName, HostIpAddress)")] string HostFileInfo[];
+  [write] string ApplicationPool;
+  [write] string SslFlags;
+  [read] string Id;
+};
