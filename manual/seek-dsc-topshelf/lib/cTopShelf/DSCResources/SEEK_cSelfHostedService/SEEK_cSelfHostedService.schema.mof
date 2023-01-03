@@ -1,0 +1,9 @@
+[ClassVersion("1.0.0"), FriendlyName("cSelfHostedService")]
+class SEEK_cSelfHostedService : OMI_BaseResource
+{
+  [Key] string Name;
+  [Write] string Executable;
+  [write,ValueMap{"True","False"},Values{"true","false"}] string AutoStart;
+  [write,ValueMap{"True","False"},Values{"true","false"}] string Start;
+  [Write, ValueMap{"Present","Absent"}] string Ensure;
+};
