@@ -1,0 +1,8 @@
+[ClassVersion("1.0.0"), FriendlyName("cAppFabricServices")]
+class SEEK_cAppFabricServices : OMI_BaseResource
+{
+    [Key, Description("Unique number to enable the resource to be defined more than once in a Configuration")] UInt16 Index;
+    [Write, Description("AppFabric services to manage")] string Services [];
+    [Write, Description("Whether the resource should be present or absent"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
+};
+

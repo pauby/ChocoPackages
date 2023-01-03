@@ -1,0 +1,9 @@
+[ClassVersion("1.0.0"), FriendlyName("cApplicationAutoStart")]
+class SEEK_cApplicationAutoStart : OMI_BaseResource
+{
+    [Key, Description("Name of website with which web application is associated")] string Website;
+    [Key, Description("Name of web application")] string Name;
+    [Write, Description("Whether web application should be present or absent"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
+    [write, Description("Obsolete"), ValueMap{"All", "Custom", "Disable"}, Values{"All", "Custom", "Disable"}] string AutoStartMode;
+};
+
