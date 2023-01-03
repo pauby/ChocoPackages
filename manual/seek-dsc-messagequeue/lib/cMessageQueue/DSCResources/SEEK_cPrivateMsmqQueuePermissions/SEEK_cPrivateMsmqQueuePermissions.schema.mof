@@ -1,0 +1,11 @@
+[ClassVersion("1.0.0"), FriendlyName("cPrivateMsmqQueuePermissions")]
+class SEEK_cPrivateMsmqQueuePermissions : OMI_BaseResource
+{
+    [Key, Description("Name of the set of permissions")] String Name ;
+    [Write, Description("Names of the queues to apply permissions")] String QueueNames [];
+    [Write, Description("Queue Present/Absent"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
+    [Write, Description("List of users who can administer the queue")] String AdminUsers [];
+    [Write, Description("List of users who can read messages off the queue")] String ReadUsers [];
+    [Write, Description("List of users who can write messages to the queue")] String WriteUsers [];
+};
+
