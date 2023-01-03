@@ -1,0 +1,12 @@
+[ClassVersion("1.0.0"), FriendlyName("cNServiceBusHost")]
+class SEEK_cNServiceBusHost : OMI_BaseResource
+{
+  [key] string ServiceName;
+  [write,ValueMap{"Present", "Absent"},Values{"Present", "Absent"}] string Ensure;
+  [write,ValueMap{"Debug", "Release"},Values{"Debug", "Release"}] string Configuration;
+  [write,ValueMap{"True","False"},Values{"true","false"}] string StartManually;
+  [write] string ApplicationRoot;
+  [write] string DisplayName;
+  [write] string Description;
+  [write] string DependsOn;
+};
