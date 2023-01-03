@@ -1,0 +1,7 @@
+[ClassVersion("1.0.0"), FriendlyName("cSharedDirectory")]
+class SEEK_cSharedDirectory : OMI_BaseResource
+{
+    [Key] string Path;
+    [Write] string Description;
+    [Write] string Permissions [];
+};

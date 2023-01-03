@@ -1,0 +1,7 @@
+[ClassVersion("1.0.0"), FriendlyName("cLink")]
+class SEEK_cLink : OMI_BaseResource
+{
+    [Key] string Link;
+    [Write] string Type;
+    [Write] string Target;
+};
