@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>qemu-img</id>
+    <version>2.3.0.20230103</version>
+    <title>[Deprecated] qemu-img</title>
+    <authors>Fabrice Bellard &amp; the QEMU Developers</authors>
+    <owners>Felix Krull</owners>
+    <licenseUrl>http://wiki.qemu.org/License</licenseUrl>
+    <projectUrl>http://wiki.qemu.org/Main_Page</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This package has been deprecated in favour of [qemu](https://community.chocolatey.org/packages/qemu) as that is being regularly maintained and replaces this.</description>
+    <summary>QEMU disk image utility</summary>
+    <tags>qemu img vhd vmdk vhdx vdi</tags>
+    <projectSourceUrl>http://git.qemu.org/qemu.git</projectSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/deprecated/qemu-img</packageSourceUrl>
+    <docsUrl>http://wiki.qemu.org/Documentation</docsUrl>
+    <bugTrackerUrl>https://www.qemu.org/contribute/report-a-bug/</bugTrackerUrl>
+    <dependencies>
+      <dependency id="qemu" />
+    </dependencies>
+  </metadata>
+</package>
