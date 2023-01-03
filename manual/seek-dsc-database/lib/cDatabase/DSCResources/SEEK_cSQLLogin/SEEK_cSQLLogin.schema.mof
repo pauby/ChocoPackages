@@ -1,0 +1,8 @@
+[ClassVersion("1.0.0"), FriendlyName("cSQLLogin")]
+class SEEK_cSQLLogin : OMI_BaseResource
+{
+    [Key] string User;
+    [Write] string Password;
+    [Write] string Server;
+	[Write, Description("User Present/Absent"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] String Ensure;
+};
