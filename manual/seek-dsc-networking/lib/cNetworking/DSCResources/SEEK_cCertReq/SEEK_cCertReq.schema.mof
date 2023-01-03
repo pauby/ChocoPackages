@@ -1,0 +1,9 @@
+[ClassVersion("1.0.0"), FriendlyName("cCertReq")]
+class SEEK_cCertReq : OMI_BaseResource
+{
+  [key] string Subject;
+  [key] string CertPath;
+  [write,ValueMap{"Present", "Absent"},Values{"Present", "Absent"}] string Ensure;
+  [write] string SANs[];
+  [write] string OnlineCA;
+};

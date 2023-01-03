@@ -1,0 +1,8 @@
+[ClassVersion("1.0.0"), FriendlyName("cStaticIpAddress")]
+class SEEK_cStaticIpAddress : OMI_BaseResource
+{
+  [Key] string IpAddress;
+  [Write, Description("Web Application Pool Present/Absent"), ValueMap{"Present","Absent"}, Values{"Present","Absent"}] string Ensure;
+  [Write] string Interface;
+  [Write] string SubnetMask;
+};

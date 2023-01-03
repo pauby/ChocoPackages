@@ -1,0 +1,10 @@
+[ClassVersion("1.0.0"), FriendlyName("cFirewallRule")]
+class SEEK_cFirewallRule : OMI_BaseResource
+{
+  [Key] string Name;
+  [Write, ValueMap{"Present","Absent"}] string Ensure;
+  [Write, ValueMap{"Inbound","Outbound"}] string Direction;
+  [Write] string LocalPort;
+  [Write, ValueMap{"TCP","UDP"}] string Protocol;
+  [Write, ValueMap{"Allow","Block","Bypass"}] string Action;
+};

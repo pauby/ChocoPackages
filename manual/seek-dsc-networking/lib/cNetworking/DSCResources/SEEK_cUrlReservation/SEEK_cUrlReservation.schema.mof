@@ -1,0 +1,9 @@
+[ClassVersion("1.0.0"), FriendlyName("cUrlReservation")]
+class SEEK_cUrlReservation : OMI_BaseResource
+{
+  [Key, ValueMap{"http"}] string Protocol;
+  [Key] string Hostname;
+  [Key] string Port;
+  [Write] string User;
+  [Write, ValueMap{"Present","Absent"}] string Ensure;
+};

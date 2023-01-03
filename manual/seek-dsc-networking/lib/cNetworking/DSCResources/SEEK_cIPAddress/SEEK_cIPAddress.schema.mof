@@ -1,0 +1,6 @@
+[ClassVersion("1.0.0"), FriendlyName("cIPAddress")]
+class SEEK_cIPAddress : OMI_BaseResource
+{
+  [Key] string IPAddress;
+  [Key] string NodeName;
+};
