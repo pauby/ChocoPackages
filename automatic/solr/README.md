@@ -1,4 +1,4 @@
-# ![Apache Solr](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@70dea0b/icons/solr.png "Apache Solr Logo") [Syncthing](https://chocolatey.org/packages/solr)
+# ![Apache Solr](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@70dea0b/icons/solr.png "Apache Solr Logo") [Apache Solr](https://chocolatey.org/packages/solr)
 
 Solr is a standalone enterprise search server with a REST-like API. You put documents in it (called "indexing") via JSON, XML, CSV or binary over HTTP. You query it via HTTP GET and receive JSON, XML, CSV or binary results.
 
