@@ -19,9 +19,6 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate() {
 }
 
-function global:au_BeforeUpdate {
-}
-
 function global:au_GetLatest {
 
     $response = Invoke-RestMethod -Uri $releases -Method Post -Body $requestBody -Headers $requestHeaders -ContentType 'text/xml' -UseBasicParsing

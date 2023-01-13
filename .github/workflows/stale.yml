@@ -1,3 +1,4 @@
+# See https://github.com/actions/stale for info
 name: 'Stale Issue and PR Cleanup'
 on:
   workflow_dispatch:
@@ -18,12 +19,12 @@ jobs:
           days-before-stale: 60
           days-before-close: 14
           days-before-pr-close: 30
-          exempt-all-assignees: true
+          exempt-assignees: 'pauby'
           exempt-draft-pr: true
-          stale-issue-label: pending closure
-          stale-pr-label: 'waiting on user'
-          only-pr-labels: 'waiting on user'
-          close-issue-label: stale
+          only-labels: 'waiting on user'
+          stale-issue-label: 'pending closure'
+          stale-pr-label: 'pending closure'
+          close-issue-label: 'stale'
           close-pr-label: 'stale'
           exempt-issue-labels: 'pinned, in progress'
           exempt-pr-labels: 'pinned, in progress'

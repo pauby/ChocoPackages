@@ -5,12 +5,12 @@ $packageArgs = @{
   fileType      = 'EXE'
   softwareName  = 'TeamViewer*'
 
-  url           = 'https://download.teamviewer.com/download/TeamViewer_Setup.exe'
-  checksum      = 'f60062cf21ed42ba0adf64a296f124074ef4ad92b6b58e2f488c4b028a286bf4'
-  checksumType  = 'sha256'
+  url           = 'https://download.teamviewer.com/download/version_15x/TeamViewer_Setup.exe'
+  checksum      = 'F2AA91FECCEA466BD9C0440DB1ADE6E16B10F42897E30431996FC4D02ED500F5'
+  checksumType  = 'SHA256'
 
-  url64         = 'https://download.teamviewer.com/download/TeamViewer_Setup_x64.exe'
-  checksum64    = 'efa1b635356ef73d7a61486ba89401b46cc7cf5a71f7d179beafe59152b2f8f6'
+  url64         = 'https://download.teamviewer.com/download/version_15x/TeamViewer_Setup_x64.exe'
+  checksum64    = 'fccef4dd9b654f98c100ab41a8e7e01d6257d496827caa740097e8a82e3e2054'
   checksumType64= 'sha256'
 
   silentArgs    = "/S"
