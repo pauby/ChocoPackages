@@ -16,9 +16,9 @@ jobs:
       - uses: actions/stale@v4.1.0
         id: stale
         with:
-          days-before-stale: 60
-          days-before-close: 14
-          days-before-pr-close: 30
+          days-before-stale: 7
+          days-before-close: 7
+          days-before-pr-close: 14
           exempt-assignees: 'pauby'
           exempt-draft-pr: true
           only-labels: 'waiting on user'
