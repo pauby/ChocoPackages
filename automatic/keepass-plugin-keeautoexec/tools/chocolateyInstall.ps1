@@ -11,8 +11,9 @@ if ([array]$key = Get-UninstallRegistryKey -SoftwareName $packageSearch) {
 }
 
 if ([string]::IsNullOrEmpty($installPath)) {
-    Write-Verbose "Searching '$env:ChocolateyBinRoot' for portable install..."
-    $portPath = Join-Path -Path $env:ChocolateyBinRoot -ChildPath "keepass"
+    $portableInstallPath = Get-ToolsLocation
+    Write-Verbose "Searching '$($portableInstallPath)' for portable install..."
+    $portPath = Join-Path -Path $portableInstallPath -ChildPath "keepass"
     $installPath = Get-ChildItem -Directory "$portPath*" -ErrorAction SilentlyContinue
 }
 
