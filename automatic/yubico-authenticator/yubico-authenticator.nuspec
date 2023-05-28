@@ -45,12 +45,7 @@ The Yubico Authenticator securely generates a code used to verify your identity 
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
-    <releaseNotes>* Complete redesign of the UI using Flutter.
-* Add support for Android.
-* Add native ARM support for MacOS.
-* Add in-app elevation to Administrator for FIDO on Windows.
-
-Available in [macOS App Store](https://apps.apple.com/us/app/yubico-authenticator/id1497506650?ls=1), [Microsoft Store](https://www.microsoft.com/en-us/p/yubico-authenticator/9nfng39387k0?activetab=pivot:overviewtab) and [Play Store](https://play.google.com/store/apps/details?id=com.yubico.yubioath)</releaseNotes>
+    <releaseNotes>https://github.com/Yubico/yubioath-flutter/releases/tag/6.0.0</releaseNotes>
     <!--<dependencies> -->
       <!-- <dependency id="KB2919355" version="1.0.20160915" /> -->
       <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /> -->

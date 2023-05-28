@@ -8,7 +8,7 @@ $repoName = 'yubioath-flutter'
 function global:au_SearchReplace {
     @{
         "$($Latest.PackageName).nuspec" = @{
-            "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$([System.Web.HttpUtility]::HtmlEncode($Latest.ReleaseNotes))`$2"
+            "(\<releaseNotes\>).*?(\<\/releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
         }
         ".\tools\chocolateyInstall.ps1" = @{
             '(^\s*\$installerFile\s*=\s*)(''.*'')'  = "`$1'$($Latest.Asset64.name)'"
@@ -49,18 +49,12 @@ function global:au_GetLatest {
         # we haven't found a match
         exit
     }
-    $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
-        $release.html_url
-    }
-    else {
-        $release.body
-    }
 
     return @{
         Asset64      = $asset64
         URL64        = $asset64.browser_download_url
         Version      = $version
-        ReleaseNotes = $releaseNotes
+        ReleaseNotes = $release.html_url
     }
 }
 
