@@ -4,7 +4,7 @@
 # https://community.chocolatey.org/packages/microsoft-windows-terminal
 #
 # This can only be installed in a user context. You cannot use Add-AppXPackage -AllUsers (as the parameter is not
-# supported). You cannot use *-ProvisionedAppXPackage as it produced an unspecified error.
+# supported). You cannot use *-AppxProvisionedPackage as it produced an unspecified error.
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 $internalAppXPackage = @{
