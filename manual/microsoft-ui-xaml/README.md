@@ -6,4 +6,5 @@ WinUI 2 is a library of controls that provides official native Microsoft UI cont
 
 WinUI 3 is the next generation of the WinUI framework. It dramatically expands WinUI into a full UX framework, making WinUI available for all types of Windows apps – from Win32 to UWP – for use as the UI layer.
 
-**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+**NOTE**: The version of this package and the version of the AppX package installed, do not match (for example, version '2.7.0' is actually AppX package version '7.2109.13004.0')
+**NOTE**: This is a manually updated package.

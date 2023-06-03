@@ -6,7 +6,7 @@ in verifying that this package's contents are trustworthy.
 1. The software is downloaded from https://www.nuget.org/packages/Microsoft.UI.Xaml/
 2. Select **Versions**, the correct version and then **Download package**.
 3. Once downloaded, open in a Zip viewer and go to tools -> AppX -> x64 -> Release and you'll find the embedded binary there.
-4. 2. You can use one of the following methods to obtain the checksum:
+4. You can use one of the following methods to obtain the checksum:
   - Use powershell function 'Get-Filehash'
   - Use chocolatey utility 'checksum.exe'
 
