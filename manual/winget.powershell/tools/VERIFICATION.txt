@@ -1,0 +1,14 @@
+﻿
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+NOTE: There is no releases on the GitHub project source page.
+
+1. Download the module from the PowerShell Gallery either using the PowerShell below or directly from the gallery:
+
+    Save-Module -Name Microsoft.WinGet.Client -Path <PATH TO DOWNLOAD TO>
+
+2. Compare the files from the package against those in the installed module. Again use Get-FileHash -Path <FILE TO VERIFY> to retrieve those hash values.
+
+File 'LICENSE.txt' is obtained from https://github.com/microsoft/winget-cli/blob/master/LICENSE
