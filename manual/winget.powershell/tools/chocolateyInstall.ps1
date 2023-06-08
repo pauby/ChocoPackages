@@ -38,7 +38,7 @@ ForEach ($destPath in $destinationPath) {
     $fullDestPath = (Join-Path -Path $destPath -ChildPath $moduleVersion)
 
     # check destination path exists and create if not
-    if (Test-Path -Path $fullDestPath) {
+    if (-not (Test-Path -Path $fullDestPath)) {
         $null = New-Item -Path $fullDestPath -ItemType Directory -Force
     }
 

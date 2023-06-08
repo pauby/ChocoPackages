@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>WinGet PowerShell Module (Microsoft.WinGet.CLient) (Install)</title>
+    <title>WinGet PowerShell Module (Microsoft.WinGet.Client) (Install)</title>
     <authors>Microsoft</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://github.com/microsoft/winget-cli</projectUrl>
