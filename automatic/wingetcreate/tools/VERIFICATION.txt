@@ -1,0 +1,12 @@
+﻿VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
+
+To verify the files using the project source:
+
+1. Please go to the project source location and download the release matching the package version.
+2. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the official release file (from step 1 above) and the file from the package and compare them.
+
+64-bit URL: https://github.com/microsoft/winget-create/releases/download/v1.2.6.0/wingetcreate.exe
+64-bit Checksum Type: SHA256
+64-bit Checksum: 560E67C87C73DF1A0D2DD3B6D436655B4F1210B925BD974C6F01A20ABFE8C9EB
