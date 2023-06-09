@@ -37,7 +37,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@306a1af5/icons/dbatools.png</iconUrl>
         <copyright>2018 Chrissy LeMaire</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
-        <licenseUrl>https://github.com/sqlcollaborative/dbatools/blob/master/LICENSE</licenseUrl>
+        <licenseUrl>https://github.com/dataplat/dbatools/blob/master/license</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <projectSourceUrl>https://github.com/sqlcollaborative/dbatools</projectSourceUrl>
         <docsUrl>https://docs.dbatools.io/</docsUrl>
