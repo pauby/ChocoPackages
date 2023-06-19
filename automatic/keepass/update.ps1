@@ -1,4 +1,6 @@
-#import-module au
+. $PSScriptRoot\..\..\scripts\all.ps1
+
+$releases = 'https://keepass.info/download.html'
 
 function global:au_SearchReplace {
     @{
@@ -8,15 +10,21 @@ function global:au_SearchReplace {
     }
 }
 
-# Left empty intentionally to override BeforeUpdate in keepass.install
-function global:au_BeforeUpdate { }
+function global:au_BeforeUpdate() { }
+
+function global:au_AfterUpdate {
+    Set-DescriptionFromReadme -SkipFirst 2
+}
 
 function global:au_GetLatest {
-    (clist keepass.install -e --by-id-only | select -Skip 1 | select -SkipLast 1) -match '^.+?\s+(?<version>.+?)\s+'
-    
+    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+
+    $regex = 'https://sourceforge.net/projects/keepass/files/KeePass%202.x/(?<version>[\d\.]+)/KeePass-[\d\.]+-Setup.exe/download'
+    $url = ($page.links | Where-Object href -Match $regex | Select-Object -First 1).href
+
     return @{
         Version = $matches.version
     }
 }
 
-update -ChecksumFor none
+Update-Package -ChecksumFor None
