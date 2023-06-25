@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
 <!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
 <!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
@@ -31,11 +31,11 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
         <!-- == SOFTWARE SPECIFIC SECTION == -->
         <!-- This section is about the software itself -->
         <title>PSHTML (PowerShell Module)</title>
-        <authors>StÃ©phane van Gulick</authors>
+        <authors>Stéphane van Gulick</authors>
         <!-- projectUrl is required for the community feed -->
         <projectUrl>https://github.com/Stephanevg/PSHTML</projectUrl>
         <iconUrl>https://rawcdn.githack.com/pauby/ChocoPackages/cc7594683fe923b18ee8c0360a90f1cc7b143b15/icons/pshtml.powershell.png</iconUrl>
-        <copyright>(c) 2018 StÃ©phane van Gulick. All rights reserved.</copyright>
+        <copyright>(c) 2018 Stéphane van Gulick. All rights reserved.</copyright>
         <!-- If there is a license Url available, it is is required for the community feed -->
         <licenseUrl>https://github.com/Stephanevg/PSHTML/blob/master/LICENSE</licenseUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
