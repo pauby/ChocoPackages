@@ -3,9 +3,9 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>logitech-presentation</id>
-    <version>1.50.340</version>
+    <version>1.60.33</version>
     <owners>pauby</owners>
-    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/logitech-presentation</packageSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/logitech-presentation</packageSourceUrl>
     <title>Logitech Presentation (Install)</title>
     <authors>Logitech</authors>
     <projectUrl>http://logitech.com/spotlight</projectUrl>
@@ -20,8 +20,8 @@
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
     <dependencies>
-      <dependency id="autohotkey" />
-    </dependencies>	
+      <dependency id="autohotkey.portable"/>
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
