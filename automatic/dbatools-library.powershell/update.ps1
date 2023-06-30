@@ -6,6 +6,18 @@ $moduleName  = 'dbatools.library'
 
 function global:au_SearchReplace {
     @{
+        "tools\chocolateyInstall.ps1" = @{
+            # We use ChocolateyPackageVersion to minimise changes to the package code -
+            # If using a patchfix version, use the moduleversion instead of the packageversion.
+            '(\s*\$moduleVersion\s*=\s*)(\$env:ChocolateyPackageVersion|(["'']?).+["'']?)' = "`${1}$(
+                if ($Latest.ModuleVersion -ne $Latest.Version) {
+                    $Quote = if ($Matches.'3') {'${3}'} else {"'"}
+                    $Quote + $Latest.ModuleVersion + $Quote
+                } else {
+                    '$env:ChocolateyPackageVersion'
+                }
+            )"
+        }
     }
 }
 

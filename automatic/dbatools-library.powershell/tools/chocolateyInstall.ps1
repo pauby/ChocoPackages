@@ -2,6 +2,7 @@
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $moduleName = 'dbatools.library'  # this may be different from the package name and different case
+$moduleVersion = $env:ChocolateyPackageVersion
 
 if ($PSVersionTable.PSVersion.Major -lt 3) {
     throw "$moduleName) module requires a minimum of PowerShell v3."
@@ -15,7 +16,7 @@ $destPath   = Join-Path -Path $env:ProgramFiles -ChildPath "WindowsPowerShell\Mo
 
 if ($PSVersionTable.PSVersion.Major -ge 5)
 {
-    $destPath     = Join-Path -Path $destPath -ChildPath $env:ChocolateyPackageVersion
+    $destPath     = Join-Path -Path $destPath -ChildPath $moduleVersion
 }
 
 Write-Verbose "Creating destination directory '$destPath' for module."
