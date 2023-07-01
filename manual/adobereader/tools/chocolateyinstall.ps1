@@ -16,7 +16,7 @@ $PerformNewInstall = $false
 $ApplyPatch = $false
 [array]$key = Get-UninstallRegistryKey -SoftwareName $DisplayName.replace(' Acrobat', ' Acrobat*')
 
-$MUImspURL -match 'AcroRdrDCUpd(\d+)_'
+$MUImspURL -match 'AcroRdrDCUpd(\d+)_' | Out-Null
 $UpdaterVersion = $Matches[1]
 
 $PackageParameters = Get-PackageParameters
