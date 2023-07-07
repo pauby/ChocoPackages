@@ -26,7 +26,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>2.7.0</version>
+    <version>2.7.3</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/microsoft-ui-xaml</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>pauby</owners>
@@ -55,10 +55,11 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
 WinUI 2 is a library of controls that provides official native Microsoft UI controls and features for Windows UWP apps. WinUI 2 can be used in any Windows 10 UWP XAML app, or in a Xamarin.Forms app running on Windows 10 using native view embedding.
 
-WinUI 3 is the next generation of the WinUI framework. It dramatically expands WinUI into a full UX framework, making WinUI available for all types of Windows apps – from Win32 to UWP – for use as the UI layer.</description>
+WinUI 3 is the next generation of the WinUI framework. It dramatically expands WinUI into a full UX framework, making WinUI available for all types of Windows apps - from Win32 to UWP - for use as the UI layer.
 
 **NOTE**: The version of this package and the version of the AppX package installed, do not match (for example, version '2.7.0' is actually AppX package version '7.2109.13004.0')
 **NOTE**: This is a manually updated package.
+</description>
     <releaseNotes>https://github.com/microsoft/microsoft-ui-xaml/releases</releaseNotes>
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
     <!--<dependencies>

@@ -1,67 +1,97 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-# This code is borrowed from the awesome Microsoft-Windows-Terminal package
-# https://community.chocolatey.org/packages/microsoft-windows-terminal
-#
 # This can only be installed in a user context. You cannot use Add-AppXPackage -AllUsers (as the parameter is not
 # supported). You cannot use *-AppxProvisionedPackage as it produced an unspecified error.
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
-$internalAppXPackage = @{
-  SoftwareName = 'Microsoft.VCLibs'
-  PackageName  = 'Microsoft.VCLibs.140.00.UWPDesktop'
-  #! This package version must have the 4 version segments that MATCH EXACTLY with the installed AppX version. EXACTLY.
-  Version      = $env:ChocolateyPackageVersion
-}
 
-$appxFileName = 'Microsoft.VCLibs.x64.14.00.Desktop.appx'
+. $(Join-Path -Path $toolsDir -ChildPath "$($env:ChocolateyPackageName)-helpers.ps1")
 
-$downloadArguments = @{
-  packageName  = $env:ChocolateyPackageName
-  fileFullPath = Join-Path -Path $toolsDir -ChildPath $appxFileName
-  url          = 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
-  checksum     = '9bfde6cfcc530ef073ab4bc9c4817575f63be1251dd75aaa58cb89299697a569'
-  checksumType = 'SHA256'
-}
-
-Get-ChocolateyWebFile @downloadArguments
-
-if (-not (Get-OSArchitectureWidth -compare '64')) {
-  throw 'Requires Windows x64. Other architectures are not supported.'
-}
+$appxFileNamex86 = 'Microsoft.VCLibs.x86.14.00.Desktop.appx'
+$appxFileNamex64 = 'Microsoft.VCLibs.x64.14.00.Desktop.appx'
 
 $windowsVersion = [Environment]::OSVersion.Version
-if ($windowsVersion.Major -ne "10") {
-  throw "This package requires Windows 10 / Server 2019."
-}
-# .appx is not supported on Windows 10 version 1709 and 1803. https://docs.microsoft.com/en-us/windows/msix/msix-1709-and-1803-support
-if ($windowsVersion.Build -lt "17763") {
-  throw "This package requires at least Windows 10 / Server 2019 version 1809 / OS build 17763.x. See https://github.com/microsoft/microsoft-ui-xaml#version-support for more information."
+if ($windowsVersion.Major -lt "10") {
+  throw "This package requires a minimum of Windows 10 / Server 2019."
 }
 
-$installedAppXPackage = Get-AppxPackage | Where-Object -Property Name -EQ $internalAppXPackage.PackageName
-
-$removeAppXPackage = $false
-if ([version]$installedAppXPackage.Version -gt [version]$internalAppXPackage.Version) {
-  # you can't install an older version of an installed appx package, you'd need to remove it first
-  Write-Warning "The installed $installedAppxVersion version is newer than this package version, it may have been automatically updated on your computer."
-  $removeAppXPackage = $true
+# .appx is only  supported on Windows 10 version 1709 and later - https://learn.microsoft.com/en-us/windows/msix/supported-platforms
+# See https://en.wikipedia.org/wiki/Windows_10_version_history for build numbers
+if ($windowsVersion.Build -lt "16299") {
+  throw "This package requires a minimum of Windows 10 / Server 2019 version 1709 / OS build 16299."
 }
-elseif ([version]$installedAppXPackage.Version -eq [version]$internalAppxPackage.Version) {
-  if ($env:ChocolateyForce) {
-    # you can't install the same version of an appx package, you need to remove it first
-    Write-Host 'Removing already installed version.'
-    $removeAppXPackage = $true
+
+$removeAppXPackage = $false         # used to indicate if we should remove the currently installed AppX package before continuing
+# get all of the packages as we may need to use that later
+$allAppXPackages = Get-AppxPackage
+# there is likely going to be two packages returned for x86 and x64.
+# we don't care about the architecture, just the version and they will both be the same.
+$installedAppXPackage = @($allAppXPackages | Where-Object -Property Name -EQ $internalAppXPackage.PackageName)
+if ($installedAppXPackage.Count -gt 0) {
+  if ([version]$installedAppXPackage[0].Version -gt [version]$internalAppXPackage.Version) {
+    # you can't install an older version of an installed appx package, you'd need to remove it first
+    # we also don't want to remove later versions as they will have been installed outside of the package ecosystem
+    # and may have been installed for very good reasons by another application.
+    # if the user pases the `-f` or `--force` option to Chocolatey CLI we can attempt uninstall
+    Write-Warning "The installed $($installedAppXPackage[0].Version) version of the AppX package is newer than the version this Chocolatey package installs, $($internalAppXPackage.Version)."
+    Write-Warning "It may have been automatically updated on your computer as part of a Windows Update or another application."
+
+    if ($env:ChocolateyForce) {
+      Write-Host "The '--force' option has been used so we will attempt to remove this later version."
+      $removeAppXPackage = $true
+    }
+    else {
+      # we will not throw an error if a later version of the AppX package is detected
+      Write-Warning "We cannot install this package version over the later version without uninstalling it first. Please remove it manually, or run the install command, adding the '--force' option to try and uninstall the later version."
+      return
+    }
   }
-  else {
-    Write-Host "The $($internalAppXPackage.Version) version of $($internalAppXPackage.PackageName) is already installed. If you want to reinstall use --force."
-    return
+  elseif ([version]$installedAppXPackage[0].Version -eq [version]$internalAppxPackage.Version) {
+    if ($env:ChocolateyForce) {
+      # you can't install the same version of an appx package, you need to remove it first
+      Write-Host "The '--force' option has been used so we will attempt to remove the already installed version."
+      $removeAppXPackage = $true
+    }
+    else {
+      Write-Warning "The $($internalAppXPackage.Version) version of $($internalAppXPackage.PackageName) is already installed. If you want to reinstall, add the '--force' option on the command line."
+      return
+    }
   }
 }
 
 if ($removeAppXPackage) {
-  Write-Host "Removing version $($installedAppXPackage.Version) of $($internalAppXPackage.PackageName)."
-  Remove-AppxPackage -Package $installedAppXPackage.PackageFullName
+  # we need to check we CAN remove the package - if it is a dependent package, it will fail if we try
+  if (Test-AppXDependency -Name $internalAppXPackage.PackageName -PackageList $allAppXPackages) {
+    Write-Warning "We cannot remove version $($installedAppXPackage[0].Version) of $($internalAppXPackage.PackageName) as it is a dependency of another AppX package. Please remove it manually and then install this package again."
+    return
+  }
+
+  # when you remove a package, you don't remove it per architecture. You just remove it for all architectures.
+  Write-Host "Attempting to remove version $($installedAppXPackage[0].Version) of $($internalAppXPackage.PackageName). Note that this may fail and you will therefore have to remove it manually."
+  Remove-AppxPackage -Package $installedAppXPackage[0].PackageFullName
 }
 
-Add-AppXPackage -Path (Join-Path -Path $toolsDir -ChildPath $appxFileName)
+# For x64, the x86 version of the package is always installed too by the looks of it
+$downloadArguments = @{
+  packageName  = $env:ChocolateyPackageName
+  fileFullPath = Join-Path -Path $toolsDir -ChildPath $appxFileNamex86
+  url          = 'https://aka.ms/Microsoft.VCLibs.x86.14.00.Desktop.appx'
+  checksum     = '3195DB914BEA1534EE73582CD483C548A929AED2799D305B3BBF7411BA7A6C7D'
+  checksumType = 'SHA256'
+}
+
+Get-ChocolateyWebFile @downloadArguments
+Add-AppxPackage -Path (Join-Path -Path $toolsDir -ChildPath $appxFileNamex86)
+
+if (Get-OSArchitectureWidth -eq '64') {
+  $downloadArguments = @{
+    packageName  = $env:ChocolateyPackageName
+    fileFullPath = Join-Path -Path $toolsDir -ChildPath $appxFileNamex64
+    url          = 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
+    checksum     = '9BFDE6CFCC530EF073AB4BC9C4817575F63BE1251DD75AAA58CB89299697A569'
+    checksumType = 'SHA256'
+  }
+
+  Get-ChocolateyWebFile @downloadArguments
+  Add-AppxPackage -Path (Join-Path -Path $toolsDir -ChildPath $appxFileNamex64)
+}
