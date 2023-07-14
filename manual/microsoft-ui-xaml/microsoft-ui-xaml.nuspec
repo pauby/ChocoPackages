@@ -34,7 +34,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>Microsoft.UI.Xaml (Install)</title>
+    <title>Microsoft.UI.Xaml 2.7 (Install)</title>
     <authors>Microsoft</authors>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://github.com/microsoft/microsoft-ui-xaml</projectUrl>
@@ -57,19 +57,18 @@ WinUI 2 is a library of controls that provides official native Microsoft UI cont
 
 WinUI 3 is the next generation of the WinUI framework. It dramatically expands WinUI into a full UX framework, making WinUI available for all types of Windows apps - from Win32 to UWP - for use as the UI layer.
 
-**NOTE**: The version of this package and the version of the AppX package installed, do not match (for example, version '2.7.0' is actually AppX package version '7.2109.13004.0')
 **NOTE**: This is a manually updated package.
 </description>
     <releaseNotes>https://github.com/microsoft/microsoft-ui-xaml/releases</releaseNotes>
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
-    <!--<dependencies>
-      <dependency id="" version="__MINIMUM_VERSION__" />
-      <dependency id="" version="[__EXACT_VERSION__]" />
+    <dependencies>
+      <dependency id="microsoft-ui-xaml-2-7" version="[2.7.3]" />
+      <!--<dependency id="" version="[__EXACT_VERSION__]" />
       <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
       <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
       <dependency id="" />
-      <dependency id="chocolatey-core.extension" version="1.1.0" />
-    </dependencies>-->
+      <dependency id="chocolatey-core.extension" version="1.1.0" />-->
+    </dependencies>
     <!-- chocolatey-core.extension - https://community.chocolatey.org/packages/chocolatey-core.extension
          - You want to use Get-UninstallRegistryKey on less than 0.9.10 (in chocolateyUninstall.ps1)
          - You want to use Get-PackageParameters and on less than 0.11.0
@@ -82,6 +81,6 @@ WinUI 3 is the next generation of the WinUI framework. It dramatically expands W
   </metadata>
   <files>
     <!-- this section controls what actually gets packaged into the Chocolatey package -->
-    <file src="tools\**" target="tools" />
+    <!--<file src="tools\**" target="tools" />-->
   </files>
 </package>
