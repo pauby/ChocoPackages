@@ -3,7 +3,6 @@
 $repoOwner = 'TranslucentTB'
 $repoName = 'TranslucentTB'
 
-
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
@@ -40,7 +39,7 @@ function global:au_GetLatest {
     return @{
         Asset32      = $asset32
         URL32        = $asset32.browser_download_url
-        Version      = $version
+        Version      = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
         ReleaseNotes = $releaseNotes
     }
 }
