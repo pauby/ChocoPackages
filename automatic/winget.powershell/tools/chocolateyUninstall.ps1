@@ -1,8 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $toolsDir = Split-Path -parent $MyInvocation.MyCommand.Definition
-$moduleName = 'Microsoft.WinGet.Client' # this could be different from package name
-$savedParamsPath = Join-Path $toolsDir -ChildPath 'parameters.saved'
+. $(Join-Path -Path $toolsDir -ChildPath "$($env:ChocolateyPackageName)-helpers.ps1")
 
 if (Test-Path -Path $savedParamsPath) {
     $removePath = Get-Content -Path $savedParamsPath

@@ -15,7 +15,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
 <!-- * If you are an organization making private packages, you probably have no issues here -->
 <!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“ÃƒÆ’Ã…Â½Ãƒâ€šÃ‚Â©ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â doesnÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â‚¬Å¾Ã‚Â¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
@@ -27,7 +27,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
     <version>0.2.1</version>
-    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/winget.powershell</packageSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/winget.powershell</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>pauby</owners>
     <!-- ============================== -->
@@ -51,7 +51,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <bugTrackerUrl>https://github.com/microsoft/winget-cli/issues</bugTrackerUrl>
     <tags>winget-cli winget powershell</tags>
     <summary>This is the PowerShell module for the WinGet command line tool.</summary>
-    <description>This is the PowerShell module for the WinGet command line tool.
+    <description>This is the PowerShell module for the WinGet command line tool, 'Microsoft.WinGet.Client'.
 
 You can pass the following parameters:
 
@@ -60,8 +60,10 @@ You can pass the following parameters:
 
 You can pass both `/core` and `/desktop` parameters to install on both. If you pass no parameters then `/desktop` is assumed.
 
-_**NOTE: This module required at least PowerShell v5.1.0**_
-**NOTE**: This is a manually updated package.
+## Notes
+
+* This module requires at least PowerShell v5.1.0.
+* This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
     <releaseNotes>https://github.com/microsoft/winget-cli/releases</releaseNotes>
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->

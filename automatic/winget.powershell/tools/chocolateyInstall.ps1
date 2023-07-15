@@ -1,10 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $toolsDir = Split-Path -parent $MyInvocation.MyCommand.Definition
-$moduleName = 'Microsoft.WinGet.Client' # this could be different from package name
-$moduleVersion = $env:ChocolateyPackageVersion  # this may change so keep this here
-$savedParamsPath = Join-Path $toolsDir -ChildPath 'parameters.saved'
-$minPSVersion = '5.1.0'
+
+. $(Join-Path -Path $toolsDir -ChildPath "$($env:ChocolateyPackageName)-helpers.ps1")
 
 if ($PSVersionTable.PSVersion -lt [version]$minPSVersion) {
     throw "$moduleName module requires a minimum of PowerShell v$minPSVersion."
