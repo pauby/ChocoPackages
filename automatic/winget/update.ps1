@@ -27,7 +27,7 @@ function global:au_GetLatest {
     }
 
     return @{
-        Version        = ConvertTo-VersionNumber -Version ([version]$version) -Part 4
+        Version         = $version
     }
 }
 

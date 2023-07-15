@@ -17,7 +17,7 @@ function global:au_SearchReplace {
             '(^\s*\$appxLicenseFilename\s*=\s*)(''.*'')'    = "`$1'$($wingetLicenseFilename)'"
         }
         ".\tools\winget-cli-helpers.ps1" = @{
-            '(^\s*\$packagedAppxVersion\s*=\s*)(''.*'')'    = "`$1'$($Latest.version)'"
+            '(^\s*\$packagedAppxVersion\s*=\s*)(''.*'')'    = "`$1'$($Latest.FourPartVersion)'"
             '(^\s*Version\s*=\s*)(''.*'')'                  = "`$1'$($Latest.AppVersion)'"
         }
         ".\tools\VERIFICATION.txt"      = @{
@@ -69,12 +69,13 @@ function global:au_GetLatest {
     }
 
     return @{
-        Asset64        = $asset64
-        AssetLicense64 = $assetLicense64
-        URL64          = $asset64.browser_download_url
-        URLLicense64   = $assetLicense64.browser_download_url
-        Version        = ConvertTo-VersionNumber -Version ([version]$version) -Part 4
-        ReleaseNotes   = $releaseNotes
+        Asset64         = $asset64
+        AssetLicense64  = $assetLicense64
+        URL64           = $asset64.browser_download_url
+        URLLicense64    = $assetLicense64.browser_download_url
+        Version         = $version
+        FourPartVersion = ConvertTo-VersionNumber -Version ([version]$version) -Part 4 
+        ReleaseNotes    = $releaseNotes
     }
 }
 
