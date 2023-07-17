@@ -26,7 +26,7 @@ function global:au_AfterUpdate {
 function global:au_GetLatest {
     # This needs to use curl.exe as it supports HTTP/2 and the Invoke-WebRequest cmdlet doesn't
     # This website needs HTTP/2
-    $page = curl.exe $releases
+    $page = curl.exe $releases --silent
 
     $regexVer = "Adobe Digital Editions (?<version>[\d\.]+) Installers"
     $regexUrl = "ADE_.*_installer.exe"
