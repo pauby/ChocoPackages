@@ -56,7 +56,8 @@ init:
 install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
-- ps: choco upgrade chocolatey -y --no-progress
+- choco upgrade chocolatey -y --no-progress
+- choco install curl -y --no-progress
 - git --version
 - choco --version
 - ps: |
