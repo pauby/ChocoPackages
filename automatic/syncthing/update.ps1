@@ -49,20 +49,14 @@ function global:au_GetLatest {
 
     $asset32 = $release.assets | Where-Object name -match 'syncthing-windows-386-v(?<version>.*).zip'
     $asset64 = $release.assets | Where-Object name -Match 'syncthing-windows-amd64-v(?<version>.*).zip'
-    $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
-        $release.html_url
-    }
-    else {
-        $release.body
-    }
-
+    
     return @{
         Asset32          = $asset32
         Asset64          = $asset64
         URL32            = $asset32.browser_download_url
         URL64            = $asset64.browser_download_url
         Version          = $version
-        ReleaseNotes     = $releaseNotes
+        ReleaseNotes     = $release.html_url
     }
 }
 
