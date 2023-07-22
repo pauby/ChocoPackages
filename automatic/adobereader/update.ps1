@@ -34,7 +34,7 @@ function global:au_GetLatest {
         throw "Version wasn't detected!"
     } else {
         $urlVersion = $matches.version.Replace('.', '')     # used in the URL
-        $packageVersion = "20$($matches.version)"
+        $packageVersion = ([version]"20$($matches.version)").ToString()
     }
 
 
