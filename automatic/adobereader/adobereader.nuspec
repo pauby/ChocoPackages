@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. --><package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
@@ -62,7 +62,7 @@ For example :
 </description>
     <releaseNotes>https://helpx.adobe.com/acrobat/release-note/release-notes-acrobat-reader.html</releaseNotes>
     <dependencies>
-      <dependency id="kb2919355"/>
+      <dependency id="kb2919355" />
     </dependencies>
   </metadata>
   <files>

@@ -34,12 +34,13 @@ However, **upgrades** to Adobe Reader via this package:
 
 ### Update Modes
 
-- `0` - Manually check for and install updates. (Default and reset on every update)
-- `1` - Same as `0`.
-- `2` - Download updates for me, but let me choose when to install them. (Appears to be no different than `0`.)
+- `0` - Manually check for and install updates. (Default and reset on every update). Requires PowerShell 3+.
+- `1` - Same as `0`. Requires PowerShell 3+.
+- `2` - Download updates for me, but let me choose when to install them. (Appears to be no different than `0`).
 - `3` - Install updates automatically (via task scheduler or ARM service if enabled).
 - `4` - Notify me, but let me choose when to download and install updates.
 
 These parameters can be passed to the installer with the use of `-params`.
+
 For example :
 `choco install adobereader -params '"/DesktopIcon /UpdateMode:4"'`
