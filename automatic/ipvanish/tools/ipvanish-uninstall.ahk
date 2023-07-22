@@ -41,7 +41,7 @@ wait := 0
 WinActivate winTitle
 ; This is here as that last window needs the mouse clicked on it _somewhere_ before
 ; it picks up the pixel colour and works
-Click 10, 10
+Click 400, 450
 While PixelGetColor(430, 225, "Slow") != "0x4A4A4A" and wait < totalWait
 {
     Sleep sleepWait

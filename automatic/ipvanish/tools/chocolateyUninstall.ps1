@@ -1,12 +1,13 @@
-﻿$ErrorActionPreference = 'Stop' # stop on all errors
+﻿$ErrorActionPreference = 'Stop'
 
 $toolsDir       = $(Split-Path -Parent $MyInvocation.MyCommand.Definition)
 
 $packageArgs = @{
     packageName     = $env:ChocolateyPackageName
-    softwareName    = 'IPVanish*'  #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
+    softwareName    = 'IPVanish*'
     fileType        = 'EXE'
-    # the installer always seems to exit with -1. ALWAYS! This is a really bad idea but I don't know what else to do here.
+    # the installer always seems to exit with -1. ALWAYS! This is a really bad idea
+    # but I don't know what else to do here.
     validExitCodes  = @(-1, 0, 3010, 1605, 1614, 1641)
 }
 
@@ -26,16 +27,12 @@ elseif ($key.Count -gt 1) {
     # MsiExec.exe /X{13C893E2-C294-43D3-93A7-2FB25245E7BE}
     # "C:\ProgramData\Package Cache\{9fbdf1aa-07db-4cda-bbac-9bed297bd2c2}\IPVanish.exe"  /uninstall
     # We need to find the correct string
-    for ($i = 0; $i -lt $key.Count; $i++) {
-        if ($key[$i].UninstallString -like '*IPVanish.exe*') {
-            break
-        }
-    }
+    $uninstallCmd = $key | Where-Object UninstallString -like '*IPVanish.exe*'
 
     # The string will look something like 
     # "C:\ProgramData\Package Cache\{9fbdf1aa-07db-4cda-bbac-9bed297bd2c2}\IPVanish.exe"  /uninstall
     # so first part will be uninstall path and second part will be arguments.
-    $uninstallStringParts = $key[$i].UninstallString -split ' /'
+    $uninstallStringParts = $uninstallCmd.UninstallString -split ' /'
     $uninstallerPath = $uninstallStringParts[0].Trim('"')
     $uninstallerArgs = "/$($uninstallStringParts[1].Trim(' '))"   # we split on the '/' so add it back in
 }

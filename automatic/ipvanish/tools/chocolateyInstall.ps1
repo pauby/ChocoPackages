@@ -19,8 +19,8 @@ $packageArgs = @{
   softwareName   = 'ipvanish*'
   fileType       = 'exe'
   url            = 'https://www.ipvanish.com/software/setup-prod-v2/ipvanish-setup.exe'
-  checksum       = 'cc339d4e26d90526abfdd40b4c65863803d07f4eda3e886568a33e38b1f5ec4d'
-  checksumType   = 'sha256'
+  checksum       = '5A2BB24368ECA12BB63F1BF16A1537866F7B6D35222AD5F84C27D91BEF00F9D2'
+  checksumType   = 'SHA256'
   silentArgs     = ''
   validExitCodes = @(0)
 }

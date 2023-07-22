@@ -16,6 +16,6 @@ Why sacrifice the protection of one device for another? We don’t meter simulta
 
 ## Notes
 
-- The install and uninstall is not silent but is automated.
-- The IPVanish software is problematic to automate. Please have patience, and let the maintainer know, if they change the installer and it stops working.
+- The install and uninstall are not silent but are automated.
+- The IPVanish software is problematic to automate. Please have patience, and let the maintainer know if they change the installer and it stops working.
 - This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
