@@ -111,7 +111,7 @@ $header = @{
 }
 
 # Check the repo does not already exist
-$repositories = Invoke-RestMethod -Uri 'http://localhost:8081/service/rest/v1/repositories' -Method Get -Headers $header
+$repositories = Invoke-RestMethod -Uri "http://$($params.ServerUri)/service/rest/v1/repositories" -Method Get -Headers $header
 if ($params.RepositoryName -in @($repositories.Name)) {
     throw "Cannot create repository '$($params.RepositoryName)' as it already exists!"
 }
