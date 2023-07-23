@@ -4,7 +4,7 @@
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>adobereader</id>
     <version>2023.003.20215</version>
-    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/adobereader</packageSourceUrl>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/adobereader</packageSourceUrl>
     <owners>pauby, doc, sbaerlocher, ITIGO</owners>
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <title>Adobe Acrobat Reader DC</title>
