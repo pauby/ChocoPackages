@@ -16,7 +16,7 @@ $packageArgs = @{
     validExitCodes = @(0, 3010, 1641)
 }
 
-# Snagit MSI parameters https://assets.techsmith.com/Docs/Snagit-2022-MSI-Installation-Guide.pdf
+# Snagit MSI parameters https://assets.techsmith.com/Docs/Snagit-2023-MSI-Installation-Guide.pdf
 $arguments = Get-PackageParameters -Parameter $env:chocolateyPackageParameters
 # use licensekey instead of licenseCode as this is consistent with Snagit
 if ($arguments.ContainsKey('licenseCode')) {
