@@ -12,7 +12,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 <!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
 <!-- * If you are an organization making private packages, you probably have no issues here -->
 <!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
-<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€  appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â  appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
@@ -23,7 +23,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!-- version should MATCH as closely as possible with the underlying software -->
     <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
     <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
-    <version>9.0.0963</version>
+    <version>9.0.1787</version>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/vim-tux.install</packageSourceUrl>
     <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
     <owners>pauby, LinkSatonaka</owners>
@@ -53,9 +53,12 @@ Vanilla build of vim, compiled with all features enabled. 'Right click &gt; edit
 
 The following package parameters can be set:
 
-* `/InstallPopUp` - Install into the context menu "Edit with gVim", powered by `GVimExt.dll`.
-* `/RestartExplorer` - Kill explorer.exe before each update to free up the in-use `GVimExt.dll`.
+* `/InstallDir`       - Install to a specific location.
+* `/InstallPopUp`     - Install into the context menu "Edit with gVim", powered by `GVimExt.dll`.
+* `/RestartExplorer`  - Kill explorer.exe before each update to free up the in-use `GVimExt.dll`.
 * `/NoCreateBatFiles` - Do not create batch files in `C:\Windows` (vim.bat, vimdiff.bat, etc).
+
+For example `choco install vim-tux.portable --package-parameters="'/InstallDir=C:\MyFolder /InstallPopUp /RestartExplorer'"`
 
 Please visit the [official site](https://tuxproject.de/projects/vim/) for more information.
 Build provided by TuxProject.de - consider donating to help support their server costs.
@@ -66,8 +69,8 @@ Build provided by TuxProject.de - consider donating to help support their server
     * The 'Contact Maintainers' link on the package page, or
     * The 'Package Source' link on the package page and raising an issue.
 * Maintainers are not notified of Disqus comments on the package page.
-    </description>
-    <releaseNotes>https://www.vim.org/download.php</releaseNotes>
+</description>
+    <releaseNotes>https://www.vim.org/vim90.php</releaseNotes>
     <dependencies>
       <dependency id="vcredist2015" />
       <dependency id="chocolatey-core.extension" version="1.1.0" />

@@ -59,8 +59,8 @@ Move-Item -Path "$toolsDir\patch.exe.manifest" -Destination $destDir -Force -Err
 (Get-Item $destdir\patch.exe).LastWriteTime = (Get-Date) # exe must be newer than manifest
 
 # Run vim's installer
-Move-Item -Path "$toolsDir\install" -Destination "$destDir\install.exe" -Force -ErrorAction SilentlyContinue # vim-tux removed the installer, just in time for Defender to stop flagging it
-Move-Item -Path "$toolsDir\uninstall" -Destination "$destDir\uninstall.exe" -Force -ErrorAction SilentlyContinue # vim-tux removed the uninstaller, just in time for Defender to stop flagging it
+Move-Item -Path "$toolsDir\install.exe" -Destination "$destDir\install.exe" -Force -ErrorAction SilentlyContinue # vim-tux removed the installer, just in time for Defender to stop flagging it
+Move-Item -Path "$toolsDir\uninstall.exe" -Destination "$destDir\uninstall.exe" -Force -ErrorAction SilentlyContinue # vim-tux removed the uninstaller, just in time for Defender to stop flagging it
 Start-ChocolateyProcessAsAdmin -Statements "$installArgs" -ExeToRun "$destDir\install.exe" -ValidExitCodes '0'
 $filename32, $filename64 | Remove-Item -Force -ErrorAction SilentlyContinue
 Write-Host 'Build provided by TuxProject.de - consider donating to help support their server costs.'

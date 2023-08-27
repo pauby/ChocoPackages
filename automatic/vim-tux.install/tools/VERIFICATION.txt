@@ -15,11 +15,7 @@ and can be verified by doing the following:
   - Use chocolatey utility 'checksum.exe'
 
 3. The checksums should match the following:
-    - complete-x64.exe: 38EA0B11C96592C040019524BB6E72D81D63FBB7F7340316808D841BD4C0B1DF (SHA256)
-    - complete-x86.exe: 5C09870C5F7B03A1F172611E81C4C512D82C61101B5C30910C7A3C2117EBECBF (SHA256)
 
-    The install.exe and the uninstall.exe have been pulled from vim.org's version 90 release:
-    - install: 683364d52c6a922d1bb62ee799eacb05a40a820d5065ab9144095eb2cada749b (SHA256)
-    - uninstall: 2312a408505fe9fbe45779cdb49199f1bcd14cadb2b70a11cb6ffdd6ec852330 (SHA256)
+    The install.exe and the uninstall.exe were extracted from
 
-The file 'LICENSE.txt' has been obtained from <https://github.com/vim/vim/blob/master/runtime/doc/uganda.txt>
+The file 'LICENSE.txt' has been obtained from https://github.com/vim/vim/blob/master/LICENSE

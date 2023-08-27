@@ -23,6 +23,7 @@ function global:au_SearchReplace {
     }
         ".\tools\VERIFICATION.txt" = @{
             "(?i)(^\s*3.\s*The checksums should match the following\:).*"          = "`${1}`n$embeddedFiles"
+            "(?i)(^\s*The install.exe and the uninstall.exe were extracted from).*" = "`${1} $($Latest.UrlInstaller)"
         }
     }
 }
@@ -32,8 +33,13 @@ function global:au_BeforeUpdate() {
     $Latest.Url32Filename = Split-Path -Path $Latest.Url32 -Leaf
     $Latest.Url64Filename = Split-Path -Path $Latest.Url64 -Leaf
 
-    Invoke-WebRequest -Uri $Latest.Url32 -OutFile "tools\$($Latest.Url32Filename)"
-    Invoke-WebRequest -Uri $Latest.Url64 -OutFile "tools\$($Latest.Url64Filename)"
+    Invoke-WebRequest -Uri $Latest.Url32 -UseBasicParsing -OutFile "tools\$($Latest.Url32Filename)"
+    Invoke-WebRequest -Uri $Latest.Url64 -UseBasicParsing -OutFile "tools\$($Latest.Url64Filename)"
+
+    $filename = New-TemporaryFile
+    $Latest.UrlInstaller = "https://github.com/vim/vim-win32-installer/releases/download/v$($Latest.Version)/gvim_$($Latest.Version)_x86.zip"
+    Invoke-WebRequest -Uri $Latest.UrlInstaller -UseBasicParsing -OutFile $filename
+    7z.exe e -aoa -o"tools" $filename "vim\vim90\install.exe" "vim\vim90\uninstall.exe"
 }
 
 function global:au_AfterUpdate {

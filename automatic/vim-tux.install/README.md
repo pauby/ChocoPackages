@@ -8,9 +8,12 @@ Vanilla build of vim, compiled with all features enabled. 'Right click &gt; edit
 
 The following package parameters can be set:
 
-* `/InstallPopUp` - Install into the context menu "Edit with gVim", powered by `GVimExt.dll`.
-* `/RestartExplorer` - Kill explorer.exe before each update to free up the in-use `GVimExt.dll`.
+* `/InstallDir`       - Install to a specific location.
+* `/InstallPopUp`     - Install into the context menu "Edit with gVim", powered by `GVimExt.dll`.
+* `/RestartExplorer`  - Kill explorer.exe before each update to free up the in-use `GVimExt.dll`.
 * `/NoCreateBatFiles` - Do not create batch files in `C:\Windows` (vim.bat, vimdiff.bat, etc).
+
+For example `choco install vim-tux.portable --package-parameters="'/InstallDir=C:\MyFolder /InstallPopUp /RestartExplorer'"`
 
 Please visit the [official site](https://tuxproject.de/projects/vim/) for more information.
 Build provided by TuxProject.de - consider donating to help support their server costs.
