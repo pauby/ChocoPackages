@@ -1,0 +1,25 @@
+﻿VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+The embedded software have been downloaded from the listed download
+location on <https://tuxproject.de/projects/vim/>
+and can be verified by doing the following:
+
+1. Download the following installers:
+  32-Bit: <http://tuxproject.de/projects/vim/complete-x86.7z>
+  64-Bit: <http://tuxproject.de/projects/vim/complete-x64.7z>
+
+2. Get the checksum using one of the following methods:
+  - Using PowerShell function 'Get-FileHash'
+  - Use chocolatey utility 'checksum.exe'
+
+3. The checksums should match the following:
+    - complete-x64.exe: 38EA0B11C96592C040019524BB6E72D81D63FBB7F7340316808D841BD4C0B1DF (SHA256)
+    - complete-x86.exe: 5C09870C5F7B03A1F172611E81C4C512D82C61101B5C30910C7A3C2117EBECBF (SHA256)
+
+    The install.exe and the uninstall.exe have been pulled from vim.org's version 90 release:
+    - install: 683364d52c6a922d1bb62ee799eacb05a40a820d5065ab9144095eb2cada749b (SHA256)
+    - uninstall: 2312a408505fe9fbe45779cdb49199f1bcd14cadb2b70a11cb6ffdd6ec852330 (SHA256)
+
+The file 'LICENSE.txt' has been obtained from <https://github.com/vim/vim/blob/master/runtime/doc/uganda.txt>
