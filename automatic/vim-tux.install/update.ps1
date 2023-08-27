@@ -28,16 +28,12 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate() {
-    # Remove-Item -Path 'tools\*.exe' -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path 'tools\*.exe' -Force -ErrorAction SilentlyContinue
     $Latest.Url32Filename = Split-Path -Path $Latest.Url32 -Leaf
     $Latest.Url64Filename = Split-Path -Path $Latest.Url64 -Leaf
 
-    # Invoke-WebRequest -Uri $Latest.Url32 -OutFile "tools\$($Latest.Url32Filename)"
-    # Invoke-WebRequest -Uri $Latest.Url64 -OutFile "tools\$($Latest.Url64Filename)"
-
-    # $Latest.ChecksumType32 = $Latest.ChecksumType64 = 'SHA256'
-    # $Latest.Checksum32 = (Get-FileHash -Path "tools\$Url32Filename" -Algorithm $Latest.ChecksumType32).Hash
-    # $Latest.Checksum64 = (Get-FileHash -Path "tools\$Url64Filename" -Algorithm $Latest.ChecksumType64).Hash
+    Invoke-WebRequest -Uri $Latest.Url32 -OutFile "tools\$($Latest.Url32Filename)"
+    Invoke-WebRequest -Uri $Latest.Url64 -OutFile "tools\$($Latest.Url64Filename)"
 }
 
 function global:au_AfterUpdate {
