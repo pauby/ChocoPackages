@@ -37,7 +37,7 @@ function global:au_BeforeUpdate() {
     Invoke-WebRequest -Uri $Latest.Url64 -UseBasicParsing -OutFile "tools\$($Latest.Url64Filename)"
 
     $filename = New-TemporaryFile
-    $Latest.UrlInstaller = "https://github.com/vim/vim-win32-installer/releases/download/v$($Latest.Version)/gvim_$($Latest.Version)_x86.zip"
+    $Latest.UrlInstaller = "https://github.com/vim/vim-win32-installer/releases/download/v$($Latest.SoftwareVersion)/gvim_$($Latest.SoftwareVersion)_x86.zip"
     Invoke-WebRequest -Uri $Latest.UrlInstaller -UseBasicParsing -OutFile $filename
     7z.exe e -aoa -o"tools" $filename "vim\vim90\install.exe" "vim\vim90\uninstall.exe"
 }
@@ -55,6 +55,7 @@ function global:au_GetLatest {
 
     return @{
         Version         = $version
+        SoftwareVersion = $version      # this is the real, original an unmodified version of the software
         VersionPath     = $versionPath
         Url32           = 'http://tuxproject.de/projects/vim/complete-x86.exe'
         Url64           = 'http://tuxproject.de/projects/vim/complete-x64.exe'
