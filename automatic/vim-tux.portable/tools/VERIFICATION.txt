@@ -1,0 +1,22 @@
+﻿VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+The embedded software have been downloaded from the listed download
+location on <https://tuxproject.de/projects/vim/>
+and can be verified by doing the following:
+
+1. Download the following installers:
+  32-Bit: <http://tuxproject.de/projects/vim/complete-x86.7z>
+  64-Bit: <http://tuxproject.de/projects/vim/complete-x64.7z>
+
+2. Get the checksum using one of the following methods:
+  - Using PowerShell function 'Get-FileHash'
+  - Use chocolatey utility 'checksum.exe'
+
+3. The checksums should match the following:
+
+    The files in the vim90 folder are taken from C:\Windows after a default
+    installation of vim-tux (or the vim-tux.install package).
+
+The file 'LICENSE.txt' has been obtained from https://github.com/vim/vim/blob/master/LICENSE
