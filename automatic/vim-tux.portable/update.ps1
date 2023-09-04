@@ -32,8 +32,8 @@ function global:au_BeforeUpdate() {
 	$Latest.Url32Filename = Split-Path -Path $Latest.Url32 -Leaf
 	$Latest.Url64Filename = Split-Path -Path $Latest.Url64 -Leaf
 
-	Invoke-WebRequest -Uri $Latest.Url32 -OutFile "tools\$($Latest.Url32Filename)"
-	Invoke-WebRequest -Uri $Latest.Url64 -OutFile "tools\$($Latest.Url64Filename)"
+	Invoke-WebRequest -Uri $Latest.Url32 -OutFile "tools\$($Latest.Url32Filename)" -UseBasicParsing
+	Invoke-WebRequest -Uri $Latest.Url64 -OutFile "tools\$($Latest.Url64Filename)" -UseBasicParsing
 }
 
 function global:au_AfterUpdate {
