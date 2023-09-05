@@ -21,6 +21,7 @@ Build provided by TuxProject.de - consider donating to help support their server
 ## Notes
 
 * The embedded binaries are regularly flagged by antivirus engines. Please see these GitHub issues for information: [1](https://github.com/vim/vim/issues/2933), [2](https://github.com/vim/vim/issues/2961), [3](https://github.com/vim/vim-win32-installer/issues/36), [4](https://github.com/vim/vim-win32-installer/issues/53) and [5](https://github.com/vim/vim/issues/2895). If in doubt, do not install the package.
+* If you find missing versions, please check the 'Version History' section on the package page. If the versions are rejected it is likely due to very high AV counts.
 * This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s), to let the know the package is no longer updating, using:
     * The 'Contact Maintainers' link on the package page, or
     * The 'Package Source' link on the package page and raising an issue.
