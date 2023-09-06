@@ -32,6 +32,7 @@ codealike.*
 *.exe
 *.msi
 *.zip
+*.7z
 *.iso
 *.plgx
 *.dll
