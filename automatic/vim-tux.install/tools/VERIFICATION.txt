@@ -15,7 +15,9 @@ and can be verified by doing the following:
   - Use chocolatey utility 'checksum.exe'
 
 3. The checksums should match the following:
+    - complete-x64.7z: 8BD4DBB6E1959217CE2AC394A3A4922AEF580F4DB00AD72E3CD60F004D08D40D (SHA256)
+    - complete-x86.7z: FFB79A83043D99572BC767081A2FF0F377F1D0DADA833E0BCDFB929435B9B439 (SHA256)
 
-    The install.exe and the uninstall.exe were extracted from
+    The install.exe and the uninstall.exe were extracted from https://github.com/vim/vim-win32-installer/releases/download/v9.0.1876/gvim_9.0.1876_x86.zip
 
 The file 'LICENSE.txt' has been obtained from https://github.com/vim/vim/blob/master/LICENSE

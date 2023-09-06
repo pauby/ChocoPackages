@@ -2,21 +2,20 @@
 
 $toolsDir = Split-Path -parent $MyInvocation.MyCommand.Definition
 $versPath = 'vim90'
-$filename32 = "$toolsDir\complete-x86.exe"
-$filename64 = "$toolsDir\complete-x64.exe"
+$filename32 = "$toolsDir\complete-x86.7z"
+$filename64 = "$toolsDir\complete-x64.7z"
 
 # pckage parameter defaults
 $destDir = Join-Path -Path $toolsDir -ChildPath $versPath
 
 $packageArgs = @{
-    packageName  = $env:ChocolateyPackagename
-    filetype     = 'exe'
-    file         = $filename32
-    file64       = $filename64
-    silentArgs   = "-o`"$destDir`" -y"
+    packageName    = $env:ChocolateyPackageName
+    fileFullPath   = $filename32
+    fileFullPath64 = $filename64
+    destination    = $destDir
 }
 
-Install-ChocolateyPackage @packageArgs
+Get-ChocolateyUnzip @packageArgs
 
 (Get-Item $destdir\patch.exe).LastWriteTime = (Get-Date) # exe must be newer than manifest; Supplied manifest fixes useless UAC request
 

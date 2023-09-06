@@ -1,11 +1,19 @@
-﻿. $PSScriptRoot\..\..\scripts\all.ps1
+﻿$ErrorActionPreference = 'Stop'
+
+#
+# 6 September 2023
+# Package was converted to using the 7z files for vim-tux due to very high AV counts for the EXE version.
+# The EXE version was a self-extracting archive that may be at the root of this.
+#
+
+. $PSScriptRoot\..\..\scripts\all.ps1
 
 $releases = "https://tuxproject.de/projects/vim/"
 $checksumType = 'SHA256'
 
 function global:au_SearchReplace {
 
-    $embeddedFiles = (Get-ChildItem -Path 'tools\*.exe' | ForEach-Object {
+    $embeddedFiles = (Get-ChildItem -Path 'tools\*.7z' | ForEach-Object {
         "    - {0}: {1} ({2})" -f $_.Name, (Get-FileHash -Path $_ -Algorithm $checksumType).Hash, $checksumType
     }) -join "`n"
 
@@ -29,17 +37,21 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate() {
-    Remove-Item -Path 'tools\*.exe' -Force -ErrorAction SilentlyContinue
-    $Latest.Url32Filename = Split-Path -Path $Latest.Url32 -Leaf
-    $Latest.Url64Filename = Split-Path -Path $Latest.Url64 -Leaf
+    Remove-Item -Path 'tools\*.7z', 'tools\*.exe' -Force -ErrorAction SilentlyContinue
 
-    Invoke-WebRequest -Uri $Latest.Url32 -UseBasicParsing -OutFile "tools\$($Latest.Url32Filename)"
-    Invoke-WebRequest -Uri $Latest.Url64 -UseBasicParsing -OutFile "tools\$($Latest.Url64Filename)"
-
+    # We cannot rely on the vim-tux and vim version matching so we need to determine and download the latest release
+    # of the vim win32 installer instead. Hopefully a close version of vim install.exe / uninstall.exe works
+    # with a different version of vim-tux. The versions are unlikely to be too far apart.
     $filename = New-TemporaryFile
-    $Latest.UrlInstaller = "https://github.com/vim/vim-win32-installer/releases/download/v$($Latest.SoftwareVersion)/gvim_$($Latest.SoftwareVersion)_x86.zip"
+    $installerRelease = Get-GitHubRelease -OwnerName 'vim' -RepositoryName 'vim-win32-installer' -Latest
+    $Latest.UrlInstaller = ($release.assets | Where-Object name -Match 'gvim_([\d\.]+)_x86.zip').browser_download_url
     Invoke-WebRequest -Uri $Latest.UrlInstaller -UseBasicParsing -OutFile $filename
     7z.exe e -aoa -o"tools" $filename "vim\vim90\install.exe" "vim\vim90\uninstall.exe"
+
+    $Latest.Url32Filename = Split-Path -Path $Latest.Url32 -Leaf
+    $Latest.Url64Filename = Split-Path -Path $Latest.Url64 -Leaf
+    Invoke-WebRequest -Uri $Latest.Url32 -UseBasicParsing -OutFile "tools\$($Latest.Url32Filename)"
+    Invoke-WebRequest -Uri $Latest.Url64 -UseBasicParsing -OutFile "tools\$($Latest.Url64Filename)"
 }
 
 function global:au_AfterUpdate {
@@ -55,10 +67,10 @@ function global:au_GetLatest {
 
     return @{
         Version         = $version
-        SoftwareVersion = $version      # this is the real, original an unmodified version of the software
+        SoftwareVersion = $version      # this is the real, original and unmodified version of the software
         VersionPath     = $versionPath
-        Url32           = 'http://tuxproject.de/projects/vim/complete-x86.exe'
-        Url64           = 'http://tuxproject.de/projects/vim/complete-x64.exe'
+        Url32           = 'http://tuxproject.de/projects/vim/complete-x86.7z'
+        Url64           = 'http://tuxproject.de/projects/vim/complete-x64.7z'
         ReleaseNotes    = "https://www.vim.org/$versionPath.php"
     }
 }
