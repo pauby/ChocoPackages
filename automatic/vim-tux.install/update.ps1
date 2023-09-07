@@ -44,7 +44,7 @@ function global:au_BeforeUpdate() {
     # with a different version of vim-tux. The versions are unlikely to be too far apart.
     $filename = New-TemporaryFile
     $installerRelease = Get-GitHubRelease -OwnerName 'vim' -RepositoryName 'vim-win32-installer' -Latest
-    $Latest.UrlInstaller = ($release.assets | Where-Object name -match 'gvim_([\d\.]+)_x86.zip').browser_download_url
+    $Latest.UrlInstaller = ($installerRelease.assets | Where-Object name -match 'gvim_([\d\.]+)_x86.zip').browser_download_url
     Invoke-WebRequest -Uri $Latest.UrlInstaller -UseBasicParsing -OutFile $filename
     7z.exe e -aoa -o"tools" $filename "vim\vim90\install.exe" "vim\vim90\uninstall.exe"
 
