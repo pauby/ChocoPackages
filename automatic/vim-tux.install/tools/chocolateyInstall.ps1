@@ -2,7 +2,7 @@
 
 $toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $versPath = 'vim90'
-$filename32 = "$toolsDir\complete-x86.7z"
+#$filename32 = "$toolsDir\complete-x86.7z"
 $filename64 = "$toolsDir\complete-x64.7z"
 
 # package parameter defaults
@@ -45,7 +45,7 @@ $installArgs = $installPopUp, $createBatFiles, $baseArgs -ne $null -join ' '
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
-    fileFullPath   = $filename32
+#    fileFullPath   = $filename32
     fileFullPath64 = $filename64
     destination    = $destDir
 }
@@ -60,5 +60,6 @@ Move-Item -Path "$toolsDir\patch.exe.manifest" -Destination $destDir -Force -Err
 Move-Item -Path "$toolsDir\install.exe" -Destination "$destDir\install.exe" -Force -ErrorAction SilentlyContinue # vim-tux removed the installer, just in time for Defender to stop flagging it
 Move-Item -Path "$toolsDir\uninstall.exe" -Destination "$destDir\uninstall.exe" -Force -ErrorAction SilentlyContinue # vim-tux removed the uninstaller, just in time for Defender to stop flagging it
 Start-ChocolateyProcessAsAdmin -Statements "$installArgs" -ExeToRun "$destDir\install.exe" -ValidExitCodes '0' | Out-Null
-$filename32, $filename64 | Remove-Item -Force -ErrorAction SilentlyContinue
+#$filename32, 
+$filename64 | Remove-Item -Force -ErrorAction SilentlyContinue
 Write-Host 'Build provided by TuxProject.de - consider donating to help support their server costs.'
