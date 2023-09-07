@@ -16,7 +16,6 @@ and can be verified by doing the following:
 
 3. The checksums should match the following:
 
-
     The files in the vim90 folder are taken from C:\Windows after a default
     installation of vim-tux (or the vim-tux.install package).
 

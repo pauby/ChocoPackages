@@ -13,7 +13,7 @@ $checksumType = 'SHA256'
 
 function global:au_SearchReplace {
 
-    $embeddedFiles = (Get-ChildItem -Path 'tools\*.exe' | ForEach-Object {
+    $embeddedFiles = (Get-ChildItem -Path 'tools\*.7z', "tools\$($Latest.versionPath)\*.*" | ForEach-Object {
             "    - {0}: {1} ({2})" -f $_.Name, (Get-FileHash -Path $_ -Algorithm $checksumType).Hash, $checksumType
         }) -join "`n"
 
@@ -36,7 +36,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_BeforeUpdate() {
-    Remove-Item -Path 'tools\*.exe' -Force -ErrorAction SilentlyContinue
+    Remove-Item -Path 'tools\*.7z' -Force -ErrorAction SilentlyContinue
 #    $Latest.Url32Filename = Split-Path -Path $Latest.Url32 -Leaf
     $Latest.Url64Filename = Split-Path -Path $Latest.Url64 -Leaf
 
