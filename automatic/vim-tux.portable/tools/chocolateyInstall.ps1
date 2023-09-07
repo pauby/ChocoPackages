@@ -2,7 +2,7 @@
 
 $toolsDir = Split-Path -parent $MyInvocation.MyCommand.Definition
 $versPath = 'vim90'
-$filename32 = "$toolsDir\complete-x86.7z"
+#$filename32 = "$toolsDir\complete-x86.7z"
 $filename64 = "$toolsDir\complete-x64.7z"
 
 # pckage parameter defaults
@@ -10,7 +10,7 @@ $destDir = Join-Path -Path $toolsDir -ChildPath $versPath
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
-    fileFullPath   = $filename32
+#    fileFullPath   = $filename32
     fileFullPath64 = $filename64
     destination    = $destDir
 }
@@ -30,6 +30,6 @@ Get-ChildItem "$destDir\*.bat" | ForEach-Object {
 # As this is a poetable package, the user may not have admin rights. Therefore, the variable scope should be 'User'
 Install-ChocolateyEnvironmentVariable -VariableName 'VIM' -VariableValue $toolsDir -VariableType 'User'
 
-$filename32, $filename64 | Remove-Item -Force -ErrorAction SilentlyContinue
+#$filename32,
+$filename64 | Remove-Item -Force -ErrorAction SilentlyContinue
 Write-Host 'Build provided by TuxProject.de - consider donating to help support their server costs.'
-
