@@ -61,7 +61,7 @@ Build provided by TuxProject.de - consider donating to help support their server
 </description>
     <releaseNotes>https://www.vim.org/vim90.php</releaseNotes>
     <dependencies>
-      <dependency id="vcredist2015" />
+      <dependency id="vcredist2015" version="14.0.24215.20170201"/>
       <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /> -->
       <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /> -->
       <!-- <dependency id="" /> -->
