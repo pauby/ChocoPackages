@@ -2,7 +2,7 @@
 
 A highly configurable text editor for efficiently creating and changing any kind of text (tux build).
 
-Vanilla build of vim, compiled with all features enabled. 'Right click &gt; edit with vim' support included. Vim and gVim launchers are added to PATH
+Vanilla build of vim, compiled with all features enabled. 'Right click &gt; edit with vim' support included. Vim and gVim launchers are added to PATH.
 
 ## Package Parameters
 
@@ -20,6 +20,7 @@ Build provided by TuxProject.de - consider donating to help support their server
 
 ## Notes
 
+* The [Vim mailing list Url](http://www.vim.org/maillist.php) causes Package Validation to regularly fail, so it was removed from the metadata.
 * This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s), to let the know the package is no longer updating, using:
     * The 'Contact Maintainers' link on the package page, or
     * The 'Package Source' link on the package page and raising an issue.

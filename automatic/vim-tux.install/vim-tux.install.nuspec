@@ -41,7 +41,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/vim/vim</projectSourceUrl>
     <docsUrl>https://www.vim.org/docs.php</docsUrl>
-    <mailingListUrl>http://www.vim.org/maillist.php</mailingListUrl>
+    <!--<mailingListUrl>http://www.vim.org/maillist.php</mailingListUrl>-->
     <!-- <bugTrackerUrl></bugTrackerUrl> -->
     <tags>vim-tux vim editor tux admin</tags>
     <summary>A highly configurable text editor for efficiently creating and changing any kind of text (tux build). Vanilla build of vim, compiled with all features enabled. 'Right click &gt; edit with vim' support included. Vim and gVim launchers are added to PATH.</summary>
