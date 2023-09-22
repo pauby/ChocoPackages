@@ -40,7 +40,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <licenseUrl>https://github.com/vim/vim/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/vim/vim</projectSourceUrl>
-    <docsUrl>https://www.vim.org/docs.php</docsUrl>
+    <!--<docsUrl>https://www.vim.org/docs.php</docsUrl>-->
     <!--<mailingListUrl>http://www.vim.org/maillist.php</mailingListUrl>-->
     <!-- <bugTrackerUrl></bugTrackerUrl> -->
     <tags>vim-tux vim editor tux admin</tags>

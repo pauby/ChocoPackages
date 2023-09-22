@@ -15,7 +15,7 @@ The following package parameters can be set:
 
 For example `choco install vim-tux.portable --package-parameters="'/InstallDir=C:\MyFolder /InstallPopUp /RestartExplorer'"`
 
-Please visit the [official site](https://tuxproject.de/projects/vim/) for more information.
+Please visit the [official site](https://tuxproject.de/projects/vim/), [docs](https://www.vim.org/docs.php) and [mailing list](http://www.vim.org/maillist.php) for more information.
 Build provided by TuxProject.de - consider donating to help support their server costs.
 
 ## Notes
@@ -24,7 +24,6 @@ Build provided by TuxProject.de - consider donating to help support their server
 * This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s), to let the know the package is no longer updating, using:
     * The 'Contact Maintainers' link on the package page, or
     * The 'Package Source' link on the package page and raising an issue.
-* Maintainers are not notified of Disqus comments on the package page.
 
 ### Antivirus Detections
 
