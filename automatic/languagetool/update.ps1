@@ -39,7 +39,7 @@ function global:au_GetLatest {
     $url = ("https://languagetool.org/download/LanguageTool-{0}.zip" -f $version)   # case of the filename matters here
     return @{
         Url32   = $url
-        Version = $version
+        Version = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
     }
 }
 
