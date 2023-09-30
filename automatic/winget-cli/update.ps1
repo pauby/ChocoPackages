@@ -9,42 +9,37 @@ $wingetLicenseFilename = 'License.xml'
 
 function global:au_SearchReplace {
     @{
-        "$($Latest.PackageName).nuspec" = @{
-            "(\<releaseNotes\>).*?(\</releaseNotes\>)"      = "`${1}$([System.Web.HttpUtility]::HtmlEncode($Latest.ReleaseNotes))`$2"
+        "$($Latest.PackageName).nuspec"  = @{
+            "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$([System.Web.HttpUtility]::HtmlEncode($Latest.ReleaseNotes))`$2"
         }
-        ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*\$appxFilename\s*=\s*)(''.*'')'           = "`$1'$($wingetAppFilename)'"
-            '(^\s*\$appxLicenseFilename\s*=\s*)(''.*'')'    = "`$1'$($wingetLicenseFilename)'"
+        ".\tools\chocolateyInstall.ps1"  = @{
+            '(^\s*\$appxURL\s*=\s*)(''.*'')'                 = "`$1'$($Latest.URL64)'"
+            '(^\s*\$appxChecksum\s*=\s*)(''.*'')'            = "`$1'$($Latest.Checksum64)'"
+            '(^\s*\$appxChecksumType\s*=\s*)(''.*'')'        = "`$1'$($Latest.ChecksumType64)'"
+            '(^\s*\$appxLicenseURL\s*=\s*)(''.*'')'          = "`$1'$($Latest.URLLicense64)'"
+            '(^\s*\$appxLicenseChecksum\s*=\s*)(''.*'')'     = "`$1'$($Latest.LicenseChecksum)'"
+            '(^\s*\$appxLicenseChecksumType\s*=\s*)(''.*'')' = "`$1'$($Latest.LicenseChecksumType)'"
         }
         ".\tools\winget-cli-helpers.ps1" = @{
-            '(^\s*\$packagedAppxVersion\s*=\s*)(''.*'')'    = "`$1'$($Latest.FourPartVersion)'"
-            '(^\s*Version\s*=\s*)(''.*'')'                  = "`$1'$($Latest.AppVersion)'"
-        }
-        ".\tools\VERIFICATION.txt"      = @{
-            "(^\s*Installer URL:\s*)(.*)"                   = "`$1$($Latest.URL64)"
-            "(^\s*Installer Checksum:\s*)(.*)"              = "`${1}$($Latest.Checksum64)"
-            "(^\s*Installer Checksum Type:\s*)(.*)"         = "`$1$($Latest.ChecksumType64)"
-            "(^\s*License URL:\s*)(.*)"                     = "`$1$($Latest.URLLicense64)"
-            "(^\s*License Checksum:\s*)(.*)"                = "`${1}$($Latest.ChecksumLicense64)"
-            "(^\s*License Checksum Type:\s*)(.*)"           = "`$1$($Latest.ChecksumType64)"
+            '(^\s*\$packagedAppxVersion\s*=\s*)(''.*'')' = "`$1'$($Latest.FourPartVersion)'"
+            '(^\s*Version\s*=\s*)(''.*'')'               = "`$1'$($Latest.AppVersion)'"
         }
     }
 }
 
 function global:au_BeforeUpdate {
-    Remove-Item -Path 'tools\$wingetAppFilename', 'tools\$wingetLicenseFilename' -Force -ErrorAction SilentlyContinue
-    Invoke-WebRequest -Uri $Latest.URL64 -OutFile "tools\$wingetAppFilename"
-    Invoke-WebRequest -Uri $Latest.URLLicense64 -OutFile "tools\$wingetLicenseFilename"
+    $Latest.ChecksumType64 = $Latest.LicenseChecksumType = 'SHA256'
 
-    $Latest.ChecksumType64 = 'SHA256'
-    $Latest.Checksum64 = (Get-FileHash -Path "tools\$wingetAppFilename" -Algorithm $Latest.ChecksumType64).Hash
-    $Latest.ChecksumLicense64 = (Get-FileHash -Path "tools\$wingetLicenseFilename" -Algorithm $Latest.ChecksumType64).Hash
-
+    $appxFile = New-TemporaryFile
+    $ProgressPreference = 'SilentlyContinue'
+    Invoke-WebRequest -Uri $Latest.URL64 -OutFile $appxFile
+    $Latest.Checksum64 = (Get-FileHash -Path $appxFile -Algorithm $Latest.ChecksumType64).Hash
     # we need to get the app package version, which is different to the software version.
     # Its stored in the AppxMetadata\AppxBundleManifest.xml
-
-    7z e tools\$wingetAppFilename AppxMetadata\AppxBundleManifest.xml -o"$env:TEMP" -y
+    7z e $appxFile AppxMetadata\AppxBundleManifest.xml -o"$env:TEMP" -y
     $Latest.AppVersion = ([xml](Get-Content -Path (Join-Path -Path $env:TEMP -ChildPath 'AppxBundleManifest.xml'))).Bundle.Identity.Version
+
+    $Latest.LicenseChecksum = Get-RemoteChecksum $Latest.URLLicense64
 }
 
 function global:au_AfterUpdate {
@@ -59,8 +54,8 @@ function global:au_GetLatest {
         $version = $version.Substring(1)    # skip over 'v' in tag
     }
 
-    $asset64 = $release.assets | Where-Object name -eq $wingetAppFilename
-    $assetLicense64 = $release.assets | Where-Object name -match "_License1.xml$"
+    $asset64 = $release.assets | Where-Object name -EQ $wingetAppFilename
+    $assetLicense64 = $release.assets | Where-Object name -Match "_License1.xml$"
     $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
         $release.html_url
     }
@@ -74,7 +69,7 @@ function global:au_GetLatest {
         URL64           = $asset64.browser_download_url
         URLLicense64    = $assetLicense64.browser_download_url
         Version         = $version
-        FourPartVersion = ConvertTo-VersionNumber -Version ([version]$version) -Part 4 
+        FourPartVersion = ConvertTo-VersionNumber -Version ([version]$version) -Part 4
         ReleaseNotes    = $releaseNotes
     }
 }

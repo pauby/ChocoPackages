@@ -4,8 +4,14 @@ $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
 . $(Join-Path -Path $toolsDir -ChildPath "$($env:ChocolateyPackageName)-helpers.ps1")
 
-$appxFileName = 'Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'
+$appxURL = 'https://github.com/microsoft/winget-cli/releases/download/v1.6.2721/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'
+$appxFilename = 'Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'
+$appxChecksum = '820D6708D4AC09EFF314A989A7BBD6567C2A326316A31718072DBC8CECE8856F'
+$appxChecksumType = 'SHA256'
+$appxLicenseURL = 'https://github.com/microsoft/winget-cli/releases/download/v1.6.2721/908e700bdf9241d59af885ad3477cfa1_License1.xml'
 $appxLicenseFilename = 'License.xml'
+$appxLicenseChecksum = '5c5cf7a10993d41b7e7d1251e881fd4fcb990446e8307561e5ee2ce16d96fc82'
+$appxLicenseChecksumType = 'SHA256'
 
 # As the dependencies are all x64, I don't think this will run in x86
 if (-not (Get-OSArchitectureWidth -eq '64')) {
@@ -32,7 +38,7 @@ if ($env:OS_NAME -like "*Server*") {
 
 # there is likely going to be two packages returned for x86 and x64.
 # we don't care about the architecture, just the version, and they will both be the same.
-$installedAppXPackage = @(Get-AppXProvisionedPackage -Online | Where-Object -Property DisplayName -eq $internalAppXPackage.PackageName)
+$installedAppXPackage = @(Get-AppxProvisionedPackage -Online | Where-Object -Property DisplayName -EQ $internalAppXPackage.PackageName)
 if ($installedAppXPackage.Count -gt 0) {
     # we've found an already installed version of this app package
 
@@ -65,12 +71,30 @@ if ($env:ChocolateyForce) {
 }
 
 $appxPackageArgs = @{
-    Online = $true
+    Online      = $true
     PackagePath = (Join-Path -Path $toolsDir -ChildPath $appxFileName)
     LicensePath = (Join-Path -Path $toolsDir -ChildPath $appxLicenseFilename)
 }
 
-Add-AppXProvisionedPackage @appxPackageArgs | Out-Null
+$appxFileArgs = @{
+    packageName  = $env:ChocolateyPackageName
+    fileFullPath = $appxPackageArgs.PackagePath
+    url          = $appxURL
+    checksum     = $appxChecksum
+    checksumType = $appxChecksumType
+}
+Get-ChocolateyWebFile @appxFileArgs
+
+$appxLicenseArgs = @{
+    packageName  = $env:ChocolateyPackageName
+    fileFullPath = $appxPackageArgs.LicensePath
+    url          = $appxLicenseURL
+    checksum     = $appxLicenseChecksum
+    checksumType = $appxLicenseChecksumType
+}
+Get-ChocolateyWebFile  @appxLicenseArgs
+
+Add-AppxProvisionedPackage @appxPackageArgs | Out-Null
 
 Write-Warning 'Note that the Microsoft may collect data when the WinGet-CLI software is installed.'
 Write-Warning 'Please see https://github.com/microsoft/winget-cli#datatelemetry for more information on how to opt-out.'
