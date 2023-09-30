@@ -2,7 +2,7 @@
 
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases = 'http://files.avast.com/iavs9x/avast_free_antivirus_setup_online.exe'
+$releases = 'https://files.avast.com/iavs9x/avast_free_antivirus_setup_online.exe'
 
 function global:au_SearchReplace {
     @{
