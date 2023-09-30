@@ -23,7 +23,7 @@ function global:au_GetLatest {
     $url = ($page.links | Where-Object href -Match $regex | Select-Object -First 1).href
 
     return @{
-        Version = $matches.version
+        Version = ConvertTo-VersionNumber -Version ([version]$matches.version) -Part 3
     }
 }
 
