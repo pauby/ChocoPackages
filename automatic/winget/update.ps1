@@ -20,14 +20,10 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
 
-    $release = Get-GitHubRelease -OwnerName $repoOwner -RepositoryName $repoName -Latest
-    $version = $release.tag_name
-    if ($version.StartsWith('v')) {
-        $version = $version.Substring(1)    # skip over 'v' in tag
-    }
+    $version = (choco search winget-cli --exact --by-id-only --limit-output | ConvertFrom-Csv -Delimiter '|' -Header 'name', 'version').version
 
     return @{
-        Version         = $version
+        Version = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
     }
 }
 

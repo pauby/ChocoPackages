@@ -12,10 +12,10 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { }
 
 function global:au_GetLatest {
-    (choco list f.lux.install -e --by-id-only | select -Skip 1 | select -SkipLast 1) -match '^.+?\s+(?<version>.+?)\s+'
+    $version = (choco search f.lux.install --exact --by-id-only --limit-output | ConvertFrom-Csv -Delimiter '|' -Header 'name', 'version').version
 
     return @{
-        Version = $matches.version
+        Version = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
     }
 }
 
