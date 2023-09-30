@@ -14,8 +14,8 @@ function global:au_SearchReplace {
     }
 }
 
-function global:au_AfterUpdate { 
-    Set-DescriptionFromReadme -SkipFirst 2 
+function global:au_AfterUpdate {
+    Set-DescriptionFromReadme -SkipFirst 2
 }
 
 function global:au_GetLatest {
@@ -25,7 +25,7 @@ function global:au_GetLatest {
 
     return @{
         URL32   = $releases
-        Version = $version
+        Version = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
     }
 }
 
