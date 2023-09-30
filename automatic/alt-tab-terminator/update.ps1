@@ -19,7 +19,7 @@ function global:au_BeforeUpdate() {
     $Latest.ChecksumType32 = 'SHA256'
 }
 
-function global:au_AfterUpdate { 
+function global:au_AfterUpdate {
     Set-DescriptionFromReadme -SkipFirst 2
 }
 
@@ -31,7 +31,7 @@ function global:au_GetLatest {
 
     return @{
         URL32   = $url
-        Version = $version
+        Version = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
     }
 }
 
