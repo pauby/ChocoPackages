@@ -12,8 +12,8 @@ function global:au_SearchReplace {
 function global:au_BeforeUpdate { }
 
 function global:au_GetLatest {
-    (clist f.lux.install -e --by-id-only | select -Skip 1 | select -SkipLast 1) -match '^.+?\s+(?<version>.+?)\s+'
-    
+    (choco list f.lux.install -e --by-id-only | select -Skip 1 | select -SkipLast 1) -match '^.+?\s+(?<version>.+?)\s+'
+
     return @{
         Version = $matches.version
     }
