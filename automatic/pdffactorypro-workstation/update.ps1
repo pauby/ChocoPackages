@@ -19,8 +19,8 @@ function global:au_BeforeUpdate() {
     $Latest.checksumType32 = 'SHA256'
 }
 
-function global:au_AfterUpdate { 
-    Set-DescriptionFromReadme -SkipFirst 2 
+function global:au_AfterUpdate {
+    Set-DescriptionFromReadme -SkipFirst 2
 }
 
 function global:au_GetLatest {
@@ -30,10 +30,10 @@ function global:au_GetLatest {
     $link = $page.links | Where-Object href -match $regexUrl | Select -First 1
     $url = $link.href
     if ($link.outerHTML -match "DOWNLOAD v([\d\.]+)") { $version = $matches[1] }
-        
+
     return @{
         URL32        = $url
-        Version      = $version
+        Version      = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
     }
 }
 
