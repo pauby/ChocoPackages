@@ -6,6 +6,9 @@ $moduleName  = 'dbatools'
 
 function global:au_SearchReplace {
     @{
+        "dbatools.nuspec" = @{
+            '(\s+<dependency\s+id="dbatools-library\.powershell" version=)"([\.\d]+)" />' = "`$1`"$($Latest.LibVersion)`" />"
+        }
     }
 }
 
@@ -37,11 +40,13 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $version = (Find-Module -Name $moduleName).Version.ToString()
+    $module = Find-Module -Name $moduleName
+    $version = $module.Version.ToString()
 
     return @{
         Version       = $version
         ModuleVersion = $version
+        LibVersion    = $module.Dependencies.Where{$_.Name -eq 'dbatools.library'}.MinimumVersion
     }
 }
 
