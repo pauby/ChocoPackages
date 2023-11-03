@@ -6,6 +6,21 @@ $moduleName  = 'dbatools'
 
 function global:au_SearchReplace {
     @{
+        "dbatools.nuspec" = @{
+            '(\s+<dependency\s+id="dbatools-library\.powershell" version=)"([\.\d]+)" />' = "`$1`"$($Latest.LibVersion)`" />"
+        }
+        "tools\chocolateyInstall.ps1" = @{
+            # We use ChocolateyPackageVersion to minimise changes to the package code -
+            # If using a patchfix version, use the moduleversion instead of the packageversion.
+            '(\s*\$moduleVersion\s*=\s*)(\$env:ChocolateyPackageVersion|(["'']?).+["'']?)' = "`${1}$(
+                if ($Latest.ModuleVersion -ne $Latest.Version) {
+                    $Quote = if ($Matches.'3') {'${3}'} else {"'"}
+                    $Quote + $Latest.ModuleVersion + $Quote
+                } else {
+                    '$env:ChocolateyPackageVersion'
+                }
+            )"
+        }
     }
 }
 
@@ -37,11 +52,13 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $version = (Find-Module -Name $moduleName).Version.ToString()
+    $module = Find-Module -Name $moduleName
+    $version = $module.Version.ToString()
 
     return @{
         Version       = $version
         ModuleVersion = $version
+        LibVersion    = $module.Dependencies.Where{$_.Name -eq 'dbatools.library'}.MinimumVersion
     }
 }
 
