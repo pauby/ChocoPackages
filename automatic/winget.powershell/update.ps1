@@ -41,7 +41,11 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $version = (Find-Module -Name $moduleName).Version.ToString()
+    $version = (Find-Module -Name $moduleName).Version
+
+    if (([version]$version).Revision -eq 0) {
+        $version = (ConvertTo-VersionNumber -Version $version -Part 3).ToString()
+    }
 
     return @{
         Version       = $version
