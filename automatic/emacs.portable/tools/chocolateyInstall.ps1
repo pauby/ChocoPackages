@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$softwareVersion = '28.1'
+$softwareVersion = '29.1'
 $zipFile = "emacs-$($softwareVersion)_x64.zip"
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
@@ -9,9 +9,8 @@ $installPath = Join-Path -Path (Get-ToolsLocation) -ChildPath 'emacs'
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
-    unzipLocation  = Get-ToolsLocation
+    unzipLocation  = "$(Get-ToolsLocation)\emacs-$softwareVersion"
     fileFullPath   = $filePath
-    specificFolder = "emacs-$softwareVersion"   # we use this so we know what the extracted folder name will be as it has to be this one
 }
 
 Get-ChocolateyUnzip @packageArgs

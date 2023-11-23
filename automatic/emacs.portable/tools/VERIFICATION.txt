@@ -1,4 +1,4 @@
-﻿VERIFICATION
+VERIFICATION
 
 Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
 
@@ -6,6 +6,6 @@ To verify the files using the project source:
 
 1. Download the binary from the URL below and verify its checksum using Get-FileHash and compare it to the details below.
 
-x64 URL: https://ftp.gnu.org/gnu/emacs/windows/emacs-28/emacs-28.1.zip
-x64 Checksum Type: SHA256
-x64 Checksum: 0EF568DF955FEC4721634336585968FE593F3B008FCE936A464FB524E5A3F009
+x64 URL: https://ftp.gnu.org/gnu/emacs/windows/emacs-29/emacs-29.1.zip
+x64 Checksum Type: sha256
+x64 Checksum: 8BF7F8921089A53F1C5686698F8155131E6B70790735C1663A7CDD1E172F72EA
