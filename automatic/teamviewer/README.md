@@ -14,4 +14,7 @@ Free for private use. Commercial users are welcome to use for trial purposes.
 * Feel safe and secure
   TeamViewer's dedication to security means you won't have to worry whether confidential files or sensitive information is at risk when connecting to devices. Private data, private conversations, and private meetings stay that way.
 
-**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+## Notes
+
+- The vendor does not update the version number but will update the software from time to time rendering the checksum invalid. If this happens then you can use the `--ignore-checksums` switch or wait until the new version is released.
+- This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
