@@ -45,11 +45,11 @@ Please see the full list on the [project README](https://github.com/aluxnimm/out
 
 You can pass the following parameters:
 
-- Install for all users not just the current user: `/allusers`
+* `/allusers`: Install for all users not just the current user.
 
 Example:
 
-`--params '"/allusers"'`
+`--package-parameters="'/allusers'"`
 
 ## Notes
 
