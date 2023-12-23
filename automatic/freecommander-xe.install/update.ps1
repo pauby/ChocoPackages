@@ -42,7 +42,7 @@ function global:au_GetLatest {
 
     return @{
         URL32        = $url
-        Version      = $version
+        Version      = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
     }
 }
 
