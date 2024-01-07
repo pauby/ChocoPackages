@@ -56,7 +56,7 @@ function global:au_GetLatest {
     $versionPath = "vim" + $matches[1] + $matches[2]
 
     return @{
-        Version      = $version
+        Version      = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
         VersionPath  = $versionPath
 #        Url32        = 'http://tuxproject.de/projects/vim/complete-x86.7z'
         Url64        = 'http://tuxproject.de/projects/vim/complete-x64.7z'
