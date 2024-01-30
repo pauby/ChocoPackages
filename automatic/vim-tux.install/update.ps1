@@ -46,7 +46,7 @@ function global:au_BeforeUpdate() {
     $installerRelease = Get-GitHubRelease -OwnerName 'vim' -RepositoryName 'vim-win32-installer' -Latest
     $Latest.UrlInstaller = ($installerRelease.assets | Where-Object name -match 'gvim_([\d\.]+)_x86.zip').browser_download_url
     Invoke-WebRequest -Uri $Latest.UrlInstaller -UseBasicParsing -OutFile $filename
-    7z.exe e -aoa -o"tools" $filename "vim\vim90\install.exe" "vim\vim90\uninstall.exe"
+    7z.exe e -aoa -o"tools" $filename "vim\$($Latest.VersionPath)\install.exe" "vim\$($Latest.VersionPath)\uninstall.exe"
 
 #    $Latest.Url32Filename = Split-Path -Path $Latest.Url32 -Leaf
     $Latest.Url64Filename = Split-Path -Path $Latest.Url64 -Leaf
