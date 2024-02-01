@@ -57,7 +57,7 @@ function global:au_GetLatest {
         URL64        = "{0}{1}" -f $releases, $url64
         File         = $url32
         File64       = $url64
-        Version      = $version
+        Version      = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
     }
 }
 
