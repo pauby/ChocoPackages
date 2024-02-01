@@ -1,7 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop'
 
 $toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$versPath = 'vim90'
+$versPath = 'vim91'
 #$filename32 = "$toolsDir\complete-x86.7z"
 $filename64 = "$toolsDir\complete-x64.7z"
 

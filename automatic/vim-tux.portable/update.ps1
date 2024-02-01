@@ -13,7 +13,7 @@ $checksumType = 'SHA256'
 
 function global:au_SearchReplace {
 
-    $embeddedFiles = (Get-ChildItem -Path 'tools\*.7z', "tools\$($Latest.versionPath)\*.*" | ForEach-Object {
+    $embeddedFiles = (Get-ChildItem -Path 'tools\*.7z' | ForEach-Object {
             "    - {0}: {1} ({2})" -f $_.Name, (Get-FileHash -Path $_ -Algorithm $checksumType).Hash, $checksumType
         }) -join "`n"
 
@@ -22,13 +22,12 @@ function global:au_SearchReplace {
             "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$($Latest.ReleaseNotes)`$2"
         }
         ".\tools\chocolateyInstall.ps1"   = @{
-            '(?i)(^\s*\$versPath\s*=\s*)(''.*'')' = "`$1'$($Latest.versionPath)'"
-#            '(?i)(^\s*\$filename32\s*=\s*)(".*")' = "`$1""`$toolsDir\$($Latest.Url32Filename)"""
+#            '(?i)(^\s*\$versPath\s*=\s*)(''.*'')' = "`$1'$($Latest.versionPath)'"
             '(?i)(^\s*\$filename64\s*=\s*)(".*")' = "`$1""`$toolsDir\$($Latest.Url64Filename)"""
         }
-        ".\tools\chocolateyUninstall.ps1" = @{
-            '(?i)(^\s*\$versPath\s*=\s*)(''.*'')' = "`${1}'$($Latest.versionPath)'"
-        }
+#        ".\tools\chocolateyUninstall.ps1" = @{
+#            '(?i)(^\s*\$versPath\s*=\s*)(''.*'')' = "`${1}'$($Latest.versionPath)'"
+#        }
         ".\tools\VERIFICATION.txt"        = @{
             "(?i)(^\s*3.\s*The checksums should match the following\:).*" = "`${1}`n$embeddedFiles"
         }
@@ -56,8 +55,8 @@ function global:au_GetLatest {
     $versionPath = "vim" + $matches[1] + $matches[2]
 
     return @{
-        Version      = $version
-        VersionPath  = $versionPath
+        Version      = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
+#        VersionPath  = $versionPath
 #        Url32        = 'http://tuxproject.de/projects/vim/complete-x86.7z'
         Url64        = 'http://tuxproject.de/projects/vim/complete-x64.7z'
         ReleaseNotes = "https://www.vim.org/$versionPath.php"

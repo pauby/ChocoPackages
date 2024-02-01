@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$versPath = 'vim90'
+$versPath = 'vim91'
 $destDir = Join-Path -Path $env:ProgramFiles -ChildPath "Vim"
 
 # Apparently doesn't have a non-interactive mode. Send 'y' to its input
