@@ -1,4 +1,5 @@
 *~
+*.directory
 *.bak
 *.cache
 *.nupkg
