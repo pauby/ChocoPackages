@@ -63,10 +63,12 @@ install:
 - ps: |
       Set-Location -Path $env:APPVEYOR_BUILD_FOLDER
       [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+      Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+      Install-Module -Name 'ChocolateyVersion' -Repository 'PSGallery'
       Invoke-WebRequest -Uri https://github.com/pauby/capu/releases/download/0.1.2/capu-0.1.2.zip -OutFile capu.zip -UseBasicParsing
       Expand-Archive capu.zip
       Import-Module -Name .\capu\capu.psd1
-      # Note that this ^ is IN the c:\projects\chocopackages folder
+#      Note that this ^ is IN the c:\projects\chocopackages folder
 #      git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
 #    . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
 
