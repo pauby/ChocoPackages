@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one.-->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>choco-cleaner-rt-nupkgs.hook</id>
+    <version>0.1.0</version>
+    <title>(unofficial) Choco Cleaner RT for nupkgs (Post-Install Hook)</title>
+    <authors>bcurran3</authors>
+    <owners>bcurran3</owners>
+    <licenseUrl>https://www.gnu.org/licenses/gpl.html</licenseUrl>
+    <projectUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/choco-cleaner-rt-collection/choco-cleaner-rt-nupkgs.hook</projectUrl>
+    <iconUrl>https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/choco-cleaner-rt-collection/choco-cleaner-rt_icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+---
+
+### [choco://choco-cleaner-rt-nupkgs.hook](choco://choco-cleaner-rt-nupkgs.hook)
+To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support ](https://chocolatey.org/packages/choco-protocol-support)
+
+---
+
+![screenshot of choco-cleaner-rt-nupkgs.hook](https://raw.githubusercontent.com/bcurran3/ChocolateyPackages/master/choco-cleaner-rt-collection/choco-cleaner-rt-nupkgs.hook/choco-cleaner-rt-nupkgs.hook_screenshot.png)
+
+## Choco Cleaner RT for nupkgs deletes unnecessary Chocolatey package embedded archives and executables in .nupkg files
+
+**Choco Cleaner RT** (runtime/realtime - you choose) hooks are the natural evolution of my [Choco-Cleaner](https://community.chocolatey.org/packages/choco-cleaner) script using hooks available in Chocolatey v1.2.0+. These hooks do micro cleansing by duplicating the features of **Choco Cleaner** before and after package installs, thus RT. No scheduling. No manually running anything. No need to edit a config file. Just install the choco-cleaner-rt-XXX.hook(s) you want. **Choco Cleaner RT** hooks run WHEN you install and update packages.
+
+### NOTES:
+* Recovered disk space will not be as dramatic as when running **Choco-Cleaner** since **Choco-Cleaner-RT** will be running far more often and you'll see smaller results on a per package basis.
+* Some **Choco-Cleaner-RT** micro cleansing happens on previously installed packages instead of the current one due to technical restrictions; i.e. **choco-cleaner-rt-ignores.hook** can not delete .ignore files from the current package or Chocolatey will make shims for everything the packager didn't want shimmed.
+* File deletion logging and toggling the displayed info off are possible via a config, see [choco-cleaner-rt](https://community.chocolatey.org/packages/choco-cleaner-rt) for more info.
+* A few features of **Choco-Cleaner** are not going to be supported by CCRT such as orphaned shim checking and deleting of Chocolatey .log and .old files; if you want these features please use [Choco-Cleaner](https://community.chocolatey.org/packages/choco-cleaner).
+
+### Choco Cleaner RT Collection:
+* [choco-cleaner-rt](https://community.chocolatey.org/packages/choco-cleaner-rt) - installs the most desirable hooks as dependencies and the optional config file
+* [choco-cleaner-rt-archives.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-archives.hook)
+* [choco-cleaner-rt-chocolateycache.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-chocolateycache.hook)
+* [choco-cleaner-rt-desktopicons.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-desktopicons.hook)
+* [choco-cleaner-rt-dotchocolatey.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-dotchocolatey.hook)
+* [choco-cleaner-rt-ignores.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-ignores.hook)
+* [choco-cleaner-rt-libbad.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-libbad.hook)
+* [choco-cleaner-rt-libbkp.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-libbkp.hook)
+* [choco-cleaner-rt-licenses.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-licenses.hook)
+* [choco-cleaner-rt-msinstallers.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-msinstallers.hook)
+* [choco-cleaner-rt-nugetcache.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-nugetcache.hook)
+* [choco-cleaner-rt-nupkgs.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-nupkgs.hook)
+* [choco-cleaner-rt-readmes.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-readmes.hook)
+* [choco-cleaner-rt-startmenuicons.hook](https://community.chocolatey.org/packages/choco-cleaner-rt-startmenuicons.hook)
+
+**If you find Choco-Cleaner-RT useful, and I suspect you will, please consider donating: https://www.paypal.me/bcurran3donations or become a patron at https://www.patreon.com/bcurran3**
+</description>
+    <summary>Choco Cleaner RT for nupkgs deletes unnecessary Chocolatey package embedded archives and executables in .nupkg files</summary>
+    <releaseNotes>
+### CHANGELOG:
+* 0.1.0 - initial release
+	</releaseNotes>
+    <copyright>Copyleft Bill Curran</copyright>
+    <tags>bcurran3 unofficial choco cleaner rt cleanup hook</tags>
+    <projectSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/choco-cleaner-rt-collection/choco-cleaner-rt-nupkgs.hook</projectSourceUrl>
+    <packageSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/choco-cleaner-rt-collection/choco-cleaner-rt-nupkgs.hook</packageSourceUrl>
+    <mailingListUrl>https://www.patreon.com/bcurran3</mailingListUrl>
+    <bugTrackerUrl>https://github.com/bcurran3/ChocolateyPackages/issues</bugTrackerUrl>
+    <dependencies>
+      <dependency id="chocolatey" version="1.2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="hook\**" target="hook" />
+  </files>
+</package>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Settings>
+  <global>
+    <AbortOnMultiples>false</AbortOnMultiples>
+  </global>
+  <chocoStatus>
+    <WaitOnMultiple>true</WaitOnMultiple>
+	<PauseSeconds>5</PauseSeconds>
+	<AbortSeconds></AbortSeconds>
+  </chocoStatus>
+  <PendingRebootStatus>
+    <action>warn</action>
+  </PendingRebootStatus>
+  <WindowsInstallerStatus>
+    <WaitOnMultiple>true</WaitOnMultiple>
+	<PauseSeconds>5</PauseSeconds>
+    <AbortSeconds></AbortSeconds>	
+  </WindowsInstallerStatus>
+</Settings>
+
+<!--
+Chocolatey-Preinstaller-Checks.xml preferences notes:
+
+AbortOnMultiples - true  = abort install/upgrades due to multiple instances of choco or Windows Installer
+                 - false = warn only and continue as normal
+WaitOnMultiple   - true = pause for number of PauseSeconds in hope the other instance(s) will finish
+                 - false = warn only and continue as normal
+PauseSeconds     - number of seconds to wait and then retry
+AbortSeconds     - not implemented yet
+PendingRebootStatus - action to perform when PRS is true, NOT IMPLEMENTED YET, possibly warn (continue), abort, retry (later), reboot
+
+-->

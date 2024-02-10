@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>chocolatey-misc-helpers.extension</id>
+    <version>0.0.4</version>
+    <title>Chocolatey Misc Helpers Extension</title>
+    <authors>Bill Curran</authors>
+    <owners>bcurran3</owners>
+    <licenseUrl>https://wiki.creativecommons.org/wiki/Public_domain</licenseUrl>
+    <copyright>public domain</copyright>
+    <tags>bcurran3 unofficial choco misc helpers extension</tags>
+    <packageSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/chocolatey-misc-helpers.extension</packageSourceUrl>
+    <projectUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/chocolatey-misc-helpers.extension</projectUrl>
+    <projectSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/chocolatey-misc-helpers.extension</projectSourceUrl>
+    <mailingListUrl>https://www.patreon.com/bcurran3</mailingListUrl>
+    <bugTrackerUrl>https://github.com/bcurran3/ChocolateyPackages/issues</bugTrackerUrl>
+    <iconUrl>https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/mylogos/myunofficialChocolateylogo_icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Chocolatey Misc Helpers Extension is a collection of helper functions for package creators/maintainers.</summary>
+    <description>
+---
+
+### [choco://chocolatey-misc-helpers.extension](choco://chocolatey-misc-helpers.extension)
+To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support ](https://chocolatey.org/packages/choco-protocol-support)
+
+---
+
+## **chocolatey-misc-helpers.extension** provides helper functions to be used in Chocolatey install/uninstall scripts by package creators/maintainers. 
+
+These didn't fit into the concept scope of my other extensions so I started this miscellaneous collection and will add to it as "needed."
+
+### HELPERS:
+* **Start-CheckandStop** - Checks for and stops a process if running. Creates variables to easily restart the process after a package upgrade. Useful for installers that fail if the program is running, i.e. KeePass, uTorrent, etc. or for stopping programs that automatically run after install, i.e. Skype, SuMo, Ellp, etc. as well as for programs that will stop running during an upgrade and then not return to a running state post upgrade, i.e. Plex Media Server, etc. [Screenshot](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/chocolatey-misc-helpers.extension_extras/chocolatey-misc-helpers.extension_screenshot.png)
+* **Start-CheckandThrow** - Checks if a process is running and aborts installation/upgrade if so. [Screenshot](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/chocolatey-misc-helpers.extension_extras/chocolatey-misc-helpers.extension_screenshot.png)
+* **Start-WaitandStop** - Starts a background process to stop a (foreground) process - quits after 5 minutes or after the process gets stopped. Useful to stop additional pop-up programs during installation. [Screenshot](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/chocolatey-misc-helpers.extension_extras/chocolatey-misc-helpers.extension_screenshot.png)
+* **Start-WaitandStopActual** - (do not directly use) Called by Start-WaitandStop to make Start-WaitandStop simple to use.
+* **Test-Dependency** - Provides a way to verify a dependency is installed. Does NOT check version. Returns True/False.
+[Screenshot](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/chocolatey-misc-helpers.extension_extras/Test-Dependency_screenshot.png)
+* **Test-URL** - Checks if a (download) URL is valid. Returns True/False. Provides a way to verify a download link and switch to an alternate if the primary is bad. Reasoning: Some software developers move program_version.exe to an archival download directory once the version has been superceded. Instead of a package failing when the download link changes to the archived location, you can now define that new archival download link as an alternative/secondary download link. 
+* **Read comments in the scripts for help implementing.**
+
+### USAGE:
+* Start-CheckandStop "ProcessName"
+* Start-CheckandThrow "ProcessName"
+* Start-WaitandStop "ProcessName"
+* Test-Dependency "DependencyPackageName"
+* Test-URL "DownloadURL"
+
+---
+
+**Click here to [Patreon-ize](https://www.patreon.com/bcurran3) the package maintainer.**
+
+---
+</description>
+    <releaseNotes>
+### CHANGE LOG:
+0.0.4 - Added Test-URL. 
+0.0.3.1 - Removed Enable-AutoPin. Real world testing has shown that even though the function works perfectly, it's a negated as choco.exe deletes the .pin file after chocolateyinstall.ps1 finishes when the .pin file didn't exist previously. Even when the .pin file is set to read only, choco.exe errors out trying to delete the .pin file and fails the package install.
+0.0.3 - Added Enable-AutoPin, Start-CheckandThrow, and Test-Dependency. Minor cosmetic changes.
+0.0.2 - Show-Patreon, Show-PayPal, and Show-ToastMessage added but later disapproved by the Chocolatey team and thus nullified. :(
+0.0.1 - initial release
+    </releaseNotes>
+  </metadata>
+</package>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>chocolatey-fastanswers.extension</id>
+    <version>0.0.2.2</version>
+    <title>Chocolatey Fast Answers Extension</title>
+    <owners>bcurran3</owners>
+    <packageSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/chocolatey-fastanswers.extension</packageSourceUrl>
+    <authors>Bill Curran</authors>
+    <projectUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/chocolatey-fastanswers.extension</projectUrl>
+    <iconUrl>https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/mylogos/myunofficialChocolateylogo_icon.png</iconUrl>
+    <copyright>public domain</copyright>
+    <licenseUrl>https://wiki.creativecommons.org/wiki/Public_domain</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/chocolatey-fastanswers.extension</projectSourceUrl>
+    <mailingListUrl>https://www.patreon.com/bcurran3</mailingListUrl>
+    <bugTrackerUrl>https://github.com/bcurran3/ChocolateyPackages/issues</bugTrackerUrl>
+    <tags>bcurran3 choco fast answers extension extensions</tags>
+    <summary>Chocolatey Fast Answers Extension is a (fairly) easy to remember collection of micro functions for package creators/maintainers.</summary>
+    <description>
+# **Chocolatey Fast Answers Extension** is a Chocolatey extension for use as a dependency by package maintainers.
+
+# PURPOSE:
+To provide (fairly) easy to remember micro functions for (new?) package creators/maintainers to get short fast answers to common decision tree questions that come up during package creation. The majority of functions return True/False. None of the functions are complex and most rely on WMI. By using this Chocolatey extension you can easily script situations such as aborting an install for a package/program that doesn't work on servers by checking first using Get-IsWinServer or conversely Get-IsWinWorkstation. Maybe you have a package that needs to make sure there is not a pending reboot and you can check using Get-PendingReboot and error out with a message explaining to reboot and try again. Maybe you have a package that only runs on Windows 10 and Windows Server 2016, you can easy check at the beginning of your script using Get-IsWin10 or Get-IsWinServer2016. 
+
+...and yes, nobody will probably use Get-IsSSD except me for some non-Chocolatey scripts! :) 
+(Though IMHO defrag packages should abort if a SSD is found and warn that it's not recommended to defrag a SSD.)
+
+The use cases go on...
+
+# FUNCTIONS:
+![List of functions](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/chocolatey-fastanswers.extension_extras/List_of_functions.png)
+
+Screenshot testing all functions with simple test-package install script that does: $test=function and Write-Out function result for each function. Results from the functions show that the test package was run on a computer with Microsoft Windows 10 Pro build 16299 64bit, joined to a domain, (onboard) Intel video, (discreet) Nvidia video, has a SSD, is a workstation not a server, and is pending a reboot.
+![](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/chocolatey-fastanswers.extension_extras/chocolatey-fastanswers.extension.png)
+
+**[PACKAGE NOTES](https://github.com/bcurran3/ChocolateyPackages/blob/master/chocolatey-fastanswers.extension_extras/readme.md)**
+    </description>
+    <releaseNotes>
+### CHANGE LOG:
+* 0.0.2.2 - Fixed Get-IsInDomain - thanks Victor Dark (V1CTOR)!
+* 0.0.2.1 - Added Get-IsWin11 and Get-IsWinServer2022
+* 0.0.2   - Added Get-IsAMDCPU, Get-IsARMCPU, Get-IsHyperV, Get-IsIntelCPU, Get-IsKVM, Get-IsMobile, Get-NuspecInfo, Get-IsWinServer2019, and Get-IsXen. Improved Get-IsVM, Get-IsWin7/8/80/81/10, Get-IsWinServer2016, and Get-IsVMware. Bug fixed in Get-IsWin8 and Get-IsWin81.
+* 0.0.1   - initial release
+
+### ROADMAP:
+* Move all functions into one file
+* Possibly add more version checking functions such as Get-IsGEWin8 (Or Get-IsMin8?) for quick checking minimums. NOTE: Look at chocolatey-os-dependency.extension
+* Am open to any useful suggestions/additions!
+    </releaseNotes>
+  </metadata>
+</package>

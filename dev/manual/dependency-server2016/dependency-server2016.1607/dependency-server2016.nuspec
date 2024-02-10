@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>dependency-server2016</id>
+    <title>Package Dependency on Windows Server 2016</title>
+    <version>2016.1607</version>
+    <authors>Bill Curran</authors>
+    <owners>bcurran3</owners>
+    <packageSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/dependency-server2016</packageSourceUrl>
+	<mailingListUrl>https://www.patreon.com/bcurran3</mailingListUrl>	
+    <projectUrl>https://github.com/chocolatey/choco/wiki/CreatePackages</projectUrl>	
+    <docsUrl>https://docs.microsoft.com/en-us/nuget/reference/nuspec#dependencies-element</docsUrl>		
+    <copyright>public domain</copyright>
+    <licenseUrl>https://wiki.creativecommons.org/wiki/Public_domain</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.rawgit.com/bcurran3/ChocolateyPackages/master/mylogos/myunofficialChocolateylogo_icon.png</iconUrl>
+    <tags>bcurran3 dependency osdependency server2016</tags>	
+    <summary>Package Dependency on Windows Server 2016 creates a way for package maintainers to build in OS version as a dependency.</summary>
+    <description>
+**Package Dependency on Windows Server 2016** is a Chocolatey package for use as a dependency by package maintainers/creators. It is similar in concept to **[Chocolatey Fast Answers Extension](https://chocolatey.org/packages/chocolatey-fastanswers.extension)** to provide a (proposed) standard way for dealing with packages/programs that are OS version specific. This package will purposely fail (throw) when Windows Server 2016 is not found or an equal to or greater than version you specify.
+
+Other OS specific dependencies can be found [here](https://chocolatey.org/packages?q=tag%3Aosdependency).
+
+###EXAMPLE USE FOR MAINTAINERS/PACKAGERS:
+
+![Examples](https://cdn.rawgit.com/bcurran3/ChocolateyPackages/master/dependency-server2016/dependency-server2016_examples.png)
+
+Look at [Version History](https://chocolatey.org/packages/dependency-server2016#versionhistory) for the builds you can specify as a minimum requirement for your package.
+
+###NOTE TO CHOCOLATEY MODERATORS:
+
+Seeing **dependency-server2016** listed as dependency on any package indicates the package has a requirement of Windows Server 2016. The package will fail automated testing because of this and require an exemption.
+
+**[PACKAGE NOTES](https://github.com/bcurran3/ChocolateyPackages/blob/master/dependency-server2016/readme.md)**
+
+***
+**Click here to [Patreon-ize](https://www.patreon.com/bcurran3) the package maintainer.**
+***
+    </description>
+    <releaseNotes>https://docs.microsoft.com/en-us/windows-server/get-started/windows-server-release-info</releaseNotes>
+      </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

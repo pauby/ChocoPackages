@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces 
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements 
+-->
+
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬ appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>choco-cleaner</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>1.1.2</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/choco-cleaner</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>(unofficial) Choco Cleaner (Script + Task)</title>
+    <authors>Bill Curran</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://github.com/pauby/chocopackages/tree/master/manual/choco-cleaner</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@9d20fae/icons/choco-cleaner.png</iconUrl>
+    <copyright>Copyleft Bill Curran</copyright>
+    <!-- If there is a license Url available, it is required for the community feed -->
+    <licenseUrl>https://www.gnu.org/licenses/gpl.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/pauby/chocopackages/tree/master/manual/choco-cleaner</projectSourceUrl>
+    <docsUrl>https://github.com/pauby/ChocoPackages/blob/master/manual/choco-cleaner/README.md</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <!--<bugTrackerUrl></bugTrackerUrl>-->
+    <tags>unofficial chocolatey choco cleaner cleanup</tags>
+    <summary>Deletes residual Chocolatey files to free up disk space.</summary>
+    <description>
+![Screenshot of Choco-Cleaner](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages/manual/choco-cleaner/choco-cleaner_screenshot.png)
+
+Do you want to recover some disk space used by residual Chocolatey files?
+
+You just found the easy way!
+
+This package creates a Windows Scheduled Task to run Choco-Cleaner.ps1 every Sunday at 11:00 PM.
+
+**BEFORE and AFTER Choco-Cleaner: (198 packages installed and does not include temp folder deletions.)**
+![screenshot of files and diskspace before Choco-Cleaner](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages/manual/choco-cleaner/choco-cleaner_before.png)
+![screenshot of files and diskspace after choco-cleaner](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages/manual/choco-cleaner/choco-cleaner_after.png)
+
+Sure, you're probably not going to get gigabytes of space back, but every few KB matters on some computers and to some people! Due to [slack space](https://www.computerhope.com/jargon/s/slack-space.htm) small files such as 6 byte .ignore files actually take up 4 KB of HDD space each.
+
+## Features
+- Set it and forget it! `choco-cleaner` cleans up your Chocolatey installation every Sunday at 11 PM in the background so you don't have to be bothered with it.
+- `choco-cleaner` is completely configurable, just run `choco-cleaner -EditConfig` and read the comments. Most options are enabled by default.
+
+Click the Software Docs link, on the package page, for more information.
+
+## Package Parameters
+- `/NOTASK:TRUE` - does not use the scheduled task. By default it is set to run every Sunday at 23:00. For example, `choco install choco-cleaner --package-parameters="'/NOTASK:TRUE'"`.
+
+## Notes
+- Organizations with software license compliance auditing should NOT delete the license and verification files for legal protection. The supplied configuration file defaults to false for these types of files.
+- If you have a previous release of `choco-cleaner` installed, upgrading to a new version will NOT modify your current preferences.
+- The default scheduled task time of 23:00 was chosen as not to conflict with default installs of `[choco-upgrade-all-at](https://community.chocolatey.org/packages/choco-upgrade-all-at)**,  **[choco-persistent-packages](https://community.chocolatey.org/packages/choco-persistent-packages)`, and `[choco-optimize-at](https://community.chocolatey.org/packages/choco-optimize-at)`.
+- This is a manually updated package.
+    </description>
+    <releaseNotes>
+* 1.x.x - Added -EditConfigRT and -ViewLogRT options for Choco Cleaner RT support
+* 1.1.1 - DeleteDotChocolatey now compatible with Chocolatey alpha/beta/delta/epsilon/zeta/eta/theta/iota/kappa/lambda/mu/nu/xi/omicron/pi/rho/sigma/tau/upsilon/phi/chi/psi/omega versions. No longer changes directory to .chocolatey when using DeleteDotChocolatey.
+* 1.1.0 - Chocolatey v2 compatible - due to the breaking change to the choco list command in Chocolatey v2, all files in .chocolatey get deleted when DeleteDotChocolatey feature is enabled. CC now checks the Chocolatey version and uses the appropriate choco list command depending on version.
+* 1.0.0 - v1.0 full feature release, all goals achieved! (The crowd roars... or is that just the sound of loud crickets?) You wanted **Choco-Cleaner** to delete the unnecessary files in the .chocolatey dir - you got it! now can delete files in lib-synced (opt-in), legend in config file got a much needed re-write (You won't see it/get it on upgrades.), no longer deletes .ignore files in Chocolatey program dirs as choco.exe regenerates 11 .ignore files EVERY time it runs now, changed log size from 4K to 50K due to increase in logging, "features" are now PS functions, now returns an exit code of 1 when there are errors
+* 0.0.9.0 - now recursively deletes chocolatey and Nuget cache files from all user profiles, added more error reporting, changed log size from 1K to 4K, added -ViewLog option
+* 0.0.8.5 - variable, spacing, and syntax cleanup by slycordinator, variables moved to top by Linux User
+* 0.0.8.4 - Fix exception when $FreedSpace is less than zero thanks to kborowinski - Thanks!
+* 0.0.8.3 - Fixed the reclaimed space calculation display thanks to salsifis - Thanks!
+* 0.0.8.2 - "Psycological Phix" - I hate seeing a negative number "reclaimed" after running Choco-Cleaner due to other programs writing to disk while CC is running; e.g. downloads. So until such time as I accurately track the space of deleted files... if the result is negative, it'll now display zero. Like I said, only a psychological fix.
+* 0.0.8.1 - Fixed v0.0.6 - v0.0.8 bug using unavailable environmental variable for scheduled task execution. Added small amount of logging.
+* 0.0.8 - Added checking and deleting of orphaned shim files thanks to TheCakeIsNaOH and Teknowledgist! New icon thanks to Teknowledgist. Added parameter to install without scheduled task. Added -EditConfig option to easily edit the config file.
+* 0.0.7.2 - Better error handling when $env:ChocolateyToolsLocation is not defined. (Usually due to running under a different account than installed from.)
+* 0.0.7.1 - Added checking to make sure that $env:ChocolateyToolsLocation exists. If you receive a "$env:ChocolateyToolsLocation not defined error message," you might simply need to close your CLI and reopen it if $env:ChocolateyToolsLocation was created during choco-cleaner's install.
+* 0.0.7 - Added some info about what and what isn't being deleted, added Requires -RunAsAdministrator statement to script (PS v4+)
+* 0.0.6 - Fixed long standing bug where the config options set to false were ignored. **Now works from Command Prompt as well as PowerShell.** Additional 7Zip supported archives deleted.
+* 0.0.5.2 - minor update to delete .img (alternate .iso name), and .msi,.msu, and .msp files in toolsDir, as well as minor cosmetic changes
+* 0.0.5.1 - made PowerShell Core compatible
+* 0.0.5 - added deletion of cacheLocation if defined in chocolatey.config, cosmetic changes, removed 7Zip dependency and now using the version of 7Zip packaged with Chocolatey.
+* 0.0.4 - added deletion of Nuget Cache folder files
+* 0.0.3.1 - fixed typo causing nupkg files to NOT be optimized - thanks E.R.! 
+* 0.0.3 - Rewritten version of 0.0.1 with XML configuration file and ferventcoder/Rob's approved default settings. Minor improvements.
+* 0.0.2 - Unreleased version with two scripts with different default settings; "Bill's way" and "Rob's way" and a package parameter to choose which one to use/install. Shelved.
+* 0.0.1 - Initial release. Did not pass Chocolatey moderation due to mandated changes of default parameters. Only "secretly" available.
+    </releaseNotes>
+    <!-- =============================== -->
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.1.0" />
+    </dependencies>
+    <!-- chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension
+         - You want to use Get-UninstallRegistryKey on less than 0.9.10 (in chocolateyUninstall.ps1)
+         - You want to use Get-PackageParameters and on less than 0.11.0
+         - You want to take advantage of other functions in the core community maintainer's team extension package
+    -->
+
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>

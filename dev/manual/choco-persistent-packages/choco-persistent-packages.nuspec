@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>choco-persistent-packages</id>
+    <version>2018.05.06</version>
+    <owners>bcurran3</owners>
+    <projectSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/choco-persistent-packages</projectSourceUrl>
+    <packageSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/choco-persistent-packages</packageSourceUrl>
+    <title>(unofficial) Choco Persistent Packages (Task)</title>
+    <authors>Bill Curran</authors>
+    <projectUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/choco-persistent-packages</projectUrl>
+    <iconUrl>https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/choco-persistent-packages/choco-persistent-packages_icon.png</iconUrl>
+    <bugTrackerUrl>https://github.com/bcurran3/ChocolateyPackages/issues</bugTrackerUrl>
+    <copyright>Copyleft Bill Curran</copyright>
+    <licenseUrl>https://wiki.creativecommons.org/wiki/Public_domain</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>bcurran3 unofficial choco persistent packages schtasks scheduled task</tags>
+    <summary>choco-persistent-packages will create a Windows Scheduled Task to upgrade your Chocolatey packages daily</summary>
+    <description>
+#**choco-persistent-packages** (re)installs any missing crucial Chocolatey packages that you designate as persistant packages. Uninstall a persistent package and it will be installed again ready for use the next day. 
+
+###This package creates a Windows Scheduled Task to run "cinst $env:ChocolateyInstall\config\persistentpackages.config -y" every day at a time that you specify. And because sometimes package installations go wrong... it will also create a Windows Scheduled Task to run "taskkill /im choco.exe /f /t" to stop the Chocolatey (choco.exe) process and all child processes at a time you specify.
+
+###WHO IS THIS FOR?
+ **choco-persistent-packages** is designed for [Chocolatey Pro](https://chocolatey.org/pricing) and [Chocolatey Business](https://chocolatey.org/pricing) licensed users who's computers are not necessarily under [Active Directory Directory Services Group Policy](https://technet.microsoft.com/en-us/library/hh147307(v=ws.10).aspx) control or other system mananagement utilities that can enforce software installation and desired state.
+
+###WHY DO I NEED THIS?
+If you have users/employees/a friend/a little brother/etc. that uninstalls programs/Chocolatey packages that you don't want uninstalled, **choco-persistent-packages** will (re)install those programs/Chocolatey packages that you deem necessary to keep installed. Basically you create a list of important packages and **choco-persistent-packages** will reinstall them every day if they are missing.
+
+###WHY DO I NEED TO BE A CHOCOLATEY PRO OR BUSINESS USER?
+
+You don't. But **choco-persistent-packages** will only work if the Chocolatey package data is missing. If a program is uninstalled outside of Chocolatey via Programs and Features this will not have any effect as Chocolatey and **choco-persistent-packages** will not know the program has been uninstalled. Chocolatey Pro and Business editions include a feature called [Package Synchronizer - Automatic Sync](https://chocolatey.org/docs/features-synchronize) which removes the Chocolatey package data when a program is uninstalled via Programs and Features. After this synchronization occurs (every execution of choco.exe), **choco-persistent-packages** will see the program/package missing and reinstall it at the designated time.
+	
+###INSTALL INSTRUCTIONS:
+You can install **choco-persistent-packages** with TIME and ABORTTIME parameters to make it run daily at your preferred time. If you enter no parameters at all, **choco-persistent-packages** will default to run at midnight every day and abort the process at 1 AM. When entering the TIME and ABORTTIME parameters, use "[Military Time](http://militarytimechart.com/)." Not entering the correct format will fail the install. Please see the examples below.
+
+###INSTALL EXAMPLES:
+* **choco install choco-persistent-packages --params "'/TIME:04:00'"** - (re)installs persistent packages at 4 AM and aborts at 1 AM 21 hours later.
+* **choco install choco-persistent-packages --params "'/TIME:06:30 /ABORTTIME:08:30'"** - (re)installs persistent packages at 6:30 AM and aborts at 8:30 AM.
+
+####A NOTE ON DEFAULTS:
+* If you don't specify any parameters, **choco-persistent-packages** defaults to running daily at midnight and aborting at 1 AM. (My preference!)
+* Not specifying a TIME will always default to midnight. Not specifying an ABORTTIME will always default to 1 AM. If you're setting a TIME, be sure to also set the ABORTTIME. 
+
+###POST INSTALL INSTRUCTIONS:
+* Edit \ProgramData\Chocolatey\config\persistentpackages.config and read the comments section.
+
+If you have a previous release of **choco-persistent-packages** installed, upgrading to a new version will NOT modify your current scheduled task or list of persistent packages. You will need to uninstall and re-install to take advantage of the new ABORTTIME feature.
+
+**[PACKAGE NOTES](https://github.com/bcurran3/ChocolateyPackages/blob/master/choco-persistent-packages/readme.md)**
+	</description>
+    <releaseNotes>https://github.com/bcurran3/ChocolateyPackages/blob/master/choco-persistent-packages/readme.md</releaseNotes>
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>instchoco</id>
+    <version>2.10</version>
+    <owners>bcurran3</owners>
+    <packageSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/InstChoco</packageSourceUrl>
+    <title>(unofficial) InstChoco (Portable)</title>
+    <authors>Bill Curran</authors>
+    <projectUrl>http://lacomputerbuddy.com/InstChoco/</projectUrl>
+    <iconUrl>https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/mylogos/myunofficialChocolateylogo_icon.png</iconUrl>
+    <copyright>Copyright 2017-2019 Bill Curran</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/bcurran3/ChocolateyPackages/master/InstChoco/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <mailingListUrl>https://www.patreon.com/bcurran3</mailingListUrl>
+    <bugTrackerUrl>https://github.com/bcurran3/ChocolateyPackages/issues</bugTrackerUrl>
+    <tags>bcurran3 instchoco choco chocolatey unofficial installer binary portable</tags>
+    <summary>InstChoco - The ULTIMATE Chocolatey and Chocolatey packages (re)installer!</summary>
+    <description>
+***
+
+###**[choco://instchoco](choco://instchoco)**  
+**To use choco:// protocol URLs, install [(unofficial) choco:// protocol support ](https://chocolatey.org/packages/choco-protocol-support)**
+
+***
+
+![Screenshot of InstChoco in use](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/InstChoco/InstChoco_screenshot.png)
+
+#InstChoco - The ULTIMATE Chocolatey and Chocolatey packages (re)installer!
+	
+##QUESTION: "Why do I need an installer for Chocolatey when I already have Chocolatey installed?"
+
+##ANSWER: You need InstChoco for the NEXT time you want to install Chocolatey and automate package (re)installation!
+
+**InstChoco** is the evolution of an old batch file I’ve used over the years to automate installing Chocolatey followed by a bunch of "choco install packagename -y" commands to install my standard toolset of programs. In 2017 I turned that old batch file into a program with many additional features. Thus, **InstChoco** was born. I also integrated **InstChoco** with other Chocolatey packages I've created. **InstChoco** is especially useful when used along with [Choco Package List Backup to Local and Cloud](https://chocolatey.org/packages/choco-package-list-backup). What you see now is the culmination of many long hard hours of work making **InstChoco** the ULTIMATE Chocolatey and Chocolatey packages (re)installer! **InstChoco** is extremely feature rich, but I'm always open to new ideas and features. Feel free to [contact me](https://chocolatey.org/packages/InstChoco/ContactOwners) with feedback or suggestions.
+
+To download **InstChoco** directly, click [here](http://lacomputerbuddy.com/InstChoco/InstChoco.exe).
+
+###FEATURES:
+
+![Screenshot of InstChoco features](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/InstChoco/InstChoco_features_screenshot.png)
+
+###Usage: 
+
+![Screenshot of InstChoco Options](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/InstChoco/InstChoco_usage_screenshot.png)
+
+**[PACKAGE NOTES](https://github.com/bcurran3/ChocolateyPackages/blob/master/InstChoco/readme.md)**	
+	
+**If you find InstChoco useful, and I suspect you will, please consider donating: https://www.paypal.me/bcurran3donations or become a patron at https://www.patreon.com/bcurran3**
+
+</description>
+    <releaseNotes>
+###CHANGELOG:
+* 2.10 - Added -offline Chocolatey install option.
+* 2.02 - Removed legacy date checking and connectivity checking which only worked in English environments.
+* 2.01 - Fixed bug with non-domain joined computers.
+* 2.00 - Added -browse, -popular, -backup, -backupwithversions, -license options as well as many cosmetic changes. Added iCloudDrive support. Commercial use of InstChoco v2+ requires a paid license.
+* 1.30 - Added ability to download a packages.config file from the web and install packages from it.
+* 1.21 - Added Box, Nextcloud, and Seafile support to catch up with choco-package-list-backup.
+* 1.20 - Added domain support to install predefined packages for domain joined computers and user specific packages.
+* 1.11 - (unreleased) Added -ynp switch to skip installation of packages. (Install Chocolatey only)
+* 1.10 - Added [Choco Package List Backup to Local and Cloud](https://chocolatey.org/packages/choco-package-list-backup) and [Choco Persistent Packages](https://chocolatey.org/packages/choco-persistent-packages) support for package (re)installation. Cosmetic changes. Checks for year 2018 or greater instead of 2017 or greater. Updated donation info. :)
+* 1.00 - Initial release.
+	</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

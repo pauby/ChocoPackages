@@ -1,0 +1,39 @@
+
+* Get-Is32.ps1                  - Is Windows 32 bit? - RETURNS: True or False
+* Get-Is64.ps1                  - Is Windows 64 bit? - RETURNS: True or False
+* Get-IsAMDVideo.ps1            - Is an AMD/ATI video card installed? - RETURNS: True or False
+* Get-IsInDomain.ps1            - Is computer joined to a domain? - RETURNS: True or False
+* Get-IsIntelVideo.ps1          - Is an Intel video card installed? - RETURNS: True or False
+* Get-IsNvidiaVideo.ps1         - Is a Nvidia video card installed? - RETURNS: True or False
+* Get-IsSSD.ps1                 - Is an SSD drive installed? - RETURNS: True or False
+* Get-IsVirtualBox.ps1          - Is the computer a VirtualBox VM? - RETURNS: True or False
+* Get-IsVM.ps1                  - Is the computer a VM? - RETURNS: True or False
+* Get-IsVMware.ps1              - Is the computer a VMWare VM? - RETURNS: True or False
+* Get-IsWin10.ps1               - Is this Windows 10? - RETURNS: True or False
+* Get-IsWin7.ps1                - Is this Windows 7? - RETURNS: True or False
+* Get-IsWin8.ps1                - Is this Windows 8? - RETURNS: True or False
+* Get-IsWin80.ps1               - Is this Windows 8.0? - RETURNS: True or False
+* Get-IsWin81.ps1               - Is this Windows 8.1? - RETURNS: True or False
+* Get-IsWinEdu.ps1              - Is this Windows Educational? - RETURNS: True or False
+* Get-IsWinEnt.ps1              - Is this Windows Enterprise? - RETURNS: True or False
+* Get-IsWinHome.ps1             - Is this Windows Home? - RETURNS: True or False
+* Get-IsWinPro.ps1              - Is this Windows Pro? - RETURNS: True or False
+* Get-IsWinServer.ps1           - Is this a Windows Server? - RETURNS: True or False
+* Get-IsWinServer2008.ps1       - Is this a Windows Server 2008? - RETURNS: True or False
+* Get-IsWinServer2008R2.ps1     - Is this a Windows Server 2008 R2? - RETURNS: True or False
+* Get-IsWinServer2012.ps1       - Is this a Windows Server 2012? - RETURNS: True or False
+* Get-IsWinServer2012R2.ps1     - Is this a Windows Server 2012 R2? - RETURNS: True or False
+* Get-IsWinServer2016.ps1       - Is this a Windows Server 2016? - RETURNS: True or False
+* Get-IsWinServerDatacenter.ps1 - Is this a Windows Server Datacenter edition? - RETURNS: True or False
+* Get-IsWinServerEssentials.ps1 - Is this a Windows Server Essentials edition? - RETURNS: True or False
+* Get-IsWinServerFoundation.ps1 - Is this a Windows Server Foundation edition? - RETURNS: True or False
+* Get-IsWinServerSBS.ps1        - Is this a Windows Server SBS edition? - RETURNS: True or False
+* Get-IsWinServerStandard.ps1   - Is this a Windows Server Standard edition? - RETURNS: True or False
+* Get-IsWinServerStorage.ps1    - Is this a Windows Server Storage edition? - RETURNS: True or False
+* Get-IsWinServerWeb.ps1        - Is this a Windows Server Web Server edition? - RETURNS: True or False
+* Get-IsWinWorkstation.ps1      - Is this a Windows Workstation (not server)? - RETURNS: True or False
+* Get-PendingReboot.ps1         - Is the computer pending a reboot? - RETURNS: True or False
+* Get-WinName.ps1               - Windows version name  - RETURNS: a Windows version name via a string
+* Get-WinVerBuild.ps1           - Windows version build #? - RETURNS: the Windows build #
+* Get-WinVerMajor.ps1           - Windows major version - RETURNS: Windows major version (i.e. 7/8/10)
+* Get-WinVerMinor.ps1           - Windows minor version - RETURNS: Windows minor version

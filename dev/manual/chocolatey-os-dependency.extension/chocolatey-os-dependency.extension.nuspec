@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>chocolatey-os-dependency.extension</id>
+    <version>0.0.1</version>
+    <title>Chocolatey OS Dependency Extension</title>
+    <owners>bcurran3</owners>
+    <packageSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/chocolatey-os-dependency.extension</packageSourceUrl>
+    <authors>Bill Curran</authors>
+    <projectUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/chocolatey-os-dependency.extension</projectUrl>
+    <iconUrl>https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/mylogos/myunofficialChocolateylogo_icon.png</iconUrl>
+    <copyright>public domain</copyright>
+    <licenseUrl>https://wiki.creativecommons.org/wiki/Public_domain</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/chocolatey-os-dependency.extension</projectSourceUrl>
+    <mailingListUrl>https://www.patreon.com/bcurran3</mailingListUrl>
+    <bugTrackerUrl>https://github.com/bcurran3/ChocolateyPackages/issues</bugTrackerUrl>
+    <tags>bcurran3 choco win10 win11 extension extensions maintainers</tags>
+    <summary>Chocolatey OS Dependency Extension is a Chocolatey extension for use as a dependency by package maintainers to easily validate OS compatibility.</summary>
+    <description>
+![Screenshot of chocolatey-os-dependency.extension example](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/chocolatey-os-dependency.extension_extras/chocolatey-os-dependency.extension_screenshot.png)
+
+### PURPOSE:
+**chocolatey-os-dependency.extension** provides easy to remember functions for package creators/maintainers to verify an OS version requirement during package installation. The OS and build versions are checked and if found not compatible, the package installation is aborted. The functions are named Confirm-WinX; where X can be 11, 10, 81, 80, 8, or 7. Additionally the Confirm-WinX function can be used with a minimum build number requirement.
+
+### FUNCTIONS:
+* **Confirm-Win11** - Checks for Windows 11 and aborts package install if not. Default build 22000.
+* **Confirm-Win10** - Checks for Windows 10 (or 11) and aborts package install if not. Default build 10240.
+* **Confirm-Win81** - Checks for Windows 8.1 and aborts package install if not. Default build 9600.
+* **Confirm-Win80** - Checks for Windows 8.0 and aborts package install if not. Default build 9200.
+* **Confirm-Win8**  - Checks for Windows 8.0 or 8.1 and aborts package install if not. Default build 9200.
+* **Confirm-Win7**  - Checks for Windows 7 and aborts package install if not. Default build 7601.
+* **Confirm-WinMinimumBuild**  - Checks for a Windows minimum build and aborts package install if not. (Built for the future!)
+* **Confirm-WinRequiredBuild** - Checks for a Windows specific build and aborts package install if not. (Built for the future!)
+
+### USAGE:
+* Add **Confirm-Win10** to your chocolateyInstall.ps1 script before Install-ChocolateyPackage to abort the install if Windows 10 (or 11) is not present.
+* Add **Confirm-Win10 19041** to your chocolateyInstall.ps1 script before Install-ChocolateyPackage to abort the install if Windows 10 build 19041 (version 2004/Vibranium) or higher is not present.
+* Add **Confirm-Win11** or **Confirm-Win11 22000** or **Confirm-WinMinimumBuild 22000** to your chocolateyInstall.ps1 script before Install-ChocolateyPackage to abort the install if Windows 11 is not present.
+* Add **Confirm-WinRequiredBuild 20348** to your chocolateyInstall.ps1 script before Install-ChocolateyPackage to abort install if Windows Server 2022 is not present.
+* Consult this [List of Microsoft Windows versions](https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions) to reference build numbers.
+
+---
+
+**Click here to [Patreon-ize](https://www.patreon.com/bcurran3) the package maintainer.**
+
+---
+    </description>
+    <releaseNotes>
+### CHANGE LOG:
+* 0.0.1 - initial release
+
+### ROADMAP:
+* Add Windows Server OS Checking
+* I am open to any useful suggestions/additions! Please open a GitHub issue if so.
+    </releaseNotes>
+  </metadata>
+</package>

@@ -1,0 +1,28 @@
+﻿
+
+environmental vars reference:
+
+ChocolateyAllowEmptyChecksumsSecure=true
+ChocolateyEnvironmentDebug=true
+ChocolateyEnvironmentVerbose=true
+ChocolateyForce=true
+ChocolateyInstall=C:\ProgramData\chocolatey
+ChocolateyLastPathUpdate=133325419411237433
+ChocolateyLicenseType=Foss
+chocolateyPackageFolder=C:\ProgramData\chocolatey\lib\choco-cleaner.hook
+chocolateyPackageName=choco-cleaner.hook
+chocolateyPackageNuspecVersion=0.1.0-pre01
+chocolateyPackageTitle=Choco Cleaner (Hook)
+chocolateyPackageVersion=0.1.0-pre01
+chocolateyPackageVersionPrerelease=pre01
+ChocolateyPowerShellHost=true
+chocolateyRequestTimeout=30000
+chocolateyResponseTimeout=2700000
+ChocolateyToolsLocation=C:\tools
+CHOCOLATEY_VERSION=2.1.0.0
+CHOCOLATEY_VERSION_PRODUCT=2.1.0
+packageFolder=C:\ProgramData\chocolatey\lib\choco-cleaner.hook
+packageName=choco-cleaner.hook
+packageNuspecVersion=0.1.0-pre01
+packageTitle=Choco Cleaner (Hook)
+packageVersion=0.1.0-pre01

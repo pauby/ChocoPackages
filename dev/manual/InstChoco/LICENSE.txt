@@ -1,0 +1,23 @@
+﻿==================== InstChoco ====================
+
+LICENSE INFORMATION:
+
+InstChoco is Copyright 2017-2019 Bill Curran and is free for personal use, though donations are encouraged.
+
+Commercial use of InstChoco requires a paid license. Limited non-production testing is permitted. 
+Organizations who purchase an InstChoco license will receive a customized version of InstChoco with 
+their organization's name embedded in the program and without corporate nag screens.
+
+To inquire about purchasing a license, please contact bcurran3@yahoo.com
+
+-------------------------------------------------------------------------------------------------------------
+
+InstChoco uses the following freely distributable licensed software for Chocolatey offline installation:
+
+7-Zip
+License information: https://www.7-zip.org/license.txt
+
+Chocolatey
+License information: https://github.com/chocolatey/choco/blob/master/LICENSE
+
+==================== InstChoco ====================

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>choco-shortcuts-winconfig</id>
+    <version>0.0.4</version>
+    <title>(unofficial) Chocolatey Shortcuts (Config)</title>
+    <authors>bcurran3</authors>
+    <owners>bcurran3</owners>
+    <copyright>public domain</copyright>
+    <licenseUrl>https://wiki.creativecommons.org/wiki/Public_domain</licenseUrl>
+    <projectUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/choco-shortcuts-winconfig</projectUrl>
+    <iconUrl>https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/mylogos/myunofficialChocolateylogo_icon.png</iconUrl>
+    <projectSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/choco-shortcuts-winconfig</projectSourceUrl>
+    <packageSourceUrl>https://github.com/bcurran3/ChocolateyPackages/tree/master/choco-shortcuts-winconfig</packageSourceUrl>
+    <mailingListUrl>https://www.patreon.com/bcurran3</mailingListUrl>
+    <bugTrackerUrl>https://github.com/bcurran3/ChocolateyPackages/issues</bugTrackerUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>bcurran3 unofficial choco shortcuts start menu chocolateasy</tags>
+    <summary>This package creates Windows Start Menu shortcuts to run common Chocolatey functions.</summary>
+    <description>
+---
+
+### [choco://choco-shortcuts-winconfig](choco://choco-shortcuts-winconfig)
+To use choco:// protocol URLs, install [(unofficial) choco:// Protocol support ](https://chocolatey.org/packages/choco-protocol-support)
+
+---
+
+
+![Screenshot of Choco Shortcuts](https://cdn.staticaly.com/gh/bcurran3/ChocolateyPackages/master/choco-shortcuts-winconfig/choco-shortcuts-winconfig_screenshot.png)	
+
+# This package creates Windows Start Menu shortcuts to run common Chocolatey functions.
+
+### WHO IS THIS FOR?
+ **Chocolatey Shortcuts** is designed for those who aren't comfortable with the Command Prompt or just don't like to type much. **Chocolatey Shortcuts** allows you to perform the most common Chocolatey functions right from the Windows Start Menu. The shortcuts still shell out to the Command Prompt to run, but **Chocolatey Shortcuts** is designed to be incredibly simple to use with minimal typing; install or remove a program in a few clicks and type in the package name. **Chocolatey Shortcuts** is also useful to support professionals who know the difficulty of getting end users to type in commands correctly, now you can just point them to the Windows Start Menu!
+
+### WHY DO I NEED THIS?
+If you're a power user or use the Command Prompt and/or PowerShell all the time, you probably don't; though the website links might be useful for remembering where to find various Chocolatey resources.
+
+### FEATURES:
+* Search for, install, and uninstall a package from the Windows Start Menu.
+* List installed and outdated packages from the Windows Start Menu.
+* Upgrade all installed packages from the Windows Start Menu (will use [choco-upgrade-all.ps1](https://raw.githubusercontent.com/bcurran3/ChocolateyPackages/master/choco-upgrade-all-at/tools/choco-upgrade-all.ps1) if **[Choco Upgrade All at](https://community.chocolatey.org/packages/choco-upgrade-all-at)** or **[Choco Upgrade All at Startup](https://community.chocolatey.org/packages/choco-upgrade-all-at-startup)** are installed)
+* Optimize your packages from the Windows Start Menu. ([Chocolatey licensed](https://chocolatey.org/pricing) users)
+* Moves **[Choco Cleaner](https://community.chocolatey.org/packages/choco-cleaner)**, **[ChocolateyGUI](https://community.chocolatey.org/packages/chocolateygui)**, **[Choco Package List Backup](https://community.chocolatey.org/packages/choco-package-list-backup)**, and **[Chocolatey  PowerShell](https://community.chocolatey.org/packages/chocolateypowershell)** icons to the new Chocolatey Start Menu folder if they are installed.
+* View chocolatey.log from the Windows Start Menu.
+* Website links to prominent Chocolatey information.
+
+For a different take on Chocolatey Shortcuts for the desktop, checkout [mica](https://community.chocolatey.org/profiles/mica)'s [Chocolatey Shortcuts (unofficial)](https://community.chocolatey.org/packages/ChocoShortcuts).
+
+Also check out **[(unofficial) Install Chocolatey Packages from your Web Browser](https://community.chocolatey.org/packages/choco-install-packages-from-web-winconfig)** which is another package I made that makes Chocolatey easy (Chocolateasy!) for new users to digest.
+
+**If you find Chocolatey Shortcuts useful, please consider donating: 
+https://www.paypal.me/bcurran3donations or become a patron at https://www.patreon.com/bcurran3**
+
+**[PACKAGE NOTES](https://github.com/bcurran3/ChocolateyPackages/blob/master/choco-shortcuts-winconfig/readme.md)**
+    
+</description>
+    <releaseNotes>
+### CHANGELOG:
+* 0.0.4   - Chocolatey v2 compatible - updated due to breaking change for the choco list command. Added dependency for Chocolatey v2.
+* 0.0.3   - updated website links to current URLs, use new icons created by Teknowledgist for Choco-Cleaner and Chocolatey PowerShell, minor logic changes on creating icons for my scripts as well as run them via their "shims", move ChocolateyGUI icon to Chocolatey icons folder if it's installed, uses choco-upgrade-all.ps1 if choco-upgrade-all-at or choco-upgrade-all-at-startup are installed
+* 0.0.2.2 - added FeedBurner RSS link
+* 0.0.2.1 - bug fix, the "egg on face release"
+* 0.0.2   - added link to Chocolatey status website, added support for moving my newer utils icons to the Chocolatey folder, minor organizational and optimization
+* 0.0.1   - initial release
+
+### ROADMAP:
+* I'm open to suggestions - open a GitHub issue please.
+    </releaseNotes>
+    <dependencies>
+      <dependency id="chocolatey" version="2.0.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
