@@ -11,9 +11,11 @@ $packageArgs = @{
 [array]$key = Get-UninstallRegistryKey -SoftwareName $packageArgs.softwareName
 if ($key.Count -eq 1) {
     $key | ForEach-Object {
-        # The uninstall string contains the --uninstall `--system-level` switch - we just want the file path
+        # The uninstall string looks something like '"C:\Program Files\Vivaldi\Application\6.5.3206.63\Installer\setup.exe" --uninstall --vivaldi-install-dir="C:\Program Files\Vivaldi" --system-level'
+        # we want to grab the bit between the first set of double quotes, i.e. "C:\Program Files\Vivaldi\Application\6.5.3206.63\Installer\setup.exe"
         #! This string is DIFFERENT from the portable package
-        $packageArgs.file = $_.UninstallString.replace(' --uninstall --system-level', '')
+        $_.UninstallString -match '".*?"' | Out-Null
+        $packageArgs.file = $matches[0]
 
         Uninstall-ChocolateyPackage @packageArgs
     }
