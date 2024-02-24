@@ -11,8 +11,11 @@ $packageArgs = @{
 [array]$key = Get-UninstallRegistryKey -SoftwareName $packageArgs.softwareName
 if ($key.Count -eq 1) {
     $key | ForEach-Object {
-        # The uninstall string contains the `--uninstall` switch - we just want the file path
-        $packageArgs.file = $_.UninstallString.replace(' --uninstall', '')
+        # The uninstall string looks something like '"C:\Users\vagrant\AppData\Local\Vivaldi\Application\6.5.3206.63\Installer\setup.exe" --vivaldi-install-dir="C:\Users\vagrant\AppData\Local\Vivaldi"'
+        # we want to grab the bit between the first set of double quotes, i.e. "C:\Program Files\Vivaldi\Application\6.5.3206.63\Installer\setup.exe"
+        #! This string is DIFFERENT from the install package
+        $_.UninstallString -match '".*?"' | Out-Null
+        $packageArgs.file = $matches[0]
 
         Uninstall-ChocolateyPackage @packageArgs
     }
