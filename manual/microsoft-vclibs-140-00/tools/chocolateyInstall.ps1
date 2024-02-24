@@ -64,7 +64,7 @@ $downloadArguments = @{
     packageName  = $env:ChocolateyPackageName
     fileFullPath = Join-Path -Path $toolsDir -ChildPath $appxFileNamex86
     url          = 'https://aka.ms/Microsoft.VCLibs.x86.14.00.Desktop.appx'
-    checksum     = '3195DB914BEA1534EE73582CD483C548A929AED2799D305B3BBF7411BA7A6C7D'
+    checksum     = 'a7fb9d76e07b36d868179eb53ffd13740c25242176fa363f154798cf34edd4a9'
     checksumType = 'SHA256'
 }
 
@@ -76,7 +76,7 @@ if (Get-OSArchitectureWidth -eq '64') {
         packageName  = $env:ChocolateyPackageName
         fileFullPath = Join-Path -Path $toolsDir -ChildPath $appxFileNamex64
         url          = 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx'
-        checksum     = '9BFDE6CFCC530EF073AB4BC9C4817575F63BE1251DD75AAA58CB89299697A569'
+        checksum     = 'b56a9101f706f9d95f815f5b7fa6efbac972e86573d378b96a07cff5540c5961'
         checksumType = 'SHA256'
     }
 

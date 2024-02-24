@@ -4,7 +4,7 @@ $internalAppXPackage = @{
     SoftwareName = 'Microsoft.VCLibs'
     PackageName  = 'Microsoft.VCLibs.140.00.UWPDesktop'
     #! This package version must have the 4 version segments that MATCH EXACTLY with the installed AppX version. EXACTLY.
-    Version      = '14.0.30704.0'
+    Version      = '14.0.33321.0'
 }
 
 function Test-AppXDependency {
