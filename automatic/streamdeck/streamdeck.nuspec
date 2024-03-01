@@ -45,7 +45,6 @@ NOTE: This application ONLY supports Windows 10 x64.
 
     <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
     <dependencies>
-      <dependency id="autohotkey" />
       <!-- <dependency id="dotnet4.5"/>
      <dependency id="" version="[__EXACT_VERSION__]" />
       <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
