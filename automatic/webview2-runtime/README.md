@@ -6,4 +6,7 @@ With WebView2, you can embed web code in different parts of your native app, or 
 
 ![WebView2](https://docs.microsoft.com/en-us/microsoft-edge/webview2/media/webview2/what-webview.png)
 
-**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+## Notes
+
+- This package uses the offline installer.
+- This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
