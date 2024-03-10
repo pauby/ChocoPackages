@@ -1,0 +1,20 @@
+name: 'Add Comment To New PR'
+on:
+  pull_request:
+    types: opened
+
+jobs:
+  new_pr_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GrantBirki/comment@v2.0.9
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thanks for raising this pull request!
+
+            The packages within this repository are maintained in my spare time. My spare time, like yours is important. Please help me not to waste it.
+
+            I will review your PR as soon as I can.
+
+            Thank you.

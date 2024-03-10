@@ -1,0 +1,20 @@
+name: 'Add Comment To New Issue'
+on:
+  issues:
+    types: opened
+
+jobs:
+  new_issue_comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: GrantBirki/comment@v2.0.9
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thanks for raising this issue!
+
+            The packages within this repository are maintained in my spare time. My spare time, like yours is important. Please help me not to waste it.
+
+            To help me, and to have the issue resolved more quickly, please see [CONTRIBUTING](CONTRIBUTING.md) for how to raise a pull request to resolve the issue yourself.
+
+            Thank you.
