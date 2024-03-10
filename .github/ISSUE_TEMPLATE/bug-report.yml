@@ -9,6 +9,15 @@ body:
         Thank you for taking the time to fill out this bug report! Please fill out out the necessary information as complete as you can. Remember, it is better to include too much information, than too little. Additionally, make sure that the issue title starts with the name of the package you were seeing the issue with inside parenthesis (e.g. `(putty)`).
 
         Note that if you do not provide the required information your issue will likely be closed without investigation.
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      description: Before continuing, please confirm the following.
+      options:
+        - label: I have checked for similar opened and closed issues.
+          required: true
+        - label: The issue title is in the format `(<PACKAGENAME>) <ISSUE SUMMARY>`.
+          required: true
   - type: input
     id: choco-version
     attributes:

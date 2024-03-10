@@ -14,8 +14,12 @@ body:
       label: Checklist
       description: Before continuing, please confirm the following.
       options:
+        - label: The package has been outdated for _at least_ 2 days.
+          required: true
         - label: |
             I have checked the [moderation queue](https://community.chocolatey.org/packages?q=&moderatorQueue=true&moderationStatus=all-statuses&prerelease=false&sortOrder=package-download-count) and no new version has been submitted (only visible when logged in), or a version has been submitted but has failed the automated checks.
+          required: true
+        - label: I have checked the **Version History** section of the package page and the new version is not listed, in any state.
           required: true
         - label: The new version is a stable release. Pre-release versions will not be added.
           required: true
