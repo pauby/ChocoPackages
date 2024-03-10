@@ -4,15 +4,9 @@ This contains my packages, both manually and automatically maintained through [A
 
 Thanks to [@AdmiringWorm](https://github.com/AdmiringWorm) and the [Chocolatey Community Packages Repository](https://github.com/chocolatey-community/chocolatey-packages) for the repository templates and stale GitHub Workflow. I shamelessly borrowed the work done over there and tweaked it for here.
 
-### Folder Structure
+## Issues? Helping Out?
 
-* automatic - where automatic packaging and packages are kept. These are packages that are automatically maintained using [capu](https://github.com/pauby/capu/).
-* icons - Where you keep icon files for the packages. This is done to reduce issues when packages themselves move around.
-* manual - where packages that are not automatic are kept.
-* scripts - scripts, jobs, and other items for ensuring automatic packaging.
-* setup - items for prepping the system to ensure for auto packaging.
-
-For setting up your own automatic package repository, please see [Automatic Packaging](https://chocolatey.org/docs/automatic-packages)
+Find more information in [CONTRIBUTING](CONTRIBUTING.md).
 
 ### Requirements
 
