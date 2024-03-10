@@ -11,21 +11,61 @@ $MUIchecksum = 'dfc4b3c70b7ecaeb40414c9d6591d8952131a5fffa0c0f5964324af7154f8111
 $MUIurl64 = 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2300120093/AcroRdrDCx642300120093_MUI.exe'
 $MUIchecksum64 = '69a3b05f4b90445024963af79b37520f26b289a8979894a5c9d8ef9c290c2ee4'
 
-$MUImspURL = 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2300320244/AcroRdrDCUpd2300320244_MUI.msp'
-$MUImspChecksum = 'd2c75ba11c9d0681b5a23a6ffff08a0cd8b2a76370f63e669637203889d7ca77'
+$MUImspURL = 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2300820555/AcroRdrDCUpd2300820555_MUI.msp'
+$MUImspChecksum = 'dc552a2befc923cf1eb629c8c397c739cc82c8d7cfd5315cfd60610e131b7e4f'
 
-$MUImspURL64 = 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2300320244/AcroRdrDCx64Upd2300320244_MUI.msp'
-$MUImspChecksum64 = 'c9728d6814ab5a343b62c8ff6e610f0b3c24b81f00baf2cc68a4c8a5222c7fa4'
+$MUImspURL64 = 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2300820555/AcroRdrDCx64Upd2300820555_MUI.msp'
+$MUImspChecksum64 = 'cf3f007067e4feee646454ac53c358a8c7f057c82fca960e662fe827e63ba986'
 
 $MUIinstalled = $false
 $PerformNewInstall = $false
 $ApplyPatch = $false
-[array]$key = Get-UninstallRegistryKey -SoftwareName $DisplayName.replace(' Acrobat', ' Acrobat*')
+[array]$installation = Get-UninstallRegistryKey -SoftwareName $DisplayName.replace(' Acrobat', ' Acrobat*')
 
 $MUImspURL -match 'AcroRdrDCUpd(\d+)_' | Out-Null
 $UpdaterVersion = $Matches[1]
 
 $PackageParameters = Get-PackageParameters
+
+# this parameter _could_ cause issues so lets put lots of verbose text around it
+if ($PackageParameters['IgnoreInstalled']) {
+   if ([string]::IsNullOrEmpty($PackageParameters['IgnoreInstalled']) -or [string]::IsNullOrWhiteSpace($PackageParameters['IgnoreInstalled'])) {
+      throw "Package parameter '/IgnoreInstalled' cannot be empty or whitespace."
+   }
+
+   $matchInstallation = ($PackageParameters['IgnoreInstalled']).Split(',')
+
+   Write-Verbose "/IgnoreInstalled package parameter was passed with these software names:"
+   $matchInstallation | ForEach-Object { Write-Verbose "- $_" }
+
+   # loop over each found installation and ignore it if it matches a value in '/IgnoreInstalled'
+   $key = for ($i = 0; $i -lt $installation.count; $i++) {
+      for ($j = 0; $j -lt $matchInstallation.count; $j++) {
+         if ($installation[$i].DisplayName -notlike $matchInstallation[$j]) {
+            $installation[$i]
+            Write-Verbose "Keeping '$($installation[$i].DisplayName)' as it does not match '$($matchInstallation[$j]))'"
+         }
+         else {
+            Write-Verbose "Removing '$($installation[$i].DisplayName)' from list of found software, as it matches '$($matchInstallation[$j]))'"
+         }
+      }
+   }
+
+   Write-Verbose "After processing, we will use this list of installed software:"
+   $key | ForEach-Object {
+      Write-Warning "- $($_.DisplayName)"
+   }
+
+   if ($installation.Count -gt 0 -and $key.Count -eq 0) {
+      Write-Warning "We originally found $($installation.Count) software names matching $($DisplayName.replace(' Acrobat', ' Acrobat*'))."
+      Write-Warning 'Using ''/IgnoreInstalled'' matches, this is now 0.'
+      Write-Warning 'This may be intended.'
+      Write-Warning "This will cause issues if you have the software from this package already installed."
+   }
+}
+else {
+   $key = $installation
+}
 
 if ($key.Count -eq 1) {
    $InstalledVersion = $key[0].DisplayVersion.replace('.', '')
@@ -72,7 +112,12 @@ elseif ($key.count -gt 1) {
    Write-Warning "$($key.Count) matching installs of Adobe Acrobat Reader DC found!"
    Write-Warning 'To prevent accidental data loss, this install will be aborted.'
    Write-Warning 'The following installs were found:'
-   $key | ForEach-Object { Write-Warning "- $($_.DisplayName)`t$($_.DisplayVersion)" }
+   $key | ForEach-Object { Write-Warning "- Name: $($_.DisplayName)`tVersion: $($_.DisplayVersion)" }
+
+   if ($PackageParameters['IgnoreInstalled']) {
+      Write-Warning "You have passed '/IgnoreInstalled' containing:"
+      ($PackageParameters['IgnoreInstalled']).Split(',') | ForEach-Object { Write-Warning "- $_" }
+   }
    Throw 'Installation halted.'
 }
 else {

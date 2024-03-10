@@ -31,6 +31,7 @@ However, **upgrades** to Adobe Reader via this package:
 - `/OverwriteInstallation` - Uninstall a language-specific installation before installing the Multi-lingual ("MUI") release. _Be aware that this will remove all data and features of an existing installation!_
 - `/EnableUpdateService` - Install the AdobeARM service. (Does not override `/NoUpdates`.)
 - `/UpdateMode:#` - Sets the update mode (below). (Does not override `/NoUpdates`.)
+- `/IgnoreInstalled="SOFTWARE NAME"` - By default, the package will not install if more than one installation of Adobe Acrobat is found. This parameter allows you to ignore software that matches a comma delimited list of wildcard strings. This is useful if you have other, perhaps older, versions of Adobe Acrobat installed (such as [Adobe Acrobat X Pro](https://github.com/pauby/ChocoPackages/issues/197)). For example: `choco install adobereader --params="'/IgnoreInstalled="Adobe Acrobat X Pro*,Adobe Acrobat Y*"'"` will ignore any installation whose name matches `Adobe Acrobat X Pro*` or `Adobe Acrobat Y*`. **WARNING**: Only use this parameter if you know what you are doing. If you have an existing installation of Adobe Acrobat Reader and you exclude it from the list using this parameter, then the package will perform an installation believing the software is not installed which _will cause issues_. **You have been warned**.
 
 ### Update Modes
 
@@ -40,7 +41,7 @@ However, **upgrades** to Adobe Reader via this package:
 - `3` - Install updates automatically (via task scheduler or ARM service if enabled).
 - `4` - Notify me, but let me choose when to download and install updates.
 
-These parameters can be passed to the installer with the use of `-params`.
+These parameters can be passed to the installer with the use of `--params`.
 
 For example :
-`choco install adobereader -params '"/DesktopIcon /UpdateMode:4"'`
+`choco install adobereader --params '"/DesktopIcon /UpdateMode:4"'`
