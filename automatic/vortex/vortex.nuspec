@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements
+-->
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>vortex</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>1.10.7</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/vortex</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby, JourneyOver</owners>
+    <!-- ============================== -->
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Vortex</title>
+    <authors>https://github.com/Nexus-Mods/Vortex/graphs/contributors</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://www.nexusmods.com/site/mods/1/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@78dcbd1/icons/vortex.png</iconUrl>
+    <copyright>Copyright (C) 2007 Free Software Foundation, Inc.</copyright>
+    <!-- If there is a license Url available, it is is required for the community feed -->
+    <licenseUrl>https://github.com/Nexus-Mods/Vortex/blob/master/LICENSE.md</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/Nexus-Mods/Vortex</projectSourceUrl>
+    <docsUrl>https://wiki.nexusmods.com/index.php/Category:Vortex</docsUrl>
+    <mailingListUrl>https://forums.nexusmods.com/index.php?/forum/4301-vortex/</mailingListUrl>
+    <bugTrackerUrl>https://github.com/Nexus-Mods/Vortex/issues</bugTrackerUrl>
+    <tags>vortex nexus mod vortexmodmanager vortex-mod-manager modmanager mod-manager nexusmods modding</tags>
+    <summary>Vortex is a free and open source piece of software that allows you to download, install, update and manage your mod files through an easy to use interface. It integrates with the Nexus sites to provide you with a fast, efficient and much less hassled modding experience.</summary>
+    <description>Vortex is the new, modern mod manager from Nexus Mods. It is designed to make modding your game as simple as possible for new users, while still providing enough control for more experienced veterans of the modding scene. Lead by Tannin, the creator of Mod Organizer, Vortex takes the lessons learnt during the development of MO and Nexus Mod Manager to provide the most powerful and intuitive modding experience available.
+
+Our approach with Vortex aims to take complex tasks such as sorting your load order or managing your mod files and automates as much of the process as possible with the goal of having you achieve a stable modded game with minimal effort. We want to help you spend less time modding and more time playing your games.
+
+## Features
+
+- MULTI-GAME SUPPORT:
+
+With mod support for over 30 different games and counting - from Dark Souls, Fallout and Skyrim, to the Witcher series and Stardew Valley - Vortex is the most versatile mod manager available.
+
+- CLOSE INTEGRATION WITH NEXUS MODS:
+
+Vortex is designed to seamlessly interact with Nexus Mods allowing you to easily find, install, and play mods from our site, learn about new files and catch the latest news.
+
+- MODDING MADE EASY:
+
+The built-in auto-sorting system manages your load order and helps you to resolve mod conflicts with powerful, yet easy to use plugin management features.
+
+- MOD PROFILES:
+
+Easily set up, switch between, and manage independent mod profiles enabling you to use exactly the combination of mods that you want for a particular playthrough.
+
+- MODERN, EASY TO USE UI:
+
+Featuring a fully customisable interface, Vortex allows you to quickly and easily access tools and manage your games, plugins, downloads and save games.
+
+- EXTENSIONS AND PLUGINS:
+
+Vortex is released under a GPL-3 License giving our community the ability to write extensions and frameworks which can then interact with Vortex, continually adding to its functionality.
+
+## Notes
+
+- This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s), to let the know the package is no longer updating, using:
+    - The 'Contact Maintainers' link on the package page, or
+    - The 'Package Source' link on the package page and raising an issue.
+</description>
+    <releaseNotes>https://github.com/Nexus-Mods/Vortex/releases/tag/v1.10.7</releaseNotes>
+    <!-- =============================== -->
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <!--<dependencies>-->
+    <!-- <dependency id="" version="" /> -->
+    <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /> -->
+    <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /> -->
+    <!-- <dependency id="" /> -->
+    <!-- <dependency id="chocolatey-uninstall.extension" /> -->
+    <!--</dependencies>-->
+    <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <file src="legal\**" target="legal" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>

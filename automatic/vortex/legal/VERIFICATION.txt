@@ -1,0 +1,26 @@
+﻿VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+The embedded software has been downloaded from the listed download
+location on <https://github.com/Nexus-Mods/Vortex/releases/tag/v1.10.7>
+and can be verified by doing the following:
+
+1. Download the following:
+
+  url: <https://github.com/Nexus-Mods/Vortex/releases/download/v1.10.7/vortex-setup-1.10.7.exe>
+
+2. You can obtain the checksum using one of the following methods:
+  - Use powershell function 'Get-FileHash'
+  - Use Chocolatey utility 'checksum.exe'
+
+  checksum type: sha256
+  checksum:1A4C12E1479CE6A711DD9597E71ABB3CE6C313C8162C08396E8F44F4F2205552
+
+Using AU:
+
+  Get-RemoteChecksum
+
+The file 'license.txt' is obtained from:
+  <https://github.com/Nexus-Mods/Vortex/blob/master/LICENSE.md>
