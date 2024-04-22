@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>myuninst</id>
+    <version>1.77.20240422</version>
+    <title>[Deprecated] MyUninstaller</title>
+    <authors>Nir Sofer</authors>
+    <owners>dtgm</owners>
+    <licenseUrl>http://www.nirsoft.net/utils/myuninst.html</licenseUrl>
+    <projectUrl>http://www.nirsoft.net/utils/myuninst.html</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This software is replaced by [UninstallView](http://www.nirsoft.net/utils/uninstall_view.html) and the [`uninstallview`](https://community.chocolatey.org/packages/uninstallview) package. Please install the package instead.</description>
+    <summary>Alternative uninstaller to the standard Windows Add / Remove module</summary>
+    <copyright>© 2003 NirSoft</copyright>
+    <tags>uninstaller</tags>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/deprecated/myuninst/</packageSourceUrl>
+  </metadata>
+</package>
