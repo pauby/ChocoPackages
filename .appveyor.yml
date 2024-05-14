@@ -71,6 +71,7 @@ install:
 #      Note that this ^ is IN the c:\projects\chocopackages folder
 #      git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
 #    . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
+      Install-Module -Name Evergreen, Nevergreen
 
 - ps: |
     "Build info"
