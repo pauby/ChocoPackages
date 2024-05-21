@@ -9,10 +9,14 @@
     <licenseUrl>http://www.nirsoft.net/utils/myuninst.html</licenseUrl>
     <projectUrl>http://www.nirsoft.net/utils/myuninst.html</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>This software is replaced by [UninstallView](http://www.nirsoft.net/utils/uninstall_view.html) and the [`uninstallview`](https://community.chocolatey.org/packages/uninstallview) package. Please install the package instead.</description>
+    <description>This software is replaced by [UninstallView](http://www.nirsoft.net/utils/uninstall_view.html) and the [`uninstallview`](https://community.chocolatey.org/packages/uninstallview) package.</description>
     <summary>Alternative uninstaller to the standard Windows Add / Remove module</summary>
     <copyright>© 2003 NirSoft</copyright>
     <tags>uninstaller</tags>
     <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/deprecated/myuninst/</packageSourceUrl>
+    <dependencies>
+      <dependency id="uninstallview" />
+    </dependencies>
   </metadata>
+  <files />
 </package>
