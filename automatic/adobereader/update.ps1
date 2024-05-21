@@ -23,7 +23,7 @@ function global:au_AfterUpdate {
 
 function global:au_GetLatest {
     # We do tests on the $matches variable, so lets just make sure it's clear before we start
-    Clear-Variable -Name 'matches'
+    Clear-Variable -Name 'matches' -ErrorAction SilentlyContinue
 
     # Discover the latest release version
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
