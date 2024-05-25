@@ -5,11 +5,11 @@ $releases = 'https://api.github.com/repos/languagetool-org/languagetool/tags'
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*\$extractedFolderName\s*=\s*)(''.*'')'    = "`$1'languagetool-$($Latest.Version)'"
-            '(^\s*\$zipFile\s*=\s*)(''.*'')'                = "`$1'languagetool-$($Latest.Version).zip'"
-            '(^\s*url\s*=\s*)(''.*'')'                      = "`$1'$($Latest.Url32)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"               = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksumType\s*=\s*)('.*')"           = "`$1'$($Latest.ChecksumType32)'"
+            '(^\s*\$extractedFolderName\s*=\s*)(''.*'')' = "`$1'languagetool-$($Latest.SoftwareVersion)'"
+            '(^\s*\$zipFile\s*=\s*)(''.*'')'             = "`$1'languagetool-$($Latest.Version).zip'"
+            '(^\s*url\s*=\s*)(''.*'')'                   = "`$1'$($Latest.Url32)'"
+            "(?i)(^\s*checksum\s*=\s*)('.*')"            = "`$1'$($Latest.Checksum32)'"
+            "(?i)(^\s*checksumType\s*=\s*)('.*')"        = "`$1'$($Latest.ChecksumType32)'"
         }
     }
 }
@@ -38,8 +38,9 @@ function global:au_GetLatest {
 
     $url = ("https://languagetool.org/download/LanguageTool-{0}.zip" -f $version)   # case of the filename matters here
     return @{
-        Url32   = $url
-        Version = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
+        Url32           = $url
+        Version         = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
+        SoftwareVersion = $version  # this is the version retrieved and the folder to extract uses this _exact_ version number in it's name
     }
 }
 
