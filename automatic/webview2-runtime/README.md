@@ -9,4 +9,5 @@ With WebView2, you can embed web code in different parts of your native app, or 
 ## Notes
 
 - This package uses the offline installer.
+- It has been shown in testing that after installation, [the components may need some extra time to register on Windows](https://github.com/pauby/ChocoPackages/issues/223#issuecomment-2144517076). If you have issues, please restart the application or in extreme cases a repair may be needed.
 - This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
