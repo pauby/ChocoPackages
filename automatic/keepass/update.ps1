@@ -17,13 +17,10 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-
-    $regex = 'https://sourceforge.net/projects/keepass/files/KeePass%202.x/(?<version>[\d\.]+)/KeePass-[\d\.]+-Setup.exe/download'
-    $url = ($page.links | Where-Object href -Match $regex | Select-Object -First 1).href
+    $version = (choco search keepass.install --exact --by-id-only --limit-output | ConvertFrom-Csv -Delimiter '|' -Header 'name', 'version').version
 
     return @{
-        Version = ConvertTo-VersionNumber -Version ([version]$matches.version) -Part 3
+        Version = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
     }
 }
 
