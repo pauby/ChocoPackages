@@ -19,14 +19,12 @@ function global:au_AfterUpdate {
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $regex = 'https://sourceforge.net/projects/keepass/files/KeePass%202.x/(?<version>[\d\.]+)/KeePass-[\d\.]+-Setup.exe/download'
-    $url = ($page.links | Where-Object href -Match $regex | Select-Object -First 1).href
+    $app = (Get-EvergreenApp -Name KeePass) | Where-Object { $_.architecture -eq 'x86' -and $_.type -eq 'exe' }
 
     return @{
-        URL32   = $url
-        Version = ConvertTo-VersionNumber -Version ([version]$matches.version) -Part 3
+        URL32   = $app.URI
+        Version = ConvertTo-VersionNumber -Version ([version]$app.version) -Part 3
     }
 }
 
