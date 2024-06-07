@@ -12,7 +12,7 @@ $installPopUp = $null
 
 $pp = Get-PackageParameters
 
-if ($pp['InstrallDir']) {
+if ($pp['InstallDir']) {
     $destDir = $pp['InstallDir']
     $destDir = $destDir -replace '^[''"]|[''"]$' # Strip quotations. Necessary?
     $destDir = $destDir -replace '[\/]$' # Remove any slashes from end of line
