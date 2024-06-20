@@ -13,7 +13,7 @@ jobs:
   stale:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/stale@v4.1.0
+      - uses: actions/stale@v9
         id: stale
         with:
           days-before-stale: 7
@@ -29,6 +29,7 @@ jobs:
           exempt-issue-labels: 'pinned, in progress'
           exempt-pr-labels: 'pinned, in progress'
           labels-to-remove-when-unstale: 'wating on user, pending closure'
+          remove-stale-when-updated: true
           stale-issue-message: |
             Is this still relevant? If so, what is blocking it? Is there anything you can do to help move it forward?
 
