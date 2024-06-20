@@ -69,7 +69,7 @@ function global:au_GetLatest {
     $patchEdition = Get-EvergreenApp -Name 'AdobeAcrobatDC' | Where-Object { $_.type -eq 'ReaderMUI' }
 
     return  @{ 
-        Version      = "20{0}" -f ($fullEdition | Where-Object { $_.architecture -eq 'x86' }).Version
+        Version = ConvertTo-VersionNumber -Version ([version]("20{0}" -f ($fullEdition | Where-Object { $_.architecture -eq 'x86' }).Version)) -Part 3
         FullURL32    = ($fullEdition | Where-Object { $_.architecture -eq 'x86' }).URI
         FullURL64    = ($fullEdition | Where-Object { $_.architecture -eq 'x64' }).URI
         PatchURL32   = ($patchEdition | Where-Object { $_.architecture -eq 'x86' }).URI
