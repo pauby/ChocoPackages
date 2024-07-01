@@ -4,4 +4,5 @@ The winget command line tool enables users to discover, install, upgrade, remove
 
 ## Notes:
 
-- This is an automatically updated package. If you find it out of date by more than a week, please let the maintainer know using the 'Contact Maintainers' link on the package page.
+- This is an automatically updated package. If you find it is out-of-date by more than a week, please contact the maintainer(s), to let the know using the 'Package Source' link on the package page and raising an issue.
+- If you find the _package_ has issues (for software issues, please contact the vendor / author), please contact the maintainer(s), to let the know using the 'Package Source' link on the package page and raising an issue.
