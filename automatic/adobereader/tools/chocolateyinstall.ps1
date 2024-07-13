@@ -43,10 +43,10 @@ if ($PackageParameters['IgnoreInstalled']) {
       for ($j = 0; $j -lt $matchInstallation.count; $j++) {
          if ($installation[$i].DisplayName -notlike $matchInstallation[$j]) {
             $installation[$i]
-            Write-Verbose "Keeping '$($installation[$i].DisplayName)' as it does not match '$($matchInstallation[$j]))'"
+            Write-Verbose "Keeping '$($installation[$i].DisplayName)' as it does not match '$($matchInstallation[$j])'"
          }
          else {
-            Write-Verbose "Removing '$($installation[$i].DisplayName)' from list of found software, as it matches '$($matchInstallation[$j]))'"
+            Write-Verbose "Removing '$($installation[$i].DisplayName)' from list of found software, as it matches '$($matchInstallation[$j])'"
          }
       }
    }
