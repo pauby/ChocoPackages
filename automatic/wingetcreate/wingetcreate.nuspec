@@ -51,31 +51,7 @@ Developers will use this tool to submit their applications for use with WinGet.
 
 **NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 </description>
-        <releaseNotes>This release contains several bug fixes related to parsing portable and zip installers for both the new and update command. There is now support for overriding the scope of a provided installer URL. This can be done by appending the intended scope value to the end of the installer url using the `|` character. Make sure to enclose the entire string in quotes since the `|` symbol is a special character in terminal.
-
-``` &quot;&lt;installerUrl&gt;|user&quot; ```
-
-Special thanks to @mdanish-kh for the help and contribution!
-
-## Changes:
-
-* aee36b496760bbb69092b84579a45dd86a805211 update localized strings (#378)
-* f7586994757f2520f5ef87554445459e11203759 Improve handling of multiple nested installers (#372)
-* b1b08f36e753a88da1d5a74008de579e0afc2df2 Include PAT creation instructions in commands docs (#375)
-* e49591553f9cd89865cc145ca21832db00ea63fd Trim InstallerUrls (#373)
-* 735abc147313032fae9c4928b9de6b433a93794b Implement scope override and scope detection from installer URL (#367)
-* c415f840adc65b3fca0a8d39b9c4a2bed4b50701 Update `cache` command to handle directories (#360)
-* dba9587c1e5a5d1f191384155d43c18abeffb12b Add arg for changing pull request title (#362)
-* e4ae5379e8d7090e7f772f2e173044cfdbe1cbd3 Update README.md (#365)
-* 65352cd1b169a94dc3c78e9bf37f74f3fd1b4941 Add back prompt for portable installer (#355)
-* 95bb8ad508b90d7ed496883da70cb9d3d91d8c09 Catch image file did not contain resource error (#356)
-&lt;details&gt;&lt;summary&gt;&lt;b&gt;See More&lt;/b&gt;&lt;/summary&gt;
-
-* 2674058624005df4721080a369b23d1806cb6ee0 Add SUPPORT.md (#352)
-* 2d5bda9d6ae5b640ad6a9d6a1d8ded082d932d9c Add Scoop installation instructions (#347)
-* ba9600bf30144916c3bbe12e20c84732dec30a48 update readme documentation for standalone exe in CI/CD pipeline (#345)
-
-This list of changes was [auto generated](https://microsoft.visualstudio.com/Apps/_build/results?buildId=70988988&amp;view=logs).&lt;/details&gt;</releaseNotes>
+        <releaseNotes></releaseNotes>
         <!-- =============================== -->
         <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
         <dependencies>
