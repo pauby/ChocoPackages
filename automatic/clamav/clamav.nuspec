@@ -37,14 +37,14 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <title>ClamAV</title>
     <authors>The ClamAV Team</authors>
     <!-- projectUrl is required for the community feed -->
-    <projectUrl>https://github.com/pauby/chocopackages/tree/master/automatic/clamav</projectUrl>
+    <projectUrl>http://www.clamav.net/</projectUrl>
     <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@f41d337/icons/clamav.png</iconUrl>
     <copyright>2023 The ClamAV Team</copyright>
     <!-- If there is a license Url available, it is required for the community feed -->
     <licenseUrl>https://github.com/Cisco-Talos/clamav/blob/main/COPYING.txt</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/Cisco-Talos/clamav</projectSourceUrl>
-    <docsUrl>https://github.com/Cisco-Talos/clamav/blob/main/README.md</docsUrl>
+    <docsUrl>https://docs.clamav.net/</docsUrl>
     <!--<mailingListUrl></mailingListUrl>-->
     <bugTrackerUrl>https://github.com/Cisco-Talos/clamav/issues</bugTrackerUrl>
     <tags>foss cross-platform clamav antivirus</tags>
