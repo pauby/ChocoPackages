@@ -80,6 +80,7 @@ install:
 
 build_script:
 - ps: |
+    Using module ChocolateyVersion
     $ErrorActionPreference = 'Continue'
 
     if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
@@ -106,7 +107,6 @@ build_script:
         }
     }
 
-    Using module ChocolateyVersion
     ./update_all.ps1 -ForcedPackages $forced
     7z a au_temp.zip $Env:TEMP\chocolatey\au\*
 
