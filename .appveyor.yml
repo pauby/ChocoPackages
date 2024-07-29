@@ -106,6 +106,7 @@ build_script:
         }
     }
 
+    Using module ChocolateyVersion
     ./update_all.ps1 -ForcedPackages $forced
     7z a au_temp.zip $Env:TEMP\chocolatey\au\*
 

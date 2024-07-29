@@ -49,7 +49,7 @@ function global:au_GetLatest {
     return @{
         Asset64        = $asset64
         URL64          = $asset64.browser_download_url
-        Version        = $version
+        Version        = ([ChocolateyVersion]$version).ToString()
         ReleaseNotes   = $releaseNotes
     }
 }
