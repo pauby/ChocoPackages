@@ -5,17 +5,17 @@ $DisplayName = 'Adobe Acrobat'
 # all checksum types are the same
 $allChecksumType = 'SHA256'
 
-$MUIurl = 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/1500720033/AcroRdrDC1500720033_MUI.exe'
-$MUIchecksum = 'dfc4b3c70b7ecaeb40414c9d6591d8952131a5fffa0c0f5964324af7154f8111'
+$MUIurl = 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2400221005/AcroRdrDC2400221005_MUI.exe'
+$MUIchecksum = '4D382B57A17E2D784B00703BDF51ABF40FF437AD762701F50AB5309A28DC1877'
 
-$MUIurl64 = 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2300120093/AcroRdrDCx642300120093_MUI.exe'
-$MUIchecksum64 = '69a3b05f4b90445024963af79b37520f26b289a8979894a5c9d8ef9c290c2ee4'
+$MUIurl64 = 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2400221005/AcroRdrDCx642400221005_MUI.exe'
+$MUIchecksum64 = '6907BDFD43C049D3D63D415F047621EE8EDED9CC0284CDE0A994A4DF17116AC2'
 
-$MUImspURL = 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2300820555/AcroRdrDCUpd2300820555_MUI.msp'
-$MUImspChecksum = 'dc552a2befc923cf1eb629c8c397c739cc82c8d7cfd5315cfd60610e131b7e4f'
+$MUImspURL = 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2400221005/AcroRdrDCUpd2400221005_MUI.msp'
+$MUImspChecksum = 'B361ED1CCCCEFC497857151C0E2F24BC195A43C9D0DF047CCB2184FE6720F0F0'
 
-$MUImspURL64 = 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2300820555/AcroRdrDCx64Upd2300820555_MUI.msp'
-$MUImspChecksum64 = 'cf3f007067e4feee646454ac53c358a8c7f057c82fca960e662fe827e63ba986'
+$MUImspURL64 = 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2400221005/AcroRdrDCx64Upd2400221005_MUI.msp'
+$MUImspChecksum64 = '26508BD006D2EBCC117DE9FD809F981B4B3EAC8BCAA849506762F31E8082E28B'
 
 $MUIinstalled = $false
 $PerformNewInstall = $false
@@ -225,19 +225,6 @@ if ((0..4) -contains $UpdateMode) {
    }
 }
 
-$DownloadArgs = @{
-   packageName         = "$env:ChocolateyPackageName (update)"
-   FileFullPath        = Join-Path $env:TEMP "$env:ChocolateyPackageName.$env:ChocolateyPackageVersion.msp"
-   url                 = $MUImspURL
-   checksum            = $MUImspChecksum
-   checksumType        = $allChecksumType
-   url64bit            = $MUImspURL64
-   checksum64          = $MUImspChecksum64
-   checksumType64      = $allChecksumType
-   GetOriginalFileName = $true
-}
-$mspPath = Get-ChocolateyWebFile @DownloadArgs
-
 if ($PerformNewInstall) {
    $DownloadArgs = @{
       packageName         = $env:ChocolateyPackageName
@@ -277,13 +264,25 @@ if ($PerformNewInstall) {
 }
 
 if ($ApplyPatch) {
-   Write-Host 'Applying patch.'
+   $DownloadArgs = @{
+      packageName         = "$env:ChocolateyPackageName (update)"
+      FileFullPath        = Join-Path $env:TEMP "$env:ChocolateyPackageName.$env:ChocolateyPackageVersion.msp"
+      url                 = $MUImspURL
+      checksum            = $MUImspChecksum
+      checksumType        = $allChecksumType
+      url64bit            = $MUImspURL64
+      checksum64          = $MUImspChecksum64
+      checksumType64      = $allChecksumType
+      GetOriginalFileName = $true
+   }
+   $mspPath = Get-ChocolateyWebFile @DownloadArgs
 
+   Write-Host 'Applying patch.'
    $UpdateArgs = @{
       Statements     = "/p `"$mspPath`" /norestart /quiet ALLUSERS=1 EULA_ACCEPT=YES $options" +
       " /L*v `"$env:TEMP\$env:chocolateyPackageName.$env:chocolateyPackageVersion.Update.log`""
       ExetoRun       = 'msiexec.exe'
-      validExitCodes = @(0, 1603)
+      validExitCodes = @(0, 1603, 3010)
    }
    $exitCode = Start-ChocolateyProcessAsAdmin @UpdateArgs
 
