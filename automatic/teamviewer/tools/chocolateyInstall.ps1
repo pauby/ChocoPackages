@@ -10,7 +10,7 @@ $packageArgs = @{
   checksumType  = 'SHA256'
 
   url64         = 'https://download.teamviewer.com/download/version_15x/TeamViewer_Setup_x64.exe'
-  checksum64    = 'fccef4dd9b654f98c100ab41a8e7e01d6257d496827caa740097e8a82e3e2054'
+  checksum64    = 'dc205bbeb2e98ac474e816ae99ff993e263d8b7680777ad95dfb0eddaf38cfc4'
   checksumType64= 'sha256'
 
   silentArgs    = "/S"
