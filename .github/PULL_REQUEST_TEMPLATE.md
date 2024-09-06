@@ -3,8 +3,8 @@
 ## Requirements
 <!-- Ensure this section is completed -->
 
-* [ ] I have read the [CONTRIBUTING.md](CONTRIBUTING.md).
-* [ ] My changes confirm to what is requested in [CONTRIBUTING.md](CONTRIBUTING.md).
+* [ ] I have read the [CONTRIBUTING.md](/CONTRIBUTING.md).
+* [ ] My changes confirm to what is requested in [CONTRIBUTING.md](/CONTRIBUTING.md).
 
 ## Description
 <!-- Describe your changes in detail -->
