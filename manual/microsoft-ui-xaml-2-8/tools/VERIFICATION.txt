@@ -1,0 +1,18 @@
+﻿
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+1. The software is downloaded from https://www.nuget.org/packages/Microsoft.UI.Xaml/
+2. Select **Versions**, the correct version and then **Download package**.
+3. Once downloaded, open in a Zip viewer and go to tools -> AppX -> x64 (or x86) -> Release and you'll find the embedded binary there.
+4. You can use one of the following methods to obtain the checksum:
+  - Use PowerShell function 'Get-Filehash'
+  - Use chocolatey utility 'checksum.exe'
+
+    x86 checksum: 77DB4857644260B61722A70AA175342DF29ABC8845C1F0AAA7B982F61028AE45
+    x86 checksum type: SHA256
+    x64 checksum: 0C1D46883629A75BFF7881661E4BB8AC2510983F9341F35D87DC63702CB85118
+    x64 checksum type: SHA256
+
+File 'LICENSE.txt' is obtained from https://github.com/microsoft/microsoft-ui-xaml/blob/main/LICENSE
