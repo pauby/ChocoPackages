@@ -3,11 +3,11 @@ $ErrorActionPreference = 'Stop'
 $internalAppXPackage = @{
     SoftwareName = 'Microsoft.UI.Xaml'
     PackageName  = 'Microsoft.Ui.Xaml.2.8'
-    Version      = '8.2305.5001.0'
+    Version      = '8.2310.30001.0'
 }
 
 $appxFileName = 'Microsoft.UI.Xaml.2.8.appx'
-$packagedAppxVersion = '2.8.4'
+$packagedAppxVersion = '2.8.6'
 
 function Test-AppXDependency {
     [CmdletBinding()]
