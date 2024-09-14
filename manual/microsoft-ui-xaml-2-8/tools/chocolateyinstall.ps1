@@ -69,10 +69,11 @@ if ($removeAppXPackage) {
     Remove-AppxPackage -Package $installedAppXPackage[0].PackageFullName
 }
 
-Add-AppxPackage -Path (Join-Path -Path $toolsDir -ChildPath "x86-$($appxFileName)")
-
 if (Get-OSArchitectureWidth -eq '64') {
     Add-AppXPackage -Path (Join-Path -Path $toolsDir -ChildPath "x64-$($appxFileName)")
+}
+else {
+    Add-AppxPackage -Path (Join-Path -Path $toolsDir -ChildPath "x86-$($appxFileName)")
 }
 
 Write-Warning 'Note that Microsoft may collect data when the Microsoft.UI.Xaml software is installed.'
