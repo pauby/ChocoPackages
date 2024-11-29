@@ -1,13 +1,16 @@
 name: 'Add Comment To New PR'
 on:
   pull_request:
-    types: opened
+    types: created
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
   new_pr_comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: GrantBirki/comment@v2.0.9
+      - uses: GrantBirki/comment@v2.1.0
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
