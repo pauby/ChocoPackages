@@ -1,0 +1,39 @@
+name: "Lock Closed Issues and PRs"
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+  discussions: write
+
+concurrency:
+  group: lock-threads
+
+jobs:
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      # https://github.com/dessant/lock-threads
+      - uses: dessant/lock-threads@v5.0.1
+        with:
+          #exclude-issue-closed-before: "2024-06-01T00:00:00Z"
+          issue-inactive-days: 30
+          issue-lock-reason: "resolved"
+          issue-comment: >
+            This issue has been automatically locked since as there has not been any recent activity after it was closed.
+            Please open a new issue for related bugs.
+          pr-inactive-days: 30
+          #exclude-pr-closed-before: "2024-06-01T00:00:00Z"
+          pr-lock-reason: "resolved"
+          discussion-inactive-days: 60
+          pr-comment: >
+            This pull request has been automatically locked since there has not been any recent activity after it was closed.
+            Please open a new pull request.
+          log-output: true
+
+
+
