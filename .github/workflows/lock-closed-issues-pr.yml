@@ -1,27 +1,32 @@
-name: "Lock closed Issues and PR's"
+name: "Lock Closed Issues and PRs"
 
 on:
   schedule:
-    - cron: "0 5 * * *"
+    - cron: '0 5 * * *'
   workflow_dispatch:
 
+permissions:
+  issues: write
+  pull-requests: write
+  discussions: write
+
+concurrency:
+  group: lock-threads
+
 jobs:
-  inactivity-lock:
-    name: Lock issues and PRs
+  action:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
     steps:
-      - name: Lock closed issues and PRs
-        uses: klaasnicolaas/action-inactivity-lock@v1.1.1
+      # https://github.com/dessant/lock-threads
+      - uses: dessant/lock-threads@v5
         with:
-          days-inactive-issues: 30
-          days-inactive-prs: 30
-          lock-reason-issues: "resolved"
-          lock-reason-prs: "resolved"
-      - name: 🔍 Display locked issues and PRs
-        run: |
-          echo "Locked issues: $(echo '${{ steps.lock.outputs.locked-issues }}' | jq)"
-          echo "Locked PRs: $(echo '${{ steps.lock.outputs.locked-prs }}' | jq)"
+          exclude-issue-closed-before: "2024-06-01"
+          issue-inactive-days: 30
+          issue-lock-reason: "resolved"
+          pr-inactive-days: 30
+          exclude-pr-closed-before: "2024-06-01"
+          pr-lock-reason: "resolved"
+          discussion-inactive-days: 60
+
+
 
