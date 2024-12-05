@@ -1,4 +1,4 @@
-name: Lock
+name: "Lock closed Issues and PR's"
 
 on:
   schedule:
