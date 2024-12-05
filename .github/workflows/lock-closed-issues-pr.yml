@@ -1,0 +1,27 @@
+name: Lock
+
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+jobs:
+  inactivity-lock:
+    name: Lock issues and PRs
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Lock closed issues and PRs
+        uses: klaasnicolaas/action-inactivity-lock@v1
+        with:
+          days-inactive-issues: 30
+          days-inactive-prs: 30
+          lock-reason-issues: "resolved"
+          lock-reason-prs: "resolved"
+      - name: 🔍 Display locked issues and PRs
+        run: |
+          echo "Locked issues: $(echo '${{ steps.lock.outputs.locked-issues }}' | jq)"
+          echo "Locked PRs: $(echo '${{ steps.lock.outputs.locked-prs }}' | jq)"
+
