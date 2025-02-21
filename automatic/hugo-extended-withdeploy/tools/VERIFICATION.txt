@@ -1,0 +1,8 @@
+﻿To verify the embedded files:
+
+1. Please go to the project source location and download the release matching the package version.
+2. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the official release file (from step 1 above) and the file from the package and compare them.
+
+x64 URL: https://github.com/gohugoio/hugo/releases/download/v0.144.2/hugo_extended_withdeploy_0.144.2_windows-amd64.zip
+x64 Checksum Type: SHA256
+x64 Checksum: 4b46fc4883c6be5ee93e6a5a40ab840b6db6b0882aadd53c14c2bb76caf3dd06
