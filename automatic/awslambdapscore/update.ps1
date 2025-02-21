@@ -34,7 +34,7 @@ function global:au_GetLatest {
     $version = (Find-Module -Name $moduleName).Version.ToString()
 
     return @{
-        Version       = $version
+        Version       = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
         ModuleVersion = $version
     }
 }

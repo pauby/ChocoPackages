@@ -82,7 +82,7 @@ function global:au_GetLatest {
     return @{
         URL32   = $releasesx86
         URL64   = $releasesx64
-        Version = $version
+        Version = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
     }
 }
 
