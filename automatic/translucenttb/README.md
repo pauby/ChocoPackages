@@ -20,4 +20,9 @@ A lightweight (uses a few MB of RAM and almost no CPU) utility that makes the Wi
 
 You can see it in action [here](https://gfycat.com/TidyFelineCrownofthornsstarfish) (short) and [here](https://gfycat.com/ConsciousCriminalDassie) (longer).
 
-**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+## Notes
+
+* This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+* I am unable to answer comments left on Disqus. If you have something related to the **_package_**:
+  1. Raise a [discussion](https://github.com/pauby/chocopackages/discussions) for questions.
+  2. Raise an [issue](https://github.com/pauby/chocopackages/issue) for a broken package.
