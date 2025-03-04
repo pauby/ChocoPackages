@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$softwareVersion = '28.1'
+$softwareVersion = '29.4'
 $exeFile = "emacs-$($softwareVersion)-installer_x64.exe"
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"

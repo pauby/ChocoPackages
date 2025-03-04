@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$softwareVersion = '29.2'
+$softwareVersion = '29.4'
 $zipFile = "emacs-$($softwareVersion)_x64.zip"
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"

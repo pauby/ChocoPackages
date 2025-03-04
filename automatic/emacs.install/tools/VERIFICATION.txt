@@ -6,6 +6,6 @@ To verify the files using the project source:
 
 1. Download the binary from the URL below and verify its checksum using Get-FileHash and compare it to the details below.
 
-x64 URL: https://ftp.gnu.org/gnu/emacs/windows/emacs-28/emacs-28.1-installer.exe
+x64 URL: https://ftp.gnu.org/gnu/emacs/windows/emacs-29/emacs-29.4-installer.exe
 x64 Checksum Type: SHA256
-x64 Checksum: 964548663B6DCF6A36A8927ED0E9837F548B57D9E57FD561AB4CB390B6296B5B
+x64 Checksum: D2A90DCA2CB749288C1C77D174B3B92A03068048BAE04E773CBD19284D0A31B5
