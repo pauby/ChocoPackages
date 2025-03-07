@@ -35,3 +35,6 @@ Vortex is released under a GPL-3 License giving our community the ability to wri
 - This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s), to let the know the package is no longer updating, using:
     - The 'Contact Maintainers' link on the package page, or
     - The 'Package Source' link on the package page and raising an issue.
+- I am unable to answer comments left on Disqus / package page comments. If you have something related to the **_package_**:
+  1. Raise a [discussion](https://github.com/pauby/chocopackages/discussions) for questions.
+  2. Raise an [issue](https://github.com/pauby/chocopackages/issue) for a broken package.
