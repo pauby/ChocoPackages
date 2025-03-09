@@ -18,4 +18,4 @@ The free version of Npcap may be used (but not externally redistributed) on up t
 * This is NOT an automatically updated package. If you find it is out of date, please contact the maintainer(s) and let them know.
 * I am unable to answer comments left on Disqus. If you have something related to the **_package_**:
   1. Raise a [discussion](https://github.com/pauby/chocopackages/discussions) for questions.
-  2. Raise an [issue](https://github.com/pauby/chocopackages/issue) for a broken package.
+  2. Raise an [issue](https://github.com/pauby/chocopackages/issues) for a broken package.

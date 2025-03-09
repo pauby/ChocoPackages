@@ -13,4 +13,4 @@ With WebView2, you can embed web code in different parts of your native app, or 
 - This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 - I am unable to answer comments left on Disqus. If you have something related to the **_package_**:
   1. Raise a [discussion](https://github.com/pauby/chocopackages/discussions) for questions.
-  2. Raise an [issue](https://github.com/pauby/chocopackages/issue) for a broken package.
+  2. Raise an [issue](https://github.com/pauby/chocopackages/issues) for a broken package.
