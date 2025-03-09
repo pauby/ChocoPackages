@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces 
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements 
+-->
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if Ã¢â‚¬Å“ÃŽÂ©Ã¢â‚¬Â doesnÃ¢â‚¬â„¢t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+    <metadata>
+        <!-- == PACKAGE SPECIFIC SECTION == -->
+        <!-- This section is about this package, although id and version have ties back to the software -->
+        <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+        <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+        <id>npcap</id>
+        <!-- version should MATCH as closely as possible with the underlying software -->
+        <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+        <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+        <version>1.8.1</version>
+        <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/manual/npcap</packageSourceUrl>
+        <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+        <owners>pauby</owners>
+        <!-- ============================== -->
+        <!-- == SOFTWARE SPECIFIC SECTION == -->
+        <!-- This section is about the software itself -->
+        <title>Npcap</title>
+        <authors>Nmap Software LLC</authors>
+        <!-- projectUrl is required for the community feed -->
+        <projectUrl>https://npcap.com</projectUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/chocopackages@b89170b/icons/npcap.png</iconUrl>
+        <copyright>2013-2025 by Nmap Software LLC</copyright>
+        <!-- If there is a license Url available, it is required for the community feed -->
+        <licenseUrl>https://github.com/nmap/npcap/blob/master/LICENSE</licenseUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <projectSourceUrl>https://github.com/nmap/npcap</projectSourceUrl>
+        <docsUrl>https://npcap.com/guide/</docsUrl>
+        <!--<mailingListUrl></mailingListUrl>-->
+        <bugTrackerUrl>https://github.com/nmap/npcap/issues</bugTrackerUrl>
+        <tags>driver packetcapture network admin</tags>
+        <summary>Npcap is the Nmap Project's packet capture (and sending) library for Microsoft Windows. It implements the open Pcap API using a custom Windows kernel driver alongside our Windows build of the excellent libpcap library.</summary>
+        <description>Npcap is the Nmap Project's packet capture (and sending) library for Microsoft Windows. It implements the open Pcap API using a custom Windows kernel driver alongside our Windows build of the excellent libpcap library. This allows Windows software to capture raw network traffic (including wireless networks, wired ethernet, localhost traffic, and many VPNs) using a simple, portable API. Npcap allows for sending raw packets as well. Mac and Linux systems already include the Pcap API, so Npcap allows popular software such as Nmap and Wireshark to run on all these platforms (and more) with a single codebase. Npcap began in 2013 as some improvements to the (now discontinued) WinPcap library, but has been largely rewritten since then with hundreds of releases improving Npcap's speed, portability, security, and efficiency. In particular, Npcap now offers:
+
+* Loopback Packet Capture and Injection
+* Support for all Current Windows Releases
+* Libpcap API
+* Support for all Windows architectures (x86, x86-64, and ARM)
+* Extra Security
+* WinPcap compatibility
+* Raw (monitor mode) 802.11 wireless capture
+
+The free version of Npcap may be used (but not externally redistributed) on up to 5 systems (free license details). It may also be used on unlimited systems where it is only used with Nmap, Wireshark, and/or Microsoft Defender for Identity. See the [website for details on Npcap OEM for Commercial Use and Redistribution](https://npcap.com).
+
+## Notes
+
+* To allow the installation to be automated, a deppendency on [autohotkey.portable](https://community.chocolatey.org/packages/autohotkey.portable) v2.0.0 or later is used.
+* This is NOT an automatically updated package. If you find it is out of date, please contact the maintainer(s) and let them know.
+* I am unable to answer comments left on Disqus. If you have something related to the **_package_**:
+  1. Raise a [discussion](https://github.com/pauby/chocopackages/discussions) for questions.
+  2. Raise an [issue](https://github.com/pauby/chocopackages/issue) for a broken package.
+        </description>
+        <releaseNotes>https://npcap.com/changelog</releaseNotes>
+        <!-- =============================== -->
+        <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+        <dependencies>
+        <!--    <dependency id="" version="[__EXACT_VERSION__]" /> -->
+          <dependency id="autohotkey.portable" version="[2.0.0, ]" /> 
+        <!-- <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /> -->
+        <!-- <dependency id="" /><dependency id="chocolatey-core.extension" version="1.1.0" /> -->
+        </dependencies>
+        <!-- chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension
+         - You want to use Get-UninstallRegistryKey on less than 0.9.10 (in chocolateyUninstall.ps1)
+         - You want to use Get-PackageParameters and on less than 0.11.0
+         - You want to take advantage of other functions in the core community maintainer's team extension package
+    -->
+        <!--<provides>NOT YET IMPLEMENTED</provides>-->
+        <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+        <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+    </metadata>
+    <files>
+        <!-- this section controls what actually gets packaged into the Chocolatey package -->
+        <file src="tools\**" target="tools" />
+        <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+    </files>
+</package>
