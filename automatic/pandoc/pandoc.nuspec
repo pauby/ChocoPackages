@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>pandoc</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>3.6.3</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/pandoc</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby, majkinetor</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Pandoc</title>
+    <authors>John MacFarlane</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>http://pandoc.org/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@49f86bb/icons/pandoc.png</iconUrl>
+    <copyright>Copyright 2006-2025 John MacFarlane.</copyright>
+    <!-- If there is a license Url available, it is is required for the community feed -->
+    <licenseUrl>https://github.com/jgm/pandoc/blob/master/COPYRIGHT</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/jgm/pandoc</projectSourceUrl>
+    <docsUrl>http://pandoc.org/README.html</docsUrl>
+    <!--<mailingListUrl></mailingListUrl>-->
+    <bugTrackerUrl>https://github.com/jgm/pandoc/issues</bugTrackerUrl>
+    <tags>admin text markdown latex pdf docx html docbook opendocument</tags>
+    <summary>A universal document converter.</summary>
+    <description>If you need to convert files from one markup format into another, pandoc is your swiss-army knife. Pandoc can convert documents in markdown, reStructuredText, textile, HTML, DocBook, LaTeX and many others.
+
+## Features
+
+- HTML formats: XHTML, HTML5, and HTML slide shows using Slidy, reveal.js, Slideous, S5, or DZSlides.
+- Word processor formats: Microsoft Word docx, OpenOffice/LibreOffice ODT, OpenDocument XML
+- Ebooks: EPUB version 2 or 3, FictionBook2
+- Documentation formats: DocBook, TEI Simple, GNU TexInfo, Groff man pages, Haddock markup
+- Page layout formats: InDesign ICML
+- Outline formats: OPML
+- TeX formats: LaTeX, ConTeXt, LaTeX Beamer slides
+- PDF via LaTeX
+- Lightweight markup formats: Markdown (including CommonMark), reStructuredText, AsciiDoc, MediaWiki markup, DokuWiki markup, Emacs Org-Mode, Textile
+- Custom formats: custom writers can be written in lua.
+
+## Notes
+
+- The package by default installs pandoc for current user. To install for all users use `choco install pandoc --install-arguments=ALLUSERS=1`
+- This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+- I am unable to answer comments left on Disqus. If you have something related to the **_package_**:
+  1. Raise a [discussion](https://github.com/pauby/chocopackages/discussions) for questions.
+  2. Raise an [issue](https://github.com/pauby/chocopackages/issues) for a broken package.
+</description>
+    <releaseNotes>https://github.com/jgm/pandoc/releases/tag/3.6.3</releaseNotes>
+    <!-- =============================== -->
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <dependencies>
+      <dependency id="chocolatey-core.extension" version="1.3.3" />
+      <!-- <dependency id="" version="[__EXACT_VERSION__]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
+      <dependency id="" />
+      <dependency id="chocolatey-uninstall.extension" /> -->
+    </dependencies>
+    <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
