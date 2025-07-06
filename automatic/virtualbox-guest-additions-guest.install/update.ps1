@@ -27,7 +27,7 @@ function global:au_AfterUpdate {
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $regex = 'VirtualBox</a>\s(?<version>.*)\splatform packages'
+    $regex = 'VirtualBox\s(?<version>.*)\splatform packages'
     $page -match $regex
 
     return @{
