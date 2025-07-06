@@ -28,9 +28,10 @@ function global:au_GetLatest {
     New-Item -Path $tempFolder -Force -ItemType Directory
     Invoke-WebRequest -Uri $url32 -OutFile $zipPath
 
-    & 7z.exe e -aoa $zipPath "SteamLink.msi" -o"$tempFolder"
+    Expand-Archive -Path $zipPath -DestinationPath $tempFolder
+    #& 7z.exe e -aoa $zipPath "SteamLink.msi" -o"$tempFolder"
 
-    $version = & lessmsi v $msiPath
+    $version = Get-MsiProductVersion -Path $msiPath
 
     if ($version -notmatch "[\d]*\.[\d]*\.[\d]*(\.[\d])?") {
         throw "Version number '$version' isn't a valid version as it doesn't match the regex"
