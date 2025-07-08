@@ -42,7 +42,7 @@ if (-not $env:ChocolateyForce) {
         }
         else {
             Write-Verbose "Did not find a version number for WebView2 runtime, at registry key '$regKey'."
-            Write-Verbsoe 'Assuming WebView2 runtime software is not installed.'
+            Write-Verbose 'Assuming WebView2 runtime software is not installed.'
         }
     }
 }
