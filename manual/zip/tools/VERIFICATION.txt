@@ -1,0 +1,18 @@
+﻿VERIFICATION
+
+Verification is intended to assist the Chocolatey moderators and community in verifying that this package's contents are trustworthy.
+
+To verify the files using the project source:
+
+1. Please go to the project source location and download the release matching the package version.
+2. Use Get-FileHash -Path <FILE TO VERIFY> to get the file hash value from both the official release file (from step 1 above) and the file from the package and compare them.
+
+x86 URL: https://fossies.org/windows/misc/zip300xn.zip
+x86 Checksum Type: SHA256
+x86 Checksum: f8bbc1821d50400245107ce8cfa4a6c7b524387b58bbd6cbe9c20094e82c3bb5
+
+x64 URL: https://fossies.org/windows/misc/zip300xn-x64.zip
+x64 Checksum Type: SHA256
+x64 Checksum: 63f32f1f797680d9c68379d36cff4373674d405527d7fa2b4bbd34edcc3370d2
+
+File LICENSE.txt is saved from https://infozip.sourceforge.net/license.html

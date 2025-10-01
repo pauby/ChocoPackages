@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>zip</id>
+    <version>3.0.0.20251001</version>
+    <title>Info-ZIP</title>
+    <authors>Info-Zip</authors>
+    <owners>pauby, Jake Petroules</owners>
+    <licenseUrl>http://www.info-zip.org/license.html</licenseUrl>
+    <projectUrl>http://www.info-zip.org</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@c0db5368/icons/zip.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Info-ZIP's purpose is to provide free, portable, high-quality versions of the Zip and UnZip compressor-archiver utilities that are compatible with the DOS-based PKZIP by PKWARE, Inc.</description>
+    <summary>package and compress (archive) files</summary>
+    <copyright>© 1997-2008 Info-Zip</copyright>
+    <tags>compression zip archive</tags>
+  </metadata>
+</package>
