@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Read this before creating packages: https://chocolatey.org/docs/create-packages -->
+<!-- It is especially important to read the above link to understand additional requirements when publishing packages to the community feed aka dot org (https://chocolatey.org/packages). -->
+<!-- Test your packages in a test environment: https://github.com/chocolatey/chocolatey-test-environment -->
+<!--
+This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Reference. Chocolatey uses a special version of NuGet.Core that allows us to do more than was initially possible. As such there are certain things to be aware of:
+
+* the package xmlns schema url may cause issues with nuget.exe
+* Any of the following elements can ONLY be used by choco tools - projectSourceUrl, docsUrl, mailingListUrl, bugTrackerUrl, packageSourceUrl, provides, conflicts, replaces
+* nuget.exe can still install packages with those elements but they are ignored. Any authoring tools or commands will error on those elements
+-->
+<!-- You can embed software files directly into packages, as long as you are not bound by distribution rights. -->
+<!-- * If you are an organization making private packages, you probably have no issues here -->
+<!-- * If you are releasing to the community feed, you need to consider distribution rights. -->
+<!-- Do not remove this test for UTF-8: if appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+    <metadata>
+        <!-- == PACKAGE SPECIFIC SECTION == -->
+        <!-- This section is about this package, although id and version have ties back to the software -->
+        <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+        <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+        <id>homeassistant</id>
+        <!-- version should MATCH as closely as possible with the underlying software -->
+        <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+        <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+        <version>2021.5.5</version>
+        <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/homeassistant</packageSourceUrl>
+        <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+        <owners>pauby, bcurran3</owners>
+        <!-- ============================== -->
+        <!-- == SOFTWARE SPECIFIC SECTION == -->
+        <!-- This section is about the software itself -->
+        <title>Home Assistant (Install)</title>
+        <authors>Open Home Foundation</authors>
+        <!-- projectUrl is required for the community feed -->
+        <projectUrl>https://www.home-assistant.io/</projectUrl>
+        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@caf75f1efe6a562678f681eef7d8cbf49ac3c9c2/icons/homeassistant.png</iconUrl>
+        <copyright>2025 Open Home Foundation</copyright>
+        <!-- If there is a license Url available, it is is required for the community feed -->
+        <licenseUrl>https://github.com/home-assistant/core/blob/dev/LICENSE.md</licenseUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <projectSourceUrl>https://github.com/home-assistant/core</projectSourceUrl>
+        <docsUrl>https://www.home-assistant.io/docs/</docsUrl>
+        <mailingListUrl>ttps://community.home-assistant.io/</mailingListUrl>
+        <bugTrackerUrl>https://github.com/home-assistant/home-assistant/issues</bugTrackerUrl>
+        <tags>admin font monospace hack mono fixedWidth fixed code editor programming ide programmer</tags>
+        <summary>Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.</summary>
+        <description>Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts. Perfect to run on a Raspberry Pi or a local server.
+
+Check out [home-assistant.io](https://home-assistant.io/) for a [demo](https://demo.home-assistant.io/), [installation instructions](https://home-assistant.io/getting-started/), [tutorials](https://home-assistant.io/getting-started/automation/) and [documentation](https://home-assistant.io/docs/).
+
+The system is built using a modular approach so support for other devices or actions can be implemented easily. See also the [section on architecture](https://developers.home-assistant.io/docs/architecture_index/) and the [section on creating your own components](https://developers.home-assistant.io/docs/creating_component_index/).
+
+If you run into issues while using Home Assistant or during development of a component, check the [Home Assistant help section](https://home-assistant.io/help/) of our website for further help and information.
+
+## Notes
+
+- This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s), to let the know the package is no longer updating, using:
+    - The 'Contact Maintainers' link on the package page, or
+    - The 'Package Source' link on the package page and raising an issue.
+</description>
+        <releaseNotes>hhttps://github.com/home-assistant/core/releases</releaseNotes>
+        <!-- =============================== -->
+        <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+        <dependencies>
+            <dependency id="python3" version="3.6.0" />
+            <dependency id="vcredist140" version="14.28.29325.2" />
+        </dependencies>
+        <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+        <!--<provides>NOT YET IMPLEMENTED</provides>-->
+        <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+        <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+    </metadata>
+    <files>
+        <!-- this section controls what actually gets packaged into the Chocolatey package -->
+        <file src="tools\**" target="tools" />
+        <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+    </files>
+</package>
