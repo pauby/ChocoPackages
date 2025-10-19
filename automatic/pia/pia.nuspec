@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>pia</id>
+    <title>Private Internet Access</title>
+    <version>290.3.5.7</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/pia</packageSourceUrl>
+    <authors>London Trust Media, Inc.</authors>
+    <owners>pauby, Sanshiro</owners>
+    <summary>Private Internet Access™
+VPN Service encrypts your connection and provides you with an anonymous IP to protect your privacy.</summary>
+    <description>
+## Why should I use PIA?
+
+* Privacy Protection.
+  We all need privacy, especially online. Your IP address and your browsing should be hidden from unnecessary surveillance. Rest assured that PIA’s virtual private network never keeps any usage logs — ever. * Unblock Censorship Filters
+* Secure Data
+  Keep your data encrypted for extra security. Don’t let anyone get their hands on unencrypted emails, pictures, banking details, or anything else best kept private.
+* Complete Access
+  Access all of your favorite content free from ISP throttling and annoying network restrictions. Enjoy unlimited bandwidth to stay connected to the world's best shows, apps, and games.
+
+## Notes
+
+* As of package version 290.3.7 (3.7 of PIA), only the 64-bit installer is available.
+* This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s), to let the know the package is no longer updating, using:
+    * The 'Contact Maintainers' link on the package page, or
+    * The 'Package Source' link on the package page and raising an issue.
+    </description>
+    <projectUrl>https://www.privateinternetaccess.com/</projectUrl>
+    <tags>admin vpn security privacy multi-platform</tags>
+    <copyright>Copyright© London Trust Media, Inc. All Rights Reserved.</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@990bce36b284f8ba7a2df27f55d90db24c429698/icons/pia.png</iconUrl>
+<!--    <dependencies>
+      <dependency id="autohotkey.portable" version="2.0.0" />
+    </dependencies> -->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
