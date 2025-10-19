@@ -1,4 +1,4 @@
-# ![PrivateInternetAccess Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@990bce36b284f8ba7a2df27f55d90db24c429698/icons/pia.png "PrivateInternetAccess")[PIA](https://chocolatey.org/packages/plaster)
+# ![PrivateInternetAccess Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@990bce36b284f8ba7a2df27f55d90db24c429698/icons/pia.png "PrivateInternetAccess")[PIA](https://chocolatey.org/packages/pia)
 
 ## Why should I use PIA?
 
