@@ -19,8 +19,8 @@ function global:au_BeforeUpdate() {
 #    $Latest.ChecksumType32 = 'SHA256'
 }
 
-function global:au_AfterUpdate { 
-    Set-DescriptionFromReadme -SkipFirst 2 
+function global:au_AfterUpdate {
+    Set-DescriptionFromReadme -SkipFirst 2
 }
 
 function global:au_GetLatest {
@@ -28,18 +28,19 @@ function global:au_GetLatest {
     $tempPath = Split-Path -Path $tempFile -Parent
     Invoke-WebRequest -Uri $releases -OutFile $tempFile -UseBasicParsing
     & 7z.exe e -aoa $tempFile "flux.exe"
-    $version = (Get-Item "flux.exe").VersionInfo.FileVersion -replace ", ", "." # version has commas between numbers !!!??!
+    $version = (Get-Item "flux.exe").VersionInfo.FileVersion -replace ", ", "." # version has commas and spaces between numbers
     # the version number for f.lux appear to always have 4 segments
     # if the last 2 are 0 then skip them
-    if ($version -match "(^\d+\.\d+)\.0\.0") {
-        $version = $matches[1]
-    }
+    # the below code was removed 6 Jan 2026 - we can now use 4 part version numbers on CCR
+    #if ($version -match "(^\d+\.\d+)\.0\.0") {
+    #    $version = $matches[1]
+    #}
 
     $fileHash = (Get-FileHash -Path $tempFile -Algorithm SHA256).Hash
 
     return @{
         URL32           = $releases
-        Version         = ConvertTo-VersionNumber -Version ([version]$version) -Part 3
+        Version         = $version
         Checksum32      = $fileHash
         ChecksumType32  = 'SHA256'
     }
