@@ -1,6 +1,6 @@
 # ![ClamAV Logo](https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@f41d337/icons/clamav.png "ClamAV Logo") [ClamAV](https://community.chocolatey.org/packages/clamav)
 
-ClamAV® is an open-source (GPL) anti-virus engine used in a variety of situations, including email and web scanning, and endpoint security. It provides many utilities for users, including a flexible and scalable multi-threaded daemon, a command-line scanner and an advanced tool for automatic database updates.
+ClamAV is an open-source (GPL) anti-virus engine used in a variety of situations, including email and web scanning, and endpoint security. It provides many utilities for users, including a flexible and scalable multi-threaded daemon, a command-line scanner and an advanced tool for automatic database updates.
 
 ## Features
 
@@ -15,4 +15,6 @@ ClamAV® is an open-source (GPL) anti-virus engine used in a variety of situatio
 
 ## Notes
 
-* This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+* This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s), to let the know the package is no longer updating, using:
+    * The 'Contact Maintainers' link on the package page, or
+    * The 'Package Source' link on the package page and raising an issue.

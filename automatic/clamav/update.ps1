@@ -11,12 +11,12 @@ function global:au_SearchReplace {
             "(\<releaseNotes\>).*?(\</releaseNotes\>)" = "`${1}$([System.Web.HttpUtility]::HtmlEncode($Latest.ReleaseNotes))`$2"
         }
         ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*\$file64Filename\s*=\s*)(''.*'')' = "`$1'$($Latest.Asset64.name)'"
+            '(^\s*\$file64Filename\s*=\s*)(''.*'')' = "`${1}'$($Latest.Asset64.name)'"
         }
         ".\tools\VERIFICATION.txt"      = @{
-            "(^\s*x64 URL:\s*)(.*)"           = "`$1$($Latest.URL64)"
-            "(^\s*x64 Checksum:\s*)(.*)"      = "`$1$($Latest.Checksum64)"
-            "(^\s*x64 Checksum Type:\s*)(.*)" = "`$1$($Latest.ChecksumType64)"
+            "(^\s*x64 URL:\s*)(.*)"           = "`${1}$($Latest.URL64)"
+            "(^\s*x64 Checksum:\s*)(.*)"      = "`${1}$($Latest.Checksum64)"
+            "(^\s*x64 Checksum Type:\s*)(.*)" = "`${1}$($Latest.ChecksumType64)"
         }
     }
 }
