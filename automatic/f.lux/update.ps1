@@ -1,5 +1,7 @@
 #import-module au
 
+. $PSScriptRoot\..\..\scripts\all.ps1
+
 function global:au_SearchReplace {
     @{
         "$($Latest.PackageName).nuspec" = @{
@@ -19,4 +21,4 @@ function global:au_GetLatest {
     }
 }
 
-update -ChecksumFor none
+Update-Package -ChecksumFor none
