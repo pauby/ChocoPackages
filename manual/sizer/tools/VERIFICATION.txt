@@ -1,0 +1,18 @@
+﻿
+VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+1. The software is downloaded from the link(s) below.
+2. Select **Versions**, the correct version and then **Download package**.
+4. You can use one of the following methods to obtain the checksum:
+  - Use PowerShell function 'Get-Filehash'
+  - Use Chocolatey utility 'checksum.exe'
+
+EMBEDDED FILES
+x86 URL:https://www.brianapps.net/sizer4/sizer4_dev640.msi
+x86 Checksum:52b5984e53afdd4ca8e77b6f6040c40e0670cb6f0c89b77ba4dc804266d3fd61
+x86 Checksum Type:SHA256
+
+LICENSE
+Taken from: inside the Zip package at https://www.brianapps.net/sizer4/sizer4_dev640.zip
