@@ -1,0 +1,17 @@
+﻿VERIFICATION
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+
+1. The software is downloaded from the link(s) below.
+2. Select **Versions**, the correct version and then **Download package**.
+4. You can use one of the following methods to obtain the checksum:
+  - Use PowerShell function 'Get-Filehash'
+  - Use chocolatey utility 'checksum.exe'
+
+EMBEDDED FILES
+x86 URL:https://dl5.oo-software.com/files/ooshutup10/OOSU10.exe
+x86 Checksum:279293B451442AEA08F181E7AC80D304B1C4150305A05C22A2E3EE0E9C57DDEA
+x86 Checksum Type:SHA256
+
+LICENSE
+Taken from: https://www.oo-software.com/en/shutup10/eula
