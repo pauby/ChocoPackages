@@ -39,7 +39,7 @@ function global:au_GetLatest {
     $version = $release.tag_name
     $versionTagPrefix = 'clamav-'
     if ($version.StartsWith($versionTagPrefix)) {
-        $version = $version.Substring($versionTagPrefix.Length)    # skip over 'v' in tag
+        $version = $version.Substring($versionTagPrefix.Length)    # skip over 'clamav-' in tag
     }
 
     $asset64 = $release.assets | Where-Object name -Match "clamav-$($version).win.x64.zip$"
