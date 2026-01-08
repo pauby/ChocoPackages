@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <!-- This section is about this package, although id and version have ties back to the software -->
+    <!-- id is lowercase and if you want a good separator for words, use '-', not '.'. Dots are only acceptable as suffixes for certain types of packages, e.g. .install, .portable, .extension, .template -->
+    <!-- If the software is cross-platform, attempt to use the same id as the debian/rpm package(s) if possible. -->
+    <id>x64dbg.portable</id>
+    <!-- version should MATCH as closely as possible with the underlying software -->
+    <!-- Is the version a prerelease of a version? https://docs.nuget.org/create/versioning#creating-prerelease-packages -->
+    <!-- Note that unstable versions like 0.0.1 can be considered a released version, but it's possible that one can release a 0.0.1-beta before you release a 0.0.1 version. If the version number is final, that is considered a released version and not a prerelease. -->
+    <version>20230115.1529.0</version>
+    <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/x64dbg.portable</packageSourceUrl>
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>pauby, Echizen Ryoma</owners>
+    <!-- ============================== -->
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>x64dbg (Portable)</title>
+    <authors>Yubico</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://x64dbg.com/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/pauby/ChocoPackages@3a03bb6/icons/x64dbg.portable.png</iconUrl>
+    <copyright>2025 x64dbg Contributors</copyright>
+    <!-- If there is a license Url available, it is is required for the community feed -->
+    <licenseUrl>https://github.com/x64dbg/x64dbg/blob/development/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/x64dbg/x64dbg</projectSourceUrl>
+    <docsUrl>https://wiki.x64dbg.com/</docsUrl>
+    <mailingListUrl>https://discord.x64dbg.com/</mailingListUrl>
+    <bugTrackerUrl>https://github.com/x64dbg/x64dbg/issues</bugTrackerUrl>
+    <tags>dbg debug debugger</tags>
+    <summary>An open-source binary debugger for Windows, aimed at malware analysis and reverse engineering of executables you do not have the source code for.</summary>
+    <description>An open-source binary debugger for Windows, aimed at malware analysis and reverse engineering of executables you do not have the source code for. There are many features available and a comprehensive [plugin system](https://plugins.x64dbg.com/) to add your own. You can find more information on the [blog](https://x64dbg.com/blog)!
+
+## Features
+
+* Open-source
+* Intuitive and familiar, yet new user interface
+* C-like expression parser
+* Full-featured debugging of DLL and EXE files (TitanEngine)
+* IDA-like sidebar with jump arrows
+* IDA-like instruction token highlighter (highlight registers, etc.)
+* Memory map
+* Symbol view
+* Thread view
+* Source code view
+* Content-sensitive register view
+* Fully customizable color scheme
+* Dynamically recognize modules and strings
+* Import reconstructor integrated (Scylla)
+* Fast disassembler (Capstone)
+* User database (JSON) for comments, labels, bookmarks, etc.
+* Plugin support with growing API
+* Extendable, debuggable scripting language for automation
+* Multi-datatype memory dump
+* Basic debug symbol (PDB) support
+* Dynamic stack view
+* Built-in assembler (XEDParse/Keystone/asmjit)
+* Executable patching
+* Yara Pattern Matching
+* Decompiler (Snowman)
+* Analysis
+
+## Notes
+
+* This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s), to let the know the package is no longer updating, using:
+    * The 'Contact Maintainers' link on the package page, or
+    * The 'Package Source' link on the package page and raising an issue.
+</description>
+    <releaseNotes>https://github.com/x64dbg/x64dbg/releases/tag/2025.08.19</releaseNotes>
+    <!-- =============================== -->
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <!-- <dependencies> -->
+    <!-- <dependency id="" /> -->
+    <!-- <dependency id="dotnet4.5"/><dependency id="" version="[__EXACT_VERSION__]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" /><dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" /><dependency id="" /><dependency id="chocolatey-uninstall.extension" /> -->
+    <!-- </dependencies> -->
+    <!-- chocolatey-uninstall.extension - If supporting 0.9.9.x (or below) and including a chocolateyUninstall.ps1 file to uninstall an EXE/MSI, you probably want to include chocolatey-uninstall.extension as a dependency. Please verify whether you are using a helper function from that package. -->
+    <!--<provides>NOT YET IMPLEMENTED</provides>-->
+    <!--<conflicts>NOT YET IMPLEMENTED</conflicts>-->
+    <!--<replaces>NOT YET IMPLEMENTED</replaces>-->
+  </metadata>
+  <files>
+    <!-- this section controls what actually gets packaged into the Chocolatey package -->
+    <file src="tools\**" target="tools" />
+    <!--Building from Linux? You may need this instead: <file src="tools/**" target="tools" />-->
+  </files>
+</package>
