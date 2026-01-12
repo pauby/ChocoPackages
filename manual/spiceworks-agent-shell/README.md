@@ -8,8 +8,8 @@ Spiceworks Agent is a tool that allows IOD IT Administrators to view details abo
 
 NOTE: This package will fail to install without providing a [site key](https://resolve.spiceworks.com/#/login) at the time of install using the following parameter:
 
-    `/site_key:"&lt;your site key&gt;"`
+    `/sitekey:"&lt;your site key&gt;"`
 
 Example:
 
-    `-packageParameters='"/site_key:ABcdefGHiJKLmnoPQRSt"'`
+    `-packageParameters='"/sitekey:ABcdefGHiJKLmnoPQRSt"'`
