@@ -16,5 +16,8 @@ Free for private use. Commercial users are welcome to use for trial purposes.
 
 ## Notes
 
-- The vendor does not update the version number but will update the software from time to time rendering the checksum invalid. If this happens then you can use the `--ignore-checksums` switch or wait until the new version is released.
-- This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+* The vendor does not update the version number but will update the software from time to time rendering the checksum invalid. If this happens then you can use the `--ignore-checksums` switch or wait until the new version is released.
+* This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+* I am unable to answer comments left on Disqus. If you have something related to the **_package_**:
+  1. Raise a [discussion](https://github.com/pauby/chocopackages/discussions) for questions.
+  2. Raise an [issue](https://github.com/pauby/chocopackages/issues) for a broken package.
