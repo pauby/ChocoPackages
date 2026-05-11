@@ -30,7 +30,7 @@ function global:au_GetLatest {
         $version = $version.Substring(1)    # skip over 'v' in tag
     }
 
-    $asset32 = $release.assets | Where-Object name -eq "ShareX-$($version)-setup.exe"
+    $asset32 = $release.assets | Where-Object name -eq "ShareX-$($version)-setup-x64.exe"
     $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
         $release.html_url
     }
