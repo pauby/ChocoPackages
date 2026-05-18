@@ -5,83 +5,96 @@ $DisplayName = 'Adobe Acrobat'
 # all checksum types are the same
 $allChecksumType = 'SHA256'
 
-$MUIurl = 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2400221005/AcroRdrDC2400221005_MUI.exe'
-$MUIchecksum = '4D382B57A17E2D784B00703BDF51ABF40FF437AD762701F50AB5309A28DC1877'
+$MUIurl = 'https://ardownload3.adobe.com/pub/adobe/reader/win/AcrobatDC/2600121529/AcroRdrDC2600121529_MUI.exe'
+$MUIchecksum = 'A6720AC06A472DFBFF4D6B294899D9F2EE050AFAF96FAA7374B42C6B7149F8D6'
 
-$MUIurl64 = 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2400221005/AcroRdrDCx642400221005_MUI.exe'
-$MUIchecksum64 = '6907BDFD43C049D3D63D415F047621EE8EDED9CC0284CDE0A994A4DF17116AC2'
+$MUIurl64 = 'https://ardownload3.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2600121529/AcroRdrDCx642600121529_MUI.exe'
+$MUIchecksum64 = '5B830C22C81899C8AF581AF2F6DC041FF28DD64DD897FA5FAB1D9C012CEAD3EF'
 
-$MUImspURL = 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2400221005/AcroRdrDCUpd2400221005_MUI.msp'
-$MUImspChecksum = 'B361ED1CCCCEFC497857151C0E2F24BC195A43C9D0DF047CCB2184FE6720F0F0'
+$MUImspURL = 'https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/2600121529/AcroRdrDCUpd2600121529_MUI.msp'
+$MUImspChecksum = '223875F11E86573FBE68F39A5FC36DD0EFE15A78A3DD2F1B1819A58552133A3C'
 
-$MUImspURL64 = 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2400221005/AcroRdrDCx64Upd2400221005_MUI.msp'
-$MUImspChecksum64 = '26508BD006D2EBCC117DE9FD809F981B4B3EAC8BCAA849506762F31E8082E28B'
+$MUImspURL64 = 'https://ardownload2.adobe.com/pub/adobe/acrobat/win/AcrobatDC/2600121529/AcroRdrDCx64Upd2600121529_MUI.msp'
+$MUImspChecksum64 = '69353E1BD95C3F5AEBCFB47351742B363669E645DC1A0A2FF613CD271EFDD54D'
 
 $MUIinstalled = $false
 $PerformNewInstall = $false
 $ApplyPatch = $false
-[array]$installation = Get-UninstallRegistryKey -SoftwareName $DisplayName.replace(' Acrobat', ' Acrobat*')
+[array]$installationFound = Get-UninstallRegistryKey -SoftwareName $DisplayName.replace(' Acrobat', ' Acrobat*')
 
 $MUImspURL -match 'AcroRdrDCUpd(\d+)_' | Out-Null
 $UpdaterVersion = $Matches[1]
 
 $PackageParameters = Get-PackageParameters
 
+##
+# Ignore Installed Adobe Acrobat Installations
+##
 # this parameter _could_ cause issues so lets put lots of verbose text around it
 if ($PackageParameters['IgnoreInstalled']) {
    if ([string]::IsNullOrEmpty($PackageParameters['IgnoreInstalled']) -or [string]::IsNullOrWhiteSpace($PackageParameters['IgnoreInstalled'])) {
-      throw "Package parameter '/IgnoreInstalled' cannot be empty or whitespace."
+      throw "Package parameter '/IgnoreInstalled' cannot be empty or contain only whitespace."
    }
 
-   $matchInstallation = ($PackageParameters['IgnoreInstalled']).Split(',')
+   # the string passwed to /IgnoreInstalled should be a comma delimited string
+   # split it up so we have a list of software to be ignored
+   $installationToIgnore = ($PackageParameters['IgnoreInstalled']).Split(',')
 
    Write-Verbose "/IgnoreInstalled package parameter was passed with these software names:"
-   $matchInstallation | ForEach-Object { Write-Verbose "- $_" }
+   $installationToIgnore | ForEach-Object { Write-Verbose "- $_" }
 
    # loop over each found installation and ignore it if it matches a value in '/IgnoreInstalled'
-   $key = for ($i = 0; $i -lt $installation.count; $i++) {
-      for ($j = 0; $j -lt $matchInstallation.count; $j++) {
-         if ($installation[$i].DisplayName -notlike $matchInstallation[$j]) {
-            $installation[$i]
-            Write-Verbose "Keeping '$($installation[$i].DisplayName)' as it does not match '$($matchInstallation[$j])'"
+   $installationToProcess = for ($i = 0; $i -lt $installationFound.count; $i++) {
+      $keep = $false
+      for ($j = 0; $j -lt $installationToIgnore.count; $j++) {
+         if ($installationFound[$i].DisplayName -notlike $installationToIgnore[$j]) {
+            $keep = $true
+            Write-Verbose "Keeping '$($installationFound[$i].DisplayName)' as it does not match '$($installationToIgnore[$j])'"
          }
          else {
-            Write-Verbose "Removing '$($installation[$i].DisplayName)' from list of found software, as it matches '$($matchInstallation[$j])'"
+            Write-Verbose "Removing '$($installationFound[$i].DisplayName)' from list of found software, as it matches '$($installationToIgnore[$j])'"
+            # we have found this in the software list so we don't need to keep checking
+            # break out of hte loop and start with the next found software
+            break
          }
+      }
+
+      if ($keep) {
+         $installationFound[$i]
       }
    }
 
    Write-Verbose "After processing, we will use this list of installed software:"
-   $key | ForEach-Object {
+   $installationToProcess | ForEach-Object {
       Write-Warning "- $($_.DisplayName)"
    }
 
-   if ($installation.Count -gt 0 -and $key.Count -eq 0) {
-      Write-Warning "We originally found $($installation.Count) software names matching $($DisplayName.replace(' Acrobat', ' Acrobat*'))."
+   if ($installation.Count -gt 0 -and $installationToProcess.Count -eq 0) {
+      Write-Warning "We originally found $($installationFound.Count) software names matching $($DisplayName.replace(' Acrobat', ' Acrobat*'))."
       Write-Warning 'Using ''/IgnoreInstalled'' matches, this is now 0.'
       Write-Warning 'This may be intended.'
       Write-Warning "This will cause issues if you have the software from this package already installed."
    }
 }
 else {
-   $key = $installation
+   $installationToProcess = $installation
 }
 
-if ($key.Count -eq 1) {
-   $InstalledVersion = $key[0].DisplayVersion.replace('.', '')
-   $IsAdobeAcrobatReader = $key[0].DisplayName -match 'Adobe Acrobat Reader'
-   if ($IsAdobeAcrobatReader -and $key[0].DisplayName -notmatch 'MUI') {
+if ($installationToProcess.Count -eq 1) {
+   $InstalledVersion = $installationToProcess[0].DisplayVersion.replace('.', '')
+   $IsAdobeAcrobatReader = $installationToProcess[0].DisplayName -match 'Adobe Acrobat Reader'
+   if ($IsAdobeAcrobatReader -and $installationToProcess[0].DisplayName -notmatch 'MUI') {
       if (($InstalledVersion -ge $UpdaterVersion) -and !($PackageParameters.OverwriteInstallation)) {
-         Write-Warning "The currently installed $($key[0].DisplayName) is a single-language install."
-         Write-Warning "You will need to uninstall $($key[0].DisplayName) first or use /OverwriteInstallation."
+         Write-Warning "The currently installed $($installationToProcess[0].DisplayName) is a single-language install."
+         Write-Warning "You will need to uninstall $($installationToProcess[0].DisplayName) first or use /OverwriteInstallation."
          Throw 'Installation halted.'
       }
       elseif (($InstalledVersion -ge $UpdaterVersion) -and $PackageParameters.OverwriteInstallation) {
-         Write-Warning "The currently installed $($key[0].DisplayName) is a single-language install."
+         Write-Warning "The currently installed $($installationToProcess[0].DisplayName) is a single-language install."
          Write-Warning  'This package will replace it with the multi-language (MUI) release (Installation overwrite).'
       }
       else {
-         Write-Warning "The currently installed $($key[0].DisplayName) is a single-language install."
+         Write-Warning "The currently installed $($installationToProcess[0].DisplayName) is a single-language install."
          Write-Warning  'This package will replace it with the multi-language (MUI) release.'
       }
    }
@@ -92,8 +105,8 @@ if ($key.Count -eq 1) {
          Return
       }
       elseif ($InstalledVersion -gt $UpdaterVersion) {
-         Write-Warning "$($key[0].DisplayName) v20$($key[0].DisplayVersion) installed."
-         Write-Warning "This package installs v$env:ChocolateyPackageVersion and cannot replace a newer version."
+         Write-Warning "$($installationToProcess[0].DisplayName) v20$($installationToProcess[0].DisplayVersion) installed."
+         Write-Warning "This package installs v$($env:ChocolateyPackageVersion) and cannot replace a newer version."
          Throw 'Installation halted.'
       }
       else {
@@ -108,11 +121,11 @@ if ($key.Count -eq 1) {
       }
    }
 }
-elseif ($key.count -gt 1) {
-   Write-Warning "$($key.Count) matching installs of Adobe Acrobat Reader DC found!"
+elseif ($installationToProcess.count -gt 1) {
+   Write-Warning "$($installationToProcess.Count) matching installs of Adobe Acrobat Reader DC found!"
    Write-Warning 'To prevent accidental data loss, this install will be aborted.'
    Write-Warning 'The following installs were found:'
-   $key | ForEach-Object { Write-Warning "- Name: $($_.DisplayName)`tVersion: $($_.DisplayVersion)" }
+   $installationToProcess | ForEach-Object { Write-Warning "- Name: $($_.DisplayName)`tVersion: $($_.DisplayVersion)" }
 
    if ($PackageParameters['IgnoreInstalled']) {
       Write-Warning "You have passed '/IgnoreInstalled' containing:"
@@ -137,8 +150,8 @@ if ($PackageParameters.OverwriteInstallation) {
    $RegPath = 'HKLM:\SOFTWARE\Policies\Adobe\Acrobat Reader\DC\FeatureLockDown'
 
    if (Test-Path $RegPath) {
-      $key = Get-ItemProperty -path $RegPath
-      if ($key.bUpdater -ne $null) {
+      $installationToProcess = Get-ItemProperty -path $RegPath
+      if ($installationToProcess.bUpdater -ne $null) {
          $null = Remove-ItemProperty -Path $RegPath -Name 'bUpdater' -Force
       }
    }
@@ -213,7 +226,7 @@ if ((0..4) -contains $UpdateMode) {
       if (Test-Path $RegPath1) {
          $null = New-ItemProperty -Path $RegPath1 -Name 'iCheckReader' -Value $UpdateMode -force
       }
-      $GUID = '{' + $key[0].UninstallString.split('{')[-1]
+      $GUID = '{' + $installationToProcess[0].UninstallString.split('{')[-1]
       # This is the setting that actually causes a change in behavior.
       $RegPath2 = "HKLM:\SOFTWARE\Wow6432Node\Adobe\Adobe ARM\Legacy\Reader\$GUID"
       if (Test-Path $RegPath2) {
@@ -251,8 +264,8 @@ if ($PerformNewInstall) {
    $exitCode = Install-ChocolateyInstallPackage @packageArgsEXE
 
    # check if the patch should be applied separately
-   [array]$key = Get-UninstallRegistryKey -SoftwareName $DisplayName.replace(' Acrobat', ' Acrobat*')
-   $InstalledVersion = $key[0].DisplayVersion.replace('.', '')
+   [array]$installationToProcess = Get-UninstallRegistryKey -SoftwareName $DisplayName.replace(' Acrobat', ' Acrobat*')
+   $InstalledVersion = $installationToProcess[0].DisplayVersion.replace('.', '')
    $ApplyPatch = $InstalledVersion -lt $UpdaterVersion
 
    if ($exitCode -eq 1603) {
