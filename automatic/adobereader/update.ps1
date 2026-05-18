@@ -66,7 +66,7 @@ function global:au_GetLatest {
     # #   x64: https://ardownload2.adobe.com/pub/adobe/ACROBAT/win/
 
     $fullEdition = Get-EvergreenApp -Name 'AdobeAcrobatReaderDC' | Where-Object { $_.language -eq 'MUI' }
-    $patchEdition = Get-EvergreenApp -Name 'AdobeAcrobatDC' | Where-Object { $_.type -eq 'ReaderMUI' }
+    $patchEdition = Get-EvergreenApp -Name 'AdobeAcrobatDC' | Where-Object { $_.product -eq 'ReaderMUI' }
 
     return  @{ 
         Version = ConvertTo-VersionNumber -Version ([version]("20{0}" -f ($fullEdition | Where-Object { $_.architecture -eq 'x86' }).Version)) -Part 3
