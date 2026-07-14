@@ -1,5 +1,4 @@
-﻿# The code structure for this from the Inconsolata's source: https://chocolatey.org/packages/Inconsolata
-# updated thanks to suggestions from Ramiro Morales (https://github.com/ramiro)
+﻿$ErrorActionPreference = 'Stop'
 
 # create temp directory
 do {
@@ -15,17 +14,17 @@ $packageArgs = @{
     checksum       = '0c2604631b1f055041c68a0e09ae4801acab6c5072ba2db6a822f53c3f8290ac'
     checksumType   = 'sha256'
 }
-
 Install-ChocolateyZipPackage @packageArgs
 
-# Obtain system font folder for extraction
-$shell = New-Object -ComObject Shell.Application
-$fontsFolder = $shell.Namespace(0x14)
+$Installed = Add-Font $tempPath -Multiple
 
-# Loop the extracted files and install them
-Get-ChildItem -Path $tempPath -Recurse -Filter '*.ttf' | ForEach-Object { 
-    Write-Verbose "Registering font '$($_.Name)'."
-    $fontsFolder.CopyHere($_.FullName)  # copying to fonts folder ignores a second param on CopyHere
+If ($Installed -eq 0) {
+   Throw 'All font installation attempts failed!'
+} elseif ($Installed -lt $FontFiles.count) {
+   Write-Host "$Installed fonts were installed." -ForegroundColor Cyan
+   Write-Warning "$($FontFiles.count - $Installed) submitted font paths failed to install."
+} else {
+   Write-Host "$Installed fonts were installed."
 }
 
 # Remove our temporary files
