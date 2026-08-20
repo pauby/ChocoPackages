@@ -65,8 +65,10 @@ function global:au_GetLatest {
     # #   x86: https://ardownload2.adobe.com/pub/adobe/READER/win
     # #   x64: https://ardownload2.adobe.com/pub/adobe/ACROBAT/win/
 
-    $fullEdition = Get-EvergreenApp -Name 'AdobeAcrobatReaderDC' | Where-Object { $_.language -eq 'MUI' }
-    $patchEdition = Get-EvergreenApp -Name 'AdobeAcrobatDC' | Where-Object { $_.product -eq 'ReaderMUI' }
+    # Evergreen sometimes returns more than just the latest version so we are sorting it here and pushing the latest
+    # to the top. As the version is a string, I'm not confident that the lasest version will always float to the top.
+    $fullEdition = Get-EvergreenApp -Name 'AdobeAcrobatReaderDC' | Where-Object { $_.language -eq 'MUI' } | Sort-Object -Property Version -Descending
+    $patchEdition = Get-EvergreenApp -Name 'AdobeAcrobatDC' | Where-Object { $_.product -eq 'ReaderMUI' }  | Sort-Object -Property Version -Descending
 
     return  @{ 
         Version = ConvertTo-VersionNumber -Version ([version]("20{0}" -f ($fullEdition | Where-Object { $_.architecture -eq 'x86' }).Version)) -Part 3
