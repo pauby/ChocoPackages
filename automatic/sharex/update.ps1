@@ -8,9 +8,9 @@ $repoName = 'sharex'
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            '(^\s*url\s*=\s*)(''.*'')'            = "`$1'$($Latest.URL32)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
-            "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType32)'"
+            '(^\s*url64bit\s*=\s*)(''.*'')'          = "`$1'$($Latest.URL64)'"
+            "(?i)(^\s*checksum64\s*=\s*)('.*')"      = "`$1'$($Latest.Checksum64)'"
+            "(?i)(^\s*checksumType64\s*=\s*)('.*')"  = "`$1'$($Latest.ChecksumType64)'"
         }
     }
 }
@@ -30,7 +30,7 @@ function global:au_GetLatest {
         $version = $version.Substring(1)    # skip over 'v' in tag
     }
 
-    $asset32 = $release.assets | Where-Object name -eq "ShareX-$($version)-setup.exe"
+    $asset64 = $release.assets | Where-Object name -eq "ShareX-$($version)-setup-x64.exe"
     $releaseNotes = if ([string]::IsNullOrEmpty($release.body)) {
         $release.html_url
     }
@@ -39,11 +39,11 @@ function global:au_GetLatest {
     }
 
     return @{
-        Asset32      = $asset32
-        URL32        = $asset32.browser_download_url
+        Asset64      = $asset64
+        URL64        = $asset64.browser_download_url
         Version      = $version
         ReleaseNotes = $releaseNotes
     }
 }
 
-Update-Package -ChecksumFor 32
+Update-Package -ChecksumFor 64

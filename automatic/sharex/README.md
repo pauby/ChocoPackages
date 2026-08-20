@@ -26,6 +26,7 @@ Screen capture, file sharing and productivity tool.
 
 ## Notes
 
+* Only a 64-bit (x64) version of ShareX is available. If you require a 32-bit (x86) version, you will need to use an older version of this package.
 * This is an automatically updated package. If you find it is out of date by **more than a week**, please contact the maintainer(s) and let them know the package is no longer updating correctly.
 * I am unable to answer comments left on Disqus. If you have something related to the **_package_**:
   1. Raise a [discussion](https://github.com/pauby/chocopackages/discussions) for questions.

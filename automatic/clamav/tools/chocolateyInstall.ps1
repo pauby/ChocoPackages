@@ -1,12 +1,13 @@
 ﻿$ErrorActionPreference = 'Stop'
 
-$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$file64Filename = 'clamav-1.1.0.win.x64.zip'
+$toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
-  packageName = $env:ChocolateyPackageName
-  fileFullPath64 = Join-Path -Path $toolsDir -ChildPath $file64Filename
-  destination = $toolsDir
+  packageName    = $env:ChocolateyPackageName
+  url64bit       = ''
+  checksum64     = ''
+  checksumType64 = ''
+  unzipLocation  = $toolsDir
 }
 
-Get-ChocolateyUnzip @packageArgs
+Install-ChocolateyZipPackage @packageArgs
