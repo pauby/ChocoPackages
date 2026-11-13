@@ -1,6 +1,8 @@
 . $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://download.techsmith.com/update/camtasiastudio/enu/manifest.xml?utm_source=product&utm_medium=cs&utm_campaign=cw22&ipc_item_name=cs&ipc_platform=windows'
+$releases    = 'https://updater.techsmith.com/tscupdate_deploy/Updates.asmx'
+$requestBody = '<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><soap:Body><CheckForUpdates xmlns="http://localhost/TSCUpdater"><product>Camtasia</product><currentVersion>1.0.0</currentVersion><language>ENU</language><keyType>Single User</keyType><key></key><os>6.2.9200.0</os><dotNet>4.8.4084</dotNet><processor>x86</processor><bitness>64</bitness><osBitness>64</osBitness><KeyVersion>0</KeyVersion></CheckForUpdates></soap:Body></soap:Envelope>'
+$requestHeaders = @{ 'SOAPAction' = 'http://localhost/TSCUpdater/CheckForUpdates' }
 
 function global:au_SearchReplace {
     @{
@@ -17,10 +19,9 @@ function global:au_BeforeUpdate() {
 
 function global:au_GetLatest {
 
-    # this doesn't return an XML formatted document so we need to regex it to get the version
-    $response = Invoke-RestMethod -Uri $releases -Method 'Get' -ContentType 'text/xml' -UseBasicParsing
-    $response -match '\<Application Name="Camtasia Studio" Version="(?<version>[\d\.]+)"' | Out-Null
-    $version = $matches.version
+    $response = Invoke-RestMethod -Uri $releases -Method Post -Body $requestBody -Headers $requestHeaders -ContentType 'text/xml' -UseBasicParsing
+
+    $version = $response.Envelope.Body.CheckForUpdatesResponse.CheckForUpdatesResult.NextVersion
     
     if (-not [string]::IsNullOrEmpty($version)) {
         $downloadUrl = ("https://download.techsmith.com/camtasiastudio/releases/{0}/camtasia.msi" -f $version.Replace('.', ''))
